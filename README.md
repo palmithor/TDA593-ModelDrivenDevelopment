@@ -9,4 +9,4 @@ Caroline Kabat 891016-4881 kabat@student.chalmers.se
 
 Simon Persson 920417-1293 simpers@student.chalmers.se
 
-Palmi Thor Valgeirsson 880712-4493 palmi@student.chalmers.se
+Pálmi Þór Valgeirsson 880712-4493 palmi@student.chalmers.se
