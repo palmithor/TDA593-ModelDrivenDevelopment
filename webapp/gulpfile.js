@@ -64,12 +64,12 @@ var isProduction = args.type === 'production';
 
 
 /*============================================================
- =>                          Server
+ =>             Server
  ============================================================*/
 
 gulp.task('server', function () {
 
-    console.log('------------------>>>> firing server  <<<<-----------------------');
+    console.log('------------------>>>> firing server <<<<-----------------------');
     gulpPlugins.connect.server(serverConfig);
 
     console.log('Started connect web server on http://localhost:' + serverConfig.port + '.');
@@ -79,7 +79,7 @@ gulp.task('server', function () {
 gulp.task('tasks', gulpPlugins.taskListing);
 
 /*============================================================
- =                          JS-HINT                          =
+ =             JS-HINT             =
  ============================================================*/
 
 gulp.task('js:hint', function () {
@@ -93,7 +93,7 @@ gulp.task('js:hint', function () {
 
 
 /*============================================================
- =                          Concat                           =
+ =             Concat              =
  ============================================================*/
 
 gulp.task('concat', ['concat:bower', 'concat:js', 'concat:css']);
@@ -182,7 +182,7 @@ gulp.task('concat:css', ['convert:scss'], function () {
 
 
 /*============================================================
- =                          Minify				            =
+ =             Minify				      =
  ============================================================*/
 
 gulp.task('image:min', function () {
@@ -194,7 +194,7 @@ gulp.task('image:min', function () {
 
 
 /*============================================================
- =                           Copy                            =
+ =              Copy              =
  ============================================================*/
 
 gulp.task('copy', ['copy:html', 'copy:images', 'copy:fonts', 'copy:html:root']);
@@ -284,7 +284,7 @@ gulp.task('watch', function () {
 
 
 /*============================================================
- =                             Clean                          =
+ =               Clean             =
  ============================================================*/
 
 var cleanFiles = function (files, logMessage) {
@@ -323,7 +323,7 @@ gulp.task('clean:zip', function () {
 
 
 /*============================================================
- =                             Zip                          =
+ =               Zip             =
  ============================================================*/
 
 gulp.task('zip', function () {
@@ -338,7 +338,7 @@ gulp.task('zip', function () {
 });
 
 /*============================================================
- =                             Start                          =
+ =               Start             =
  ============================================================*/
 
 
@@ -360,7 +360,7 @@ gulp.task('prod', ['build:prod', 'server']);
 
 
 /*============================================================
- =                       Browser Sync                         =
+ =            Browser Sync             =
  ============================================================*/
 
 gulp.task('bs', function () {

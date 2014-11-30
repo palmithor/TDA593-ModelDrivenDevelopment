@@ -1,4 +1,4 @@
-package com.mdsd.hotel.logic.model;
+package com.mdsd.hotel.business.model;
 
 /**
  * @author palmithor
@@ -8,9 +8,19 @@ public abstract class Bill implements IBill {
 
     private CardInformation cardInformation;
 
+    protected Bill() {
+    }
+
+    protected Bill(final CardInformation cardInformation) {
+        this.cardInformation = cardInformation;
+    }
 
     public CardInformation getCardInformation() {
         return cardInformation;
+    }
+
+    public void setCardInformation(final CardInformation cardInformation) {
+        this.cardInformation = cardInformation;
     }
 
     public boolean isPaid() {

@@ -1,4 +1,4 @@
-package com.mdsd.hotel.logic.model;
+package com.mdsd.hotel.business.model;
 
 /**
  * @author palmithor
