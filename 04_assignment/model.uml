@@ -362,5 +362,26 @@
       </ownedEnd>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_vCx14HlcEeSbENxhkq-Geg" name="ClassDiagram"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_vCx14HlcEeSbENxhkq-Geg" name="ClassDiagram">
+    <packagedElement xmi:type="uml:Class" xmi:id="_2u2aoHllEeSbENxhkq-Geg" name="RoomExtraTemplate">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QG95cHlmEeSbENxhkq-Geg" name="templateName">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_gw5gIHlmEeSbENxhkq-Geg" name="extras">
+        <type xmi:type="uml:Class" href="../test/model.uml#_EspogHk1EeSsOOo59CoEGw"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lAJu0HlmEeSbENxhkq-Geg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lAJu0XlmEeSbENxhkq-Geg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_p7fAYHlmEeSbENxhkq-Geg" name="roomExtra" type="_EspogHk1EeSsOOo59CoEGw" association="_p7fAY3lmEeSbENxhkq-Geg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p7fAYXlmEeSbENxhkq-Geg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p7fAYnlmEeSbENxhkq-Geg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_p7fAY3lmEeSbENxhkq-Geg" memberEnd="_p7fAZHlmEeSbENxhkq-Geg _p7fAYHlmEeSbENxhkq-Geg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_p7fAZHlmEeSbENxhkq-Geg" name="roomExtraTemplate" type="_2u2aoHllEeSbENxhkq-Geg" association="_p7fAY3lmEeSbENxhkq-Geg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p7fAZXlmEeSbENxhkq-Geg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p7fAZnlmEeSbENxhkq-Geg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
 </uml:Model>
