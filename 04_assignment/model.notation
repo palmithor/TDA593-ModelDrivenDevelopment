@@ -650,9 +650,6 @@
     <children xmi:type="notation:Shape" xmi:id="_2u2aoXllEeSbENxhkq-Geg" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_2vALoHllEeSbENxhkq-Geg" type="5029"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_2vALoXllEeSbENxhkq-Geg" type="7017">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_5FoEwHllEeSbENxhkq-Geg" source="PapyrusCSSForceValue">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_5FoEwXllEeSbENxhkq-Geg" key="collapsed" value="true"/>
-        </eAnnotations>
         <children xmi:type="notation:Shape" xmi:id="_Q5RgIHlmEeSbENxhkq-Geg" type="3012">
           <element xmi:type="uml:Property" href="model.uml#_QG95cHlmEeSbENxhkq-Geg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_Q5RgIXlmEeSbENxhkq-Geg"/>
@@ -1233,5 +1230,21 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p7x7UHlmEeSbENxhkq-Geg" id="(0.25555555555555554,0.11607142857142858)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_p7x7UXlmEeSbENxhkq-Geg" id="(0.6797385620915033,0.8035714285714286)"/>
     </edges>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_kblvkHluEeSn2_rhECnITA" type="PapyrusUMLSequenceDiagram" name="SeqDiagramCheckIn" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_kblvkXluEeSn2_rhECnITA" type="2001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_kblvknluEeSn2_rhECnITA" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_kblvk3luEeSn2_rhECnITA" type="7001">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kblvlHluEeSn2_rhECnITA"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="model.uml#_iZBa4HluEeSn2_rhECnITA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kblvlXluEeSn2_rhECnITA"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_kblvlnluEeSn2_rhECnITA" name="diagram_compatibility_version" stringValue="1.0.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_kblvl3luEeSn2_rhECnITA"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_kblvmHluEeSn2_rhECnITA">
+      <owner xmi:type="uml:Package" href="model.uml#_a7AxMHluEeSn2_rhECnITA"/>
+    </styles>
+    <element xmi:type="uml:Interaction" href="model.uml#_iZBa4HluEeSn2_rhECnITA"/>
   </notation:Diagram>
 </xmi:XMI>

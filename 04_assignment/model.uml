@@ -411,4 +411,7 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_7Rrv4HlpEeSuvNuMJAhOkg" name="Operation7"/>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_a7AxMHluEeSn2_rhECnITA" name="SequenceDiagrams">
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_iZBa4HluEeSn2_rhECnITA" name="Interaction1"/>
+  </packagedElement>
 </uml:Model>
