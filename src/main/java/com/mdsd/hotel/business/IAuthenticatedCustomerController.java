@@ -11,7 +11,7 @@ import java.util.List;
  * @author palmithor
  * @since 01/12/14.
  */
-public interface IAuthenticatedUserController {
+public interface IAuthenticatedCustomerController {
 
     List<Booking> listBookings(final Long customerId);
 
