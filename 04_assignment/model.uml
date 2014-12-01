@@ -29,7 +29,6 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_nYzwcHkzEeSsOOo59CoEGw" name="address" visibility="private" type="_dCV90HkxEeSsOOo59CoEGw"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_j5AMQHk0EeSsOOo59CoEGw" name="IBill"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_tPDVoHk0EeSsOOo59CoEGw" name="Bill">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_wewy4Hk0EeSsOOo59CoEGw" name="cardInformation" visibility="private" type="_jeP_YHkzEeSsOOo59CoEGw"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_v8wGcHk-EeSAa8N7JDAVfA" name="status" visibility="private" type="_7AReQHk-EeSAa8N7JDAVfA"/>
@@ -195,4 +194,5 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7AReQXk-EeSAa8N7JDAVfA" name="PAID"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7AReQnk-EeSAa8N7JDAVfA" name="NOT_PAID"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_cSAT8HlbEeSbENxhkq-Geg" name="IBill"/>
 </uml:Model>
