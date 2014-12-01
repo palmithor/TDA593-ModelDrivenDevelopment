@@ -361,8 +361,12 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4loIVnlgEeSbENxhkq-Geg" value="1"/>
       </ownedEnd>
     </packagedElement>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_vCx14HlcEeSbENxhkq-Geg" name="ClassDiagram">
+    <packagedElement xmi:type="uml:Association" xmi:id="_p7fAY3lmEeSbENxhkq-Geg" memberEnd="_p7fAZHlmEeSbENxhkq-Geg _p7fAYHlmEeSbENxhkq-Geg">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_p7fAZHlmEeSbENxhkq-Geg" name="roomExtraTemplate" type="_2u2aoHllEeSbENxhkq-Geg" association="_p7fAY3lmEeSbENxhkq-Geg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p7fAZXlmEeSbENxhkq-Geg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p7fAZnlmEeSbENxhkq-Geg" value="1"/>
+      </ownedEnd>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_2u2aoHllEeSbENxhkq-Geg" name="RoomExtraTemplate">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_QG95cHlmEeSbENxhkq-Geg" name="templateName">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -377,13 +381,8 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p7fAYnlmEeSbENxhkq-Geg" value="*"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_p7fAY3lmEeSbENxhkq-Geg" memberEnd="_p7fAZHlmEeSbENxhkq-Geg _p7fAYHlmEeSbENxhkq-Geg">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_p7fAZHlmEeSbENxhkq-Geg" name="roomExtraTemplate" type="_2u2aoHllEeSbENxhkq-Geg" association="_p7fAY3lmEeSbENxhkq-Geg">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_p7fAZXlmEeSbENxhkq-Geg" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_p7fAZnlmEeSbENxhkq-Geg" value="1"/>
-      </ownedEnd>
-    </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_vCx14HlcEeSbENxhkq-Geg" name="ClassDiagram"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_5xaP4HlpEeSuvNuMJAhOkg" name="Components">
     <packagedElement xmi:type="uml:Component" xmi:id="_7RrIwHlpEeSuvNuMJAhOkg" name="Banking"/>
     <packagedElement xmi:type="uml:Component" xmi:id="_7RrIwXlpEeSuvNuMJAhOkg" name="HotelSystem"/>
@@ -394,13 +393,10 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_7Rrv1HlpEeSuvNuMJAhOkg" name="IManagerController">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_7Rrv1XlpEeSuvNuMJAhOkg" name="createRoom"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_7Rrv1nlpEeSuvNuMJAhOkg" name="updateRoom">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7Rrv13lpEeSuvNuMJAhOkg" name="room">
-          <type xmi:type="uml:Class" href="#_YQh30Hk1EeSsOOo59CoEGw"/>
-        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7Rrv13lpEeSuvNuMJAhOkg" name="room" type="_YQh30Hk1EeSsOOo59CoEGw"/>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_7Rrv2HlpEeSuvNuMJAhOkg" name="addRoomExtrasTemplate">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7Rrv2XlpEeSuvNuMJAhOkg" name="roomExtras">
-          <type xmi:type="uml:Class" href="#_EspogHk1EeSsOOo59CoEGw"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_7Rrv2XlpEeSuvNuMJAhOkg" name="roomExtras" type="_EspogHk1EeSsOOo59CoEGw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7Rrv2nlpEeSuvNuMJAhOkg"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_7Rrv23lpEeSuvNuMJAhOkg" value="*"/>
         </ownedParameter>
