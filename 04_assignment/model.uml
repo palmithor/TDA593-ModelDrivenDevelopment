@@ -32,6 +32,7 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_j5AMQHk0EeSsOOo59CoEGw" name="IBill"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_tPDVoHk0EeSsOOo59CoEGw" name="Bill">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_wewy4Hk0EeSsOOo59CoEGw" name="cardInformation" visibility="private" type="_jeP_YHkzEeSsOOo59CoEGw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_v8wGcHk-EeSAa8N7JDAVfA" name="status" visibility="private" type="_7AReQHk-EeSAa8N7JDAVfA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_6qMFEHk0EeSsOOo59CoEGw" name="BookingBill" visibility="protected"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_-LPJ8Hk0EeSsOOo59CoEGw" name="RoomBill">
@@ -189,5 +190,9 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_E88VAHk6EeSsOOo59CoEGw" name="STATUS_1"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fnz28Hk6EeSsOOo59CoEGw" name="STATUS_2"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Gm1D8Hk6EeSsOOo59CoEGw" name="STATUS_3"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_7AReQHk-EeSAa8N7JDAVfA" name="BillStatusEnum">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7AReQXk-EeSAa8N7JDAVfA" name="PAID"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7AReQnk-EeSAa8N7JDAVfA" name="NOT_PAID"/>
   </packagedElement>
 </uml:Model>
