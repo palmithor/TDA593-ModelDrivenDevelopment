@@ -87,10 +87,6 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dOqXMXlgEeSbENxhkq-Geg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dOqXMnlgEeSbENxhkq-Geg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_ovLNAHlgEeSbENxhkq-Geg" name="customer" type="_OsIJYHk1EeSsOOo59CoEGw" association="_ovLNA3lgEeSbENxhkq-Geg">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ovLNAXlgEeSbENxhkq-Geg" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ovLNAnlgEeSbENxhkq-Geg" value="1"/>
-      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_6qMFEHk0EeSsOOo59CoEGw" name="BookingBill" visibility="protected">
       <generalization xmi:type="uml:Generalization" xmi:id="_KCjusHlgEeSbENxhkq-Geg" general="_tPDVoHk0EeSsOOo59CoEGw"/>
@@ -348,11 +344,14 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dOqXNnlgEeSbENxhkq-Geg" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_ovLNA3lgEeSbENxhkq-Geg" memberEnd="_ovLNBHlgEeSbENxhkq-Geg _ovLNAHlgEeSbENxhkq-Geg">
-      <name xsi:nil="true"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ovLNA3lgEeSbENxhkq-Geg" memberEnd="_ovLNBHlgEeSbENxhkq-Geg _ovLNAHlgEeSbENxhkq-Geg" navigableOwnedEnd="_ovLNAHlgEeSbENxhkq-Geg">
       <ownedEnd xmi:type="uml:Property" xmi:id="_ovLNBHlgEeSbENxhkq-Geg" name="booking" type="_jNDPwHk1EeSsOOo59CoEGw" association="_ovLNA3lgEeSbENxhkq-Geg">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ovLNBXlgEeSbENxhkq-Geg" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ovLNBnlgEeSbENxhkq-Geg" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ovLNAHlgEeSbENxhkq-Geg" name="customer" type="_OsIJYHk1EeSsOOo59CoEGw" association="_ovLNA3lgEeSbENxhkq-Geg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ovLNAXlgEeSbENxhkq-Geg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ovLNAnlgEeSbENxhkq-Geg" value="1"/>
       </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_4loIU3lgEeSbENxhkq-Geg" memberEnd="_4loIVHlgEeSbENxhkq-Geg _4loIUHlgEeSbENxhkq-Geg">
