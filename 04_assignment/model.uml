@@ -388,9 +388,7 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_5xaP4HlpEeSuvNuMJAhOkg" name="Components">
-    <packagedElement xmi:type="uml:Component" xmi:id="_7RrIwHlpEeSuvNuMJAhOkg" name="Banking"/>
     <packagedElement xmi:type="uml:Component" xmi:id="_7RrIwXlpEeSuvNuMJAhOkg" name="HotelSystem"/>
-    <packagedElement xmi:type="uml:Component" xmi:id="_7Rrv0HlpEeSuvNuMJAhOkg" name="WebApp"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_7Rrv0XlpEeSuvNuMJAhOkg" name="ICustomerBookingController">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_CbxtEHlsEeScR5a8vkIPbw" name="searchRoom">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_V0vs4HlsEeScR5a8vkIPbw" name="numberOfGuests">
@@ -792,6 +790,15 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_43dXAHmTEeScR5a8vkIPbw" name="loggedInUserAccount" type="_kvi_0HmOEeScR5a8vkIPbw" direction="return"/>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_j_xhkHoDEeSCM72iwJepcA" name="Realization0" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_pwqXAHmTEeScR5a8vkIPbw" contract="_pwqXAHmTEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_l7wtIHoDEeSCM72iwJepcA" name="Realization1" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_FK7JMHmTEeScR5a8vkIPbw" contract="_FK7JMHmTEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_m7C_4HoDEeSCM72iwJepcA" name="Realization2" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_DsKecHmOEeScR5a8vkIPbw" contract="_DsKecHmOEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_n2LLYHoDEeSCM72iwJepcA" name="Realization3" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_0HKfgHmNEeScR5a8vkIPbw" contract="_0HKfgHmNEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_oTINIHoDEeSCM72iwJepcA" name="Realization4" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_7Rrv0XlpEeSuvNuMJAhOkg" contract="_7Rrv0XlpEeSuvNuMJAhOkg"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_p5K94HoDEeSCM72iwJepcA" name="Realization5" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_7Rrv0nlpEeSuvNuMJAhOkg" contract="_7Rrv0nlpEeSuvNuMJAhOkg"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_s2AicHoDEeSCM72iwJepcA" name="Realization6" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_7Rrv1HlpEeSuvNuMJAhOkg" contract="_7Rrv1HlpEeSuvNuMJAhOkg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_GC1-UHoEEeSCM72iwJepcA" name="Usage0" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_l--S1Hn7EeSsR_tFU0eXEQ"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_Gsv28HoEEeSCM72iwJepcA" name="Usage1" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_l--S9nn7EeSsR_tFU0eXEQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_a7AxMHluEeSn2_rhECnITA" name="SequenceDiagrams">
     <packagedElement xmi:type="uml:Interaction" xmi:id="_iZBa4HluEeSn2_rhECnITA" name="Interaction1"/>
