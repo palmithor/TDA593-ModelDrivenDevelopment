@@ -891,8 +891,8 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGS3ogEeSvg8qt3_6xcA" name="addItemToBill_MessageRecv" covered="_jaEGR3ogEeSvg8qt3_6xcA" message="_jaEGZXogEeSvg8qt3_6xcA"/>
       <fragment xmi:type="uml:CombinedFragment" xmi:id="_jaEGTHogEeSvg8qt3_6xcA" name="CombinedFragment" covered="_jaEGSXogEeSvg8qt3_6xcA _jaEGRnogEeSvg8qt3_6xcA _jaEGSHogEeSvg8qt3_6xcA _jaEGR3ogEeSvg8qt3_6xcA" interactionOperator="alt">
         <operand xmi:type="uml:InteractionOperand" xmi:id="_jaEGTXogEeSvg8qt3_6xcA" name="InteractionOperand" covered="_jaEGSXogEeSvg8qt3_6xcA _jaEGRnogEeSvg8qt3_6xcA _jaEGSHogEeSvg8qt3_6xcA _jaEGR3ogEeSvg8qt3_6xcA">
-          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGTnogEeSvg8qt3_6xcA" name="MessageSend" covered="_jaEGR3ogEeSvg8qt3_6xcA" message="_jaEGaXogEeSvg8qt3_6xcA"/>
-          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGT3ogEeSvg8qt3_6xcA" name="MessageRecv" covered="_jaEGRnogEeSvg8qt3_6xcA" message="_jaEGaXogEeSvg8qt3_6xcA"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGTnogEeSvg8qt3_6xcA" name="MessageSend" covered="_jaEGR3ogEeSvg8qt3_6xcA"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGT3ogEeSvg8qt3_6xcA" name="MessageRecv" covered="_jaEGRnogEeSvg8qt3_6xcA"/>
           <guard xmi:type="uml:InteractionConstraint" xmi:id="_jaEGUHogEeSvg8qt3_6xcA" visibility="package">
             <specification xmi:type="uml:LiteralString" xmi:id="_jaEGUXogEeSvg8qt3_6xcA" value="if quantity &lt;= 0"/>
             <maxint xmi:type="uml:LiteralInteger" xmi:id="_jaEGUnogEeSvg8qt3_6xcA" value="1"/>
@@ -929,8 +929,7 @@
         <signature xmi:type="uml:Operation" href="../temp/model.uml#_lAf7AHmQEeScR5a8vkIPbw"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_jaEGZ3ogEeSvg8qt3_6xcA" name="createBillableItem(...)" messageSort="asynchCall" receiveEvent="_jaEGWnogEeSvg8qt3_6xcA" sendEvent="_jaEGWXogEeSvg8qt3_6xcA"/>
-      <message xmi:type="uml:Message" xmi:id="_jaEGaHogEeSvg8qt3_6xcA" name="addItem(...)" messageSort="asynchCall" receiveEvent="_jaEGYHogEeSvg8qt3_6xcA" sendEvent="_jaEGX3ogEeSvg8qt3_6xcA"/>
-      <message xmi:type="uml:Message" xmi:id="_jaEGaXogEeSvg8qt3_6xcA" name="ShowErrorMessage(...)" messageSort="asynchCall" receiveEvent="_jaEGT3ogEeSvg8qt3_6xcA" sendEvent="_jaEGTnogEeSvg8qt3_6xcA"/>
+      <message xmi:type="uml:Message" xmi:id="_jaEGaHogEeSvg8qt3_6xcA" name="addItemToBill(...)" messageSort="asynchCall" receiveEvent="_jaEGYHogEeSvg8qt3_6xcA" sendEvent="_jaEGX3ogEeSvg8qt3_6xcA"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Model" xmi:id="_l--S0Hn7EeSsR_tFU0eXEQ" name="BankingModel">
