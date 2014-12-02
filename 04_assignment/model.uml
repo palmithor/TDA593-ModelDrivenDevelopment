@@ -894,7 +894,7 @@
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGTnogEeSvg8qt3_6xcA" name="MessageSend" covered="_jaEGR3ogEeSvg8qt3_6xcA" message="_jaEGaXogEeSvg8qt3_6xcA"/>
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGT3ogEeSvg8qt3_6xcA" name="MessageRecv" covered="_jaEGRnogEeSvg8qt3_6xcA" message="_jaEGaXogEeSvg8qt3_6xcA"/>
           <guard xmi:type="uml:InteractionConstraint" xmi:id="_jaEGUHogEeSvg8qt3_6xcA" visibility="package">
-            <specification xmi:type="uml:LiteralString" xmi:id="_jaEGUXogEeSvg8qt3_6xcA" value="if quantity &lt; 0"/>
+            <specification xmi:type="uml:LiteralString" xmi:id="_jaEGUXogEeSvg8qt3_6xcA" value="if quantity &lt;= 0"/>
             <maxint xmi:type="uml:LiteralInteger" xmi:id="_jaEGUnogEeSvg8qt3_6xcA" value="1"/>
             <minint xmi:type="uml:LiteralInteger" xmi:id="_jaEGU3ogEeSvg8qt3_6xcA"/>
           </guard>
