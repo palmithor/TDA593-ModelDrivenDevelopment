@@ -806,7 +806,8 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_n__58Hn8EeSh-eDq9AxmXQ" name="Interaction3">
       <ownedComment xmi:type="uml:Comment" xmi:id="_Bos1oHoBEeSh-eDq9AxmXQ">
-        <body>cancel search</body>
+        <body>search is cancelled
+</body>
       </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_rdO10Hn8EeSh-eDq9AxmXQ" name="c" type="_OsIJYHk1EeSsOOo59CoEGw"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_lincEHn9EeSh-eDq9AxmXQ" name="ICBC" type="_7Rrv0XlpEeSuvNuMJAhOkg"/>
