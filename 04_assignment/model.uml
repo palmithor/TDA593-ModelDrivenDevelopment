@@ -858,6 +858,72 @@
       <message xmi:type="uml:Message" xmi:id="_owf7EHoCEeSvg8qt3_6xcA" name="searchRoom_Message" messageSort="asynchCall" receiveEvent="_owkzkHoCEeSvg8qt3_6xcA" sendEvent="_owkMgHoCEeSvg8qt3_6xcA" signature="_xCc0UHlsEeScR5a8vkIPbw"/>
       <message xmi:type="uml:Message" xmi:id="_qoxEQHoCEeSvg8qt3_6xcA" name="searchRoom_Message0" messageSort="asynchCall" receiveEvent="_qoySYHoCEeSvg8qt3_6xcA" sendEvent="_qoxrUHoCEeSvg8qt3_6xcA" signature="_xCc0UHlsEeScR5a8vkIPbw"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_jaEGQHogEeSvg8qt3_6xcA" name="Interaction4">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_jaEGQXogEeSvg8qt3_6xcA">
+        <body>Show error message (&quot;quantity cannot be zero or negative&quot;)
+</body>
+      </ownedComment>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jaEGQnogEeSvg8qt3_6xcA" name="u">
+        <type xmi:type="uml:Class" href="../temp/model.uml#_kvi_0HmOEeScR5a8vkIPbw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jaEGQ3ogEeSvg8qt3_6xcA" name="ICC">
+        <type xmi:type="uml:Interface" href="../temp/model.uml#_7Rrv0nlpEeSuvNuMJAhOkg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jaEGRHogEeSvg8qt3_6xcA" name="RR">
+        <type xmi:type="uml:Class" href="../temp/model.uml#_b5BBcHk1EeSsOOo59CoEGw"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_jaEGRXogEeSvg8qt3_6xcA" name="b">
+        <type xmi:type="uml:Interface" href="../temp/model.uml#_cSAT8HlbEeSbENxhkq-Geg"/>
+      </ownedAttribute>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_jaEGRnogEeSvg8qt3_6xcA" name="Clerk" represents="_jaEGQnogEeSvg8qt3_6xcA" coveredBy="_jaEGSnogEeSvg8qt3_6xcA _jaEGTHogEeSvg8qt3_6xcA _jaEGTXogEeSvg8qt3_6xcA _jaEGVHogEeSvg8qt3_6xcA _jaEGT3ogEeSvg8qt3_6xcA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_jaEGR3ogEeSvg8qt3_6xcA" name="IClerkController" represents="_jaEGQ3ogEeSvg8qt3_6xcA" coveredBy="_jaEGS3ogEeSvg8qt3_6xcA _jaEGTHogEeSvg8qt3_6xcA _jaEGTXogEeSvg8qt3_6xcA _jaEGVHogEeSvg8qt3_6xcA _jaEGVXogEeSvg8qt3_6xcA _jaEGTnogEeSvg8qt3_6xcA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_jaEGSHogEeSvg8qt3_6xcA" name="RoomReservation" represents="_jaEGRHogEeSvg8qt3_6xcA" coveredBy="_jaEGTHogEeSvg8qt3_6xcA _jaEGTXogEeSvg8qt3_6xcA _jaEGVHogEeSvg8qt3_6xcA _jaEGVnogEeSvg8qt3_6xcA _jaEGV3ogEeSvg8qt3_6xcA _jaEGWHogEeSvg8qt3_6xcA _jaEGWXogEeSvg8qt3_6xcA _jaEGX3ogEeSvg8qt3_6xcA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_jaEGSXogEeSvg8qt3_6xcA" name="Bill" represents="_jaEGRXogEeSvg8qt3_6xcA" coveredBy="_jaEGTHogEeSvg8qt3_6xcA _jaEGTXogEeSvg8qt3_6xcA _jaEGVHogEeSvg8qt3_6xcA _jaEGV3ogEeSvg8qt3_6xcA _jaEGWHogEeSvg8qt3_6xcA _jaEGWnogEeSvg8qt3_6xcA _jaEGYHogEeSvg8qt3_6xcA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGSnogEeSvg8qt3_6xcA" name="addItemToBill_MessageSend" covered="_jaEGRnogEeSvg8qt3_6xcA" message="_jaEGZXogEeSvg8qt3_6xcA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGS3ogEeSvg8qt3_6xcA" name="addItemToBill_MessageRecv" covered="_jaEGR3ogEeSvg8qt3_6xcA" message="_jaEGZXogEeSvg8qt3_6xcA"/>
+      <fragment xmi:type="uml:CombinedFragment" xmi:id="_jaEGTHogEeSvg8qt3_6xcA" name="CombinedFragment" covered="_jaEGSXogEeSvg8qt3_6xcA _jaEGRnogEeSvg8qt3_6xcA _jaEGSHogEeSvg8qt3_6xcA _jaEGR3ogEeSvg8qt3_6xcA" interactionOperator="alt">
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_jaEGTXogEeSvg8qt3_6xcA" name="InteractionOperand" covered="_jaEGSXogEeSvg8qt3_6xcA _jaEGRnogEeSvg8qt3_6xcA _jaEGSHogEeSvg8qt3_6xcA _jaEGR3ogEeSvg8qt3_6xcA">
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGTnogEeSvg8qt3_6xcA" name="MessageSend" covered="_jaEGR3ogEeSvg8qt3_6xcA" message="_jaEGaXogEeSvg8qt3_6xcA"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGT3ogEeSvg8qt3_6xcA" name="MessageRecv" covered="_jaEGRnogEeSvg8qt3_6xcA" message="_jaEGaXogEeSvg8qt3_6xcA"/>
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="_jaEGUHogEeSvg8qt3_6xcA" visibility="package">
+            <specification xmi:type="uml:LiteralString" xmi:id="_jaEGUXogEeSvg8qt3_6xcA" value="if quantity &lt; 0"/>
+            <maxint xmi:type="uml:LiteralInteger" xmi:id="_jaEGUnogEeSvg8qt3_6xcA" value="1"/>
+            <minint xmi:type="uml:LiteralInteger" xmi:id="_jaEGU3ogEeSvg8qt3_6xcA"/>
+          </guard>
+        </operand>
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_jaEGVHogEeSvg8qt3_6xcA" name="InteractionOperand0" covered="_jaEGSXogEeSvg8qt3_6xcA _jaEGRnogEeSvg8qt3_6xcA _jaEGSHogEeSvg8qt3_6xcA _jaEGR3ogEeSvg8qt3_6xcA">
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGVXogEeSvg8qt3_6xcA" name="addItemToBill_Message0Send" covered="_jaEGR3ogEeSvg8qt3_6xcA" message="_jaEGZnogEeSvg8qt3_6xcA"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGVnogEeSvg8qt3_6xcA" name="addItemToBill_Message0Recv" covered="_jaEGSHogEeSvg8qt3_6xcA" message="_jaEGZnogEeSvg8qt3_6xcA"/>
+          <fragment xmi:type="uml:CombinedFragment" xmi:id="_jaEGV3ogEeSvg8qt3_6xcA" name="CombinedFragment" covered="_jaEGSHogEeSvg8qt3_6xcA _jaEGSXogEeSvg8qt3_6xcA" interactionOperator="opt">
+            <operand xmi:type="uml:InteractionOperand" xmi:id="_jaEGWHogEeSvg8qt3_6xcA" name="InteractionOperand" covered="_jaEGSHogEeSvg8qt3_6xcA _jaEGSXogEeSvg8qt3_6xcA">
+              <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGWXogEeSvg8qt3_6xcA" name="MessageSend" covered="_jaEGSHogEeSvg8qt3_6xcA" message="_jaEGZ3ogEeSvg8qt3_6xcA"/>
+              <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGWnogEeSvg8qt3_6xcA" name="MessageRecv" covered="_jaEGSXogEeSvg8qt3_6xcA" message="_jaEGZ3ogEeSvg8qt3_6xcA"/>
+              <guard xmi:type="uml:InteractionConstraint" xmi:id="_jaEGW3ogEeSvg8qt3_6xcA">
+                <specification xmi:type="uml:LiteralString" xmi:id="_jaEGXHogEeSvg8qt3_6xcA" value="billable item does not exist"/>
+                <maxint xmi:type="uml:LiteralInteger" xmi:id="_jaEGXXogEeSvg8qt3_6xcA" value="1"/>
+                <minint xmi:type="uml:LiteralInteger" xmi:id="_jaEGXnogEeSvg8qt3_6xcA"/>
+              </guard>
+            </operand>
+          </fragment>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGX3ogEeSvg8qt3_6xcA" name="MessageSend" covered="_jaEGSHogEeSvg8qt3_6xcA" message="_jaEGaHogEeSvg8qt3_6xcA"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_jaEGYHogEeSvg8qt3_6xcA" name="MessageRecv" covered="_jaEGSXogEeSvg8qt3_6xcA" message="_jaEGaHogEeSvg8qt3_6xcA"/>
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="_jaEGYXogEeSvg8qt3_6xcA">
+            <specification xmi:type="uml:LiteralString" xmi:id="_jaEGYnogEeSvg8qt3_6xcA" value="else "/>
+            <maxint xmi:type="uml:LiteralInteger" xmi:id="_jaEGY3ogEeSvg8qt3_6xcA" value="1"/>
+            <minint xmi:type="uml:LiteralInteger" xmi:id="_jaEGZHogEeSvg8qt3_6xcA"/>
+          </guard>
+        </operand>
+      </fragment>
+      <message xmi:type="uml:Message" xmi:id="_jaEGZXogEeSvg8qt3_6xcA" name="addItemToBill_Message" messageSort="asynchCall" receiveEvent="_jaEGS3ogEeSvg8qt3_6xcA" sendEvent="_jaEGSnogEeSvg8qt3_6xcA">
+        <signature xmi:type="uml:Operation" href="../temp/model.uml#_lAf7AHmQEeScR5a8vkIPbw"/>
+      </message>
+      <message xmi:type="uml:Message" xmi:id="_jaEGZnogEeSvg8qt3_6xcA" name="addItemToBill_Message0" messageSort="asynchCall" receiveEvent="_jaEGVnogEeSvg8qt3_6xcA" sendEvent="_jaEGVXogEeSvg8qt3_6xcA">
+        <signature xmi:type="uml:Operation" href="../temp/model.uml#_lAf7AHmQEeScR5a8vkIPbw"/>
+      </message>
+      <message xmi:type="uml:Message" xmi:id="_jaEGZ3ogEeSvg8qt3_6xcA" name="createBillableItem(...)" messageSort="asynchCall" receiveEvent="_jaEGWnogEeSvg8qt3_6xcA" sendEvent="_jaEGWXogEeSvg8qt3_6xcA"/>
+      <message xmi:type="uml:Message" xmi:id="_jaEGaHogEeSvg8qt3_6xcA" name="addItem(...)" messageSort="asynchCall" receiveEvent="_jaEGYHogEeSvg8qt3_6xcA" sendEvent="_jaEGX3ogEeSvg8qt3_6xcA"/>
+      <message xmi:type="uml:Message" xmi:id="_jaEGaXogEeSvg8qt3_6xcA" name="ShowErrorMessage(...)" messageSort="asynchCall" receiveEvent="_jaEGT3ogEeSvg8qt3_6xcA" sendEvent="_jaEGTnogEeSvg8qt3_6xcA"/>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Model" xmi:id="_l--S0Hn7EeSsR_tFU0eXEQ" name="BankingModel">
     <packagedElement xmi:type="uml:Component" xmi:id="_l--S0Xn7EeSsR_tFU0eXEQ" name="BankComponent"/>
