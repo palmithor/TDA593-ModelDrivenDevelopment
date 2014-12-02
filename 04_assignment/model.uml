@@ -799,6 +799,14 @@
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_s2AicHoDEeSCM72iwJepcA" name="Realization6" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_7Rrv1HlpEeSuvNuMJAhOkg" contract="_7Rrv1HlpEeSuvNuMJAhOkg"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_GC1-UHoEEeSCM72iwJepcA" name="Usage0" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_l--S1Hn7EeSsR_tFU0eXEQ"/>
     <packagedElement xmi:type="uml:Usage" xmi:id="_Gsv28HoEEeSCM72iwJepcA" name="Usage1" client="_7RrIwXlpEeSuvNuMJAhOkg" supplier="_l--S9nn7EeSsR_tFU0eXEQ"/>
+    <packagedElement xmi:type="uml:Component" xmi:id="_ArrP4HoFEeSCM72iwJepcA" name="Presentation"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_HhreYHoFEeSCM72iwJepcA" name="Usage2" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_pwqXAHmTEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_IRpiwHoFEeSCM72iwJepcA" name="Usage3" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_FK7JMHmTEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_Iu7UoHoFEeSCM72iwJepcA" name="Usage4" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_DsKecHmOEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_JWfq8HoFEeSCM72iwJepcA" name="Usage5" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_0HKfgHmNEeScR5a8vkIPbw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_J4u1UHoFEeSCM72iwJepcA" name="Usage6" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_7Rrv0XlpEeSuvNuMJAhOkg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_KYCAcHoFEeSCM72iwJepcA" name="Usage7" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_7Rrv0nlpEeSuvNuMJAhOkg"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_K4__gHoFEeSCM72iwJepcA" name="Usage8" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_7Rrv1HlpEeSuvNuMJAhOkg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_a7AxMHluEeSn2_rhECnITA" name="SequenceDiagrams">
     <packagedElement xmi:type="uml:Interaction" xmi:id="_iZBa4HluEeSn2_rhECnITA" name="Interaction1"/>
