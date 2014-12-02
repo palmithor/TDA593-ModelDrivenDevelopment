@@ -848,7 +848,7 @@
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qoxrUHoCEeSvg8qt3_6xcA" name="searchRoom_Message0Send1" covered="_pZjt4Hn8EeSh-eDq9AxmXQ" message="_qoxEQHoCEeSvg8qt3_6xcA"/>
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qoySYHoCEeSvg8qt3_6xcA" name="searchRoom_Message0Recv1" covered="_jLRxQHn9EeSh-eDq9AxmXQ" message="_qoxEQHoCEeSvg8qt3_6xcA"/>
           <guard xmi:type="uml:InteractionConstraint" xmi:id="_DZ1G8Xn_EeSh-eDq9AxmXQ">
-            <specification xmi:type="uml:LiteralString" xmi:id="_DZ1uAHn_EeSh-eDq9AxmXQ" value="actor is not happy with the result and wants to search again&#xA;"/>
+            <specification xmi:type="uml:LiteralString" xmi:id="_DZ1uAHn_EeSh-eDq9AxmXQ" value="actor is not happy with the result and wants to search again"/>
             <maxint xmi:type="uml:LiteralInteger" xmi:id="_DZ1uAnn_EeSh-eDq9AxmXQ" value="1"/>
             <minint xmi:type="uml:LiteralInteger" xmi:id="_DZ1uAXn_EeSh-eDq9AxmXQ"/>
           </guard>
@@ -857,7 +857,7 @@
       <fragment xmi:type="uml:CombinedFragment" xmi:id="_4RNh0HoAEeSh-eDq9AxmXQ" name="CombinedFragment0" covered="_jLRxQHn9EeSh-eDq9AxmXQ _pZjt4Hn8EeSh-eDq9AxmXQ" interactionOperator="alt">
         <operand xmi:type="uml:InteractionOperand" xmi:id="_4RNh0XoAEeSh-eDq9AxmXQ" name="InteractionOperand" covered="_jLRxQHn9EeSh-eDq9AxmXQ _pZjt4Hn8EeSh-eDq9AxmXQ">
           <guard xmi:type="uml:InteractionConstraint" xmi:id="_4ROI4HoAEeSh-eDq9AxmXQ">
-            <specification xmi:type="uml:LiteralString" xmi:id="_4ROI4XoAEeSh-eDq9AxmXQ" value="actor is not happy with the result and doesn't want to search again&#xA;"/>
+            <specification xmi:type="uml:LiteralString" xmi:id="_4ROI4XoAEeSh-eDq9AxmXQ" value="actor is not happy with the result and doesn't want to search again"/>
             <maxint xmi:type="uml:LiteralInteger" xmi:id="_4ROI43oAEeSh-eDq9AxmXQ" value="1"/>
             <minint xmi:type="uml:LiteralInteger" xmi:id="_4ROI4noAEeSh-eDq9AxmXQ"/>
           </guard>
@@ -931,7 +931,6 @@
       <message xmi:type="uml:Message" xmi:id="_jaEGZ3ogEeSvg8qt3_6xcA" name="createBillableItem(...)" messageSort="asynchCall" receiveEvent="_jaEGWnogEeSvg8qt3_6xcA" sendEvent="_jaEGWXogEeSvg8qt3_6xcA"/>
       <message xmi:type="uml:Message" xmi:id="_jaEGaHogEeSvg8qt3_6xcA" name="addItemToBill(...)" messageSort="asynchCall" receiveEvent="_jaEGYHogEeSvg8qt3_6xcA" sendEvent="_jaEGX3ogEeSvg8qt3_6xcA"/>
     </packagedElement>
-
     <packagedElement xmi:type="uml:Interaction" xmi:id="_IFJIEHoWEeSCM72iwJepcA" name="Interaction5">
       <ownedComment xmi:type="uml:Comment" xmi:id="_JZrAIHoYEeSCM72iwJepcA">
         <body>Ask if user wants to log in</body>
