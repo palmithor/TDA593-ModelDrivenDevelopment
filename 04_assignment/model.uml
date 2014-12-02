@@ -588,7 +588,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_qC420HmQEeScR5a8vkIPbw" name="billableItem">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rwXFQHmQEeScR5a8vkIPbw" name="roomBumber">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_rwXFQHmQEeScR5a8vkIPbw" name="roomNumber">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#ELong"/>
         </ownedParameter>
       </ownedOperation>
