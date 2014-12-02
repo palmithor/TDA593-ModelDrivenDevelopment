@@ -2008,7 +2008,7 @@
         <children xmi:type="notation:Shape" xmi:id="_onAsUHogEeSvg8qt3_6xcA" type="3001">
           <children xmi:type="notation:DecorationNode" xmi:id="_onAsUXogEeSvg8qt3_6xcA" type="5002"/>
           <element xmi:type="uml:Lifeline" href="model.uml#_jaEGSHogEeSvg8qt3_6xcA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_onAsVXogEeSvg8qt3_6xcA" x="532" y="14" width="128" height="401"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_onAsVXogEeSvg8qt3_6xcA" x="517" y="14" width="128" height="401"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_onAsVnogEeSvg8qt3_6xcA" type="3001">
           <children xmi:type="notation:DecorationNode" xmi:id="_onAsV3ogEeSvg8qt3_6xcA" type="5002"/>
@@ -2065,7 +2065,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_onAsd3ogEeSvg8qt3_6xcA"/>
       </children>
       <element xmi:type="uml:Interaction" href="model.uml#_jaEGQHogEeSvg8qt3_6xcA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_onAseHogEeSvg8qt3_6xcA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_onAseHogEeSvg8qt3_6xcA" height="471"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_onAseXogEeSvg8qt3_6xcA" name="diagram_compatibility_version" stringValue="1.0.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_onAsenogEeSvg8qt3_6xcA"/>
