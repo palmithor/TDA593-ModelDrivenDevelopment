@@ -813,13 +813,44 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_a7AxMHluEeSn2_rhECnITA" name="SequenceDiagrams">
     <packagedElement xmi:type="uml:Interaction" xmi:id="_iZBa4HluEeSn2_rhECnITA" name="Interaction1">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_-pN9MHo2EeS5aO3VpdAhog">
+        <body>Abort or try again.
+</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_QtVC4Ho3EeS5aO3VpdAhog">
+        <body>Abort.
+</body>
+      </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="__-nkgHojEeSSPLFn6F4C_A" name="ICC " type="_7Rrv0nlpEeSuvNuMJAhOkg" aggregation="shared"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_OBg3gHokEeSSPLFn6F4C_A" name="Customer" type="_OsIJYHk1EeSsOOo59CoEGw"/>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_y9QnAHojEeSSPLFn6F4C_A" name="Lifeline" represents="__-nkgHojEeSSPLFn6F4C_A" coveredBy="_9IyKYHokEeSSPLFn6F4C_A"/>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_PB9A0HokEeSSPLFn6F4C_A" name="Lifeline0" represents="_OBg3gHokEeSSPLFn6F4C_A" coveredBy="_9IxjUHokEeSSPLFn6F4C_A"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9IyKYHokEeSSPLFn6F4C_A" name="checkInRoom_MessageRecv" covered="_y9QnAHojEeSSPLFn6F4C_A" message="_9IvuIHokEeSSPLFn6F4C_A"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9IxjUHokEeSSPLFn6F4C_A" name="checkInRoom_MessageSend" covered="_PB9A0HokEeSSPLFn6F4C_A" message="_9IvuIHokEeSSPLFn6F4C_A"/>
-      <message xmi:type="uml:Message" xmi:id="_9IvuIHokEeSSPLFn6F4C_A" name="checkInRoom_Message" messageSort="asynchCall" receiveEvent="_9IyKYHokEeSSPLFn6F4C_A" sendEvent="_9IxjUHokEeSSPLFn6F4C_A" signature="_Qnc-QHmQEeScR5a8vkIPbw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_OBg3gHokEeSSPLFn6F4C_A" name="Clerk" type="_kvi_0HmOEeScR5a8vkIPbw"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_y9QnAHojEeSSPLFn6F4C_A" name="Lifeline" represents="__-nkgHojEeSSPLFn6F4C_A" coveredBy="_9IyKYHokEeSSPLFn6F4C_A _LXxNEHovEeS5aO3VpdAhog _pO3YoHovEeS5aO3VpdAhog _pPRoUHovEeS5aO3VpdAhog _C4bh4HoyEeS5aO3VpdAhog _9qrYsHozEeS5aO3VpdAhog _9qr_wHozEeS5aO3VpdAhog"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_PB9A0HokEeSSPLFn6F4C_A" name="Lifeline0" represents="_OBg3gHokEeSSPLFn6F4C_A" coveredBy="_LXwmAHovEeS5aO3VpdAhog _pO3YoHovEeS5aO3VpdAhog _pPRoUHovEeS5aO3VpdAhog _C4ZssHoyEeS5aO3VpdAhog _9qrYsHozEeS5aO3VpdAhog _9qr_wHozEeS5aO3VpdAhog"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9IyKYHokEeSSPLFn6F4C_A" name="checkInRoom_MessageRecv" covered="_y9QnAHojEeSSPLFn6F4C_A"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LXwmAHovEeS5aO3VpdAhog" name="checkInBooking_MessageSend" covered="_PB9A0HokEeSSPLFn6F4C_A" message="_LXpRQHovEeS5aO3VpdAhog"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9IxjUHokEeSSPLFn6F4C_A" name="checkInRoom_MessageSend"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LXxNEHovEeS5aO3VpdAhog" name="checkInBooking_MessageRecv" covered="_y9QnAHojEeSSPLFn6F4C_A" message="_LXpRQHovEeS5aO3VpdAhog"/>
+      <fragment xmi:type="uml:CombinedFragment" xmi:id="_pO3YoHovEeS5aO3VpdAhog" name="CombinedFragment" covered="_PB9A0HokEeSSPLFn6F4C_A _y9QnAHojEeSSPLFn6F4C_A" interactionOperator="alt">
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_pPRoUHovEeS5aO3VpdAhog" name="InteractionOperand" covered="_PB9A0HokEeSSPLFn6F4C_A _y9QnAHojEeSSPLFn6F4C_A">
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_C4ZssHoyEeS5aO3VpdAhog" name="checkInBooking_Message0Send" covered="_PB9A0HokEeSSPLFn6F4C_A" message="_C4ZFoHoyEeS5aO3VpdAhog"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_C4bh4HoyEeS5aO3VpdAhog" name="checkInBooking_Message0Recv" covered="_y9QnAHojEeSSPLFn6F4C_A" message="_C4ZFoHoyEeS5aO3VpdAhog"/>
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="_pPSPYHovEeS5aO3VpdAhog">
+            <specification xmi:type="uml:LiteralString" xmi:id="_FH6w4Ho1EeS5aO3VpdAhog" value="The booking number is incorrect."/>
+            <maxint xmi:type="uml:LiteralInteger" xmi:id="_pPSPY3ovEeS5aO3VpdAhog" value="1"/>
+            <minint xmi:type="uml:LiteralInteger" xmi:id="_pPSPYnovEeS5aO3VpdAhog"/>
+          </guard>
+        </operand>
+      </fragment>
+      <fragment xmi:type="uml:CombinedFragment" xmi:id="_9qrYsHozEeS5aO3VpdAhog" name="CombinedFragment0" covered="_PB9A0HokEeSSPLFn6F4C_A _y9QnAHojEeSSPLFn6F4C_A" interactionOperator="alt">
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_9qr_wHozEeS5aO3VpdAhog" name="InteractionOperand" covered="_PB9A0HokEeSSPLFn6F4C_A _y9QnAHojEeSSPLFn6F4C_A">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="_9qsm0HozEeS5aO3VpdAhog">
+            <specification xmi:type="uml:LiteralString" xmi:id="_OCU1MHo3EeS5aO3VpdAhog" value="The booking's status is already &quot;checked in&quot;."/>
+            <maxint xmi:type="uml:LiteralInteger" xmi:id="_9qsm03ozEeS5aO3VpdAhog" value="1"/>
+            <minint xmi:type="uml:LiteralInteger" xmi:id="_9qsm0nozEeS5aO3VpdAhog"/>
+          </guard>
+        </operand>
+      </fragment>
+      <message xmi:type="uml:Message" xmi:id="_LXpRQHovEeS5aO3VpdAhog" name="checkInBooking_Message" messageSort="asynchCall" receiveEvent="_LXxNEHovEeS5aO3VpdAhog" sendEvent="_LXwmAHovEeS5aO3VpdAhog" signature="_BEu3QHmQEeScR5a8vkIPbw"/>
+      <message xmi:type="uml:Message" xmi:id="_C4ZFoHoyEeS5aO3VpdAhog" name="checkInBooking_Message0" messageSort="asynchCall" receiveEvent="_C4bh4HoyEeS5aO3VpdAhog" sendEvent="_C4ZssHoyEeS5aO3VpdAhog" signature="_BEu3QHmQEeScR5a8vkIPbw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_DtBSsHmREeScR5a8vkIPbw" name="Interaction2">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_N1y5gHmREeScR5a8vkIPbw" name="c" type="_OsIJYHk1EeSsOOo59CoEGw"/>
@@ -837,8 +868,8 @@
       </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_rdO10Hn8EeSh-eDq9AxmXQ" name="c" type="_OsIJYHk1EeSsOOo59CoEGw"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_lincEHn9EeSh-eDq9AxmXQ" name="ICBC" type="_7Rrv0XlpEeSuvNuMJAhOkg"/>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_pZjt4Hn8EeSh-eDq9AxmXQ" name="Customer" represents="_rdO10Hn8EeSh-eDq9AxmXQ" coveredBy="_DZ0f4Hn_EeSh-eDq9AxmXQ _DZ1G8Hn_EeSh-eDq9AxmXQ _zPQD0HoAEeSh-eDq9AxmXQ _4RNh0HoAEeSh-eDq9AxmXQ _4RNh0XoAEeSh-eDq9AxmXQ _owkMgHoCEeSvg8qt3_6xcA _qoxrUHoCEeSvg8qt3_6xcA"/>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_jLRxQHn9EeSh-eDq9AxmXQ" name="BookingController" represents="_lincEHn9EeSh-eDq9AxmXQ" coveredBy="_DZ0f4Hn_EeSh-eDq9AxmXQ _DZ1G8Hn_EeSh-eDq9AxmXQ _zPQD0XoAEeSh-eDq9AxmXQ _4RNh0HoAEeSh-eDq9AxmXQ _4RNh0XoAEeSh-eDq9AxmXQ _owkzkHoCEeSvg8qt3_6xcA _qoySYHoCEeSvg8qt3_6xcA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_pZjt4Hn8EeSh-eDq9AxmXQ" name="Customer" represents="_rdO10Hn8EeSh-eDq9AxmXQ" coveredBy="_DZ0f4Hn_EeSh-eDq9AxmXQ _DZ1G8Hn_EeSh-eDq9AxmXQ _zPQD0HoAEeSh-eDq9AxmXQ _4RNh0HoAEeSh-eDq9AxmXQ _4RNh0XoAEeSh-eDq9AxmXQ _owkMgHoCEeSvg8qt3_6xcA _qoxrUHoCEeSvg8qt3_6xcA _LYtWUHoxEeS5aO3VpdAhog"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_jLRxQHn9EeSh-eDq9AxmXQ" name="BookingController" represents="_lincEHn9EeSh-eDq9AxmXQ" coveredBy="_DZ0f4Hn_EeSh-eDq9AxmXQ _DZ1G8Hn_EeSh-eDq9AxmXQ _zPQD0XoAEeSh-eDq9AxmXQ _4RNh0HoAEeSh-eDq9AxmXQ _4RNh0XoAEeSh-eDq9AxmXQ _owkzkHoCEeSvg8qt3_6xcA _qoySYHoCEeSvg8qt3_6xcA _LYtWUHoxEeS5aO3VpdAhog"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_owkMgHoCEeSvg8qt3_6xcA" name="searchRoom_MessageSend" covered="_pZjt4Hn8EeSh-eDq9AxmXQ" message="_owf7EHoCEeSvg8qt3_6xcA"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_owkzkHoCEeSvg8qt3_6xcA" name="searchRoom_MessageRecv" covered="_jLRxQHn9EeSh-eDq9AxmXQ" message="_owf7EHoCEeSvg8qt3_6xcA"/>
       <fragment xmi:type="uml:CombinedFragment" xmi:id="_DZ0f4Hn_EeSh-eDq9AxmXQ" name="CombinedFragment" covered="_jLRxQHn9EeSh-eDq9AxmXQ _pZjt4Hn8EeSh-eDq9AxmXQ" interactionOperator="alt">
@@ -851,6 +882,13 @@
             <specification xmi:type="uml:LiteralString" xmi:id="_DZ1uAHn_EeSh-eDq9AxmXQ" value="actor is not happy with the result and wants to search again"/>
             <maxint xmi:type="uml:LiteralInteger" xmi:id="_DZ1uAnn_EeSh-eDq9AxmXQ" value="1"/>
             <minint xmi:type="uml:LiteralInteger" xmi:id="_DZ1uAXn_EeSh-eDq9AxmXQ"/>
+          </guard>
+        </operand>
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_LYtWUHoxEeS5aO3VpdAhog" name="InteractionOperand0" covered="_jLRxQHn9EeSh-eDq9AxmXQ _pZjt4Hn8EeSh-eDq9AxmXQ">
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="_LYxAsHoxEeS5aO3VpdAhog">
+            <specification xmi:type="uml:LiteralString" xmi:id="_LYxAsXoxEeS5aO3VpdAhog" value="undefined"/>
+            <maxint xmi:type="uml:LiteralInteger" xmi:id="_LYxnwXoxEeS5aO3VpdAhog" value="1"/>
+            <minint xmi:type="uml:LiteralInteger" xmi:id="_LYxnwHoxEeS5aO3VpdAhog"/>
           </guard>
         </operand>
       </fragment>
