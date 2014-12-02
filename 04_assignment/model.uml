@@ -812,7 +812,15 @@
     <packagedElement xmi:type="uml:Usage" xmi:id="_K4__gHoFEeSCM72iwJepcA" name="Usage8" client="_ArrP4HoFEeSCM72iwJepcA" supplier="_7Rrv1HlpEeSuvNuMJAhOkg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_a7AxMHluEeSn2_rhECnITA" name="SequenceDiagrams">
-    <packagedElement xmi:type="uml:Interaction" xmi:id="_iZBa4HluEeSn2_rhECnITA" name="Interaction1"/>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_iZBa4HluEeSn2_rhECnITA" name="Interaction1">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__-nkgHojEeSSPLFn6F4C_A" name="ICC " type="_7Rrv0nlpEeSuvNuMJAhOkg" aggregation="shared"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_OBg3gHokEeSSPLFn6F4C_A" name="Customer" type="_OsIJYHk1EeSsOOo59CoEGw"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_y9QnAHojEeSSPLFn6F4C_A" name="Lifeline" represents="__-nkgHojEeSSPLFn6F4C_A" coveredBy="_9IyKYHokEeSSPLFn6F4C_A"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_PB9A0HokEeSSPLFn6F4C_A" name="Lifeline0" represents="_OBg3gHokEeSSPLFn6F4C_A" coveredBy="_9IxjUHokEeSSPLFn6F4C_A"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9IyKYHokEeSSPLFn6F4C_A" name="checkInRoom_MessageRecv" covered="_y9QnAHojEeSSPLFn6F4C_A" message="_9IvuIHokEeSSPLFn6F4C_A"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9IxjUHokEeSSPLFn6F4C_A" name="checkInRoom_MessageSend" covered="_PB9A0HokEeSSPLFn6F4C_A" message="_9IvuIHokEeSSPLFn6F4C_A"/>
+      <message xmi:type="uml:Message" xmi:id="_9IvuIHokEeSSPLFn6F4C_A" name="checkInRoom_Message" messageSort="asynchCall" receiveEvent="_9IyKYHokEeSSPLFn6F4C_A" sendEvent="_9IxjUHokEeSSPLFn6F4C_A" signature="_Qnc-QHmQEeScR5a8vkIPbw"/>
+    </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_DtBSsHmREeScR5a8vkIPbw" name="Interaction2">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_N1y5gHmREeScR5a8vkIPbw" name="c" type="_OsIJYHk1EeSsOOo59CoEGw"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_aF9qoHmREeScR5a8vkIPbw" name="b" type="_7Rrv0XlpEeSuvNuMJAhOkg"/>
