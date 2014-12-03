@@ -17,7 +17,7 @@
 package conf;
 
 
-import com.mdsd.hotel.presentation.controllers.ApplicationController;
+import com.mdsd.hotel.presentation.endpoint.ApplicationController;
 import ninja.AssetsController;
 import ninja.Router;
 import ninja.application.ApplicationRoutes;
@@ -27,7 +27,6 @@ public class Routes implements ApplicationRoutes {
     @Override
     public void init(Router router) {
 
-        router.GET().route("/").with(ApplicationController.class, "index");
         router.GET().route("/room/extras").with(ApplicationController.class, "listRoomExtras");
 
 

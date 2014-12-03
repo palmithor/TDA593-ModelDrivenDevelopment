@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.mdsd.hotel.presentation.controllers;
+package com.mdsd.hotel.presentation.endpoint;
 
+import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import com.mdsd.hotel.business.logic.IBookingController;
 import com.mdsd.hotel.presentation.model.RoomExtra;
 import ninja.Result;
 import ninja.Results;
@@ -27,6 +29,10 @@ import java.util.List;
 
 @Singleton
 public class ApplicationController {
+
+    @Inject
+    IBookingController bookingController;
+
 
     public Result index() {
 
@@ -41,6 +47,7 @@ public class ApplicationController {
                 new RoomExtra("2", "Hairdryer", "Top of the line hairdryer")
         );
 
+        bookingController.ble();
         return Results.json().render(roomExtras);
 
     }

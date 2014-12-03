@@ -18,6 +18,10 @@ package conf;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
+import com.mdsd.hotel.business.logic.BookingController;
+import com.mdsd.hotel.business.logic.IBookingController;
+import com.mdsd.hotel.persistence.service.AddressService;
+import com.mdsd.hotel.persistence.service.RoomService;
 
 @Singleton
 public class Module extends AbstractModule {
@@ -25,8 +29,11 @@ public class Module extends AbstractModule {
 
     protected void configure() {
 
-        // bind your injections here!
+        bind(IBookingController.class).to(BookingController.class);
 
+        // persistence services
+        bind(AddressService.class);
+        bind(RoomService.class);
     }
 
 }

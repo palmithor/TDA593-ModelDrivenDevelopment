@@ -4,22 +4,22 @@ package com.mdsd.hotel.presentation.model;
  * @author palmithor
  * @since 27/11/14.
  */
-public class RoomExtra {
+public class Classification {
 
     private final String id;
     private final String title;
     private final String description;
 
-    public RoomExtra() {
-        this.description = null;
-        this.title = null;
+    public Classification() {
         this.id = null;
+        this.title = null;
+        this.description = null;
     }
 
-    public RoomExtra(final String id, final String description, final String title) {
-        this.description = description;
-        this.title = title;
+    public Classification(final String id, final String title, final String description) {
         this.id = id;
+        this.title = title;
+        this.description = description;
     }
 
     public String getId() {

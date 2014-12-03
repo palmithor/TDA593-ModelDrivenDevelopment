@@ -1,4 +1,4 @@
-package com.mdsd.hotel.presentation.controllers;
+package com.mdsd.hotel.presentation.endpoint;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.mdsd.hotel.presentation.model.RoomExtra;

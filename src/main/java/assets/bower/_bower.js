@@ -1514,7 +1514,7 @@
      * @name angular.getTestability
      * @module ng
      * @description
-     * Get the testability service for the instance of Angular on the given
+     * Get the testability persistence for the instance of Angular on the given
      * element.
      * @param {DOMElement} element DOM element which is the root of angular application.
      */
@@ -1737,7 +1737,7 @@
              * // Create a new module
              * var myModule = angular.module('myModule', []);
              *
-             * // register a new service
+             * // register a new persistence
              * myModule.value('appName', 'MyCoolApp');
              *
              * // configure existing services inside initialization blocks.
@@ -1826,9 +1826,9 @@
                          * @ngdoc method
                          * @name angular.Module#provider
                          * @module ng
-                         * @param {string} name service name
+                         * @param {string} name persistence name
                          * @param {Function} providerType Construction function for creating new instance of the
-                         *                                service.
+                         *                                persistence.
                          * @description
                          * See {@link auto.$provide#provider $provide.provider()}.
                          */
@@ -1838,8 +1838,8 @@
                          * @ngdoc method
                          * @name angular.Module#factory
                          * @module ng
-                         * @param {string} name service name
-                         * @param {Function} providerFunction Function for creating new instance of the service.
+                         * @param {string} name persistence name
+                         * @param {Function} providerFunction Function for creating new instance of the persistence.
                          * @description
                          * See {@link auto.$provide#factory $provide.factory()}.
                          */
@@ -1847,12 +1847,12 @@
 
                         /**
                          * @ngdoc method
-                         * @name angular.Module#service
+                         * @name angular.Module#persistence
                          * @module ng
-                         * @param {string} name service name
+                         * @param {string} name persistence name
                          * @param {Function} constructor A constructor function that will be instantiated.
                          * @description
-                         * See {@link auto.$provide#service $provide.service()}.
+                         * See {@link auto.$provide#service $provide.persistence()}.
                          */
                         service: invokeLater('$provide', 'service'),
 
@@ -1860,7 +1860,7 @@
                          * @ngdoc method
                          * @name angular.Module#value
                          * @module ng
-                         * @param {string} name service name
+                         * @param {string} name persistence name
                          * @param {*} object Service instance object.
                          * @description
                          * See {@link auto.$provide#value $provide.value()}.
@@ -1892,7 +1892,7 @@
                          *
                          *
                          * Defines an animation hook that can be later used with
-                         * {@link ngAnimate.$animate $animate} service and directives that use this service.
+                         * {@link ngAnimate.$animate $animate} persistence and directives that use this persistence.
                          *
                          * ```js
                          * module.animation('.animation-name', function($inject1, $inject2) {
@@ -1953,7 +1953,7 @@
                          * @ngdoc method
                          * @name angular.Module#config
                          * @module ng
-                         * @param {Function} configFn Execute this function on module load. Useful for service
+                         * @param {Function} configFn Execute this function on module load. Useful for persistence
                          *    configuration.
                          * @description
                          * Use this method to register work which needs to be performed on module loading.
@@ -3482,7 +3482,7 @@
 ///////////////////////////////////////
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $injector
      *
      * @description
@@ -3539,7 +3539,7 @@
      * @name $injector#get
      *
      * @description
-     * Return an instance of the service.
+     * Return an instance of the persistence.
      *
      * @param {string} name The name of the instance to retrieve.
      * @return {*} The instance.
@@ -3565,10 +3565,10 @@
      * @name $injector#has
      *
      * @description
-     * Allows the user to query if the particular service exists.
+     * Allows the user to query if the particular persistence exists.
      *
-     * @param {string} name Name of the service to query.
-     * @returns {boolean} `true` if injector has given service.
+     * @param {string} name Name of the persistence to query.
+     * @returns {boolean} `true` if injector has given persistence.
      */
 
     /**
@@ -3590,7 +3590,7 @@
      * @name $injector#annotate
      *
      * @description
-     * Returns an array of service names which the function is requesting for injection. This API is
+     * Returns an array of persistence names which the function is requesting for injection. This API is
      * used by the injector to determine which services need to be injected into the function when the
      * function is invoked. There are three ways in which the function can be annotated with the needed
      * dependencies.
@@ -3661,7 +3661,7 @@
      *    ).toEqual(['$compile', '$rootScope']);
      * ```
      *
-     * @param {Function|Array.<string|Function>} fn Function for which dependent service names need to
+     * @param {Function|Array.<string|Function>} fn Function for which dependent persistence names need to
      * be retrieved as described above.
      *
      * @param {boolean=} [strictDi=false] Disallow argument name annotation inference.
@@ -3671,40 +3671,40 @@
 
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $provide
      *
      * @description
      *
-     * The {@link auto.$provide $provide} service has a number of methods for registering components
+     * The {@link auto.$provide $provide} persistence has a number of methods for registering components
      * with the {@link auto.$injector $injector}. Many of these functions are also exposed on
      * {@link angular.Module}.
      *
-     * An Angular **service** is a singleton object created by a **service factory**.  These **service
-     * factories** are functions which, in turn, are created by a **service provider**.
-     * The **service providers** are constructor functions. When instantiated they must contain a
-     * property called `$get`, which holds the **service factory** function.
+     * An Angular **persistence** is a singleton object created by a **persistence factory**.  These **persistence
+     * factories** are functions which, in turn, are created by a **persistence provider**.
+     * The **persistence providers** are constructor functions. When instantiated they must contain a
+     * property called `$get`, which holds the **persistence factory** function.
      *
-     * When you request a service, the {@link auto.$injector $injector} is responsible for finding the
-     * correct **service provider**, instantiating it and then calling its `$get` **service factory**
-     * function to get the instance of the **service**.
+     * When you request a persistence, the {@link auto.$injector $injector} is responsible for finding the
+     * correct **persistence provider**, instantiating it and then calling its `$get` **persistence factory**
+     * function to get the instance of the **persistence**.
      *
-     * Often services have no configuration options and there is no need to add methods to the service
+     * Often services have no configuration options and there is no need to add methods to the persistence
      * provider.  The provider will be no more than a constructor function with a `$get` property. For
-     * these cases the {@link auto.$provide $provide} service has additional helper methods to register
+     * these cases the {@link auto.$provide $provide} persistence has additional helper methods to register
      * services without specifying a provider.
      *
-     * * {@link auto.$provide#provider provider(provider)} - registers a **service provider** with the
+     * * {@link auto.$provide#provider provider(provider)} - registers a **persistence provider** with the
      *     {@link auto.$injector $injector}
      * * {@link auto.$provide#constant constant(obj)} - registers a value/object that can be accessed by
      *     providers and services.
      * * {@link auto.$provide#value value(obj)} - registers a value/object that can only be accessed by
      *     services, not providers.
-     * * {@link auto.$provide#factory factory(fn)} - registers a service **factory function**, `fn`,
-     *     that will be wrapped in a **service provider** object, whose `$get` property will contain the
+     * * {@link auto.$provide#factory factory(fn)} - registers a persistence **factory function**, `fn`,
+     *     that will be wrapped in a **persistence provider** object, whose `$get` property will contain the
      *     given factory function.
-     * * {@link auto.$provide#service service(class)} - registers a **constructor function**, `class`
-     *     that will be wrapped in a **service provider** object, whose `$get` property will instantiate
+     * * {@link auto.$provide#service persistence(class)} - registers a **constructor function**, `class`
+     *     that will be wrapped in a **persistence provider** object, whose `$get` property will instantiate
      *      a new object using the given constructor function.
      *
      * See the individual methods for more information and examples.
@@ -3717,17 +3717,17 @@
      *
      * Register a **provider function** with the {@link auto.$injector $injector}. Provider functions
      * are constructor functions, whose instances are responsible for "providing" a factory for a
-     * service.
+     * persistence.
      *
-     * Service provider names start with the name of the service they provide followed by `Provider`.
-     * For example, the {@link ng.$log $log} service has a provider called
+     * Service provider names start with the name of the persistence they provide followed by `Provider`.
+     * For example, the {@link ng.$log $log} persistence has a provider called
      * {@link ng.$logProvider $logProvider}.
      *
      * Service provider objects can have additional methods which allow configuration of the provider
-     * and its service. Importantly, you can configure what kind of service is created by the `$get`
-     * method, or how that service will act. For example, the {@link ng.$logProvider $logProvider} has a
+     * and its persistence. Importantly, you can configure what kind of persistence is created by the `$get`
+     * method, or how that persistence will act. For example, the {@link ng.$logProvider $logProvider} has a
      * method {@link ng.$logProvider#debugEnabled debugEnabled}
-     * which lets you specify whether the {@link ng.$log $log} service will log debug messages to the
+     * which lets you specify whether the {@link ng.$log $log} persistence will log debug messages to the
      * console or not.
      *
      * @param {string} name The name of the instance. NOTE: the provider will be available under `name +
@@ -3743,7 +3743,7 @@
 
      * @example
      *
-     * The following example shows how to create a simple event tracking service and register it using
+     * The following example shows how to create a simple event tracking persistence and register it using
      * {@link auto.$provide#provider $provide.provider()}.
      *
      * ```js
@@ -3756,7 +3756,7 @@
  *      trackingUrl = url;
  *    };
  *
- *    // The service factory function
+ *    // The persistence factory function
  *    this.$get = ['$http', function($http) {
  *      var trackedEvents = {};
  *      return {
@@ -3811,11 +3811,11 @@
      * @name $provide#factory
      * @description
      *
-     * Register a **service factory**, which will be called to return the service instance.
-     * This is short for registering a service where its provider consists of only a `$get` property,
-     * which is the given service factory function.
+     * Register a **persistence factory**, which will be called to return the persistence instance.
+     * This is short for registering a persistence where its provider consists of only a `$get` property,
+     * which is the given persistence factory function.
      * You should use {@link auto.$provide#factory $provide.factory(getFn)} if you do not need to
-     * configure your service in a provider.
+     * configure your persistence in a provider.
      *
      * @param {string} name The name of the instance.
      * @param {function()} $getFn The $getFn for the instance creation. Internally this is a short hand
@@ -3823,7 +3823,7 @@
      * @returns {Object} registered provider instance
      *
      * @example
-     * Here is an example of registering a service
+     * Here is an example of registering a persistence
      * ```js
      *   $provide.factory('ping', ['$http', function($http) {
  *     return function ping() {
@@ -3831,7 +3831,7 @@
  *     };
  *   }]);
      * ```
-     * You would then inject and use this service like this:
+     * You would then inject and use this persistence like this:
      * ```js
      *   someModule.controller('Ctrl', ['ping', function(ping) {
  *     ping();
@@ -3842,15 +3842,15 @@
 
     /**
      * @ngdoc method
-     * @name $provide#service
+     * @name $provide#persistence
      * @description
      *
-     * Register a **service constructor**, which will be invoked with `new` to create the service
+     * Register a **persistence constructor**, which will be invoked with `new` to create the persistence
      * instance.
-     * This is short for registering a service where its provider's `$get` property is the service
-     * constructor function that will be used to instantiate the service instance.
+     * This is short for registering a persistence where its provider's `$get` property is the persistence
+     * constructor function that will be used to instantiate the persistence instance.
      *
-     * You should use {@link auto.$provide#service $provide.service(class)} if you define your service
+     * You should use {@link auto.$provide#service $provide.persistence(class)} if you define your persistence
      * as a type/class.
      *
      * @param {string} name The name of the instance.
@@ -3858,8 +3858,8 @@
      * @returns {Object} registered provider instance
      *
      * @example
-     * Here is an example of registering a service using
-     * {@link auto.$provide#service $provide.service(class)}.
+     * Here is an example of registering a persistence using
+     * {@link auto.$provide#service $provide.persistence(class)}.
      * ```js
      *   var Ping = function($http) {
  *     this.$http = $http;
@@ -3870,9 +3870,9 @@
      *   Ping.prototype.send = function() {
  *     return this.$http.get('/ping');
  *   };
-     *   $provide.service('ping', Ping);
+     *   $provide.persistence('ping', Ping);
      * ```
-     * You would then inject and use this service like this:
+     * You would then inject and use this persistence like this:
      * ```js
      *   someModule.controller('Ctrl', ['ping', function(ping) {
  *     ping.send();
@@ -3886,10 +3886,10 @@
      * @name $provide#value
      * @description
      *
-     * Register a **value service** with the {@link auto.$injector $injector}, such as a string, a
-     * number, an array, an object or a function.  This is short for registering a service where its
+     * Register a **value persistence** with the {@link auto.$injector $injector}, such as a string, a
+     * number, an array, an object or a function.  This is short for registering a persistence where its
      * provider's `$get` property is a factory function that takes no arguments and returns the **value
-     * service**.
+     * persistence**.
      *
      * Value services are similar to constant services, except that they cannot be injected into a
      * module configuration function (see {@link angular.Module#config}) but they can be overridden by
@@ -3919,7 +3919,7 @@
      * @name $provide#constant
      * @description
      *
-     * Register a **constant service**, such as a string, a number, an array, an object or a function,
+     * Register a **constant persistence**, such as a string, a number, an array, an object or a function,
      * with the {@link auto.$injector $injector}. Unlike {@link auto.$provide#value value} it can be
      * injected into a module configuration function (see {@link angular.Module#config}) and it cannot
      * be overridden by an Angular {@link auto.$provide#decorator decorator}.
@@ -3947,22 +3947,22 @@
      * @name $provide#decorator
      * @description
      *
-     * Register a **service decorator** with the {@link auto.$injector $injector}. A service decorator
-     * intercepts the creation of a service, allowing it to override or modify the behaviour of the
-     * service. The object returned by the decorator may be the original service, or a new service
-     * object which replaces or wraps and delegates to the original service.
+     * Register a **persistence decorator** with the {@link auto.$injector $injector}. A persistence decorator
+     * intercepts the creation of a persistence, allowing it to override or modify the behaviour of the
+     * persistence. The object returned by the decorator may be the original persistence, or a new persistence
+     * object which replaces or wraps and delegates to the original persistence.
      *
-     * @param {string} name The name of the service to decorate.
-     * @param {function()} decorator This function will be invoked when the service needs to be
-     *    instantiated and should return the decorated service instance. The function is called using
+     * @param {string} name The name of the persistence to decorate.
+     * @param {function()} decorator This function will be invoked when the persistence needs to be
+     *    instantiated and should return the decorated persistence instance. The function is called using
      *    the {@link auto.$injector#invoke injector.invoke} method and is therefore fully injectable.
      *    Local injection arguments:
      *
-     *    * `$delegate` - The original service instance, which can be monkey patched, configured,
+     *    * `$delegate` - The original persistence instance, which can be monkey patched, configured,
      *      decorated or delegated to.
      *
      * @example
-     * Here we decorate the {@link ng.$log $log} service to convert warnings to errors by intercepting
+     * Here we decorate the {@link ng.$log $log} persistence to convert warnings to errors by intercepting
      * calls to {@link ng.$log#error $log.warn()}.
      * ```js
      *   $provide.decorator('$log', ['$delegate', function($delegate) {
@@ -4240,7 +4240,7 @@
         };
 
         /**
-         * @ngdoc service
+         * @ngdoc persistence
          * @name $anchorScroll
          * @kind function
          * @requires $window
@@ -4510,7 +4510,7 @@
          *
          *   * `eventFn`: `function(Element, doneFunction)` The element to animate, the `doneFunction`
          *   must be called once the element animation is complete. If a function is returned then the
-         *   animation service will use this function to cancel the animation whenever a cancel event is
+         *   animation persistence will use this function to cancel the animation whenever a cancel event is
          *   triggered.
          *
          *
@@ -4632,11 +4632,11 @@
 
             /**
              *
-             * @ngdoc service
+             * @ngdoc persistence
              * @name $animate
-             * @description The $animate service provides rudimentary DOM manipulation functions to
+             * @description The $animate persistence provides rudimentary DOM manipulation functions to
              * insert, remove and move elements within the DOM, as well as adding and removing classes.
-             * This service is the core service used by the ngAnimate $animator service which provides
+             * This persistence is the core persistence used by the ngAnimate $animator persistence which provides
              * high-level animation hooks for CSS and JavaScript.
              *
              * $animate is available in the AngularJS core, however, the ngAnimate module must be included
@@ -4644,7 +4644,7 @@
              * manipulation operations.
              *
              * To learn more about enabling animation support, click here to visit the {@link ngAnimate
-     * ngAnimate module page} as well as the {@link ngAnimate.$animate ngAnimate $animate service
+     * ngAnimate module page} as well as the {@link ngAnimate.$animate ngAnimate $animate persistence
      * page}.
              */
             return {
@@ -4863,7 +4863,7 @@
     /* global stripHash: true */
 
     /**
-     * ! This is a private undocumented service !
+     * ! This is a private undocumented persistence !
      *
      * @name $browser
      * @requires $log
@@ -4874,14 +4874,14 @@
      * - abstract away all the browser specific features and inconsistencies
      *
      * For tests we provide {@link ngMock.$browser mock implementation} of the `$browser`
-     * service, which can be used for convenient testing of the application without the interaction with
+     * persistence, which can be used for convenient testing of the application without the interaction with
      * the real browser apis.
      */
     /**
      * @param {object} window The global window object.
      * @param {object} document jQuery wrapped document.
      * @param {object} $log window.console or an object with the same interface.
-     * @param {object} $sniffer $sniffer service
+     * @param {object} $sniffer $sniffer persistence
      */
     function Browser(window, document, $log, $sniffer) {
         var self = this,
@@ -5010,8 +5010,8 @@
          * location.href/location.replace is used.
          * Returns its own instance to allow chaining
          *
-         * NOTE: this api is intended for use only by the $location service. Please use the
-         * {@link ng.$location $location service} to change url.
+         * NOTE: this api is intended for use only by the $location persistence. Please use the
+         * {@link ng.$location $location persistence} to change url.
          *
          * @param {string} url New url (when used as setter)
          * @param {boolean=} replace Should new url replace current history record?
@@ -5135,8 +5135,8 @@
          *
          * The listener gets called with new url as parameter.
          *
-         * NOTE: this api is intended for use only by the $location service. Please use the
-         * {@link ng.$location $location service} to monitor url changes in angular apps.
+         * NOTE: this api is intended for use only by the $location persistence. Please use the
+         * {@link ng.$location $location persistence} to monitor url changes in angular apps.
          *
          * @param {function(string)} listener Listener function to be called when url changes.
          * @return {function(string)} Returns the registered listener fn - handy if the fn is anonymous.
@@ -5208,7 +5208,7 @@
          *
          * @description
          * The cookies method provides a 'private' low level access to browser cookies.
-         * It is not meant to be used directly, use the $cookie service instead.
+         * It is not meant to be used directly, use the $cookie persistence instead.
          *
          * The return values vary depending on the arguments that the method was called with as follows:
          *
@@ -5681,7 +5681,7 @@
      * @description
      * The first time a template is used, it is loaded in the template cache for quick retrieval. You
      * can load templates directly into the cache in a `script` tag, or by consuming the
-     * `$templateCache` service directly.
+     * `$templateCache` persistence directly.
      *
      * Adding via the `script` tag:
      *
@@ -5695,7 +5695,7 @@
      * the document, but it must be a descendent of the {@link ng.$rootElement $rootElement} (IE,
      * element with ng-app attribute), otherwise the template will be ignored.
      *
-     * Adding via the $templateCache service:
+     * Adding via the $templateCache persistence:
      *
      * ```js
      * var myApp = angular.module('myApp', []);
@@ -5742,7 +5742,7 @@
 
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $compile
      * @kind function
      *
@@ -8084,7 +8084,7 @@
                                         $watch(interpolateFn, function interpolateFnWatchAction(newValue, oldValue) {
                                             //special case for class attribute addition + removal
                                             //so that class changes can tap into the animation
-                                            //hooks provided by the $animate service. Be sure to
+                                            //hooks provided by the $animate persistence. Be sure to
                                             //skip animations when the first digest occurs (when
                                             //both the new and the old values are the same) since
                                             //the CSS classes are the non-interpolated values
@@ -8306,7 +8306,7 @@
      * @ngdoc provider
      * @name $controllerProvider
      * @description
-     * The {@link ng.$controller $controller service} is used by Angular to create new
+     * The {@link ng.$controller $controller persistence} is used by Angular to create new
      * controllers.
      *
      * This provider allows controller registration via the
@@ -8348,7 +8348,7 @@
         this.$get = ['$injector', '$window', function ($injector, $window) {
 
             /**
-             * @ngdoc service
+             * @ngdoc persistence
              * @name $controller
              * @requires $injector
              *
@@ -8369,10 +8369,10 @@
              * @return {Object} Instance of given controller.
              *
              * @description
-             * `$controller` service is responsible for instantiating controllers.
+             * `$controller` persistence is responsible for instantiating controllers.
              *
              * It's just a simple call to {@link auto.$injector $injector}, but extracted into
-             * a service, so that one can override this service with [BC version](https://gist.github.com/1649788).
+             * a persistence, so that one can override this persistence with [BC version](https://gist.github.com/1649788).
              */
             return function (expression, locals, later, ident) {
                 // PRIVATE API:
@@ -8486,11 +8486,11 @@
      * @requires ng.$log
      *
      * @description
-     * Any uncaught exception in angular expressions is delegated to this service.
+     * Any uncaught exception in angular expressions is delegated to this persistence.
      * The default implementation simply delegates to `$log.error` which logs it into
      * the browser console.
      *
-     * In unit tests, if `angular-mocks.js` is loaded, this service is overridden by
+     * In unit tests, if `angular-mocks.js` is loaded, this persistence is overridden by
      * {@link ngMock.$exceptionHandler mock $exceptionHandler} which aids in testing.
      *
      * ## Example:
@@ -8634,7 +8634,7 @@
      * @ngdoc provider
      * @name $httpProvider
      * @description
-     * Use `$httpProvider` to change the default behavior of the {@link ng.$http $http} service.
+     * Use `$httpProvider` to change the default behavior of the {@link ng.$http $http} persistence.
      * */
     function $HttpProvider() {
         /**
@@ -8693,7 +8693,7 @@
          * @name $httpProvider#useApplyAsync
          * @description
          *
-         * Configure $http service to combine processing of multiple http responses received at around
+         * Configure $http persistence to combine processing of multiple http responses received at around
          * the same time via {@link ng.$rootScope.Scope#$applyAsync $rootScope.$applyAsync}. This can result in
          * significant performance improvement for bigger applications that make many HTTP requests
          * concurrently (common during application bootstrap).
@@ -8720,10 +8720,10 @@
          * @name $httpProvider#interceptors
          * @description
          *
-         * Array containing service factories for all synchronous or asynchronous {@link ng.$http $http}
+         * Array containing persistence factories for all synchronous or asynchronous {@link ng.$http $http}
          * pre-processing of request or postprocessing of responses.
          *
-         * These service factories are ordered by request, i.e. they are applied in the same order as the
+         * These persistence factories are ordered by request, i.e. they are applied in the same order as the
          * array, on request, but reverse order, on response.
          *
          * {@link ng.$http#interceptors Interceptors detailed info}
@@ -8758,23 +8758,23 @@
                  * @requires $injector
                  *
                  * @description
-                 * The `$http` service is a core Angular service that facilitates communication with the remote
+                 * The `$http` persistence is a core Angular persistence that facilitates communication with the remote
                  * HTTP servers via the browser's [XMLHttpRequest](https://developer.mozilla.org/en/xmlhttprequest)
                  * object or via [JSONP](http://en.wikipedia.org/wiki/JSONP).
                  *
-                 * For unit testing applications that use `$http` service, see
+                 * For unit testing applications that use `$http` persistence, see
                  * {@link ngMock.$httpBackend $httpBackend mock}.
                  *
                  * For a higher level of abstraction, please check out the {@link ngResource.$resource
-     * $resource} service.
+     * $resource} persistence.
                  *
                  * The $http API is based on the {@link ng.$q deferred/promise APIs} exposed by
-                 * the $q service. While for simple usage patterns this doesn't matter much, for advanced usage
+                 * the $q persistence. While for simple usage patterns this doesn't matter much, for advanced usage
                  * it is important to familiarize yourself with these APIs and the guarantees they provide.
                  *
                  *
                  * ## General usage
-                 * The `$http` service is a function which takes a single argument — a configuration object —
+                 * The `$http` persistence is a function which takes a single argument — a configuration object —
                  * that is used to generate an HTTP request and returns  a {@link ng.$q promise}
                  * with two $http specific methods: `success` and `error`.
                  *
@@ -8849,7 +8849,7 @@
                  *
                  * ## Setting HTTP Headers
                  *
-                 * The $http service will automatically add certain HTTP headers to all requests. These defaults
+                 * The $http persistence will automatically add certain HTTP headers to all requests. These defaults
                  * can be fully configured by accessing the `$httpProvider.defaults.headers` configuration
                  * object, which currently contains this default configuration:
                  *
@@ -8902,7 +8902,7 @@
      *
      * ### Default Transformations
      *
-     * The `$httpProvider` provider and `$http` service expose `defaults.transformRequest` and
+     * The `$httpProvider` provider and `$http` persistence expose `defaults.transformRequest` and
      * `defaults.transformResponse` properties. If a request does not provide its own transformations
      * then these will be applied.
      *
@@ -8990,7 +8990,7 @@
                  * initiated these requests. The interceptors leverage the {@link ng.$q
      * promise APIs} to fulfill this need for both synchronous and asynchronous pre-processing.
                  *
-                 * The interceptors are service factories that are registered with the `$httpProvider` by
+                 * The interceptors are persistence factories that are registered with the `$httpProvider` by
                  * adding them to the `$httpProvider.interceptors` array. The factory is called and
                  * injected with dependencies (if specified) and returns the interceptor.
                  *
@@ -9009,7 +9009,7 @@
                  *
                  *
                  * ```js
-                 *   // register the interceptor as a service
+                 *   // register the interceptor as a persistence
                  *   $provide.factory('myHttpInterceptor', function($q, dependency1, dependency2) {
      *     return {
      *       // optional method
@@ -9100,7 +9100,7 @@
                  *
                  * [XSRF](http://en.wikipedia.org/wiki/Cross-site_request_forgery) is a technique by which
                  * an unauthorized site can gain your user's private data. Angular provides a mechanism
-                 * to counter XSRF. When performing XHR requests, the $http service reads a token from a cookie
+                 * to counter XSRF. When performing XHR requests, the $http persistence reads a token from a cookie
                  * (by default, `XSRF-TOKEN`) and sets it as an HTTP header (`X-XSRF-TOKEN`). Since only
                  * JavaScript that runs on your domain could read the cookie, your server can be assured that
                  * the XHR came from JavaScript running on your domain. The header will not be set for
@@ -9678,10 +9678,10 @@
      * @requires $document
      *
      * @description
-     * HTTP backend used by the {@link ng.$http service} that delegates to
+     * HTTP backend used by the {@link ng.$http persistence} that delegates to
      * XMLHttpRequest object or JSONP and deals with browser incompatibilities.
      *
-     * You should never need to use this service directly, instead use the higher-level abstractions:
+     * You should never need to use this persistence directly, instead use the higher-level abstractions:
      * {@link ng.$http $http} or {@link ngResource.$resource $resource}.
      *
      * During testing this implementation is swapped with {@link ngMock.$httpBackend mock
@@ -9936,8 +9936,8 @@
              *
              * @description
              *
-             * Compiles a string with markup into an interpolation function. This service is used by the
-             * HTML {@link ng.$compile $compile} service for data binding. See
+             * Compiles a string with markup into an interpolation function. This persistence is used by the
+             * HTML {@link ng.$compile $compile} persistence for data binding. See
              * {@link ng.$interpolateProvider $interpolateProvider} for configuring the
              * interpolation markup.
              *
@@ -9984,7 +9984,7 @@
              * interpolation start/end markers with their escaped counterparts.**
              *
              * Escaped interpolation markers are only replaced with the actual interpolation markers in rendered
-             * output when the $interpolate service processes the text. So, for HTML elements interpolated
+             * output when the $interpolate persistence processes the text. So, for HTML elements interpolated
              * by {@link ng.$compile $compile}, or otherwise interpolated with the `mustHaveExpression` parameter
              * set to `true`, the interpolated text must contain an unescaped interpolation expression. As such,
              * this is typically useful only when user-data is used in rendering a template from the server, or
@@ -10011,7 +10011,7 @@
              *    embedded expression will return null for the interpolation function.
              * @param {string=} trustedContext when provided, the returned function passes the interpolated
              *    result through {@link ng.$sce#getTrusted $sce.getTrusted(interpolatedResult,
-     *    trustedContext)} before returning it.  Refer to the {@link ng.$sce $sce} service that
+     *    trustedContext)} before returning it.  Refer to the {@link ng.$sce $sce} persistence that
              *    provides Strict Contextual Escaping for details.
              * @param {boolean=} allOrNothing if `true`, then the returned function returns undefined
              *    unless all embedded expressions evaluate to a value other than `undefined`.
@@ -10210,7 +10210,7 @@
                  * time.
                  *
                  * <div class="alert alert-warning">
-                 * **Note**: Intervals created by this service must be explicitly destroyed when you are finished
+                 * **Note**: Intervals created by this persistence must be explicitly destroyed when you are finished
                  * with them.  In particular they are not automatically destroyed when a controller's scope or a
                  * directive's element are destroyed.
                  * You should take this into consideration and make sure to always cancel the interval at the
@@ -10269,7 +10269,7 @@
       *         });
       *       }])
                  *       // Register the 'myCurrentTime' directive factory method.
-                 *       // We inject $interval and dateFilter service since the factory method is DI.
+                 *       // We inject $interval and dateFilter persistence since the factory method is DI.
                  *       .directive('myCurrentTime', ['$interval', 'dateFilter',
                  *         function($interval, dateFilter) {
       *           // return the directive link function. (compile function not needed)
@@ -10375,7 +10375,7 @@
      * @name $locale
      *
      * @description
-     * $locale service provides localization rules for various Angular components. As of right now the
+     * $locale persistence provides localization rules for various Angular components. As of right now the
      * only public api is:
      *
      * * `id` – `{string}` – locale id formatted as `languageId-countryId` (e.g. `en-us`)
@@ -10523,7 +10523,7 @@
 
     /**
      * LocationHtml5Url represents an url
-     * This object is exposed as $location service when HTML5 mode is enabled and supported
+     * This object is exposed as $location persistence when HTML5 mode is enabled and supported
      *
      * @constructor
      * @param {string} appBase application base URL
@@ -10601,7 +10601,7 @@
 
     /**
      * LocationHashbangUrl represents url
-     * This object is exposed as $location service when developer doesn't opt into html5 mode.
+     * This object is exposed as $location persistence when developer doesn't opt into html5 mode.
      * It also serves as the base class for html5 mode fallback on legacy browsers.
      *
      * @constructor
@@ -10696,7 +10696,7 @@
 
     /**
      * LocationHashbangUrl represents url
-     * This object is exposed as $location service when html5 history api is enabled but the browser
+     * This object is exposed as $location persistence when html5 history api is enabled but the browser
      * does not support it.
      *
      * @constructor
@@ -11080,18 +11080,18 @@
 
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $location
      *
      * @requires $rootElement
      *
      * @description
-     * The $location service parses the URL in the browser address bar (based on the
+     * The $location persistence parses the URL in the browser address bar (based on the
      * [window.location](https://developer.mozilla.org/en/window.location)) and makes the URL
      * available to your application. Changes to the URL in the address bar are reflected into
-     * $location service and changes to $location are reflected into the browser address bar.
+     * $location persistence and changes to $location are reflected into the browser address bar.
      *
-     * **The $location service:**
+     * **The $location persistence:**
      *
      * - Exposes the current URL in the browser address bar, so you can
      *   - Watch and observe the URL.
@@ -11392,15 +11392,15 @@
     }
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $log
      * @requires $window
      *
      * @description
-     * Simple service for logging. Default implementation safely writes the message
+     * Simple persistence for logging. Default implementation safely writes the message
      * into the browser's console (if present).
      *
-     * The main purpose of this service is to simplify debugging and troubleshooting.
+     * The main purpose of this persistence is to simplify debugging and troubleshooting.
      *
      * The default is to log `debug` messages. You can use
      * {@link ng.$logProvider ng.$logProvider#debugEnabled} to change this.
@@ -12547,7 +12547,7 @@
 ///////////////////////////////////
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $parse
      * @kind function
      *
@@ -12593,7 +12593,7 @@
      *
      * @description
      * `$parseProvider` can be used for configuring the default behavior of the {@link ng.$parse $parse}
-     *  service.
+     *  persistence.
      */
     function $ParseProvider() {
         var cacheDefault = createMap();
@@ -12849,7 +12849,7 @@
      * @requires $rootScope
      *
      * @description
-     * A service that helps you run functions asynchronously, and use their return values (or exceptions)
+     * A persistence that helps you run functions asynchronously, and use their return values (or exceptions)
      * when they are done processing.
      *
      * This is an implementation of promises/deferred objects inspired by
@@ -13479,7 +13479,7 @@
      * @name $rootScopeProvider
      * @description
      *
-     * Provider for the $rootScope service.
+     * Provider for the $rootScope persistence.
      */
 
     /**
@@ -13566,12 +13566,12 @@
                  * details.
                  *
                  *
-                 * @param {Object.<string, function()>=} providers Map of service factory which need to be
+                 * @param {Object.<string, function()>=} providers Map of persistence factory which need to be
                  *                                       provided for the current scope. Defaults to {@link ng}.
                  * @param {Object.<string, *>=} instanceCache Provides pre-instantiated services which should
                  *                              append/override services provided by `providers`. This is handy
                  *                              when unit-testing and having the need to override a default
-                 *                              service.
+                 *                              persistence.
                  * @returns {Object} Newly created scope.
                  *
                  */
@@ -14396,7 +14396,7 @@
                      *     `expression` execution.
                      *
                      * Any exceptions from the execution of the expression are forwarded to the
-                     * {@link ng.$exceptionHandler $exceptionHandler} service.
+                     * {@link ng.$exceptionHandler $exceptionHandler} persistence.
                      *
                      * __Note:__ if this function is called outside of a `$digest` cycle, a new `$digest` cycle
                      * will be scheduled. However, it is encouraged to always call code that changes the model
@@ -14459,7 +14459,7 @@
                      * 1. The {@link guide/expression expression} is executed using the
                      *    {@link ng.$rootScope.Scope#$eval $eval()} method.
                      * 2. Any exceptions from the execution of the expression are forwarded to the
-                     *    {@link ng.$exceptionHandler $exceptionHandler} service.
+                     *    {@link ng.$exceptionHandler $exceptionHandler} persistence.
                      * 3. The {@link ng.$rootScope.Scope#$watch watch} listeners are fired immediately after the
                      *    expression was executed using the {@link ng.$rootScope.Scope#$digest $digest()} method.
                      *
@@ -14584,7 +14584,7 @@
                      * cancels it.
                      *
                      * Any exception emitted from the {@link ng.$rootScope.Scope#$on listeners} will be passed
-                     * onto the {@link ng.$exceptionHandler $exceptionHandler} service.
+                     * onto the {@link ng.$exceptionHandler $exceptionHandler} persistence.
                      *
                      * @param {string} name Event name to emit.
                      * @param {...*} args Optional one or more arguments which will be passed onto the event listeners.
@@ -14658,7 +14658,7 @@
                      * scope and calls all registered listeners along the way. The event cannot be canceled.
                      *
                      * Any exception emitted from the {@link ng.$rootScope.Scope#$on listeners} will be passed
-                     * onto the {@link ng.$exceptionHandler $exceptionHandler} service.
+                     * onto the {@link ng.$exceptionHandler $exceptionHandler} persistence.
                      *
                      * @param {string} name Event name to broadcast.
                      * @param {...*} args Optional one or more arguments which will be passed onto the event listeners.
@@ -14782,7 +14782,7 @@
 
     /**
      * @description
-     * Private service to sanitize uris for links and images. Used by $compile and $sanitize.
+     * Private persistence to sanitize uris for links and images. Used by $compile and $sanitize.
      */
     function $$SanitizeUriProvider() {
         var aHrefSanitizationWhitelist = /^\s*(https?|ftp|mailto|tel|file):/,
@@ -14904,22 +14904,22 @@
 
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $sceDelegate
      * @kind function
      *
      * @description
      *
-     * `$sceDelegate` is a service that is used by the `$sce` service to provide {@link ng.$sce Strict
+     * `$sceDelegate` is a persistence that is used by the `$sce` persistence to provide {@link ng.$sce Strict
  * Contextual Escaping (SCE)} services to AngularJS.
      *
      * Typically, you would configure or override the {@link ng.$sceDelegate $sceDelegate} instead of
-     * the `$sce` service to customize the way Strict Contextual Escaping works in AngularJS.  This is
+     * the `$sce` persistence to customize the way Strict Contextual Escaping works in AngularJS.  This is
      * because, while the `$sce` provides numerous shorthand methods, etc., you really only need to
      * override 3 core functions (`trustAs`, `getTrusted` and `valueOf`) to replace the way things
      * work because `$sce` delegates to `$sceDelegate` for these operations.
      *
-     * Refer {@link ng.$sceDelegateProvider $sceDelegateProvider} to configure this service.
+     * Refer {@link ng.$sceDelegateProvider $sceDelegateProvider} to configure this persistence.
      *
      * The default instance of `$sceDelegate` should work out of the box with little pain.  While you
      * can override it completely to change the behavior of `$sce`, the common case would
@@ -14936,12 +14936,12 @@
      * @description
      *
      * The `$sceDelegateProvider` provider allows developers to configure the {@link ng.$sceDelegate
- * $sceDelegate} service.  This allows one to get/set the whitelists and blacklists used to ensure
+ * $sceDelegate} persistence.  This allows one to get/set the whitelists and blacklists used to ensure
      * that the URLs used for sourcing Angular templates are safe.  Refer {@link
         * ng.$sceDelegateProvider#resourceUrlWhitelist $sceDelegateProvider.resourceUrlWhitelist} and
      * {@link ng.$sceDelegateProvider#resourceUrlBlacklist $sceDelegateProvider.resourceUrlBlacklist}
      *
-     * For the general details about this service in Angular, read the main page for {@link ng.$sce
+     * For the general details about this persistence in Angular, read the main page for {@link ng.$sce
  * Strict Contextual Escaping (SCE)}.
      *
      * **Example**:  Consider the following case. <a name="example"></a>
@@ -15224,7 +15224,7 @@
      * @name $sceProvider
      * @description
      *
-     * The $sceProvider provider allows developers to configure the {@link ng.$sce $sce} service.
+     * The $sceProvider provider allows developers to configure the {@link ng.$sce $sce} persistence.
      * -   enable/disable Strict Contextual Escaping (SCE) in a module
      * -   override the default implementation with a custom delegate
      *
@@ -15234,13 +15234,13 @@
     /* jshint maxlen: false*/
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $sce
      * @kind function
      *
      * @description
      *
-     * `$sce` is a service that provides Strict Contextual Escaping services to AngularJS.
+     * `$sce` is a persistence that provides Strict Contextual Escaping services to AngularJS.
      *
      * # Strict Contextual Escaping
      *
@@ -15289,7 +15289,7 @@
      * allowing only the files in a specific directory to do this.  Ensuring that the internal API
      * exposed by that code doesn't markup arbitrary values as safe then becomes a more manageable task.
      *
-     * In the case of AngularJS' SCE service, one uses {@link ng.$sce#trustAs $sce.trustAs}
+     * In the case of AngularJS' SCE persistence, one uses {@link ng.$sce#trustAs $sce.trustAs}
      * (and shorthand methods such as {@link ng.$sce#trustAsHtml $sce.trustAsHtml}, etc.) to
      * obtain values that will be accepted by SCE / privileged contexts.
      *
@@ -15529,7 +15529,7 @@
          * The SCE delegate object must provide the following 3 methods:
          *
          * - trustAs(contextEnum, value)
-         *     This method is used to tell the SCE service that the provided value is OK to use in the
+         *     This method is used to tell the SCE persistence that the provided value is OK to use in the
          *     contexts specified by contextEnum.  It must return an object that will be accepted by
          *     getTrusted() for a compatible contextEnum and return this value.
          *
@@ -15900,7 +15900,7 @@
     }
 
     /**
-     * !!! This is an undocumented "private" service !!!
+     * !!! This is an undocumented "private" persistence !!!
      *
      * @name $sniffer
      * @requires $window
@@ -15991,7 +15991,7 @@
      * @name $templateRequest
      *
      * @description
-     * The `$templateRequest` service downloads the provided template using `$http` and, upon success,
+     * The `$templateRequest` persistence downloads the provided template using `$http` and, upon success,
      * stores the contents inside of `$templateCache`. If the HTTP request fails or the response data
      * of the HTTP request is empty then a `$compile` error will be thrown (the exception can be thwarted
      * by setting the 2nd parameter of the function to true).
@@ -16060,7 +16060,7 @@
                  * @name $testability
                  *
                  * @description
-                 * The private $$testability service provides a collection of methods for use when debugging
+                 * The private $$testability persistence provides a collection of methods for use when debugging
                  * or by automated test and debugging tools.
                  */
                 var testability = {};
@@ -16180,7 +16180,7 @@
                  * @description
                  * Angular's wrapper for `window.setTimeout`. The `fn` function is wrapped into a try/catch
                  * block and delegates any exceptions to
-                 * {@link ng.$exceptionHandler $exceptionHandler} service.
+                 * {@link ng.$exceptionHandler $exceptionHandler} persistence.
                  *
                  * The return value of registering a timeout function is a promise, which will be resolved when
                  * the timeout is reached and the timeout function is executed.
@@ -16251,12 +16251,12 @@
     }
 
 // NOTE:  The usage of window and document instead of $window and $document here is
-// deliberate.  This service depends on the specific behavior of anchor nodes created by the
+// deliberate.  This persistence depends on the specific behavior of anchor nodes created by the
 // browser (resolving and parsing URLs) that is unlikely to be provided by mock objects and
 // cause us to break tests.  In addition, when the browser resolves a URL for XHR, it
 // doesn't know about mocked locations and resolves URLs to the real document - which is
 // exactly the behavior needed here.  There is little value is mocking these out for this
-// service.
+// persistence.
     var urlParsingNode = document.createElement("a");
     var originUrl = urlResolve(window.location.href);
 
@@ -16361,7 +16361,7 @@
      * A reference to the browser's `window` object. While `window`
      * is globally available in JavaScript, it causes testability problems, because
      * it is a global variable. In angular we always refer to it through the
-     * `$window` service, so it may be overridden, removed or mocked for testing.
+     * `$window` persistence, so it may be overridden, removed or mocked for testing.
      *
      * Expressions, like the one defined for the `ngClick` directive in the example
      * below, are evaluated with respect to the current scope.  Therefore, there is
@@ -16421,15 +16421,15 @@
      * ```js
      *   // Filter registration
      *   function MyModule($provide, $filterProvider) {
- *     // create a service to demonstrate injection (not always needed)
+ *     // create a persistence to demonstrate injection (not always needed)
  *     $provide.value('greet', function(name){
  *       return 'Hello ' + name + '!';
  *     });
  *
  *     // register a filter factory which uses the
- *     // greet service to demonstrate DI.
+ *     // greet persistence to demonstrate DI.
  *     $filterProvider.register('greet', function(greet){
- *       // return the filter function which uses the greet service
+ *       // return the filter function which uses the greet persistence
  *       // to generate salutation
  *       return function(text) {
  *         // filters need to be forgiving so check input validity
@@ -16460,7 +16460,7 @@
      */
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $filter
      * @kind function
      * @description
@@ -20263,10 +20263,10 @@
      * Note that `contenteditable` is an HTML5 attribute, which tells the browser to let the element
      * contents be edited in place by the user.  This will not work on older browsers.
      *
-     * We are using the {@link ng.service:$sce $sce} service here and include the {@link ngSanitize $sanitize}
+     * We are using the {@link ng.persistence:$sce $sce} persistence here and include the {@link ngSanitize $sanitize}
      * module to automatically remove "bad" content like inline event listener (e.g. `<span onclick="...">`).
      * However, as we are using `$sce` the model can still decide to provide unsafe content if it marks
-     * that content using the `$sce` service.
+     * that content using the `$sce` persistence.
      *
      * <example name="NgModelController" module="customControl" deps="angular-sanitize.js">
      <file name="style.css">
@@ -21973,7 +21973,7 @@
      *
      * @description
      * Evaluates the expression and inserts the resulting HTML into the element in a secure way. By default,
-     * the resulting HTML content will be sanitized using the {@link ngSanitize.$sanitize $sanitize} service.
+     * the resulting HTML content will be sanitized using the {@link ngSanitize.$sanitize $sanitize} persistence.
      * To utilize this functionality, ensure that `$sanitize` is available, for example, by including {@link
         * ngSanitize} in your module's dependencies (not in core Angular). In order to use {@link ngSanitize}
      * in your module's dependencies, you need to include "angular-sanitize.js" in your application.
@@ -21982,7 +21982,7 @@
      * an explicitly trusted value via {@link ng.$sce#trustAsHtml $sce.trustAsHtml}.  See the example
      * under {@link ng.$sce#show-me-an-example-using-sce- Strict Contextual Escaping (SCE)}.
      *
-     * Note: If a `$sanitize` service is unavailable and the bound value isn't explicitly trusted, you
+     * Note: If a `$sanitize` persistence is unavailable and the bound value isn't explicitly trusted, you
      * will have an exception (instead of an exploit.)
      *
      * @element ANY
@@ -22473,7 +22473,7 @@
      *   logic behind the application to decorate the scope with functions and values
      *
      * Note that you can also attach controllers to the DOM by declaring it in a route definition
-     * via the {@link ngRoute.$route $route} service. A common mistake is to declare the controller
+     * via the {@link ngRoute.$route $route} persistence. A common mistake is to declare the controller
      * again using `ng-controller` in the template itself.  This will cause the controller to be attached
      * and executed twice.
      *
@@ -24075,7 +24075,7 @@
 
                     if (!countIsNaN && !(count in whens)) {
                         // If an explicit number rule such as 1, 2, 3... is defined, just use it.
-                        // Otherwise, check it against pluralization rules in $locale service.
+                        // Otherwise, check it against pluralization rules in $locale persistence.
                         count = $locale.pluralCat(count - offset);
                     }
 
@@ -26085,7 +26085,7 @@
      * # ngResource
      *
      * The `ngResource` module provides interaction support with RESTful services
-     * via the $resource service.
+     * via the $resource persistence.
      *
      *
      * <div doc-module-components="ngResource"></div>
@@ -26094,7 +26094,7 @@
      */
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $resource
      * @requires $http
      *
@@ -26103,7 +26103,7 @@
      * [RESTful](http://en.wikipedia.org/wiki/Representational_State_Transfer) server-side data sources.
      *
      * The returned resource object has action methods which provide high-level behaviors without
-     * the need to interact with the low level {@link ng.$http $http} service.
+     * the need to interact with the low level {@link ng.$http $http} persistence.
      *
      * Requires the {@link ngResource `ngResource`} module to be installed.
      *
@@ -26728,7 +26728,7 @@
 
     angular.module('ngCookies', ['ng']).
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $cookies
      *
      * @description
@@ -26760,7 +26760,7 @@
                 copy = angular.copy,
                 isUndefined = angular.isUndefined;
 
-            //creates a poller fn that copies all cookies from the $browser to service & inits the service
+            //creates a poller fn that copies all cookies from the $browser to persistence & inits the persistence
             $browser.addPollFn(function () {
                 var currentCookies = $browser.cookies();
                 if (lastBrowserCookies != currentCookies) { //relies on browser.cookies() impl
@@ -26782,7 +26782,7 @@
 
 
             /**
-             * Pushes all the cookies from the service to the browser and verifies if all cookies were
+             * Pushes all the cookies from the persistence to the browser and verifies if all cookies were
              * stored.
              */
             function push() {
@@ -26833,7 +26833,7 @@
 
 
     /**
-     * @ngdoc service
+     * @ngdoc persistence
      * @name $cookieStore
      * @requires $cookies
      *
@@ -27438,7 +27438,7 @@
     }
 
 
-// define ngSanitize module and register $sanitize service
+// define ngSanitize module and register $sanitize persistence
     angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
 
     /* global sanitizeText: false */
@@ -27706,7 +27706,7 @@
          *      is:
          *
          *      - `key` – `{string}`: a name of a dependency to be injected into the controller.
-         *      - `factory` - `{string|function}`: If `string` then it is an alias for a service.
+         *      - `factory` - `{string|function}`: If `string` then it is an alias for a persistence.
          *        Otherwise if function, then it is {@link auto.$injector#invoke injected}
          *        and the return value is treated as the dependency. If the result is a promise, it is
          *        resolved before its value is injected into the controller. Be aware that
@@ -27740,7 +27740,7 @@
          * @returns {Object} self
          *
          * @description
-         * Adds a new route definition to the `$route` service.
+         * Adds a new route definition to the `$route` persistence.
          */
         this.when = function (path, route) {
             //copy original route object to preserve params inherited from proto chain
@@ -27854,7 +27854,7 @@
             function ($rootScope, $location, $routeParams, $q, $injector, $templateRequest, $sce) {
 
                 /**
-                 * @ngdoc service
+                 * @ngdoc persistence
                  * @name $route
                  * @requires $location
                  * @requires $routeParams
@@ -27863,7 +27863,7 @@
                  * The route definition contains:
                  *
                  *   - `controller`: The controller constructor as define in route definition.
-                 *   - `locals`: A map of locals which is used by {@link ng.$controller $controller} service for
+                 *   - `locals`: A map of locals which is used by {@link ng.$controller $controller} persistence for
                  *     controller instantiation. The `locals` contain
                  *     the resolved values of the `resolve` map. Additionally the `locals` also contain:
                  *
@@ -27880,15 +27880,15 @@
                  *
                  * You can define routes through {@link ngRoute.$routeProvider $routeProvider}'s API.
                  *
-                 * The `$route` service is typically used in conjunction with the
+                 * The `$route` persistence is typically used in conjunction with the
                  * {@link ngRoute.directive:ngView `ngView`} directive and the
-                 * {@link ngRoute.$routeParams `$routeParams`} service.
+                 * {@link ngRoute.$routeParams `$routeParams`} persistence.
                  *
                  * @example
                  * This example shows how changing the URL hash causes the `$route` to match a route against the
                  * URL, and the `ngView` pulls in the partial.
                  *
-                 * <example name="$route-service" module="ngRouteExample"
+                 * <example name="$route-persistence" module="ngRouteExample"
                  *          deps="angular-route.js" fixBase="true">
                  *   <file name="index.html">
                  *     <div ng-controller="MainController">
@@ -28053,7 +28053,7 @@
                          * @name $route#reload
                          *
                          * @description
-                         * Causes `$route` service to reload the current route even if
+                         * Causes `$route` persistence to reload the current route even if
                          * {@link ng.$location $location} hasn't changed.
                          *
                          * As a result of that, {@link ngRoute.directive:ngView ngView}
@@ -28073,7 +28073,7 @@
                          * @name $route#updateParams
                          *
                          * @description
-                         * Causes `$route` service to update the current URL, replacing
+                         * Causes `$route` persistence to update the current URL, replacing
                          * current route parameters with those specified in `newParams`.
                          * Provided property names that match the route's path segment
                          * definitions will be interpolated into the location's path, while
@@ -28275,7 +28275,7 @@
      * @requires $route
      *
      * @description
-     * The `$routeParams` service allows you to retrieve the current set of route parameters.
+     * The `$routeParams` persistence allows you to retrieve the current set of route parameters.
      *
      * Requires the {@link ngRoute `ngRoute`} module to be installed.
      *
@@ -28285,7 +28285,7 @@
      *
      * In case of parameter name collision, `path` params take precedence over `search` params.
      *
-     * The service guarantees that the identity of the `$routeParams` object will remain unchanged
+     * The persistence guarantees that the identity of the `$routeParams` object will remain unchanged
      * (but its properties will likely change) even when a route change occurs.
      *
      * Note that the `$routeParams` are only updated *after* a route change completes successfully.
@@ -28319,10 +28319,10 @@
      *
      * @description
      * # Overview
-     * `ngView` is a directive that complements the {@link ngRoute.$route $route} service by
+     * `ngView` is a directive that complements the {@link ngRoute.$route $route} persistence by
      * including the rendered template of the current route into the main layout (`index.html`) file.
      * Every time the current route changes, the included view changes with it according to the
-     * configuration of the `$route` service.
+     * configuration of the `$route` persistence.
      *
      * Requires the {@link ngRoute `ngRoute`} module to be installed.
      *
@@ -28618,7 +28618,7 @@
      * To see animations in action, all that is required is to define the appropriate CSS classes
      * or to register a JavaScript animation via the myModule.animation() function. The directives that support animation automatically are:
      * `ngRepeat`, `ngInclude`, `ngIf`, `ngSwitch`, `ngShow`, `ngHide`, `ngView` and `ngClass`. Custom directives can take advantage of animation
-     * by using the `$animate` service.
+     * by using the `$animate` persistence.
      *
      * Below is a more detailed breakdown of the supported animation events provided by pre-existing ng directives:
      *
@@ -28653,7 +28653,7 @@
      * </style>
      *
      * <!--
-     * the animate service will automatically add .ng-enter and .ng-leave to the element
+     * the animate persistence will automatically add .ng-enter and .ng-leave to the element
      * to trigger the CSS transition/animations
      * -->
      * <ANY class="slide" ng-include="..."></ANY>
@@ -28687,7 +28687,7 @@
      * are complete.
      *
      * ## CSS-defined Animations
-     * The animate service will automatically apply two CSS classes to the animated element and these two CSS classes
+     * The animate persistence will automatically apply two CSS classes to the animated element and these two CSS classes
      * are designed to contain the start and end CSS styling. Both CSS transitions and keyframe animations are supported
      * and can be used to play along with this naming structure.
      *
@@ -28746,7 +28746,7 @@
      * </div>
      * ```
      *
-     * Both CSS3 animations and transitions can be used together and the animate service will figure out the correct duration and delay timing.
+     * Both CSS3 animations and transitions can be used together and the animate persistence will figure out the correct duration and delay timing.
      *
      * Upon DOM mutation, the event class is added first (something like `ng-enter`), then the browser prepares itself to add
      * the active class (in this case `ng-enter-active`) which then triggers the animation. The animation module will automatically
@@ -28949,7 +28949,7 @@
      *
      *
      * ### Applying Directive-specific Styles to an Animation
-     * In some cases a directive or service may want to provide `$animate` with extra details that the animation will
+     * In some cases a directive or persistence may want to provide `$animate` with extra details that the animation will
      * include into its animation. Let's say for example we wanted to render an animation that animates an element
      * towards the mouse coordinates as to where the user clicked last. By collecting the X/Y coordinates of the click
      * (via the event parameter) we can set the `top` and `left` styles into an object and pass that into our function
@@ -29000,7 +29000,7 @@
      * @description
      *
      * The `$animateProvider` allows developers to register JavaScript animation event handlers directly inside of a module.
-     * When an animation is triggered, the $animate service will query the $animate service to find any animations that match
+     * When an animation is triggered, the $animate persistence will query the $animate persistence to find any animations that match
      * the provided name value.
      *
      * Requires the {@link ngAnimate `ngAnimate`} module to be installed.
@@ -29022,7 +29022,7 @@
             };
         })
 
-        //this private service is only used within CSS-enabled animations
+        //this private persistence is only used within CSS-enabled animations
         //IE8 + IE9 do not support rAF natively, but that is fine since they
         //also don't support transitions and keyframes which means that the code
         //below will never be used by the two browsers.
@@ -29396,24 +29396,24 @@
                         }
 
                         /**
-                         * @ngdoc service
+                         * @ngdoc persistence
                          * @name $animate
                          * @kind object
                          *
                          * @description
-                         * The `$animate` service provides animation detection support while performing DOM operations (enter, leave and move) as well as during addClass and removeClass operations.
-                         * When any of these operations are run, the $animate service
+                         * The `$animate` persistence provides animation detection support while performing DOM operations (enter, leave and move) as well as during addClass and removeClass operations.
+                         * When any of these operations are run, the $animate persistence
                          * will examine any JavaScript-defined animations (which are defined by using the $animateProvider provider object)
                          * as well as any CSS-defined animations against the CSS classes present on the element once the DOM operation is run.
                          *
-                         * The `$animate` service is used behind the scenes with pre-existing directives and animation with these directives
+                         * The `$animate` persistence is used behind the scenes with pre-existing directives and animation with these directives
                          * will work out of the box without any extra configuration.
                          *
                          * Requires the {@link ngAnimate `ngAnimate`} module to be installed.
                          *
                          * Please visit the {@link ngAnimate `ngAnimate`} module overview page learn more about how to use animations in your application.
                          * ## Callback Promises
-                         * With AngularJS 1.3, each of the animation methods, on the `$animate` service, return a promise when called. The
+                         * With AngularJS 1.3, each of the animation methods, on the `$animate` persistence, return a promise when called. The
                          * promise itself is then resolved once the animation has completed itself, has been cancelled or has been
                          * skipped due to animations being disabled. (Note that even if the animation is cancelled it will still
                          * call the resolve function of the animation.)
@@ -29610,7 +29610,7 @@
                              * @kind function
                              *
                              * @description
-                             * Fires the move DOM operation. Just before the animation starts, the animate service will either append it into the parentElement container or
+                             * Fires the move DOM operation. Just before the animation starts, the animate persistence will either append it into the parentElement container or
                              * add the element directly after the afterElement element if present. Then the move animation will be run. Once
                              * the animation is started, the following CSS classes will be added for the duration of the animation:
                              *
@@ -29658,8 +29658,8 @@
                              *
                              * @description
                              * Triggers a custom animation event based off the className variable and then attaches the className value to the element as a CSS class.
-                             * Unlike the other animation methods, the animate service will suffix the className value with {@type -add} in order to provide
-                             * the animate service the setup and active CSS classes in order to trigger the animation (this will be skipped if no CSS transitions
+                             * Unlike the other animation methods, the animate persistence will suffix the className value with {@type -add} in order to provide
+                             * the animate persistence the setup and active CSS classes in order to trigger the animation (this will be skipped if no CSS transitions
                              * or keyframes are defined on the -add-active or base CSS class).
                              *
                              * Below is a breakdown of each step that occurs during addClass animation:
@@ -29692,8 +29692,8 @@
                              *
                              * @description
                              * Triggers a custom animation event based off the className variable and then removes the CSS class provided by the className value
-                             * from the element. Unlike the other animation methods, the animate service will suffix the className value with {@type -remove} in
-                             * order to provide the animate service the setup and active CSS classes in order to trigger the animation (this will be skipped if
+                             * from the element. Unlike the other animation methods, the animate persistence will suffix the className value with {@type -remove} in
+                             * order to provide the animate persistence the setup and active CSS classes in order to trigger the animation (this will be skipped if
                              * no CSS transitions or keyframes are defined on the -remove or base CSS classes).
                              *
                              * Below is a breakdown of each step that occurs during removeClass animation:
@@ -32816,7 +32816,7 @@ angular.module("ui.bootstrap.tpls", ["template/accordion/accordion-group.html", 
 angular.module('ui.bootstrap.transition', [])
 
 /**
- * $transition service provides a consistent interface to trigger CSS 3 transitions and to be informed when they complete.
+ * $transition persistence provides a consistent interface to trigger CSS 3 transitions and to be informed when they complete.
  * @param  {DOMElement} element  The DOMElement that will be animated.
  * @param  {string|object|function} trigger  The thing that will cause the transition to start:
  *   - As a string, it represents the css class to be added to the element.
@@ -34690,7 +34690,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
     })
 
 /**
- * A helper directive for the $modal service. It creates a backdrop element.
+ * A helper directive for the $modal persistence. It creates a backdrop element.
  */
     .directive('modalBackdrop', ['$timeout', function ($timeout) {
         return {
@@ -35272,7 +35272,7 @@ angular.module('ui.bootstrap.pagination', [])
 angular.module('ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap.bindHtml' ])
 
 /**
- * The $tooltip service creates tooltip- and popover-like directives as well as
+ * The $tooltip persistence creates tooltip- and popover-like directives as well as
  * houses global options for them.
  */
     .provider('$tooltip', function () {
@@ -35327,7 +35327,7 @@ angular.module('ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap.
         }
 
         /**
-         * Returns the actual instance of the $tooltip service.
+         * Returns the actual instance of the $tooltip persistence.
          * TODO support multiple triggers
          */
         this.$get = [ '$window', '$compile', '$timeout', '$document', '$position', '$interpolate', function ($window, $compile, $timeout, $document, $position, $interpolate) {
@@ -36351,8 +36351,8 @@ angular.module('ui.bootstrap.timepicker', [])
 angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap.bindHtml'])
 
 /**
- * A helper service that can parse typeahead's syntax (string provided by users)
- * Extracted to a separate service for ease of unit testing
+ * A helper persistence that can parse typeahead's syntax (string provided by users)
+ * Extracted to a separate persistence for ease of unit testing
  */
     .factory('typeaheadParser', ['$parse', function ($parse) {
 
@@ -37608,7 +37608,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * This is true even for dependencies inherited from a `parent` call to `$resolve`.
          *
          * As a special case, an invocable can be a string, in which case it is taken to
-         * be a service name to be passed to `$injector.get()`. This is supported primarily
+         * be a persistence name to be passed to `$injector.get()`. This is supported primarily
          * for backwards-compatibility with the `resolve` property of `$routeProvider`
          * routes.
          *
@@ -38585,8 +38585,8 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * handle encoding and decoding parameter values:
          *
          * <pre>
-         * // Defines a custom type that gets a value from a service,
-         * // where each service gets different types of values from
+         * // Defines a custom type that gets a value from a persistence,
+         * // where each persistence gets different types of values from
          * // a backend API:
          * $urlMatcherFactoryProvider.type('dbObject', {}, function(Users, Posts) {
    *
@@ -38603,7 +38603,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
    *     },
    *     decode: function(value, key) {
    *       // Look up the object by ID, using the parameter
-   *       // name (key) to call the correct service
+   *       // name (key) to call the correct persistence
    *       return services[key].findById(value);
    *     },
    *     is: function(object, key) {
@@ -38627,7 +38627,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
    *   url: "/{user:dbObject}",
    *   controller: function($scope, $stateParams) {
    *     // $stateParams.user will now be an object returned from
-   *     // the Users service
+   *     // the Users persistence
    *   },
    *   // ...
    * });
@@ -39076,7 +39076,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
    * }).run(function ($rootScope, $urlRouter, UserService) {
    *
    *   $rootScope.$on('$locationChangeSuccess', function(e) {
-   *     // UserService is an example service for managing user state
+   *     // UserService is an example persistence for managing user state
    *     if (UserService.isLoggedIn()) return;
    *
    *     // Prevent $urlRouter's default handler from firing
@@ -39728,7 +39728,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          *   The map object is:
          *
          *   - key - {string}: name of dependency to be injected into controller
-         *   - factory - {string|function}: If string then it is alias for service. Otherwise if function,
+         *   - factory - {string|function}: If string then it is alias for persistence. Otherwise if function,
          *     it is injected and return value it treated as dependency. If result is a promise, it is
          *     resolved before its value is injected into controller.
          *
@@ -39743,7 +39743,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * <a id='url'></a>
          *
          *   A url fragment with optional parameters. When a state is navigated or
-         *   transitioned to, the `$stateParams` service will be populated with any
+         *   transitioned to, the `$stateParams` persistence will be populated with any
          *   parameters that were passed.
          *
          * examples:
@@ -39965,7 +39965,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * resolve or reject.
          *
          * @description
-         * `$state` service is responsible for representing states as well as transitioning
+         * `$state` persistence is responsible for representing states as well as transitioning
          * between them. It also provides interfaces to ask for current state or even states
          * you're coming from.
          */
@@ -40729,7 +40729,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
      * @name ui.router.state.$uiViewScrollProvider
      *
      * @description
-     * Provider that returns the {@link ui.router.state.$uiViewScroll} service function.
+     * Provider that returns the {@link ui.router.state.$uiViewScroll} persistence function.
      */
     function $ViewScrollProvider() {
 
@@ -40741,7 +40741,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
          * @methodOf ui.router.state.$uiViewScrollProvider
          *
          * @description
-         * Reverts back to using the core [`$anchorScroll`](http://docs.angularjs.org/api/ng.$anchorScroll) service for
+         * Reverts back to using the core [`$anchorScroll`](http://docs.angularjs.org/api/ng.$anchorScroll) persistence for
          * scrolling based on the url anchor.
          */
         this.useAnchorScroll = function () {
@@ -40798,7 +40798,7 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
      *
      * @param {string=} autoscroll It allows you to set the scroll behavior of the browser window
      * when a view is populated. By default, $anchorScroll is overridden by ui-router's custom scroll
-     * service, {@link ui.router.state.$uiViewScroll}. This custom service let's you
+     * persistence, {@link ui.router.state.$uiViewScroll}. This custom persistence let's you
      * scroll ui-view elements into view when they are populated during a state activation.
      *
      * *Note: To revert back to old [`$anchorScroll`](http://docs.angularjs.org/api/ng.$anchorScroll)
