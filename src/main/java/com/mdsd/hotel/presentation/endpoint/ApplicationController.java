@@ -18,7 +18,7 @@ package com.mdsd.hotel.presentation.endpoint;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.mdsd.hotel.business.logic.IBookingController;
+import com.mdsd.hotel.business.logic.BookingController;
 import com.mdsd.hotel.presentation.model.RoomExtra;
 import ninja.Result;
 import ninja.Results;
@@ -31,7 +31,7 @@ import java.util.List;
 public class ApplicationController {
 
     @Inject
-    IBookingController bookingController;
+    BookingController bookingController;
 
 
     public Result index() {

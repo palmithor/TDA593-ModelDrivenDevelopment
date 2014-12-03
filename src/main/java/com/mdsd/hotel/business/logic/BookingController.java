@@ -14,13 +14,22 @@ import ninja.cache.NinjaCache;
 @Singleton
 public class BookingController {
 
-    @Inject
     NinjaCache bookingCache;
 
-    @Inject
     AddressService addressService;
 
     public void ble() {
         addressService.save(new AddressEntity("123", "123", "123", "123", "123"));
     }
+
+    @Inject
+    public void setBookingCache(final NinjaCache bookingCache) {
+        this.bookingCache = bookingCache;
+    }
+
+    @Inject
+    public void setAddressService(final AddressService addressService) {
+        this.addressService = addressService;
+    }
+
 }
