@@ -19,7 +19,6 @@ package conf;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import com.mdsd.hotel.business.logic.BookingController;
-import com.mdsd.hotel.business.logic.IBookingController;
 import com.mdsd.hotel.persistence.service.AddressService;
 import com.mdsd.hotel.persistence.service.RoomService;
 
@@ -29,7 +28,7 @@ public class Module extends AbstractModule {
 
     protected void configure() {
 
-        bind(IBookingController.class).to(BookingController.class);
+        bind(BookingController.class);
 
         // persistence services
         bind(AddressService.class);
