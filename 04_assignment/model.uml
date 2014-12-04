@@ -1001,6 +1001,11 @@
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_8Yt1sHugEeSKovwTcU7VCQ" name="status" type="_9jUSgHueEeSKovwTcU7VCQ" direction="return"/>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tphgwHvJEeSKovwTcU7VCQ" name="confirmAndPay">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zV7p8HvJEeSKovwTcU7VCQ" name="booking" type="_jNDPwHk1EeSsOOo59CoEGw"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_1kt1sHvJEeSKovwTcU7VCQ" name="cardInformation" type="_jeP_YHkzEeSsOOo59CoEGw"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-FjOUHvJEeSKovwTcU7VCQ" name="receipt" type="_n1220Hu6EeSKovwTcU7VCQ" direction="return"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_SadOkHuhEeSKovwTcU7VCQ" name="IGuestManagement">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_mo4PsHuhEeSKovwTcU7VCQ" name="checkOut">
