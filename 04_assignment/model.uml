@@ -1109,6 +1109,7 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_tpObQHvIEeSKovwTcU7VCQ" name="userAccount" type="_kvi_0HmOEeScR5a8vkIPbw" direction="return"/>
       </ownedOperation>
     </packagedElement>
+    <packagedElement xmi:type="uml:Actor" xmi:id="_BC9skHvIEeSgH-pNJ9VdlA" name="Actor"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_a7AxMHluEeSn2_rhECnITA" name="SequenceDiagrams">
     <packagedElement xmi:type="uml:Interaction" xmi:id="_1YancHu7EeSWybACxIamUw" name="SearchRoom">
