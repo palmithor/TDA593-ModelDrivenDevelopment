@@ -464,7 +464,11 @@
       </ownedAttribute>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_vCx14HlcEeSbENxhkq-Geg" name="ClassDiagram"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_vCx14HlcEeSbENxhkq-Geg" name="ClassDiagram">
+    <packagedElement xmi:type="uml:Class" xmi:id="_VfhM4HxjEeSXUN3XZqUehg" name="AccountManagement">
+      <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XUr-wHxjEeSXUN3XZqUehg" client="_VfhM4HxjEeSXUN3XZqUehg" supplier="_gDzLkHvBEeSKovwTcU7VCQ" contract="_gDzLkHvBEeSKovwTcU7VCQ"/>
+    </packagedElement>
+  </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_5xaP4HlpEeSuvNuMJAhOkg" name="Components">
     <packagedElement xmi:type="uml:Component" xmi:id="_7RrIwXlpEeSuvNuMJAhOkg" name="HotelSystem"/>
     <packagedElement xmi:type="uml:Interface" xmi:id="_7Rrv0XlpEeSuvNuMJAhOkg" name="ICustomerBookingController">
@@ -1112,7 +1116,7 @@
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Interface" xmi:id="_gDzLkHvBEeSKovwTcU7VCQ" name="IAccountManager">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_gDzLkHvBEeSKovwTcU7VCQ" name="IAccountManagement">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_khb0gHvBEeSKovwTcU7VCQ" name="createCustomerAccount">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_7bhKoHvBEeSKovwTcU7VCQ" name="username">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -1136,6 +1140,20 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_o4poMHvIEeSKovwTcU7VCQ" name="editUserAccount">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_r4xKQHvIEeSKovwTcU7VCQ" name="userAccount" type="_kvi_0HmOEeScR5a8vkIPbw"/>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_tpObQHvIEeSKovwTcU7VCQ" name="userAccount" type="_kvi_0HmOEeScR5a8vkIPbw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_-U-_8HxiEeSXUN3XZqUehg" name="login">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-U-_8XxiEeSXUN3XZqUehg" name="username">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-U-_8nxiEeSXUN3XZqUehg" name="password">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-U-_9HxiEeSXUN3XZqUehg" name="customerAccount" type="_UEHLAHmTEeScR5a8vkIPbw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_B7xgcHxjEeSXUN3XZqUehg" name="isLoggedIn">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_NvwE0HxjEeSXUN3XZqUehg" name="result" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Actor" xmi:id="_BC9skHvIEeSgH-pNJ9VdlA" name="Actor"/>
