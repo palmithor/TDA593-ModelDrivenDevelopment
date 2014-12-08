@@ -10,7 +10,7 @@ import java.util.List;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("Customer")
+@Entity(CollectionNames.CUSTOMER)
 public class CustomerEntity extends Person {
 
     @Id

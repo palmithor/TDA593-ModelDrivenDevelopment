@@ -8,7 +8,7 @@ import org.mongodb.morphia.annotations.Id;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("RoomReservationType")
+@Entity(CollectionNames.ROOM_RESERVATION_TYPE)
 public class RoomReservationTypeEntity {
 
     @Id

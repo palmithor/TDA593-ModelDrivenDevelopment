@@ -8,7 +8,7 @@ import org.mongodb.morphia.annotations.Id;
  * @author palmithor
  * @since 01/12/14.
  */
-@Entity("UserAccount")
+@Entity(CollectionNames.USER_ACCOUNT)
 public class UserAccountEntity {
 
     @Id

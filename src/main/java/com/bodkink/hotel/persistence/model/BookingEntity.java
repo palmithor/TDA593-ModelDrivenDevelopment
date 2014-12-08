@@ -11,7 +11,7 @@ import java.util.List;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("Booking")
+@Entity(CollectionNames.BOOKING)
 public class BookingEntity {
 
     @Id

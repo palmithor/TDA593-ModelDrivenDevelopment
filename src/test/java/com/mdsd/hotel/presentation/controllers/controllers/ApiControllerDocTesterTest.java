@@ -1,14 +1,9 @@
-package com.bodkink.hotel.presentation.endpoint;
+package com.mdsd.hotel.presentation.controllers.controllers;
 
-import com.bodkink.hotel.presentation.model.RoomExtra;
-import com.fasterxml.jackson.core.type.TypeReference;
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
-
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
@@ -21,7 +16,6 @@ import static org.junit.Assert.assertThat;
 public class ApiControllerDocTesterTest extends NinjaDocTester {
 
     String URL_INDEX = "/";
-    String URL_ROOM_EXTRAS = "/room/extras";
 
     @Test
     public void testGetIndex() {
@@ -36,7 +30,7 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
 
     }
 
-    @Test
+    /*@Test
     public void testGetHelloWorldJson() {
 
         Response response = makeRequest(
@@ -51,6 +45,6 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         assertThat(roomExtras.size(), CoreMatchers.equalTo(2));
 
 
-    }
+    }*/
 
 }

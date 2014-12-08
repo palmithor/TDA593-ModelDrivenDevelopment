@@ -11,7 +11,7 @@ import java.util.List;
  * @author palmithor
  * @since 01/12/14.
  */
-@Entity("RoomExtrasTemplate")
+@Entity(CollectionNames.ROOM_EXTRAS_TEMPLATE)
 public class RoomExtrasTemplateEntity {
 
     @Id

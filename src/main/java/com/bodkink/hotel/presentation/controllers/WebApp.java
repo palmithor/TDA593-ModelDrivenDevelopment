@@ -14,40 +14,20 @@
  * limitations under the License.
  */
 
-package com.bodkink.hotel.presentation.endpoint;
+package com.bodkink.hotel.presentation.controllers;
 
-import com.bodkink.hotel.business.IBookingManagement;
-import com.bodkink.hotel.presentation.model.RoomExtra;
-import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import ninja.Result;
 import ninja.Results;
 
-import java.util.Arrays;
-import java.util.List;
-
 
 @Singleton
-public class ApplicationController {
-
-    @Inject
-    IBookingManagement bookingManagement;
+public class WebApp {
 
 
     public Result index() {
 
         return Results.html();
-
-    }
-
-    public Result listRoomExtras() {
-
-        List<RoomExtra> roomExtras = Arrays.asList(
-                new RoomExtra("1", "TV", "Television including three stations"),
-                new RoomExtra("2", "Hairdryer", "Top of the line hairdryer")
-        );
-
-        return Results.json().render(roomExtras);
 
     }
 }

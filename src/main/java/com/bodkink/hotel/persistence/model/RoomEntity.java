@@ -15,7 +15,7 @@ import java.util.Map;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("Room")
+@Entity(CollectionNames.ROOM)
 public class RoomEntity {
 
     @Id

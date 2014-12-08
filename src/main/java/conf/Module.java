@@ -17,8 +17,14 @@
 package conf;
 
 import com.bodkink.hotel.business.IBookingManagement;
+import com.bodkink.hotel.business.IRoomExtraManagement;
 import com.bodkink.hotel.business.logic.BookingManagementImpl;
+import com.bodkink.hotel.business.logic.RoomExtraManagementImpl;
+import com.bodkink.hotel.persistence.IBookingService;
+import com.bodkink.hotel.persistence.IRoomExtraService;
 import com.bodkink.hotel.persistence.dao.AddressDAO;
+import com.bodkink.hotel.persistence.service.BookingServiceImpl;
+import com.bodkink.hotel.persistence.service.RoomExtraServiceImpl;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import org.reflections.Reflections;
@@ -29,9 +35,19 @@ public class Module extends AbstractModule {
 
     protected void configure() {
 
+        // on startup
+        bind(StartupActions.class);
+
+        // Management interfaces
+        bind(IRoomExtraManagement.class).to(RoomExtraManagementImpl.class);
         bind(IBookingManagement.class).to(BookingManagementImpl.class);
 
         // persistence services
+        bind(IBookingService.class).to(BookingServiceImpl.class);
+        bind(IRoomExtraService.class).to(RoomExtraServiceImpl.class);
+
+
+        // persistence dao
         Reflections reflections = new Reflections(AddressDAO.class.getPackage().getName());
 
         for (String clazz : reflections.getStore().get("TypeAnnotationsScanner").asMap().get("com.google.inject.Singleton")) {
@@ -41,6 +57,8 @@ public class Module extends AbstractModule {
                 e.printStackTrace();
             }
         }
+
+
     }
 
 }

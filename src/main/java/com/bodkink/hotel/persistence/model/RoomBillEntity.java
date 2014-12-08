@@ -10,7 +10,7 @@ import java.util.List;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("RoomBill")
+@Entity(CollectionNames.ROOM_BILL)
 public class RoomBillEntity {
 
     @Id

@@ -10,7 +10,7 @@ import java.time.LocalDate;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("CardInformation")
+@Entity(CollectionNames.CARD_INFORMATION)
 public class CardInformationEntity {
 
     @Id

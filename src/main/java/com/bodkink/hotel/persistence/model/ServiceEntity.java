@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("Service")
+@Entity(CollectionNames.SERVICE)
 public class ServiceEntity {
 
     @Id

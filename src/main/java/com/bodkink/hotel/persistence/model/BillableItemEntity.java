@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("BillableItem")
+@Entity(CollectionNames.BILLABLE_ITEM)
 public class BillableItemEntity {
 
     @Id

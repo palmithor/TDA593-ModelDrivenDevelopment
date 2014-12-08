@@ -11,7 +11,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider', function ($r
 
     $routeProvider
         .when('/home', {
-            templateUrl: 'templates/home.html',
+            templateUrl: '/assets/templates/home.html',
             controller: 'ControllerA'
         })
         .otherwise({

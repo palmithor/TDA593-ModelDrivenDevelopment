@@ -12,7 +12,7 @@ import java.util.List;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("RoomReservation")
+@Entity(CollectionNames.ROOM_RESERVATION)
 public class RoomReservationEntity {
 
     @Id

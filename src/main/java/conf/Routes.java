@@ -17,7 +17,8 @@
 package conf;
 
 
-import com.bodkink.hotel.presentation.endpoint.ApplicationController;
+import com.bodkink.hotel.presentation.controllers.RoomExtrasController;
+import com.bodkink.hotel.presentation.controllers.WebApp;
 import ninja.AssetsController;
 import ninja.Router;
 import ninja.application.ApplicationRoutes;
@@ -27,8 +28,6 @@ public class Routes implements ApplicationRoutes {
     @Override
     public void init(Router router) {
 
-        router.GET().route("/room/extras").with(ApplicationController.class, "listRoomExtras");
-
 
         ///////////////////////////////////////////////////////////////////////
         // Assets (pictures / javascript)
@@ -36,11 +35,12 @@ public class Routes implements ApplicationRoutes {
         router.GET().route("/assets/webjars/{fileName: .*}").with(AssetsController.class, "serveWebJars");
         router.GET().route("/assets/{fileName: .*}").with(AssetsController.class, "serveStatic");
 
-        ///////////////////////////////////////////////////////////////////////
-        // Index / Catchall shows index page
-        ///////////////////////////////////////////////////////////////////////
-        //router.GET().route("/.*").with(ApplicationController.class, "index");
 
+        // WEB APP
+        router.GET().route("/").with(WebApp.class, "index");
+
+        // Room extras endpoint
+        router.GET().route("/roomextras/list").with(RoomExtrasController.class, "list");
     }
 
 }

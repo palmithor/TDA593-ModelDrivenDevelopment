@@ -9,7 +9,7 @@ import org.mongodb.morphia.annotations.Id;
  * @author palmithor
  * @since 27/11/14.
  */
-@Entity("Classification")
+@Entity(CollectionNames.CLASSIFICATION)
 public class ClassificationEntity {
 
     @Id
