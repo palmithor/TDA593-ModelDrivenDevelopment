@@ -16,10 +16,11 @@
 
 package conf;
 
+import com.bodkink.hotel.business.IBookingManagement;
+import com.bodkink.hotel.business.logic.BookingManagementImpl;
+import com.bodkink.hotel.persistence.dao.AddressDAO;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
-import com.mdsd.hotel.business.logic.BookingController;
-import com.mdsd.hotel.persistence.dao.AddressDAO;
 import org.reflections.Reflections;
 
 @Singleton
@@ -28,7 +29,7 @@ public class Module extends AbstractModule {
 
     protected void configure() {
 
-        bind(BookingController.class);
+        bind(IBookingManagement.class).to(BookingManagementImpl.class);
 
         // persistence services
         Reflections reflections = new Reflections(AddressDAO.class.getPackage().getName());

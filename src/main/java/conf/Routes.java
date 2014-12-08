@@ -17,7 +17,7 @@
 package conf;
 
 
-import com.mdsd.hotel.presentation.endpoint.ApplicationController;
+import com.bodkink.hotel.presentation.endpoint.ApplicationController;
 import ninja.AssetsController;
 import ninja.Router;
 import ninja.application.ApplicationRoutes;
