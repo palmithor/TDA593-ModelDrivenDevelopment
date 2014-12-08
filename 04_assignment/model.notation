@@ -4872,7 +4872,7 @@
     <styles xmi:type="notation:StringValueStyle" xmi:id="_AwM-an7XEeS9oYmR8qByaQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_AwM-a37XEeS9oYmR8qByaQ"/>
     <styles xmi:type="style:PapyrusViewStyle" xmi:id="_AwM-bH7XEeS9oYmR8qByaQ">
-      <owner xmi:type="uml:Interaction" href="model.uml#_AwLvsH7XEeS9oYmR8qByaQ"/>
+      <owner xmi:type="uml:Package" href="model.uml#_a7AxMHluEeSn2_rhECnITA"/>
     </styles>
     <element xmi:type="uml:Interaction" href="model.uml#_AwLvsH7XEeS9oYmR8qByaQ"/>
     <edges xmi:type="notation:Edge" xmi:id="_AwM-bX7XEeS9oYmR8qByaQ" type="4004" source="_AwM-C37XEeS9oYmR8qByaQ" target="_AwM-F37XEeS9oYmR8qByaQ">
