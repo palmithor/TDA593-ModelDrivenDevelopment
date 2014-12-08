@@ -19,8 +19,8 @@ package conf;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import com.mdsd.hotel.business.logic.BookingController;
-import com.mdsd.hotel.persistence.service.AddressService;
-import com.mdsd.hotel.persistence.service.RoomService;
+import com.mdsd.hotel.persistence.dao.AddressDAO;
+import org.reflections.Reflections;
 
 @Singleton
 public class Module extends AbstractModule {
@@ -31,8 +31,15 @@ public class Module extends AbstractModule {
         bind(BookingController.class);
 
         // persistence services
-        bind(AddressService.class);
-        bind(RoomService.class);
+        Reflections reflections = new Reflections(AddressDAO.class.getPackage().getName());
+
+        for (String clazz : reflections.getStore().get("TypeAnnotationsScanner").asMap().get("com.google.inject.Singleton")) {
+            try {
+                bind(Class.forName(clazz));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

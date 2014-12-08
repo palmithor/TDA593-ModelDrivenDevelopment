@@ -1,4 +1,4 @@
-package com.mdsd.hotel.persistence.service;
+package com.mdsd.hotel.persistence.dao;
 
 import com.google.inject.Singleton;
 import com.mdsd.hotel.persistence.MongoDB;
@@ -11,9 +11,9 @@ import org.mongodb.morphia.dao.BasicDAO;
  * @since 03/12/14.
  */
 @Singleton
-public class RoomExtraService extends BasicDAO<RoomExtraEntity, ObjectId> {
+public class RoomExtraDAO extends BasicDAO<RoomExtraEntity, ObjectId> {
 
-    public RoomExtraService() {
+    public RoomExtraDAO() {
         super(RoomExtraEntity.class, MongoDB.getDatastore());
     }
 }

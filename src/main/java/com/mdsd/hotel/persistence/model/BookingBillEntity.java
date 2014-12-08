@@ -1,12 +1,17 @@
 package com.mdsd.hotel.persistence.model;
 
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 
 /**
  * @author palmithor
  * @since 27/11/14.
  */
+@Entity("BookingBill")
 public class BookingBillEntity {
+
+    @Id
     private final ObjectId id;
     private final CardInformationEntity cardInformation;
 

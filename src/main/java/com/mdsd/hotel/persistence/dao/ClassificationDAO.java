@@ -1,4 +1,4 @@
-package com.mdsd.hotel.persistence.service;
+package com.mdsd.hotel.persistence.dao;
 
 import com.google.inject.Singleton;
 import com.mdsd.hotel.persistence.MongoDB;
@@ -11,9 +11,9 @@ import org.mongodb.morphia.dao.BasicDAO;
  * @since 03/12/14.
  */
 @Singleton
-public class ClassificationService extends BasicDAO<ClassificationEntity, ObjectId> {
+public class ClassificationDAO extends BasicDAO<ClassificationEntity, ObjectId> {
 
-    public ClassificationService() {
+    public ClassificationDAO() {
         super(ClassificationEntity.class, MongoDB.getDatastore());
     }
 }

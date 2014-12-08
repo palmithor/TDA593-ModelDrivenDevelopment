@@ -1,7 +1,7 @@
 package com.mdsd.hotel.business.logic;
 
+import com.mdsd.hotel.persistence.dao.AddressDAO;
 import com.mdsd.hotel.persistence.model.AddressEntity;
-import com.mdsd.hotel.persistence.service.AddressService;
 import org.bson.types.ObjectId;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,9 +19,9 @@ public class BookingControllerTest {
     public void before() {
         bookingController = new BookingController();
 
-        AddressService addressService = mock(AddressService.class);
-        when(addressService.save(anyObject())).thenReturn(new Key<>(AddressEntity.class, ObjectId.get()));
-        bookingController.setAddressService(addressService);
+        AddressDAO addressDAO = mock(AddressDAO.class);
+        when(addressDAO.save(anyObject())).thenReturn(new Key<>(AddressEntity.class, ObjectId.get()));
+        bookingController.setAddressDAO(addressDAO);
     }
 
     @Test

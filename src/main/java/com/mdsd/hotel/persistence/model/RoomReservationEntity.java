@@ -2,6 +2,7 @@ package com.mdsd.hotel.persistence.model;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
 
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ import java.util.List;
 @Entity("RoomReservation")
 public class RoomReservationEntity {
 
+    @Id
     private final ObjectId id;
     private final LocalDate startDate;
     private final LocalDate endDate;

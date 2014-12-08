@@ -1,4 +1,4 @@
-package com.mdsd.hotel.persistence.service;
+package com.mdsd.hotel.persistence.dao;
 
 import com.google.inject.Singleton;
 import com.mdsd.hotel.persistence.MongoDB;
@@ -11,10 +11,11 @@ import org.mongodb.morphia.dao.BasicDAO;
  * @since 02/12/14.
  */
 @Singleton
-public class AddressService extends BasicDAO<AddressEntity, ObjectId> {
+public class AddressDAO extends BasicDAO<AddressEntity, ObjectId> {
 
-    public AddressService() {
+    public AddressDAO() {
         super(AddressEntity.class, MongoDB.getDatastore());
     }
+
 
 }

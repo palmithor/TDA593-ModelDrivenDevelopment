@@ -1,4 +1,4 @@
-package com.mdsd.hotel.persistence.service;
+package com.mdsd.hotel.persistence.dao;
 
 import com.google.inject.Singleton;
 import com.mdsd.hotel.persistence.MongoDB;
@@ -11,9 +11,9 @@ import org.mongodb.morphia.dao.BasicDAO;
  * @since 03/12/14.
  */
 @Singleton
-public class BillableItemService extends BasicDAO<BillableItemEntity, ObjectId> {
+public class BillableItemDAO extends BasicDAO<BillableItemEntity, ObjectId> {
 
-    public BillableItemService() {
+    public BillableItemDAO() {
         super(BillableItemEntity.class, MongoDB.getDatastore());
     }
 }
