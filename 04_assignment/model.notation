@@ -560,6 +560,9 @@
     <children xmi:type="notation:Shape" xmi:id="_CjeY4HleEeSbENxhkq-Geg" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_CjeY4nleEeSbENxhkq-Geg" type="5029"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_CjeY43leEeSbENxhkq-Geg" type="7017">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_x1K1AH7uEeSG9YQFl8zRow" source="PapyrusCSSForceValue">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_x1LcEH7uEeSG9YQFl8zRow" key="collapsed" value="true"/>
+        </eAnnotations>
         <children xmi:type="notation:Shape" xmi:id="_LvSoMHleEeSbENxhkq-Geg" type="3012">
           <element xmi:type="uml:Property" href="model.uml#_ywqO8HkyEeSsOOo59CoEGw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_LvSoMXleEeSbENxhkq-Geg"/>
