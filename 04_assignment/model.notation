@@ -653,10 +653,6 @@
           <element xmi:type="uml:Property" href="model.uml#_QG95cHlmEeSbENxhkq-Geg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_Q5RgIXlmEeSbENxhkq-Geg"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_j3zmsHlmEeSbENxhkq-Geg" type="3012">
-          <element xmi:type="uml:Property" href="model.uml#_gw5gIHlmEeSbENxhkq-Geg"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_j3zmsXlmEeSbENxhkq-Geg"/>
-        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_2vALonllEeSbENxhkq-Geg"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_2vALo3llEeSbENxhkq-Geg"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_2vALpHllEeSbENxhkq-Geg"/>
