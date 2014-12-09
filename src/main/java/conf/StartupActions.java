@@ -53,13 +53,6 @@ public class StartupActions {
 
     }
 
-    private void dropDefaultSchemas() {
-        roomExtraDAO.getDatastore().getDB().getCollection(CollectionNames.ADDRESS).drop();
-        roomExtraDAO.getDatastore().getDB().getCollection(CollectionNames.BED_TYPE).drop();
-        roomExtraDAO.getDatastore().getDB().getCollection(CollectionNames.CLASSIFICATION).drop();
-        roomExtraDAO.getDatastore().getDB().getCollection(CollectionNames.ROOM).drop();
-    }
-
     private void dropAndCreateDefaultRoomExtras() {
         roomExtraDAO.getDatastore().getDB().getCollection(CollectionNames.ROOM_EXTRA).drop();
 
