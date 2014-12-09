@@ -1,7 +1,7 @@
 package com.bodkink.hotel.presentation.controllers;
 
-import com.bodkink.hotel.business.IBedTypeManagement;
-import com.bodkink.hotel.business.model.BedType;
+import business.IBedTypeManagement;
+import business.model.BedType;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import ninja.Result;

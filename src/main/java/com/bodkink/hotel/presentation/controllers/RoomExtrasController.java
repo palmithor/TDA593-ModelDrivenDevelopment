@@ -1,7 +1,7 @@
 package com.bodkink.hotel.presentation.controllers;
 
-import com.bodkink.hotel.business.IRoomExtraManagement;
-import com.bodkink.hotel.business.model.RoomExtra;
+import business.IRoomExtraManagement;
+import business.model.RoomExtra;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import ninja.Result;
