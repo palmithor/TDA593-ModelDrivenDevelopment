@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+    <extension point="org.eclipse.emf.ecore.generated_package">
+        <!-- @generated codegen3 -->
+        <package
+                uri="http:///business.ecore"
+                class="business.BusinessPackage"
+                genModel="codegen3.genmodel"/>
+    </extension>
+
+    <extension point="org.eclipse.emf.ecore.generated_package">
+        <!-- @generated codegen3 -->
+        <package
+                uri="http:///business/model.ecore"
+                class="business.model.ModelPackage"
+                genModel="codegen3.genmodel"/>
+    </extension>
+
+    <extension point="org.eclipse.emf.ecore.generated_package">
+        <!-- @generated codegen3 -->
+        <package
+                uri="http:///business/logic.ecore"
+                class="business.logic.LogicPackage"
+                genModel="codegen3.genmodel"/>
+    </extension>
+
+    <extension point="org.eclipse.emf.ecore.generated_package">
+        <!-- @generated codegen3 -->
+        <package
+                uri="http://www.eclipse.org/uml2/5.0.0/Types"
+                class="org.eclipse.uml2.types.TypesPackage"
+                genModel="codegen3.genmodel"/>
+    </extension>
+
+</plugin>

@@ -1,0 +1,112 @@
+/**
+ */
+package business.model;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Bill</b></em>'.
+ * <!-- end-user-doc -->
+ * <p/>
+ * <p>
+ * The following features are supported:
+ * <ul>
+ * <li>{@link business.model.Bill#getId <em>Id</em>}</li>
+ * <li>{@link business.model.Bill#getBillStatusEnum <em>Bill Status Enum</em>}</li>
+ * <li>{@link business.model.Bill#getCardInformation <em>Card Information</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @model
+ * @generated
+ * @see business.model.ModelPackage#getBill()
+ */
+public interface Bill extends IBill {
+    /**
+     * Returns the value of the '<em><b>Id</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Id</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Id</em>' attribute.
+     * @model required="true" ordered="false"
+     * @generated
+     * @see #setId(String)
+     * @see business.model.ModelPackage#getBill_Id()
+     */
+    String getId();
+
+    /**
+     * Sets the value of the '{@link business.model.Bill#getId <em>Id</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @param value the new value of the '<em>Id</em>' attribute.
+     * @generated
+     * @see #getId()
+     */
+    void setId(String value);
+
+    /**
+     * Returns the value of the '<em><b>Bill Status Enum</b></em>' attribute.
+     * The literals are from the enumeration {@link business.model.BillStatusEnum}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Bill Status Enum</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Bill Status Enum</em>' attribute.
+     * @model required="true" ordered="false"
+     * @generated
+     * @see business.model.BillStatusEnum
+     * @see #setBillStatusEnum(BillStatusEnum)
+     * @see business.model.ModelPackage#getBill_BillStatusEnum()
+     */
+    BillStatusEnum getBillStatusEnum();
+
+    /**
+     * Sets the value of the '{@link business.model.Bill#getBillStatusEnum <em>Bill Status Enum</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @param value the new value of the '<em>Bill Status Enum</em>' attribute.
+     * @generated
+     * @see business.model.BillStatusEnum
+     * @see #getBillStatusEnum()
+     */
+    void setBillStatusEnum(BillStatusEnum value);
+
+    /**
+     * Returns the value of the '<em><b>Card Information</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Card Information</em>' reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Card Information</em>' reference.
+     * @model required="true" ordered="false"
+     * @generated
+     * @see #setCardInformation(CardInformation)
+     * @see business.model.ModelPackage#getBill_CardInformation()
+     */
+    CardInformation getCardInformation();
+
+    /**
+     * Sets the value of the '{@link business.model.Bill#getCardInformation <em>Card Information</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @param value the new value of the '<em>Card Information</em>' reference.
+     * @generated
+     * @see #getCardInformation()
+     */
+    void setCardInformation(CardInformation value);
+
+} // Bill

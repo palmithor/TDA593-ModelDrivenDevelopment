@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http:///model.ecore" nsPrefix="model">
+  <eSubpackages name="diagrams" nsURI="http:///model/diagrams.ecore" nsPrefix="model.diagrams">
+    <eSubpackages name="class" nsURI="http:///model/diagrams/class.ecore" nsPrefix="model.diagrams.class"/>
+    <eSubpackages name="component" nsURI="http:///model/diagrams/component.ecore"
+        nsPrefix="model.diagrams.component">
+      <eClassifiers xsi:type="ecore:EClass" name="HotelSystem"/>
+      <eClassifiers xsi:type="ecore:EClass" name="Presentation"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="BankingModel" nsURI="http:///model/BankingModel.ecore" nsPrefix="model.BankingModel">
+    <eClassifiers xsi:type="ecore:EClass" name="BankComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AdministratorProvides" abstract="true"
+        interface="true">
+      <eOperations name="makeDeposit" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eParameters name="ccNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="expiryMonth" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="expiryYear" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="sum" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eOperations>
+      <eOperations name="addCreditCard" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="ccNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="expiryMonth" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="expiryYear" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+      </eOperations>
+      <eOperations name="removeCreditCard" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="ccNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="expiryMonth" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="expiryYear" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+      </eOperations>
+      <eOperations name="getBalance" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+        <eParameters name="ccNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="expiryMonth" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="expiryYear" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CustomerProvides" abstract="true"
+        interface="true">
+      <eOperations name="makePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="ccNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="expiryMonth" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="expiryYear" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="sum" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eOperations>
+      <eOperations name="isCreditCardValid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="ccNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="ccv" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="expiryMonth" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="expiryYear" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+        <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="com" nsURI="http:///model/com.ecore" nsPrefix="model.com">
+    <eSubpackages name="bodkink" nsURI="http:///model/com/bodkink.ecore" nsPrefix="model.com.bodkink">
+      <eSubpackages name="hotel" nsURI="http:///model/com/bodkink/hotel.ecore" nsPrefix="model.com.bodkink.hotel">
+        <eSubpackages name="presentation" nsURI="http:///model/com/bodkink/hotel/presentation.ecore"
+            nsPrefix="model.com.bodkink.hotel.presentation"/>
+        <eSubpackages name="business" nsURI="http:///model/com/bodkink/hotel/business.ecore"
+            nsPrefix="model.com.bodkink.hotel.business">
+          <eClassifiers xsi:type="ecore:EClass" name="IGuestManagement" abstract="true"
+              interface="true">
+            <eOperations name="checkOut" ordered="false" lowerBound="1">
+              <eParameters name="booking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking"/>
+              <eParameters name="result" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+            </eOperations>
+            <eOperations name="checkIn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="roomReservation" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomReservation"/>
+              <eParameters name="guests" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Guest"/>
+            </eOperations>
+            <eOperations name="checkOut" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="roomReservation" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomReservation"/>
+            </eOperations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IRoomExtraManagement" abstract="true"
+              interface="true">
+            <eOperations name="createRoomExtra" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomExtra">
+              <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eOperations>
+            <eOperations name="editRoomExtra" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomExtra">
+              <eParameters name="roomExtra" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomExtra"/>
+            </eOperations>
+            <eOperations name="listRoomExtras" ordered="false" upperBound="-1" eType="#//com/bodkink/hotel/business/model/RoomExtra"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IRoomManagement" abstract="true"
+              interface="true">
+            <eOperations name="create" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room">
+              <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eParameters name="allowedGuest" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eParameters name="size" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+              <eParameters name="nightPrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+              <eParameters name="picUrls" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eParameters name="classification" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Classification"/>
+              <eParameters name="bedTypes" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+              <eParameters name="roomExtras" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomExtra"/>
+            </eOperations>
+            <eOperations name="listRooms" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room"/>
+            <eOperations name="editRoom" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room">
+              <eParameters name="room" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room"/>
+            </eOperations>
+            <eOperations name="disableRoom" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="roomId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eOperations>
+            <eOperations name="findRoom" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room">
+              <eParameters name="roomId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+            </eOperations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IServiceManagement" abstract="true"
+              interface="true">
+            <eOperations name="createService" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Service">
+              <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="width" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            </eOperations>
+            <eOperations name="editService" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Service">
+              <eParameters name="service" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Service"/>
+            </eOperations>
+            <eOperations name="listServices" ordered="false" upperBound="-1" eType="#//com/bodkink/hotel/business/model/Service"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IBedTypeManagement" abstract="true"
+              interface="true">
+            <eOperations name="createBedType" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BedType">
+              <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="length" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eParameters name="width" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eParameters name="noOfSleepingSpots" ordered="false" lowerBound="1"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            </eOperations>
+            <eOperations name="editBedType" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BedType">
+              <eParameters name="bedType" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BedType"/>
+            </eOperations>
+            <eOperations name="listBedTypes" ordered="false" upperBound="-1" eType="#//com/bodkink/hotel/business/model/BedType"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IBillableItemManagement" abstract="true"
+              interface="true">
+            <eOperations name="createBillableItem" ordered="false" lowerBound="1"
+                eType="#//com/bodkink/hotel/business/model/BillableItem">
+              <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            </eOperations>
+            <eOperations name="editBillableItem" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BillableItem">
+              <eParameters name="billableItem" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BillableItem"/>
+            </eOperations>
+            <eOperations name="listBillableItems" ordered="false" lowerBound="1">
+              <eParameters name="items" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BillableItem"/>
+            </eOperations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IBillingManagement" abstract="true"
+              interface="true">
+            <eOperations name="createRoomBill" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomBill">
+              <eParameters name="roomReservation" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomReservation"/>
+            </eOperations>
+            <eOperations name="createBookingBill" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BookingBill">
+              <eParameters name="booking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking"/>
+              <eParameters name="bookingBillType" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BookingBillType"/>
+            </eOperations>
+            <eOperations name="addBillableItem" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="roomBill" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomBill"/>
+              <eParameters name="item" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BillableItem"/>
+              <eParameters name="quantity" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            </eOperations>
+            <eOperations name="findRoomBill" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomBill">
+              <eParameters name="roomBillId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+            </eOperations>
+            <eOperations name="makePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="bill" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Bill"/>
+              <eParameters name="cardInformation" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/CardInformation"/>
+            </eOperations>
+            <eOperations name="generateReceipts" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Receipt">
+              <eParameters name="booking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking"/>
+            </eOperations>
+            <eOperations name="generateReceipt" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Receipt">
+              <eParameters name="bill" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Bill"/>
+            </eOperations>
+            <eOperations name="makePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="bill" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Bill"/>
+              <eParameters name="customer" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer"/>
+            </eOperations>
+            <eOperations name="makePayment" ordered="false" lowerBound="1">
+              <eParameters name="booking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking"/>
+              <eParameters name="result" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+            </eOperations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IBookingManagement" abstract="true"
+              interface="true">
+            <eOperations name="create" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking">
+              <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eParameters name="rooms" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room"/>
+              <eParameters name="numberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+              <eParameters name="customer" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer"/>
+            </eOperations>
+            <eOperations name="listBookings" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking"/>
+            <eOperations name="findBooking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking">
+              <eParameters name="bookingId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+            </eOperations>
+            <eOperations name="listBooking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking">
+              <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            </eOperations>
+            <eOperations name="listAvailableRooms" ordered="false" lowerBound="1">
+              <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eParameters name="endDate" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eParameters name="rooms" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room"/>
+            </eOperations>
+            <eOperations name="cancelBooking" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="booking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking"/>
+            </eOperations>
+            <eOperations name="getBookingStatus" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/ReservationStatusEnum">
+              <eParameters name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+            </eOperations>
+            <eOperations name="confirmAndPay" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Receipt">
+              <eParameters name="booking" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Booking"/>
+              <eParameters name="cardInformation" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/CardInformation"/>
+            </eOperations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="ICustomerManagement" abstract="true"
+              interface="true">
+            <eOperations name="createCustomer" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer">
+              <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="phone" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="email" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="birthYear" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            </eOperations>
+            <eOperations name="editCustomer" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer">
+              <eParameters name="customer" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer"/>
+            </eOperations>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IAccountManagement" abstract="true"
+              interface="true">
+            <eOperations name="createCustomerAccount" ordered="false" lowerBound="1">
+              <eParameters name="username" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="password" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="customer" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer"/>
+            </eOperations>
+            <eOperations name="createEmployeeAccount" ordered="false" lowerBound="1"
+                eType="#//com/bodkink/hotel/business/model/UserAccount">
+              <eParameters name="username" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="password" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="userGroup" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/UserGroupEnum"/>
+            </eOperations>
+            <eOperations name="editUserAccount" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/UserAccount">
+              <eParameters name="userAccount" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/UserAccount"/>
+            </eOperations>
+            <eOperations name="login" ordered="false" lowerBound="1">
+              <eParameters name="username" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eParameters name="password" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eOperations>
+            <eOperations name="isLoggedIn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+          </eClassifiers>
+          <eClassifiers xsi:type="ecore:EClass" name="IRoomReservationManagement"
+              abstract="true" interface="true">
+            <eOperations name="listRoomReservations" ordered="false" lowerBound="1"
+                eType="#//com/bodkink/hotel/business/model/RoomReservation"/>
+            <eOperations name="listRoomReservations" ordered="false" lowerBound="1"
+                eType="#//com/bodkink/hotel/business/model/RoomReservation">
+              <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            </eOperations>
+            <eOperations name="listRoomReservations" ordered="false" lowerBound="1"
+                eType="#//com/bodkink/hotel/business/model/RoomReservation">
+              <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            </eOperations>
+            <eOperations name="create" ordered="false" lowerBound="1">
+              <eParameters name="room" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room"/>
+              <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eParameters name="roomReservationType" ordered="false" lowerBound="1"
+                  eType="#//com/bodkink/hotel/business/model/RoomReservationType"/>
+            </eOperations>
+            <eOperations name="findRoomReservation" ordered="false" lowerBound="1"
+                eType="#//com/bodkink/hotel/business/model/RoomReservation">
+              <eParameters name="roomReservationId" ordered="false" lowerBound="1"
+                  eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eOperations>
+            <eOperations name="cancelRoomReservation" ordered="false" lowerBound="1"
+                eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+              <eParameters name="roomReservation" ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomReservation"/>
+            </eOperations>
+          </eClassifiers>
+          <eSubpackages name="model" nsURI="http:///model/com/bodkink/hotel/business/model.ecore"
+              nsPrefix="model.com.bodkink.hotel.business.model">
+            <eClassifiers xsi:type="ecore:EClass" name="Address">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="addressLine1"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="addressLine2"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="zipCode" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="BedType">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="places" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Bill" eSuperTypes="#//com/bodkink/hotel/business/model/IBill">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="billStatusEnum"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BillStatusEnum"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="cardInformation"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/CardInformation"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="BillStatusEnum">
+              <eLiterals name="PAID"/>
+              <eLiterals name="NOT_PAID" value="1"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="CardInformation">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="CardHolderName"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationDate"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="address" ordered="false"
+                  lowerBound="1" eType="#//com/bodkink/hotel/business/model/Address"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="IBill" abstract="true" interface="true"/>
+            <eClassifiers xsi:type="ecore:EClass" name="BillableItem">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Booking">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//Real"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
+                  lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roomReservation"
+                  ordered="false" upperBound="-1" eType="#//com/bodkink/hotel/business/model/RoomReservation"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="service" ordered="false"
+                  upperBound="-1" eType="#//com/bodkink/hotel/business/model/Service"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="bookingBill"
+                  ordered="false" upperBound="-1" eType="#//com/bodkink/hotel/business/model/BookingBill"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//com/bodkink/hotel/business/model/Person">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="phone" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="notes" ordered="false"
+                  upperBound="-1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="cardInformation"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/CardInformation"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Person">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="Surname" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="BirthYear" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RoomReservation">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="guest" ordered="false"
+                  upperBound="-1" eType="#//com/bodkink/hotel/business/model/Guest"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roomReservationType"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomReservationType"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false"
+                  lowerBound="1" eType="#//com/bodkink/hotel/business/model/Room"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roomBill" ordered="false"
+                  lowerBound="1" eType="#//com/bodkink/hotel/business/model/RoomBill"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="reservationStatusEnum"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/ReservationStatusEnum"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//com/bodkink/hotel/business/model/Person">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RoomReservationType">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Room">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="allowedGuests"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="nightPrice" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="pictures" ordered="false"
+                  upperBound="-1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="classification"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/Classification"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="bedType" ordered="false"
+                  upperBound="-1" eType="#//com/bodkink/hotel/business/model/BedType"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roomExtra" ordered="false"
+                  upperBound="-1" eType="#//com/bodkink/hotel/business/model/RoomExtra"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Classification">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RoomExtra">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RoomBill" eSuperTypes="#//com/bodkink/hotel/business/model/Bill">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="billableItem"
+                  ordered="false" upperBound="-1" eType="#//com/bodkink/hotel/business/model/BillableItem"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="ReservationStatusEnum">
+              <eLiterals name="CHECKED_IN"/>
+              <eLiterals name="CHECKED_OUT" value="1"/>
+              <eLiterals name="RESERVED" value="2"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Service">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="BookingBill" eSuperTypes="#//com/bodkink/hotel/business/model/Bill">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="bookingBillType"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/BookingBillType"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="BookingBillType">
+              <eLiterals name="RESERVATION_FEE"/>
+              <eLiterals name="FINALIZE" value="1"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="RoomExtraTemplate">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateName"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+              <eStructuralFeatures xsi:type="ecore:EReference" name="roomExtra" ordered="false"
+                  upperBound="-1" eType="#//com/bodkink/hotel/business/model/RoomExtra"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="Receipt">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="receiptItem"
+                  ordered="false" upperBound="-1" eType="#//com/bodkink/hotel/business/model/ReceiptItem"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ReceiptItem">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="description"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalAmount"
+                  ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="UserAccount">
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
+                  lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EEnum" name="UserGroupEnum">
+              <eLiterals name="ADMIN"/>
+              <eLiterals name="MANAGER" value="1"/>
+              <eLiterals name="CLERK" value="2"/>
+              <eLiterals name="CUSTOMER" value="3"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="CustomerUserAccount" eSuperTypes="#//com/bodkink/hotel/business/model/UserAccount">
+              <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
+                  lowerBound="1" eType="#//com/bodkink/hotel/business/model/Customer"/>
+              <eStructuralFeatures xsi:type="ecore:EAttribute" name="userGroupEnum"
+                  ordered="false" lowerBound="1" eType="#//com/bodkink/hotel/business/model/UserGroupEnum"/>
+            </eClassifiers>
+          </eSubpackages>
+          <eSubpackages name="logic" nsURI="http:///model/com/bodkink/hotel/business/logic.ecore"
+              nsPrefix="model.com.bodkink.hotel.business.logic">
+            <eClassifiers xsi:type="ecore:EClass" name="GuestManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IGuestManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="RoomExtraManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IRoomExtraManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="RoomManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IRoomManagement">
+              <eOperations name="listRoomReservations" ordered="false" lowerBound="1"
+                  eType="#//com/bodkink/hotel/business/model/RoomReservation"/>
+            </eClassifiers>
+            <eClassifiers xsi:type="ecore:EClass" name="ServiceManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IServiceManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="BedTypeManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IBedTypeManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="BillableItemManagementImpl"
+                eSuperTypes="#//com/bodkink/hotel/business/IBillableItemManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="BillingManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IBillingManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="BookingManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IBookingManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="CustomerManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/ICustomerManagement"/>
+            <eClassifiers xsi:type="ecore:EClass" name="AccountManagementImpl" eSuperTypes="#//com/bodkink/hotel/business/IAccountManagement"/>
+          </eSubpackages>
+        </eSubpackages>
+        <eSubpackages name="persistence" nsURI="http:///model/com/bodkink/hotel/persistence.ecore"
+            nsPrefix="model.com.bodkink.hotel.persistence"/>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>
