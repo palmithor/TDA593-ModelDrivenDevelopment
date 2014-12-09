@@ -17,6 +17,7 @@
 package conf;
 
 
+import com.bodkink.hotel.presentation.controllers.BedTypesController;
 import com.bodkink.hotel.presentation.controllers.RoomExtrasController;
 import com.bodkink.hotel.presentation.controllers.WebApp;
 import ninja.AssetsController;
@@ -41,6 +42,9 @@ public class Routes implements ApplicationRoutes {
 
         // Room extras endpoint
         router.GET().route("/api/room/extras").with(RoomExtrasController.class, "list");
+
+        // Bed types endpoint
+        router.GET().route("/api/bed/types").with(BedTypesController.class, "list");
     }
 
 }

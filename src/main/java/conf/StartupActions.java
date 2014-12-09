@@ -4,6 +4,7 @@ import com.bodkink.hotel.persistence.dao.BedTypeDAO;
 import com.bodkink.hotel.persistence.dao.ClassificationDAO;
 import com.bodkink.hotel.persistence.dao.RoomDAO;
 import com.bodkink.hotel.persistence.dao.RoomExtraDAO;
+import com.bodkink.hotel.persistence.model.BedTypeEntity;
 import com.bodkink.hotel.persistence.model.ClassificationEntity;
 import com.bodkink.hotel.persistence.model.CollectionNames;
 import com.bodkink.hotel.persistence.model.RoomExtraEntity;
@@ -42,7 +43,15 @@ public class StartupActions {
         if (ninjaProperties.isDev()) {
             dropAndCreateDefaultRoomExtras();
             dropAndCreateDefaultClassifications();
+            dropAndCreateDefaultBedTypes();
         }
+    }
+
+    private void dropAndCreateDefaultBedTypes() {
+        bedTypeDAO.getDatastore().getDB().getCollection(CollectionNames.BED_TYPE).drop();
+        bedTypeDAO.save(new BedTypeEntity(2, 200, 200, "King Size"));
+        bedTypeDAO.save(new BedTypeEntity(2, 140, 200, "Double"));
+        bedTypeDAO.save(new BedTypeEntity(1, 90, 200, "Single"));
     }
 
     private void dropAndCreateDefaultClassifications() {

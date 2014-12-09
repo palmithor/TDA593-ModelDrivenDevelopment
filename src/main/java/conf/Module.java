@@ -16,13 +16,17 @@
 
 package conf;
 
+import com.bodkink.hotel.business.IBedTypeManagement;
 import com.bodkink.hotel.business.IBookingManagement;
 import com.bodkink.hotel.business.IRoomExtraManagement;
+import com.bodkink.hotel.business.logic.BedTypeManagementImpl;
 import com.bodkink.hotel.business.logic.BookingManagementImpl;
 import com.bodkink.hotel.business.logic.RoomExtraManagementImpl;
+import com.bodkink.hotel.persistence.IBedTypeService;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.IRoomExtraService;
 import com.bodkink.hotel.persistence.dao.AddressDAO;
+import com.bodkink.hotel.persistence.service.BedTypeServiceImpl;
 import com.bodkink.hotel.persistence.service.BookingServiceImpl;
 import com.bodkink.hotel.persistence.service.RoomExtraServiceImpl;
 import com.google.inject.AbstractModule;
@@ -41,10 +45,13 @@ public class Module extends AbstractModule {
         // Management interfaces
         bind(IRoomExtraManagement.class).to(RoomExtraManagementImpl.class);
         bind(IBookingManagement.class).to(BookingManagementImpl.class);
+        bind(IBedTypeManagement.class).to(BedTypeManagementImpl.class);
 
         // persistence services
         bind(IBookingService.class).to(BookingServiceImpl.class);
         bind(IRoomExtraService.class).to(RoomExtraServiceImpl.class);
+        bind(IBedTypeService.class).to(BedTypeServiceImpl.class);
+
 
 
         // persistence dao

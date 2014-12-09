@@ -3,7 +3,8 @@ angular.module('webapp', [
     'ngResource',
     // app
     'webapp.todo',
-    'webapp.room.extras'
+    'webapp.room.extras',
+    'webapp.bed.types'
 ])
     .config(function ($routeProvider) {
         'use strict';
@@ -15,6 +16,10 @@ angular.module('webapp', [
             .when('/room/extras', {
                 controller: 'RoomExtrasCtrl',
                 templateUrl: '/webapp/roomextras/RoomExtrasTemplate.html'
+            })
+            .when('/bed/types', {
+                controller: 'BedTypesCtrl',
+                templateUrl: '/webapp/bedtypes/BedTypesTemplate.html'
             })
             .otherwise({
                 redirectTo: '/todo'
