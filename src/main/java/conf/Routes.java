@@ -40,7 +40,7 @@ public class Routes implements ApplicationRoutes {
         router.GET().route("/").with(WebApp.class, "index");
 
         // Room extras endpoint
-        router.GET().route("/roomextras/list").with(RoomExtrasController.class, "list");
+        router.GET().route("/api/room/extras").with(RoomExtrasController.class, "list");
     }
 
 }

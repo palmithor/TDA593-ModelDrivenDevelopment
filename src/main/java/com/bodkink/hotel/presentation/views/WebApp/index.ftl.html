@@ -1,24 +1,15 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html ng-app="webapp">
 <head>
     <meta charset="utf-8">
-    <title>test</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"/>
-    <link rel="stylesheet" href="/assets/bower/_bower.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Hotel Bodkink</title>
+    <link rel="stylesheet" href="/assets/webapp.min.css">
+    <link rel="stylesheet" href="/assets/vendors.min.css">
 </head>
+<body><h1>Hotel Bodkink</h1>
 
-<body ng-app="test">
-<h1>Welcome to Boom Angular.js Generator!</h1>
-
-
-<div ng-view></div>
-
-
-<script type="text/javascript" src="/assets/bower/_bower.js"></script>
-<script type="text/javascript" src="/assets/js/all.js"></script>
-<!-- endbuild -->
+<ng-view></ng-view>
+<script src="/assets/vendors.min.js"></script>
+<script src="/assets/webapp.min.js"></script>
 </body>
 </html>
