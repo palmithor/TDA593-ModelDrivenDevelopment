@@ -2,17 +2,17 @@
  */
 package org.eclipse.uml2.types.impl;
 
-import business.BusinessPackage;
+import com.bodkink.hotel.business.BusinessPackage;
 
-import business.impl.BusinessPackageImpl;
+import com.bodkink.hotel.business.impl.BusinessPackageImpl;
 
-import business.logic.LogicPackage;
+import com.bodkink.hotel.business.logic.LogicPackage;
 
-import business.logic.impl.LogicPackageImpl;
+import com.bodkink.hotel.business.logic.impl.LogicPackageImpl;
 
-import business.model.ModelPackage;
+import com.bodkink.hotel.business.model.ModelPackage;
 
-import business.model.impl.ModelPackageImpl;
+import com.bodkink.hotel.business.model.impl.ModelPackageImpl;
 
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
@@ -26,261 +26,248 @@ import org.eclipse.uml2.types.TypesPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- *
  * @generated
  */
 public class TypesPackageImpl extends EPackageImpl implements TypesPackage {
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private static boolean isInited = false;
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EDataType booleanEDataType = null;
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EDataType integerEDataType = null;
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EDataType realEDataType = null;
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EDataType unlimitedNaturalEDataType = null;
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private EDataType stringEDataType = null;
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private boolean isCreated = false;
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    private boolean isInitialized = false;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType booleanEDataType = null;
 
-    /**
-     * Creates an instance of the model <b>Package</b>, registered with
-     * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
-     * package URI value.
-     * <p>Note: the correct way to create the package is via the static
-     * factory method {@link #init init()}, which also performs
-     * initialization of the package, or returns the registered package,
-     * if one already exists.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     * @see org.eclipse.emf.ecore.EPackage.Registry
-     * @see org.eclipse.uml2.types.TypesPackage#eNS_URI
-     * @see #init()
-     */
-    private TypesPackageImpl() {
-        super(eNS_URI, TypesFactory.eINSTANCE);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType integerEDataType = null;
 
-    /**
-     * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-     * <p/>
-     * <p>This method is used to initialize {@link TypesPackage#eINSTANCE} when that field is accessed.
-     * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     * @see #eNS_URI
-     * @see #createPackageContents()
-     * @see #initializePackageContents()
-     */
-    public static TypesPackage init() {
-        if (isInited) return (TypesPackage) EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType realEDataType = null;
 
-        // Obtain or create and register package
-        TypesPackageImpl theTypesPackage = (TypesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TypesPackageImpl());
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType unlimitedNaturalEDataType = null;
 
-        isInited = true;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType stringEDataType = null;
 
-        // Obtain or create and register interdependencies
-        BusinessPackageImpl theBusinessPackage = (BusinessPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(BusinessPackage.eNS_URI) instanceof BusinessPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BusinessPackage.eNS_URI) : BusinessPackage.eINSTANCE);
-        ModelPackageImpl theModelPackage = (ModelPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI) instanceof ModelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI) : ModelPackage.eINSTANCE);
-        LogicPackageImpl theLogicPackage = (LogicPackageImpl) (EPackage.Registry.INSTANCE.getEPackage(LogicPackage.eNS_URI) instanceof LogicPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogicPackage.eNS_URI) : LogicPackage.eINSTANCE);
+	/**
+	 * Creates an instance of the model <b>Package</b>, registered with
+	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * package URI value.
+	 * <p>Note: the correct way to create the package is via the static
+	 * factory method {@link #init init()}, which also performs
+	 * initialization of the package, or returns the registered package,
+	 * if one already exists.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.EPackage.Registry
+	 * @see org.eclipse.uml2.types.TypesPackage#eNS_URI
+	 * @see #init()
+	 * @generated
+	 */
+	private TypesPackageImpl() {
+		super(eNS_URI, TypesFactory.eINSTANCE);
+	}
 
-        // Create package meta-data objects
-        theTypesPackage.createPackageContents();
-        theBusinessPackage.createPackageContents();
-        theModelPackage.createPackageContents();
-        theLogicPackage.createPackageContents();
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static boolean isInited = false;
 
-        // Initialize created meta-data
-        theTypesPackage.initializePackageContents();
-        theBusinessPackage.initializePackageContents();
-        theModelPackage.initializePackageContents();
-        theLogicPackage.initializePackageContents();
+	/**
+	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 * 
+	 * <p>This method is used to initialize {@link TypesPackage#eINSTANCE} when that field is accessed.
+	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #eNS_URI
+	 * @see #createPackageContents()
+	 * @see #initializePackageContents()
+	 * @generated
+	 */
+	public static TypesPackage init() {
+		if (isInited) return (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 
-        // Mark meta-data to indicate it can't be changed
-        theTypesPackage.freeze();
+		// Obtain or create and register package
+		TypesPackageImpl theTypesPackage = (TypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TypesPackageImpl());
 
+		isInited = true;
 
-        // Update the registry and return the package
-        EPackage.Registry.INSTANCE.put(TypesPackage.eNS_URI, theTypesPackage);
-        return theTypesPackage;
-    }
+		// Obtain or create and register interdependencies
+		BusinessPackageImpl theBusinessPackage = (BusinessPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(BusinessPackage.eNS_URI) instanceof BusinessPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(BusinessPackage.eNS_URI) : BusinessPackage.eINSTANCE);
+		ModelPackageImpl theModelPackage = (ModelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI) instanceof ModelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ModelPackage.eNS_URI) : ModelPackage.eINSTANCE);
+		LogicPackageImpl theLogicPackage = (LogicPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(LogicPackage.eNS_URI) instanceof LogicPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(LogicPackage.eNS_URI) : LogicPackage.eINSTANCE);
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public EDataType getBoolean() {
-        return booleanEDataType;
-    }
+		// Create package meta-data objects
+		theTypesPackage.createPackageContents();
+		theBusinessPackage.createPackageContents();
+		theModelPackage.createPackageContents();
+		theLogicPackage.createPackageContents();
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public EDataType getInteger() {
-        return integerEDataType;
-    }
+		// Initialize created meta-data
+		theTypesPackage.initializePackageContents();
+		theBusinessPackage.initializePackageContents();
+		theModelPackage.initializePackageContents();
+		theLogicPackage.initializePackageContents();
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public EDataType getReal() {
-        return realEDataType;
-    }
+		// Mark meta-data to indicate it can't be changed
+		theTypesPackage.freeze();
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public EDataType getUnlimitedNatural() {
-        return unlimitedNaturalEDataType;
-    }
+  
+		// Update the registry and return the package
+		EPackage.Registry.INSTANCE.put(TypesPackage.eNS_URI, theTypesPackage);
+		return theTypesPackage;
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public EDataType getString() {
-        return stringEDataType;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getBoolean() {
+		return booleanEDataType;
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public TypesFactory getTypesFactory() {
-        return (TypesFactory) getEFactoryInstance();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getInteger() {
+		return integerEDataType;
+	}
 
-    /**
-     * Creates the meta-model objects for the package.  This method is
-     * guarded to have no affect on any invocation but its first.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public void createPackageContents() {
-        if (isCreated) return;
-        isCreated = true;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getReal() {
+		return realEDataType;
+	}
 
-        // Create data types
-        booleanEDataType = createEDataType(BOOLEAN);
-        integerEDataType = createEDataType(INTEGER);
-        realEDataType = createEDataType(REAL);
-        unlimitedNaturalEDataType = createEDataType(UNLIMITED_NATURAL);
-        stringEDataType = createEDataType(STRING);
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getUnlimitedNatural() {
+		return unlimitedNaturalEDataType;
+	}
 
-    /**
-     * Complete the initialization of the package and its meta-model.  This
-     * method is guarded to have no affect on any invocation but its first.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public void initializePackageContents() {
-        if (isInitialized) return;
-        isInitialized = true;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getString() {
+		return stringEDataType;
+	}
 
-        // Initialize package
-        setName(eNAME);
-        setNsPrefix(eNS_PREFIX);
-        setNsURI(eNS_URI);
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypesFactory getTypesFactory() {
+		return (TypesFactory)getEFactoryInstance();
+	}
 
-        // Initialize data types
-        initEDataType(booleanEDataType, boolean.class, "Boolean", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-        initEDataType(integerEDataType, int.class, "Integer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-        initEDataType(realEDataType, double.class, "Real", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-        initEDataType(unlimitedNaturalEDataType, int.class, "UnlimitedNatural", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-        initEDataType(stringEDataType, String.class, "String", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isCreated = false;
 
-        // Create resource
-        createResource(eNS_URI);
+	/**
+	 * Creates the meta-model objects for the package.  This method is
+	 * guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void createPackageContents() {
+		if (isCreated) return;
+		isCreated = true;
 
-        // Create annotations
-        // http://www.eclipse.org/uml2/2.0.0/UML
-        createUMLAnnotations();
-    }
+		// Create data types
+		booleanEDataType = createEDataType(BOOLEAN);
+		integerEDataType = createEDataType(INTEGER);
+		realEDataType = createEDataType(REAL);
+		unlimitedNaturalEDataType = createEDataType(UNLIMITED_NATURAL);
+		stringEDataType = createEDataType(STRING);
+	}
 
-    /**
-     * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected void createUMLAnnotations() {
-        String source = "http://www.eclipse.org/uml2/2.0.0/UML";
-        addAnnotation
-                (this,
-                        source,
-                        new String[]{
-                                "originalName", "PrimitiveTypes"
-                        });
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isInitialized = false;
+
+	/**
+	 * Complete the initialization of the package and its meta-model.  This
+	 * method is guarded to have no affect on any invocation but its first.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void initializePackageContents() {
+		if (isInitialized) return;
+		isInitialized = true;
+
+		// Initialize package
+		setName(eNAME);
+		setNsPrefix(eNS_PREFIX);
+		setNsURI(eNS_URI);
+
+		// Initialize data types
+		initEDataType(booleanEDataType, boolean.class, "Boolean", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(integerEDataType, int.class, "Integer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(realEDataType, double.class, "Real", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(unlimitedNaturalEDataType, int.class, "UnlimitedNatural", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(stringEDataType, String.class, "String", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
+		// Create resource
+		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "originalName", "PrimitiveTypes"
+		   });
+	}
 
 } //TypesPackageImpl

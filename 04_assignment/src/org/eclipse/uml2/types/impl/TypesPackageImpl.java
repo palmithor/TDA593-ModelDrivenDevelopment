@@ -2,17 +2,17 @@
  */
 package org.eclipse.uml2.types.impl;
 
-import business.BusinessPackage;
+import com.bodkink.hotel.business.BusinessPackage;
 
-import business.impl.BusinessPackageImpl;
+import com.bodkink.hotel.business.impl.BusinessPackageImpl;
 
-import business.logic.LogicPackage;
+import com.bodkink.hotel.business.logic.LogicPackage;
 
-import business.logic.impl.LogicPackageImpl;
+import com.bodkink.hotel.business.logic.impl.LogicPackageImpl;
 
-import business.model.ModelPackage;
+import com.bodkink.hotel.business.model.ModelPackage;
 
-import business.model.impl.ModelPackageImpl;
+import com.bodkink.hotel.business.model.impl.ModelPackageImpl;
 
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
