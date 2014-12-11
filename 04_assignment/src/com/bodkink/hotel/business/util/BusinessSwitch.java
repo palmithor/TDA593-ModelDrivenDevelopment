@@ -3,6 +3,7 @@
 package com.bodkink.hotel.business.util;
 
 import com.bodkink.hotel.business.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 

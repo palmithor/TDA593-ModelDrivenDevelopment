@@ -29,7 +29,7 @@ public interface BusinessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "com/bodkink/hotel/business";
+	String eNAME = "business";
 
 	/**
 	 * The package namespace URI.
@@ -37,7 +37,7 @@ public interface BusinessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///business.ecore";
+	String eNS_URI = "http:///com/bodkink/hotel/business.ecore";
 
 	/**
 	 * The package namespace name.
@@ -45,7 +45,7 @@ public interface BusinessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "com/bodkink/hotel/business";
+	String eNS_PREFIX = "com.bodkink.hotel.business";
 
 	/**
 	 * The singleton instance of the package.

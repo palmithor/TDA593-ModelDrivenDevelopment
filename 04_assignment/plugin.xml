@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codeGen -->
       <package
-            uri="http:///com.bodkink.hotel.business.ecore"
+            uri="http:///com/bodkink/hotel/business.ecore"
             class="com.bodkink.hotel.business.BusinessPackage"
             genModel="codeGen.genmodel"/>
    </extension>
@@ -17,7 +17,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codeGen -->
       <package
-            uri="http:///business/model.ecore"
+            uri="http:///com/bodkink/hotel/business/model.ecore"
             class="com.bodkink.hotel.business.model.ModelPackage"
             genModel="codeGen.genmodel"/>
    </extension>
@@ -25,7 +25,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated codeGen -->
       <package
-            uri="http:///business/logic.ecore"
+            uri="http:///com/bodkink/hotel/business/logic.ecore"
             class="com.bodkink.hotel.business.logic.LogicPackage"
             genModel="codeGen.genmodel"/>
    </extension>

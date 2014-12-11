@@ -972,13 +972,5 @@
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_Mms74H5BEeSbRMfmy2L3fA" name="Realization0" client="_l--S0Xn7EeSsR_tFU0eXEQ" supplier="_l--S9nn7EeSsR_tFU0eXEQ" contract="_l--S9nn7EeSsR_tFU0eXEQ"/>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_NjG5wH5BEeSbRMfmy2L3fA" name="Realization1" client="_l--S0Xn7EeSsR_tFU0eXEQ" supplier="_l--S1Hn7EeSsR_tFU0eXEQ" contract="_l--S1Hn7EeSsR_tFU0eXEQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_3gTmcH17EeSPqMsbIcA9Lg" name="com">
-    <packagedElement xmi:type="uml:Package" xmi:id="_5WAj0H17EeSPqMsbIcA9Lg" name="bodkink">
-      <packagedElement xmi:type="uml:Package" xmi:id="_6RU8kH17EeSPqMsbIcA9Lg" name="hotel">
-        <packagedElement xmi:type="uml:Package" xmi:id="_8Y8JUH17EeSPqMsbIcA9Lg" name="presentation"/>
-        <packagedElement xmi:type="uml:Package" href="business.uml#_9-UywH17EeSPqMsbIcA9Lg"/>
-        <packagedElement xmi:type="uml:Package" xmi:id="_-sSE8H17EeSPqMsbIcA9Lg" name="persistence"/>
-      </packagedElement>
-    </packagedElement>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Package" href="com.uml#_3gTmcH17EeSPqMsbIcA9Lg"/>
 </uml:Model>

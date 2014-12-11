@@ -3,6 +3,7 @@
 package com.bodkink.hotel.business.util;
 
 import com.bodkink.hotel.business.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 

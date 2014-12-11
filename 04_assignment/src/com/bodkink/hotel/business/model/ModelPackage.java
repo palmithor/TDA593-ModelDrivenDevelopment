@@ -39,7 +39,7 @@ public interface ModelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///business/model.ecore";
+	String eNS_URI = "http:///com/bodkink/hotel/business/model.ecore";
 
 	/**
 	 * The package namespace name.
@@ -47,7 +47,7 @@ public interface ModelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "business.model";
+	String eNS_PREFIX = "com.bodkink.hotel.business.model";
 
 	/**
 	 * The singleton instance of the package.

@@ -38,7 +38,7 @@ public interface LogicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///business/logic.ecore";
+	String eNS_URI = "http:///com/bodkink/hotel/business/logic.ecore";
 
 	/**
 	 * The package namespace name.
@@ -46,7 +46,7 @@ public interface LogicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "business.logic";
+	String eNS_PREFIX = "com.bodkink.hotel.business.logic";
 
 	/**
 	 * The singleton instance of the package.
