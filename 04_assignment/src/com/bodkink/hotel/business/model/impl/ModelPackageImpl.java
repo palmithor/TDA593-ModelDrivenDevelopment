@@ -1563,6 +1563,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.CHECKED_IN);
 		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.CHECKED_OUT);
 		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.RESERVED);
+		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.CANCELED);
 
 		initEEnum(bookingBillTypeEEnum, BookingBillType.class, "BookingBillType");
 		addEEnumLiteral(bookingBillTypeEEnum, BookingBillType.RESERVATION_FEE);

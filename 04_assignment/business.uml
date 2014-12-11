@@ -292,6 +292,7 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fVqysHufEeSKovwTcU7VCQ" name="CHECKED_IN"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_SQkvQHugEeSKovwTcU7VCQ" name="CHECKED_OUT"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_UuAbAHugEeSKovwTcU7VCQ" name="RESERVED"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_XB0bMIFHEeS9mJsE6MGidw" name="CANCELED"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_7_5ggHu1EeSKovwTcU7VCQ" name="BookingBillType">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_arSPwHu2EeSKovwTcU7VCQ" name="RESERVATION_FEE"/>

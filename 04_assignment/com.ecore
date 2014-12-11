@@ -394,6 +394,7 @@
             <eLiterals name="CHECKED_IN"/>
             <eLiterals name="CHECKED_OUT" value="1"/>
             <eLiterals name="RESERVED" value="2"/>
+            <eLiterals name="CANCELED" value="3"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Service">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
