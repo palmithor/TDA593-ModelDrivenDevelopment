@@ -254,6 +254,7 @@
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/ReservationStatusEnum/CHECKED_IN"/>
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/ReservationStatusEnum/CHECKED_OUT"/>
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/ReservationStatusEnum/RESERVED"/>
+              <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/ReservationStatusEnum/CANCELED"/>
             </genEnums>
             <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="com.ecore#//bodkink/hotel/business/model/BookingBillType">
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/BookingBillType/RESERVATION_FEE"/>

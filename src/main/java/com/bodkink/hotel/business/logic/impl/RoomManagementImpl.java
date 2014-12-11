@@ -15,8 +15,6 @@ import java.math.BigDecimal;
 
 import java.util.Map;
 
-import com.bodkink.hotel.persistence.IRoomExtraService;
-import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -33,10 +31,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class RoomManagementImpl extends MinimalEObjectImpl.Container implements RoomManagement {
-
-	@Inject
-	public IRoomExtraService roomExtraService;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

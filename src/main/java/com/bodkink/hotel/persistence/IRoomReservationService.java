@@ -17,4 +17,10 @@ public interface IRoomReservationService {
     public EList<RoomReservation> list(Date start, Date end);
 
     public EList<RoomReservation> list(Date start);
+
+    public RoomReservation find(String id);
+
+    public boolean edit(RoomReservation roomReservation);
+
+    public RoomReservation persist(RoomReservation roomReservation);
 }

@@ -86,7 +86,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void create(Room room, Date start, Date end, RoomReservationType roomReservationType) {
+	public RoomReservation create(Room room, Date start, Date end, RoomReservationType roomReservationType) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -129,8 +129,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___LIST_ROOM_RESERVATIONS__DATE:
 				return listRoomReservations((Date)arguments.get(0));
 			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___CREATE__ROOM_DATE_DATE_ROOMRESERVATIONTYPE:
-				create((Room)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (RoomReservationType)arguments.get(3));
-				return null;
+				return create((Room)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (RoomReservationType)arguments.get(3));
 			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__STRING:
 				return findRoomReservation((String)arguments.get(0));
 			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING:

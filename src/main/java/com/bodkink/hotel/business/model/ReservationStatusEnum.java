@@ -46,7 +46,17 @@ public enum ReservationStatusEnum implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RESERVED(2, "RESERVED", "RESERVED");
+	RESERVED(2, "RESERVED", "RESERVED"),
+
+	/**
+	 * The '<em><b>CANCELED</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CANCELED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CANCELED(3, "CANCELED", "CANCELED");
 
 	/**
 	 * The '<em><b>CHECKED IN</b></em>' literal value.
@@ -94,6 +104,21 @@ public enum ReservationStatusEnum implements Enumerator {
 	public static final int RESERVED_VALUE = 2;
 
 	/**
+	 * The '<em><b>CANCELED</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>CANCELED</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #CANCELED
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CANCELED_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Reservation Status Enum</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +129,7 @@ public enum ReservationStatusEnum implements Enumerator {
 			CHECKED_IN,
 			CHECKED_OUT,
 			RESERVED,
+			CANCELED,
 		};
 
 	/**
@@ -157,6 +183,7 @@ public enum ReservationStatusEnum implements Enumerator {
 			case CHECKED_IN_VALUE: return CHECKED_IN;
 			case CHECKED_OUT_VALUE: return CHECKED_OUT;
 			case RESERVED_VALUE: return RESERVED;
+			case CANCELED_VALUE: return CANCELED;
 		}
 		return null;
 	}
