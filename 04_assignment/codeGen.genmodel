@@ -84,12 +84,6 @@
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomManagement/findRoom">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/findRoom/roomId"/>
             </genOperations>
-            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomManagement/searchRoom">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/searchRoom/numberOfGuests"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/searchRoom/numberOfRooms"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/searchRoom/start"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/searchRoom/end"/>
-            </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="com.ecore#//bodkink/hotel/business/IRoomReservationManagement">
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomReservationManagement/listRoomReservations"/>
@@ -209,6 +203,12 @@
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IBookingManagement/confirmAndPay">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/confirmAndPay/booking"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/confirmAndPay/cardInformation"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IBookingManagement/searchRoom">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/searchRoom/numberOfGuests"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/searchRoom/numberOfRooms"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/searchRoom/start"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/searchRoom/end"/>
             </genOperations>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="com.ecore#//bodkink/hotel/business/ICustomerManagement">

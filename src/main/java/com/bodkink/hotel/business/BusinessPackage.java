@@ -29,7 +29,7 @@ public interface BusinessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "com/bodkink/hotel/business";
+	String eNAME = "business";
 
 	/**
 	 * The package namespace URI.
@@ -37,7 +37,7 @@ public interface BusinessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///com.bodkink.hotel.business.ecore";
+	String eNS_URI = "http:///com/bodkink/hotel/business.ecore";
 
 	/**
 	 * The package namespace name.
@@ -45,7 +45,7 @@ public interface BusinessPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "com/bodkink/hotel/business";
+	String eNS_PREFIX = "com.bodkink.hotel.business";
 
 	/**
 	 * The singleton instance of the package.
@@ -686,13 +686,22 @@ public interface BusinessPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION = 7;
 
 	/**
+	 * The operation id for the '<em>Search Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE = 8;
+
+	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 8;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.ICustomerManagement <em>ICustomer Management</em>}' class.
@@ -1335,6 +1344,16 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBookingManagement__ConfirmAndPay__Booking_CardInformation();
 
 	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#searchRoom(int, int, java.util.Date, java.util.Date) <em>Search Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Search Room</em>' operation.
+	 * @see com.bodkink.hotel.business.IBookingManagement#searchRoom(int, int, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getIBookingManagement__SearchRoom__int_int_Date_Date();
+
+	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.ICustomerManagement <em>ICustomer Management</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1880,6 +1899,14 @@ public interface BusinessPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION = eINSTANCE.getIBookingManagement__ConfirmAndPay__Booking_CardInformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Search Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE = eINSTANCE.getIBookingManagement__SearchRoom__int_int_Date_Date();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.ICustomerManagement <em>ICustomer Management</em>}' class.

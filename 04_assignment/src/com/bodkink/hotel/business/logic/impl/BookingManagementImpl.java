@@ -145,6 +145,17 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Room> searchRoom(int numberOfGuests, int numberOfRooms, Date start, Date end) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
@@ -165,6 +176,8 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 				return getBookingStatus((String)arguments.get(0));
 			case LogicPackage.BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION:
 				return confirmAndPay((Booking)arguments.get(0), (CardInformation)arguments.get(1));
+			case LogicPackage.BOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE:
+				return searchRoom((Integer)arguments.get(0), (Integer)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

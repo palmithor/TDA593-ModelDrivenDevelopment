@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implements RoomExtraManagement {
-
 	@Inject
 	public IRoomExtraService roomExtraService;
 	/**
@@ -104,4 +103,5 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 	public void setRoomExtraService(IRoomExtraService roomExtraService) {
 				this.roomExtraService = roomExtraService;
 	}
+
 } //RoomExtraManagementImpl

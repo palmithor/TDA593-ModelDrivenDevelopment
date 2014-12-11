@@ -54,12 +54,6 @@
           <eOperations name="findRoom" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Room">
             <eParameters name="roomId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
-          <eOperations name="searchRoom" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Room">
-            <eParameters name="numberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
-            <eParameters name="numberOfRooms" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
-            <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-            <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="IRoomReservationManagement" abstract="true"
             interface="true">
@@ -190,6 +184,12 @@
           <eOperations name="confirmAndPay" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Receipt">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Booking"/>
             <eParameters name="cardInformation" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/CardInformation"/>
+          </eOperations>
+          <eOperations name="searchRoom" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Room">
+            <eParameters name="numberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            <eParameters name="numberOfRooms" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
           </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="ICustomerManagement" abstract="true"

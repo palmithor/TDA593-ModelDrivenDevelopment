@@ -38,7 +38,7 @@ public interface LogicPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http:///com.bodkink.hotel.business/logic.ecore";
+	String eNS_URI = "http:///com/bodkink/hotel/business/logic.ecore";
 
 	/**
 	 * The package namespace name.
@@ -685,6 +685,15 @@ public interface LogicPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION = BusinessPackage.IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION;
+
+	/**
+	 * The operation id for the '<em>Search Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE = BusinessPackage.IBOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE;
 
 	/**
 	 * The number of operations of the '<em>Booking Management</em>' class.

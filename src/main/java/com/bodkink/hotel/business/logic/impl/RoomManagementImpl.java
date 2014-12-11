@@ -13,9 +13,10 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
 
-import java.util.Date;
 import java.util.Map;
 
+import com.bodkink.hotel.persistence.IRoomExtraService;
+import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -32,6 +33,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class RoomManagementImpl extends MinimalEObjectImpl.Container implements RoomManagement {
+
+	@Inject
+	public IRoomExtraService roomExtraService;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,11 +109,6 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public EList<Room> searchRoom(int numberOfGuests, int numberOfRooms, Date start, Date end) {
-		return null;
 	}
 
 	/**

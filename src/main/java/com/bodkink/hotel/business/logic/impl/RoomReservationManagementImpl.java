@@ -13,8 +13,6 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Date;
 
-import com.bodkink.hotel.persistence.IRoomReservationService;
-import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -31,10 +29,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container implements RoomReservationManagement {
-
-	@Inject
-	IRoomReservationService roomReservationService;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -57,25 +51,34 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public EList<RoomReservation> listRoomReservations() {
-		return roomReservationService.list();
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public EList<RoomReservation> listRoomReservations(Date start, Date end) {
-		return roomReservationService.list(start, end);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public EList<RoomReservation> listRoomReservations(Date start) {
-		return roomReservationService.list(start);
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**

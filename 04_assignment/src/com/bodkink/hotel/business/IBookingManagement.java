@@ -91,4 +91,12 @@ public interface IBookingManagement extends EObject {
 	 */
 	Receipt confirmAndPay(Booking booking, CardInformation cardInformation);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" numberOfGuestsDataType="org.eclipse.uml2.types.Integer" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" numberOfRoomsDataType="org.eclipse.uml2.types.Integer" numberOfRoomsRequired="true" numberOfRoomsOrdered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false"
+	 * @generated
+	 */
+	EList<Room> searchRoom(int numberOfGuests, int numberOfRooms, Date start, Date end);
+
 } // IBookingManagement

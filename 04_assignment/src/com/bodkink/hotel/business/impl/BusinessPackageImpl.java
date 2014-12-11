@@ -321,15 +321,6 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIRoomManagement__SearchRoom__int_int_Date_Date() {
-		return iRoomManagementEClass.getEOperations().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIRoomReservationManagement() {
 		return iRoomReservationManagementEClass;
 	}
@@ -672,6 +663,15 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIBookingManagement__SearchRoom__int_int_Date_Date() {
+		return iBookingManagementEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getICustomerManagement() {
 		return iCustomerManagementEClass;
 	}
@@ -792,7 +792,6 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___EDIT_ROOM__ROOM);
 		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___DISABLE_ROOM__STRING);
 		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___FIND_ROOM__STRING);
-		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE);
 
 		iRoomReservationManagementEClass = createEClass(IROOM_RESERVATION_MANAGEMENT);
 		createEOperation(iRoomReservationManagementEClass, IROOM_RESERVATION_MANAGEMENT___LIST_ROOM_RESERVATIONS);
@@ -837,6 +836,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CANCEL_BOOKING__BOOKING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION);
+		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE);
 
 		iCustomerManagementEClass = createEClass(ICUSTOMER_MANAGEMENT);
 		createEOperation(iCustomerManagementEClass, ICUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT_CARDINFORMATION);
@@ -935,12 +935,6 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 
 		op = initEOperation(getIRoomManagement__FindRoom__String(), theModelPackage.getRoom(), "findRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "roomId", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIRoomManagement__SearchRoom__int_int_Date_Date(), theModelPackage.getRoom(), "searchRoom", 0, -1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getInteger(), "numberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getInteger(), "numberOfRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "start", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "end", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iRoomReservationManagementEClass, IRoomReservationManagement.class, "IRoomReservationManagement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1066,6 +1060,12 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		op = initEOperation(getIBookingManagement__ConfirmAndPay__Booking_CardInformation(), theModelPackage.getReceipt(), "confirmAndPay", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theModelPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theModelPackage.getCardInformation(), "cardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIBookingManagement__SearchRoom__int_int_Date_Date(), theModelPackage.getRoom(), "searchRoom", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getInteger(), "numberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getInteger(), "numberOfRooms", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "start", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "end", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iCustomerManagementEClass, ICustomerManagement.class, "ICustomerManagement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
