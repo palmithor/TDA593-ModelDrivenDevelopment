@@ -3,6 +3,7 @@ package com.bodkink.hotel.test;
 import com.bodkink.hotel.business.model.*;
 import org.apache.commons.lang.StringUtils;
 import org.bson.types.ObjectId;
+import org.eclipse.emf.common.util.BasicEList;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -16,7 +17,7 @@ public class ModelTestDataMock {
     public static final String PICTURE_URL = "http://www.doylecollection.com/var/doyle/storage/images/media/photo-galleries/the-dupont-circle-hotel-gallery/rooms/dupont-circle-hotel-superior-king-room/36016-1-eng-US/dupont-circle-hotel-superior-king-room_gallery_image.jpg";
 
     public static List<Room> getRooms() {
-        List<Room> roomEntities = new ArrayList<>();
+        List<Room> roomEntities = new BasicEList<>();
         List<Classification> classifications = getClassifications();
         List<BedType> bedTypes = getBedTypes();
         // Not pretty I know !
@@ -61,7 +62,7 @@ public class ModelTestDataMock {
     }
 
     public static List<RoomExtra> getRoomExtras() {
-        List<RoomExtra> roomExtras = new ArrayList<>();
+        List<RoomExtra> roomExtras = new BasicEList<>();
         RoomExtra roomExtraTv = ModelFactory.eINSTANCE.createRoomExtra();
         roomExtraTv.setId(ObjectId.get().toString());
         roomExtraTv.setTitle("42\" TV");
@@ -96,5 +97,20 @@ public class ModelTestDataMock {
         return bedTypes;
     }
 
+    public static List<RoomReservationType> getRoomReservationTypes() {
+        List<RoomReservationType> roomReservationTypes = new BasicEList<>();
+
+        RoomReservationType roomReservationTypeBooking = ModelFactory.eINSTANCE.createRoomReservationType();
+        roomReservationTypeBooking.setId(ObjectId.get().toString());
+        roomReservationTypeBooking.setType("Booking");
+
+        RoomReservationType roomReservationTypeMaintenance = ModelFactory.eINSTANCE.createRoomReservationType();
+        roomReservationTypeMaintenance.setId(ObjectId.get().toString());
+        roomReservationTypeMaintenance.setType("Maintenance");
+
+        roomReservationTypes.add(roomReservationTypeBooking);
+        roomReservationTypes.add(roomReservationTypeMaintenance);
+        return roomReservationTypes;
+    }
 
 }

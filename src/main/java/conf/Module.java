@@ -21,10 +21,12 @@ import com.bodkink.hotel.business.logic.impl.*;
 import com.bodkink.hotel.persistence.IBedTypeService;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.IRoomExtraService;
+import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.bodkink.hotel.persistence.dao.AddressDAO;
 import com.bodkink.hotel.persistence.service.BedTypeServiceImpl;
 import com.bodkink.hotel.persistence.service.BookingServiceImpl;
 import com.bodkink.hotel.persistence.service.RoomExtraServiceImpl;
+import com.bodkink.hotel.persistence.service.RoomReservationServiceImpl;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import org.reflections.Reflections;
@@ -40,9 +42,9 @@ public class Module extends AbstractModule {
 
         // Management interfaces
         bind(IRoomReservationManagement.class).to(RoomReservationManagementImpl.class); // SIMON
-        bind(IBookingManagement.class).to(BookingManagementImpl.class);                 // CARL / PALMITHOR
+        bind(IBookingManagement.class).to(BookingManagementImpl.class);                 // PALMITHOR
         bind(IGuestManagement.class).to(GuestManagementImpl.class);                     // MIKAEL
-        bind(IBillingManagement.class).to(BillingManagementImpl.class);                 // CARL / PALMITHOR
+        bind(IBillingManagement.class).to(BillingManagementImpl.class);                 // CARL
         bind(IBillableItemManagement.class).to(BillableItemManagementImpl.class);       // Sara
         bind(IServiceManagement.class).to(ServiceManagementImpl.class);                 // Linnéa
         bind(IRoomManagement.class).to(RoomManagementImpl.class);                       // Erik
@@ -57,6 +59,7 @@ public class Module extends AbstractModule {
         bind(IBookingService.class).to(BookingServiceImpl.class);
         bind(IRoomExtraService.class).to(RoomExtraServiceImpl.class);
         bind(IBedTypeService.class).to(BedTypeServiceImpl.class);
+        bind(IRoomReservationService.class).to(RoomReservationServiceImpl.class);
 
 
 

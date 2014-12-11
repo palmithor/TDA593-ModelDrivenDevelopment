@@ -1,11 +1,11 @@
-package com.mdsd.hotel.presentation.controllers.controllers;
+package com.bodkink.hotel.presentation.controllers.controllers;
 
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 
@@ -23,11 +23,7 @@ public class ApiControllerDocTesterTest extends NinjaDocTester {
         Response response = makeRequest(
                 Request.GET().url(
                         testServerUrl().path(URL_INDEX)));
-
-        assertThat(response.payload, containsString("Hello World!"));
-        assertThat(response.payload, containsString("BAM!"));
-
-
+        assertThat(response.httpStatus, is(200));
     }
 
     /*@Test
