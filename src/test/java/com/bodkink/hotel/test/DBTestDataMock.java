@@ -21,7 +21,7 @@ public class DBTestDataMock {
     public static List<RoomEntity> getRoomEntities() {
         List<RoomEntity> roomEntities = new ArrayList<>();
         List<ClassificationEntity> classifications = getClassificationEntities();
-        List<BedTypeEntity> bedTypes = getBetTypeEntities();
+        List<BedTypeEntity> bedTypes = getBedTypeEntities();
         // Not pretty I know !
         for (int i = 0; i < 30; i++) {
             final String roomNumber = StringUtils.leftPad(String.valueOf(i), 3, "0");
@@ -54,7 +54,7 @@ public class DBTestDataMock {
         }};
     }
 
-    public static List<BedTypeEntity> getBetTypeEntities() {
+    public static List<BedTypeEntity> getBedTypeEntities() {
         return new ArrayList<BedTypeEntity>() {{
             add(new BedTypeEntity(2, 160, 200, "Double Bed"));
             add(new BedTypeEntity(1, 90, 200, "Single Bed"));

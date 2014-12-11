@@ -15,10 +15,10 @@ public class ModelTestDataMock {
 
     public static final String PICTURE_URL = "http://www.doylecollection.com/var/doyle/storage/images/media/photo-galleries/the-dupont-circle-hotel-gallery/rooms/dupont-circle-hotel-superior-king-room/36016-1-eng-US/dupont-circle-hotel-superior-king-room_gallery_image.jpg";
 
-    public static List<Room> getRoomEntities() {
+    public static List<Room> getRooms() {
         List<Room> roomEntities = new ArrayList<>();
-        List<Classification> classifications = getClassificationEntities();
-        List<BedType> bedTypes = getBetTypeEntities();
+        List<Classification> classifications = getClassifications();
+        List<BedType> bedTypes = getBedTypes();
         // Not pretty I know !
         for (int i = 0; i < 30; i++) {
             final String roomNumber = StringUtils.leftPad(String.valueOf(i), 3, "0");
@@ -38,14 +38,14 @@ public class ModelTestDataMock {
             room.setNightPrice(nightPrice);
             room.getPictures().addAll(Arrays.asList(PICTURE_URL));
             room.setClassification(classifications.get(i % 2));
-            room.getRoomExtra().addAll(getRoomExtraEntities());
+            room.getRoomExtra().addAll(getRoomExtras());
             // TODO MAP ? room.getBedType();
             roomEntities.add(room);
         }
         return roomEntities;
     }
 
-    public static List<Classification> getClassificationEntities() {
+    public static List<Classification> getClassifications() {
         List<Classification> classifications = new ArrayList<Classification>();
         Classification aClass = ModelFactory.eINSTANCE.createClassification();
         aClass.setId(ObjectId.get().toString());
@@ -60,7 +60,7 @@ public class ModelTestDataMock {
         return classifications;
     }
 
-    public static List<RoomExtra> getRoomExtraEntities() {
+    public static List<RoomExtra> getRoomExtras() {
         List<RoomExtra> roomExtras = new ArrayList<>();
         RoomExtra roomExtraTv = ModelFactory.eINSTANCE.createRoomExtra();
         roomExtraTv.setId(ObjectId.get().toString());
@@ -75,7 +75,7 @@ public class ModelTestDataMock {
         return roomExtras;
     }
 
-    public static List<BedType> getBetTypeEntities() {
+    public static List<BedType> getBedTypes() {
         List<BedType> bedTypes = new ArrayList<BedType>();
         BedType single = ModelFactory.eINSTANCE.createBedType();
         single.setId(ObjectId.get().toString());
