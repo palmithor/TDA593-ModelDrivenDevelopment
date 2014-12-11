@@ -16,12 +16,8 @@
 
 package conf;
 
-import com.bodkink.hotel.business.IBedTypeManagement;
-import com.bodkink.hotel.business.IBookingManagement;
-import com.bodkink.hotel.business.IRoomExtraManagement;
-import com.bodkink.hotel.business.logic.impl.BedTypeManagementImpl;
-import com.bodkink.hotel.business.logic.impl.BookingManagementImpl;
-import com.bodkink.hotel.business.logic.impl.RoomExtraManagementImpl;
+import com.bodkink.hotel.business.*;
+import com.bodkink.hotel.business.logic.impl.*;
 import com.bodkink.hotel.persistence.IBedTypeService;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.IRoomExtraService;
@@ -46,6 +42,14 @@ public class Module extends AbstractModule {
         bind(IRoomExtraManagement.class).to(RoomExtraManagementImpl.class);
         bind(IBookingManagement.class).to(BookingManagementImpl.class);
         bind(IBedTypeManagement.class).to(BedTypeManagementImpl.class);
+        bind(IRoomReservationManagement.class).to(RoomReservationManagementImpl.class);
+        bind(IRoomManagement.class).to(RoomManagementImpl.class);
+        bind(IGuestManagement.class).to(GuestManagementImpl.class);
+        bind(IBillingManagement.class).to(BillingManagementImpl.class);
+        bind(IAccountManagement.class).to(AccountManagementImpl.class);
+        bind(ICustomerManagement.class).to(CustomerManagementImpl.class);
+        bind(IBillableItemManagement.class).to(BillableItemManagementImpl.class);
+        bind(IServiceManagement.class).to(ServiceManagementImpl.class);
 
         // persistence services
         bind(IBookingService.class).to(BookingServiceImpl.class);
