@@ -31,9 +31,10 @@ import static org.mockito.Mockito.when;
 public class BookingManagementImplTest {
 
     private static DateTime now = DateTime.now();
-    private static final DateInterval dateIntervalHalfAvailable = new DateInterval(now.minusDays(2).toDate(), now.plusDays(1).toDate());
+    private static final DateInterval dateIntervalHalfAvailable1 = new DateInterval(now.minusDays(2).toDate(), now.plusDays(1).toDate());
+    private static final DateInterval dateIntervalHalfAvailable2 = new DateInterval(now.minusDays(6).toDate(), now.minusDays(4).toDate());
     private static final DateInterval dateIntervalAllAvailable = new DateInterval(now.plusDays(20).toDate(), now.plusDays(23).toDate());
-    private static final DateInterval dateIntervalNoAvailable = new DateInterval(now.minusDays(2).toDate(), now.plusDays(24).toDate());
+    private static final DateInterval dateIntervalNoAvailable = new DateInterval(now.minusDays(7).toDate(), now.plusDays(24).toDate());
 
     List<Room> rooms = ModelTestDataMock.getRooms();
 
@@ -53,7 +54,7 @@ public class BookingManagementImplTest {
 
     @Test
     public void testListAvailableRoomsHalfAvailable() {
-        EList<Room> availableRooms = bookingManagement.listAvailableRooms(dateIntervalHalfAvailable.getStart(), dateIntervalHalfAvailable.getEnd());
+        EList<Room> availableRooms = bookingManagement.listAvailableRooms(dateIntervalHalfAvailable1.getStart(), dateIntervalHalfAvailable1.getEnd());
         assertThat(availableRooms.size(), is(rooms.size() / 2));
     }
 
@@ -69,6 +70,23 @@ public class BookingManagementImplTest {
         assertThat(availableRooms.size(), is(30));
     }
 
+    @Test
+    public void testSearchRoomsTooManyRooms() {
+        EList<Room> availableRooms = bookingManagement.searchRoom(1, 31, dateIntervalAllAvailable.getStart(), dateIntervalAllAvailable.getEnd());
+        assertThat(availableRooms.size(), is(0));
+    }
+
+    @Test
+    public void testSearchRoomsTooManyGuests() {
+        EList<Room> availableRooms = bookingManagement.searchRoom(76, 2, dateIntervalAllAvailable.getStart(), dateIntervalAllAvailable.getEnd());
+        assertThat(availableRooms.size(), is(0));
+    }
+
+    @Test
+    public void testSearchSuccess() {
+        EList<Room> availableRooms = bookingManagement.searchRoom(2, 4, dateIntervalAllAvailable.getStart(), dateIntervalAllAvailable.getEnd());
+        assertThat(availableRooms.size(), is(30));
+    }
 
     private IRoomReservationManagement mockRoomReservation() {
         IRoomReservationManagement roomReservationManagement = mock(IRoomReservationManagement.class);
@@ -76,8 +94,8 @@ public class BookingManagementImplTest {
         for (int i = 0; i < rooms.size(); i++) {
             RoomReservation r = ModelFactory.eINSTANCE.createRoomReservation();
             r.setId(ObjectId.get().toString());
-            r.setEndDate(i % 2 == 0 ? dateIntervalHalfAvailable.getEnd() : dateIntervalAllAvailable.getEnd());
-            r.setStartDate(i % 2 == 0 ? dateIntervalHalfAvailable.getStart() : dateIntervalAllAvailable.getStart());
+            r.setEndDate(i % 2 == 0 ? dateIntervalHalfAvailable1.getEnd() : dateIntervalHalfAvailable2.getEnd());
+            r.setStartDate(i % 2 == 0 ? dateIntervalHalfAvailable1.getStart() : dateIntervalHalfAvailable2.getStart());
             r.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
             r.setRoom(rooms.get(i));
             r.setRoomReservationType(ModelTestDataMock.getRoomReservationTypes().get(0));
@@ -96,7 +114,7 @@ public class BookingManagementImplTest {
             @Override
             public Room answer(InvocationOnMock invocationOnMock) throws Throwable {
                 String roomId = (String) invocationOnMock.getArguments()[0];
-                for (Room r : ModelTestDataMock.getRooms()) {
+                for (Room r : rooms) {
                     if (r.getId().equals(roomId)) {
                         return r;
                     }
