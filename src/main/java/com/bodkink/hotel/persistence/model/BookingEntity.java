@@ -52,6 +52,16 @@ public class BookingEntity {
         this.bookingBills = bookingBills;
     }
 
+   /* public BookingEntity(final ObjectId id, final Booking booking) {
+        this.id = id;
+        this.number = new BigDecimal(booking.getNumber()).longValue();
+        this.customer = new CustomerEntity(booking.getCustomer().getFirstName(), booking.getCustomer().getSurname(),
+                booking.getCustomer().getBirthYear(), booking.);
+        this.services = booking.getService();
+        this.roomReservations = roomReservations;
+        this.bookingBills = bookingBills;
+    }*/
+
     public ObjectId getId() {
         return id;
     }

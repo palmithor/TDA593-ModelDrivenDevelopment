@@ -4,16 +4,14 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.logic.RoomExtraManagement;
-
 import com.bodkink.hotel.business.model.RoomExtra;
+import com.bodkink.hotel.persistence.IRoomExtraService;
+import com.google.inject.Inject;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +23,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implements RoomExtraManagement {
+
+	@Inject
+	public IRoomExtraService roomExtraService;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,6 +75,7 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 	 */
 	public EList<RoomExtra> listRoomExtras() {
 		// TODO: implement this method
+		roomExtraService.listAll();
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
@@ -95,4 +98,8 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 		return super.eInvoke(operationID, arguments);
 	}
 
+
+	public void setRoomExtraService(IRoomExtraService roomExtraService) {
+		this.roomExtraService = roomExtraService;
+	}
 } //RoomExtraManagementImpl

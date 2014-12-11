@@ -39,17 +39,19 @@ public class Module extends AbstractModule {
         bind(StartupActions.class);
 
         // Management interfaces
+        bind(IRoomReservationManagement.class).to(RoomReservationManagementImpl.class); // SIMON
+        bind(IBookingManagement.class).to(BookingManagementImpl.class);                 // CARL / PALMITHOR
+        bind(IGuestManagement.class).to(GuestManagementImpl.class);                     // MIKAEL
+        bind(IBillingManagement.class).to(BillingManagementImpl.class);                 // CARL / PALMITHOR
+        bind(IBillableItemManagement.class).to(BillableItemManagementImpl.class);       // Sara
+        bind(IServiceManagement.class).to(ServiceManagementImpl.class);                 // Linnéa
+        bind(IRoomManagement.class).to(RoomManagementImpl.class);                       // Erik
+        bind(ICustomerManagement.class).to(CustomerManagementImpl.class);               // Caroline
+
+
         bind(IRoomExtraManagement.class).to(RoomExtraManagementImpl.class);
-        bind(IBookingManagement.class).to(BookingManagementImpl.class);
         bind(IBedTypeManagement.class).to(BedTypeManagementImpl.class);
-        bind(IRoomReservationManagement.class).to(RoomReservationManagementImpl.class);
-        bind(IRoomManagement.class).to(RoomManagementImpl.class);
-        bind(IGuestManagement.class).to(GuestManagementImpl.class);
-        bind(IBillingManagement.class).to(BillingManagementImpl.class);
         bind(IAccountManagement.class).to(AccountManagementImpl.class);
-        bind(ICustomerManagement.class).to(CustomerManagementImpl.class);
-        bind(IBillableItemManagement.class).to(BillableItemManagementImpl.class);
-        bind(IServiceManagement.class).to(ServiceManagementImpl.class);
 
         // persistence services
         bind(IBookingService.class).to(BookingServiceImpl.class);

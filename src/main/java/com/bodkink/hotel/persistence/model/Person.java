@@ -7,18 +7,18 @@ package com.bodkink.hotel.persistence.model;
 public abstract class Person {
     private final String firstName;
     private final String lastName;
-    private final Integer age;
+    private final Integer birthYear;
 
     public Person() {
         this.firstName = null;
         this.lastName = null;
-        this.age = null;
+        this.birthYear = null;
     }
 
-    public Person(final String firstName, final String lastName, final Integer age) {
+    public Person(final String firstName, final String lastName, final Integer birthYear) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
+        this.birthYear = birthYear;
     }
 
     public String getFirstName() {
@@ -29,7 +29,7 @@ public abstract class Person {
         return lastName;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getBirthYear() {
+        return birthYear;
     }
 }

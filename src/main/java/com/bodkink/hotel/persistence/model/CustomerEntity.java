@@ -43,6 +43,11 @@ public class CustomerEntity extends Person {
         this.notes = notes;
     }
 
+   /* public CustomerEntity(final ObjectId id, final Customer customer) {
+        this.id = id;
+
+    }*/
+
     public ObjectId getId() {
         return id;
     }
