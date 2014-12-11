@@ -50,10 +50,10 @@ public interface IRoomReservationManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomRequired="true" roomOrdered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomReservationTypeRequired="true" roomReservationTypeOrdered="false"
+	 * @model required="true" ordered="false" roomRequired="true" roomOrdered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomReservationTypeRequired="true" roomReservationTypeOrdered="false"
 	 * @generated
 	 */
-	void create(Room room, Date start, Date end, RoomReservationType roomReservationType);
+	RoomReservation create(Room room, Date start, Date end, RoomReservationType roomReservationType);
 
 	/**
 	 * <!-- begin-user-doc -->

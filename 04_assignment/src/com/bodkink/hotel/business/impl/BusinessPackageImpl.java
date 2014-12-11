@@ -947,7 +947,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		op = initEOperation(getIRoomReservationManagement__ListRoomReservations__Date(), theModelPackage.getRoomReservation(), "listRoomReservations", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "start", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIRoomReservationManagement__Create__Room_Date_Date_RoomReservationType(), null, "create", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIRoomReservationManagement__Create__Room_Date_Date_RoomReservationType(), theModelPackage.getRoomReservation(), "create", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theModelPackage.getRoom(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "start", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "end", 1, 1, IS_UNIQUE, !IS_ORDERED);

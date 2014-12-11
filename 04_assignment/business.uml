@@ -405,6 +405,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_TKV-8HuXEeSKovwTcU7VCQ" name="roomReservationType" type="_Ua6RIHk1EeSsOOo59CoEGw"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_GbInsIFFEeS9mJsE6MGidw" name="result" type="_b5BBcHk1EeSsOOo59CoEGw" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_rMdUIHuXEeSKovwTcU7VCQ" name="findRoomReservation">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_L23U0HuYEeSKovwTcU7VCQ" name="roomReservationId">

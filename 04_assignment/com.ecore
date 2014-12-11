@@ -68,7 +68,7 @@
               eType="#//bodkink/hotel/business/model/RoomReservation">
             <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
           </eOperations>
-          <eOperations name="create" ordered="false" lowerBound="1">
+          <eOperations name="create" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomReservation">
             <eParameters name="room" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Room"/>
             <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
