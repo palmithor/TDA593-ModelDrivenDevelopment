@@ -51,8 +51,6 @@ public class DBTestDataMock {
         return new ArrayList<RoomExtraEntity>() {{
             add(new RoomExtraEntity("42\" TV", "42\" Samsung flat screen television"));
             add(new RoomExtraEntity("Hairdryer", "Simple hairdryer"));
-            add(new RoomExtraEntity("Telephone", "Telephone for calling the room service"));
-            add(new RoomExtraEntity("Wifi", "Wireless internet connection"));
         }};
     }
 
