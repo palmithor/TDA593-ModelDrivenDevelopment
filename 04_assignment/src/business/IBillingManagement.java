@@ -13,6 +13,8 @@ import com.bodkink.hotel.business.model.Receipt;
 import com.bodkink.hotel.business.model.RoomBill;
 import com.bodkink.hotel.business.model.RoomReservation;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -53,10 +55,10 @@ public interface IBillingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomBillIdRequired="true" roomBillIdOrdered="false"
+	 * @model required="true" ordered="false" roomReservationIdRequired="true" roomReservationIdOrdered="false"
 	 * @generated
 	 */
-	RoomBill findRoomBill(long roomBillId);
+	RoomBill findRoomBill(String roomReservationId);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,10 +71,10 @@ public interface IBillingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
+	 * @model ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	Receipt generateReceipts(Booking booking);
+	EList<Receipt> generateReceipts(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,9 +95,9 @@ public interface IBillingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingRequired="true" bookingOrdered="false" resultRequired="true" resultOrdered="false"
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	void makePayment(Booking booking, boolean result);
+	boolean makePayment(Booking booking);
 
 } // IBillingManagement

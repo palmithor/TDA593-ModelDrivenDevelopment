@@ -22,10 +22,10 @@ public interface IGuestManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingRequired="true" bookingOrdered="false" resultRequired="true" resultOrdered="false"
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	void checkOut(Booking booking, boolean result);
+	boolean checkOut(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->

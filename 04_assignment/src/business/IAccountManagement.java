@@ -3,6 +3,7 @@
 package com.bodkink.hotel.business;
 
 import com.bodkink.hotel.business.model.Customer;
+import com.bodkink.hotel.business.model.CustomerUserAccount;
 import com.bodkink.hotel.business.model.UserAccount;
 import com.bodkink.hotel.business.model.UserGroupEnum;
 
@@ -22,18 +23,18 @@ public interface IAccountManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false" customerRequired="true" customerOrdered="false"
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	void createCustomerAccount(String username, String password, Customer customer);
+	CustomerUserAccount createCustomerAccount(String username, String password, Customer customer);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false" userGroupRequired="true" userGroupOrdered="false"
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false" userGroupRequired="true" userGroupOrdered="false"
 	 * @generated
 	 */
-	void createEmployeeAccount(String username, String password, UserGroupEnum userGroup);
+	UserAccount createEmployeeAccount(String username, String password, UserGroupEnum userGroup);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,10 +47,10 @@ public interface IAccountManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false"
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false"
 	 * @generated
 	 */
-	void login(String username, String password);
+	CustomerUserAccount login(String username, String password);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -73,7 +73,7 @@ public class BillableItemManagementImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void listBillableItems(BillableItem items) {
+	public EList<BillableItem> listBillableItems() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -91,9 +91,8 @@ public class BillableItemManagementImpl extends MinimalEObjectImpl.Container imp
 				return createBillableItem((String)arguments.get(0), (BigDecimal)arguments.get(1));
 			case LogicPackage.BILLABLE_ITEM_MANAGEMENT___EDIT_BILLABLE_ITEM__BILLABLEITEM:
 				return editBillableItem((BillableItem)arguments.get(0));
-			case LogicPackage.BILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS__BILLABLEITEM:
-				listBillableItems((BillableItem)arguments.get(0));
-				return null;
+			case LogicPackage.BILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS:
+				return listBillableItems();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

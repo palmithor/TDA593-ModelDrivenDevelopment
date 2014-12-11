@@ -10,6 +10,8 @@ import java.math.BigDecimal;
 
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,18 +28,18 @@ public interface IRoomManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomNumberDataType="org.eclipse.uml2.types.String" roomNumberRequired="true" roomNumberOrdered="false" descriptionDataType="org.eclipse.uml2.types.String" descriptionRequired="true" descriptionOrdered="false" allowedGuestRequired="true" allowedGuestOrdered="false" sizeRequired="true" sizeOrdered="false" nightPriceRequired="true" nightPriceOrdered="false" picUrlsDataType="org.eclipse.uml2.types.String" picUrlsRequired="true" picUrlsOrdered="false" classificationRequired="true" classificationOrdered="false" bedTypesRequired="true" bedTypesOrdered="false" roomExtrasRequired="true" roomExtrasOrdered="false"
+	 * @model required="true" ordered="false" roomNumberDataType="org.eclipse.uml2.types.String" roomNumberRequired="true" roomNumberOrdered="false" descriptionDataType="org.eclipse.uml2.types.String" descriptionRequired="true" descriptionOrdered="false" allowedGuestRequired="true" allowedGuestOrdered="false" sizeRequired="true" sizeOrdered="false" nightPriceRequired="true" nightPriceOrdered="false" picUrlsDataType="org.eclipse.uml2.types.String" picUrlsRequired="true" picUrlsOrdered="false" classificationRequired="true" classificationOrdered="false" bedTypesRequired="true" bedTypesOrdered="false" roomExtrasMany="true" roomExtrasOrdered="false"
 	 * @generated
 	 */
-	Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, RoomExtra roomExtras);
+	Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, EList<RoomExtra> roomExtras);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	Room listRooms();
+	EList<Room> listRooms();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -53,7 +55,7 @@ public interface IRoomManagement extends EObject {
 	 * @model required="true" ordered="false" roomIdRequired="true" roomIdOrdered="false"
 	 * @generated
 	 */
-	boolean disableRoom(long roomId);
+	boolean disableRoom(String roomId);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,6 +63,6 @@ public interface IRoomManagement extends EObject {
 	 * @model required="true" ordered="false" roomIdRequired="true" roomIdOrdered="false"
 	 * @generated
 	 */
-	Room findRoom(long roomId);
+	Room findRoom(String roomId);
 
 } // IRoomManagement

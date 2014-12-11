@@ -11,6 +11,7 @@ import com.bodkink.hotel.business.model.Customer;
 import com.bodkink.hotel.business.model.Receipt;
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.business.model.Room;
+import com.bodkink.hotel.business.model.Service;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -56,7 +57,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking create(Date start, Date end, Room rooms, int numberOfGuests, Customer customer) {
+	public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, int numberOfGuests, Customer customer) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -67,7 +68,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking listBookings() {
+	public EList<Booking> listBookings() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -78,7 +79,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking findBooking(long bookingId) {
+	public Booking findBooking(String bookingId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -89,7 +90,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking listBooking(Date start) {
+	public EList<Booking> listBookings(Date start) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -100,7 +101,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void listAvailableRooms(Date start, Date endDate, Room rooms) {
+	public EList<Room> listAvailableRooms(Date start, Date endDate) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -122,7 +123,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReservationStatusEnum getBookingStatus(long id) {
+	public ReservationStatusEnum getBookingStatus(String bookingId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,23 +146,23 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LogicPackage.BOOKING_MANAGEMENT___CREATE__DATE_DATE_ROOM_INT_CUSTOMER:
-				return create((Date)arguments.get(0), (Date)arguments.get(1), (Room)arguments.get(2), (Integer)arguments.get(3), (Customer)arguments.get(4));
+			case LogicPackage.BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER:
+				return create((Date)arguments.get(0), (Date)arguments.get(1), (EList<Room>)arguments.get(2), (EList<Service>)arguments.get(3), (Integer)arguments.get(4), (Customer)arguments.get(5));
 			case LogicPackage.BOOKING_MANAGEMENT___LIST_BOOKINGS:
 				return listBookings();
-			case LogicPackage.BOOKING_MANAGEMENT___FIND_BOOKING__LONG:
-				return findBooking((Long)arguments.get(0));
-			case LogicPackage.BOOKING_MANAGEMENT___LIST_BOOKING__DATE:
-				return listBooking((Date)arguments.get(0));
-			case LogicPackage.BOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE_ROOM:
-				listAvailableRooms((Date)arguments.get(0), (Date)arguments.get(1), (Room)arguments.get(2));
-				return null;
+			case LogicPackage.BOOKING_MANAGEMENT___FIND_BOOKING__STRING:
+				return findBooking((String)arguments.get(0));
+			case LogicPackage.BOOKING_MANAGEMENT___LIST_BOOKINGS__DATE:
+				return listBookings((Date)arguments.get(0));
+			case LogicPackage.BOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE:
+				return listAvailableRooms((Date)arguments.get(0), (Date)arguments.get(1));
 			case LogicPackage.BOOKING_MANAGEMENT___CANCEL_BOOKING__BOOKING:
 				return cancelBooking((Booking)arguments.get(0));
-			case LogicPackage.BOOKING_MANAGEMENT___GET_BOOKING_STATUS__LONG:
-				return getBookingStatus((Long)arguments.get(0));
+			case LogicPackage.BOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING:
+				return getBookingStatus((String)arguments.get(0));
 			case LogicPackage.BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION:
 				return confirmAndPay((Booking)arguments.get(0), (CardInformation)arguments.get(1));
 		}

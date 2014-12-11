@@ -35,7 +35,6 @@
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="business.ecore#//IGuestManagement">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IGuestManagement/checkOut">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IGuestManagement/checkOut/booking"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IGuestManagement/checkOut/result"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IGuestManagement/checkIn">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IGuestManagement/checkIn/roomReservation"/>
@@ -97,7 +96,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IRoomReservationManagement/findRoomReservation/roomReservationId"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IRoomReservationManagement/cancelRoomReservation">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IRoomReservationManagement/cancelRoomReservation/roomReservation"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IRoomReservationManagement/cancelRoomReservation/roomReservationId"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="business.ecore#//IServiceManagement">
@@ -131,9 +130,7 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBillableItemManagement/editBillableItem">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillableItemManagement/editBillableItem/billableItem"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBillableItemManagement/listBillableItems">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillableItemManagement/listBillableItems/items"/>
-      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBillableItemManagement/listBillableItems"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="business.ecore#//IBillingManagement">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBillingManagement/createRoomBill">
@@ -149,7 +146,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillingManagement/addBillableItem/quantity"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBillingManagement/findRoomBill">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillingManagement/findRoomBill/roomBillId"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillingManagement/findRoomBill/roomReservationId"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBillingManagement/makePayment">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillingManagement/makePayment/bill"/>
@@ -167,7 +164,6 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBillingManagement/makePayment.2">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillingManagement/makePayment.2/booking"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBillingManagement/makePayment.2/result"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="business.ecore#//IBookingManagement">
@@ -175,6 +171,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/create/start"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/create/end"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/create/rooms"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/create/services"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/create/numberOfGuests"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/create/customer"/>
       </genOperations>
@@ -182,19 +179,18 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBookingManagement/findBooking">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/findBooking/bookingId"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBookingManagement/listBooking">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/listBooking/start"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBookingManagement/listBookings.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/listBookings.1/start"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBookingManagement/listAvailableRooms">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/listAvailableRooms/start"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/listAvailableRooms/endDate"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/listAvailableRooms/rooms"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBookingManagement/cancelBooking">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/cancelBooking/booking"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBookingManagement/getBookingStatus">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/getBookingStatus/id"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/getBookingStatus/bookingId"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//IBookingManagement/confirmAndPay">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//IBookingManagement/confirmAndPay/booking"/>
@@ -208,6 +204,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//ICustomerManagement/createCustomer/phone"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//ICustomerManagement/createCustomer/email"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//ICustomerManagement/createCustomer/birthYear"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//ICustomerManagement/createCustomer/cardInformation"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="business.ecore#//ICustomerManagement/editCustomer">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="business.ecore#//ICustomerManagement/editCustomer/customer"/>

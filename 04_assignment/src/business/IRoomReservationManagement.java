@@ -8,6 +8,8 @@ import com.bodkink.hotel.business.model.RoomReservationType;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,26 +26,26 @@ public interface IRoomReservationManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	RoomReservation listRoomReservations();
+	EList<RoomReservation> listRoomReservations();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false"
+	 * @model ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false"
 	 * @generated
 	 */
-	RoomReservation listRoomReservations(Date start, Date end);
+	EList<RoomReservation> listRoomReservations(Date start, Date end);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" startRequired="true" startOrdered="false"
+	 * @model ordered="false" startRequired="true" startOrdered="false"
 	 * @generated
 	 */
-	RoomReservation listRoomReservations(Date start);
+	EList<RoomReservation> listRoomReservations(Date start);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -59,14 +61,14 @@ public interface IRoomReservationManagement extends EObject {
 	 * @model required="true" ordered="false" roomReservationIdRequired="true" roomReservationIdOrdered="false"
 	 * @generated
 	 */
-	RoomReservation findRoomReservation(long roomReservationId);
+	RoomReservation findRoomReservation(String roomReservationId);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomReservationRequired="true" roomReservationOrdered="false"
+	 * @model required="true" ordered="false" roomReservationIdRequired="true" roomReservationIdOrdered="false"
 	 * @generated
 	 */
-	boolean cancelRoomReservation(RoomReservation roomReservation);
+	boolean cancelRoomReservation(String roomReservationId);
 
 } // IRoomReservationManagement

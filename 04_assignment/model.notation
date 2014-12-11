@@ -4365,7 +4365,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ja3asnygEeSCEIupwR-iAQ"/>
       </children>
       <element xmi:type="uml:Interaction" href="model.uml#_g_m4MHygEeSCEIupwR-iAQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ja3as3ygEeSCEIupwR-iAQ" x="-290" width="5085" height="2472"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ja3as3ygEeSCEIupwR-iAQ" x="-290" width="5085" height="2473"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_ja3atHygEeSCEIupwR-iAQ" name="diagram_compatibility_version" stringValue="1.0.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_ja3atXygEeSCEIupwR-iAQ"/>

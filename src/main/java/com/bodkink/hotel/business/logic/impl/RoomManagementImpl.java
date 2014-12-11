@@ -55,7 +55,7 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, RoomExtra roomExtras) {
+	public Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, EList<RoomExtra> roomExtras) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -66,7 +66,7 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room listRooms() {
+	public EList<Room> listRooms() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -88,7 +88,7 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean disableRoom(long roomId) {
+	public boolean disableRoom(String roomId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -99,7 +99,7 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Room findRoom(long roomId) {
+	public Room findRoom(String roomId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -111,18 +111,19 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LogicPackage.ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRA:
-				return create((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (BigDecimal)arguments.get(3), (BigDecimal)arguments.get(4), (String)arguments.get(5), (Classification)arguments.get(6), (Map)arguments.get(7), (RoomExtra)arguments.get(8));
+			case LogicPackage.ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST:
+				return create((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (BigDecimal)arguments.get(3), (BigDecimal)arguments.get(4), (String)arguments.get(5), (Classification)arguments.get(6), (Map)arguments.get(7), (EList<RoomExtra>)arguments.get(8));
 			case LogicPackage.ROOM_MANAGEMENT___LIST_ROOMS:
 				return listRooms();
 			case LogicPackage.ROOM_MANAGEMENT___EDIT_ROOM__ROOM:
 				return editRoom((Room)arguments.get(0));
-			case LogicPackage.ROOM_MANAGEMENT___DISABLE_ROOM__LONG:
-				return disableRoom((Long)arguments.get(0));
-			case LogicPackage.ROOM_MANAGEMENT___FIND_ROOM__LONG:
-				return findRoom((Long)arguments.get(0));
+			case LogicPackage.ROOM_MANAGEMENT___DISABLE_ROOM__STRING:
+				return disableRoom((String)arguments.get(0));
+			case LogicPackage.ROOM_MANAGEMENT___FIND_ROOM__STRING:
+				return findRoom((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

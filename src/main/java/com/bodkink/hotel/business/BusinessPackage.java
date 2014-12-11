@@ -81,7 +81,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IGUEST_MANAGEMENT___CHECK_OUT__BOOKING_BOOLEAN = 0;
+	int IGUEST_MANAGEMENT___CHECK_OUT__BOOKING = 0;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -191,7 +191,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRA = 0;
+	int IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST = 0;
 
 	/**
 	 * The operation id for the '<em>List Rooms</em>' operation.
@@ -218,7 +218,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT___DISABLE_ROOM__LONG = 3;
+	int IROOM_MANAGEMENT___DISABLE_ROOM__STRING = 3;
 
 	/**
 	 * The operation id for the '<em>Find Room</em>' operation.
@@ -227,7 +227,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT___FIND_ROOM__LONG = 4;
+	int IROOM_MANAGEMENT___FIND_ROOM__STRING = 4;
 
 	/**
 	 * The number of operations of the '<em>IRoom Management</em>' class.
@@ -300,7 +300,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__LONG = 4;
+	int IROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__STRING = 4;
 
 	/**
 	 * The operation id for the '<em>Cancel Room Reservation</em>' operation.
@@ -309,7 +309,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__ROOMRESERVATION = 5;
+	int IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING = 5;
 
 	/**
 	 * The number of operations of the '<em>IRoom Reservation Management</em>' class.
@@ -474,7 +474,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS__BILLABLEITEM = 2;
+	int IBILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS = 2;
 
 	/**
 	 * The number of operations of the '<em>IBillable Item Management</em>' class.
@@ -538,7 +538,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBILLING_MANAGEMENT___FIND_ROOM_BILL__LONG = 3;
+	int IBILLING_MANAGEMENT___FIND_ROOM_BILL__STRING = 3;
 
 	/**
 	 * The operation id for the '<em>Make Payment</em>' operation.
@@ -583,7 +583,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING_BOOLEAN = 8;
+	int IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING = 8;
 
 	/**
 	 * The number of operations of the '<em>IBilling Management</em>' class.
@@ -620,7 +620,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ROOM_INT_CUSTOMER = 0;
+	int IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER = 0;
 
 	/**
 	 * The operation id for the '<em>List Bookings</em>' operation.
@@ -638,16 +638,16 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___FIND_BOOKING__LONG = 2;
+	int IBOOKING_MANAGEMENT___FIND_BOOKING__STRING = 2;
 
 	/**
-	 * The operation id for the '<em>List Booking</em>' operation.
+	 * The operation id for the '<em>List Bookings</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___LIST_BOOKING__DATE = 3;
+	int IBOOKING_MANAGEMENT___LIST_BOOKINGS__DATE = 3;
 
 	/**
 	 * The operation id for the '<em>List Available Rooms</em>' operation.
@@ -656,7 +656,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE_ROOM = 4;
+	int IBOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE = 4;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -674,7 +674,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__LONG = 6;
+	int IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING = 6;
 
 	/**
 	 * The operation id for the '<em>Confirm And Pay</em>' operation.
@@ -720,7 +720,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT = 0;
+	int ICUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT_CARDINFORMATION = 0;
 
 	/**
 	 * The operation id for the '<em>Edit Customer</em>' operation.
@@ -825,14 +825,14 @@ public interface BusinessPackage extends EPackage {
 	EClass getIGuestManagement();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IGuestManagement#checkOut(com.bodkink.hotel.business.model.Booking, boolean) <em>Check Out</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IGuestManagement#checkOut(com.bodkink.hotel.business.model.Booking) <em>Check Out</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check Out</em>' operation.
-	 * @see com.bodkink.hotel.business.IGuestManagement#checkOut(com.bodkink.hotel.business.model.Booking, boolean)
+	 * @see com.bodkink.hotel.business.IGuestManagement#checkOut(com.bodkink.hotel.business.model.Booking)
 	 * @generated
 	 */
-	EOperation getIGuestManagement__CheckOut__Booking_boolean();
+	EOperation getIGuestManagement__CheckOut__Booking();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IGuestManagement#checkIn(com.bodkink.hotel.business.model.RoomReservation, com.bodkink.hotel.business.model.Guest) <em>Check In</em>}' operation.
@@ -905,14 +905,14 @@ public interface BusinessPackage extends EPackage {
 	EClass getIRoomManagement();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#create(java.lang.String, java.lang.String, int, java.math.BigDecimal, java.math.BigDecimal, java.lang.String, com.bodkink.hotel.business.model.Classification, java.util.Map, com.bodkink.hotel.business.model.RoomExtra) <em>Create</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#create(java.lang.String, java.lang.String, int, java.math.BigDecimal, java.math.BigDecimal, java.lang.String, com.bodkink.hotel.business.model.Classification, java.util.Map, org.eclipse.emf.common.util.EList) <em>Create</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create</em>' operation.
-	 * @see com.bodkink.hotel.business.IRoomManagement#create(java.lang.String, java.lang.String, int, java.math.BigDecimal, java.math.BigDecimal, java.lang.String, com.bodkink.hotel.business.model.Classification, java.util.Map, com.bodkink.hotel.business.model.RoomExtra)
+	 * @see com.bodkink.hotel.business.IRoomManagement#create(java.lang.String, java.lang.String, int, java.math.BigDecimal, java.math.BigDecimal, java.lang.String, com.bodkink.hotel.business.model.Classification, java.util.Map, org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_RoomExtra();
+	EOperation getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_EList();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#listRooms() <em>List Rooms</em>}' operation.
@@ -935,24 +935,24 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIRoomManagement__EditRoom__Room();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#disableRoom(long) <em>Disable Room</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#disableRoom(java.lang.String) <em>Disable Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Disable Room</em>' operation.
-	 * @see com.bodkink.hotel.business.IRoomManagement#disableRoom(long)
+	 * @see com.bodkink.hotel.business.IRoomManagement#disableRoom(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIRoomManagement__DisableRoom__long();
+	EOperation getIRoomManagement__DisableRoom__String();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#findRoom(long) <em>Find Room</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#findRoom(java.lang.String) <em>Find Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Find Room</em>' operation.
-	 * @see com.bodkink.hotel.business.IRoomManagement#findRoom(long)
+	 * @see com.bodkink.hotel.business.IRoomManagement#findRoom(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIRoomManagement__FindRoom__long();
+	EOperation getIRoomManagement__FindRoom__String();
 
 	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IRoomReservationManagement <em>IRoom Reservation Management</em>}'.
@@ -1005,24 +1005,24 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIRoomReservationManagement__Create__Room_Date_Date_RoomReservationType();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomReservationManagement#findRoomReservation(long) <em>Find Room Reservation</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomReservationManagement#findRoomReservation(java.lang.String) <em>Find Room Reservation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Find Room Reservation</em>' operation.
-	 * @see com.bodkink.hotel.business.IRoomReservationManagement#findRoomReservation(long)
+	 * @see com.bodkink.hotel.business.IRoomReservationManagement#findRoomReservation(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIRoomReservationManagement__FindRoomReservation__long();
+	EOperation getIRoomReservationManagement__FindRoomReservation__String();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomReservationManagement#cancelRoomReservation(com.bodkink.hotel.business.model.RoomReservation) <em>Cancel Room Reservation</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomReservationManagement#cancelRoomReservation(java.lang.String) <em>Cancel Room Reservation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Cancel Room Reservation</em>' operation.
-	 * @see com.bodkink.hotel.business.IRoomReservationManagement#cancelRoomReservation(com.bodkink.hotel.business.model.RoomReservation)
+	 * @see com.bodkink.hotel.business.IRoomReservationManagement#cancelRoomReservation(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIRoomReservationManagement__CancelRoomReservation__RoomReservation();
+	EOperation getIRoomReservationManagement__CancelRoomReservation__String();
 
 	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IServiceManagement <em>IService Management</em>}'.
@@ -1135,14 +1135,14 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBillableItemManagement__EditBillableItem__BillableItem();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillableItemManagement#listBillableItems(com.bodkink.hotel.business.model.BillableItem) <em>List Billable Items</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillableItemManagement#listBillableItems() <em>List Billable Items</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>List Billable Items</em>' operation.
-	 * @see com.bodkink.hotel.business.IBillableItemManagement#listBillableItems(com.bodkink.hotel.business.model.BillableItem)
+	 * @see com.bodkink.hotel.business.IBillableItemManagement#listBillableItems()
 	 * @generated
 	 */
-	EOperation getIBillableItemManagement__ListBillableItems__BillableItem();
+	EOperation getIBillableItemManagement__ListBillableItems();
 
 	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IBillingManagement <em>IBilling Management</em>}'.
@@ -1185,14 +1185,14 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBillingManagement__AddBillableItem__RoomBill_BillableItem_int();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#findRoomBill(long) <em>Find Room Bill</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#findRoomBill(java.lang.String) <em>Find Room Bill</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Find Room Bill</em>' operation.
-	 * @see com.bodkink.hotel.business.IBillingManagement#findRoomBill(long)
+	 * @see com.bodkink.hotel.business.IBillingManagement#findRoomBill(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIBillingManagement__FindRoomBill__long();
+	EOperation getIBillingManagement__FindRoomBill__String();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Bill, com.bodkink.hotel.business.model.CardInformation) <em>Make Payment</em>}' operation.
@@ -1235,14 +1235,14 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBillingManagement__MakePayment__Bill_Customer();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Booking, boolean) <em>Make Payment</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Booking) <em>Make Payment</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Make Payment</em>' operation.
-	 * @see com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Booking, boolean)
+	 * @see com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Booking)
 	 * @generated
 	 */
-	EOperation getIBillingManagement__MakePayment__Booking_boolean();
+	EOperation getIBillingManagement__MakePayment__Booking();
 
 	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IBookingManagement <em>IBooking Management</em>}'.
@@ -1255,14 +1255,14 @@ public interface BusinessPackage extends EPackage {
 	EClass getIBookingManagement();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, com.bodkink.hotel.business.model.Room, int, com.bodkink.hotel.business.model.Customer) <em>Create</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, int, com.bodkink.hotel.business.model.Customer) <em>Create</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create</em>' operation.
-	 * @see com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, com.bodkink.hotel.business.model.Room, int, com.bodkink.hotel.business.model.Customer)
+	 * @see com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, int, com.bodkink.hotel.business.model.Customer)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__Create__Date_Date_Room_int_Customer();
+	EOperation getIBookingManagement__Create__Date_Date_EList_EList_int_Customer();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#listBookings() <em>List Bookings</em>}' operation.
@@ -1275,34 +1275,34 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBookingManagement__ListBookings();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#findBooking(long) <em>Find Booking</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#findBooking(java.lang.String) <em>Find Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Find Booking</em>' operation.
-	 * @see com.bodkink.hotel.business.IBookingManagement#findBooking(long)
+	 * @see com.bodkink.hotel.business.IBookingManagement#findBooking(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__FindBooking__long();
+	EOperation getIBookingManagement__FindBooking__String();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#listBooking(java.util.Date) <em>List Booking</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#listBookings(java.util.Date) <em>List Bookings</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>List Booking</em>' operation.
-	 * @see com.bodkink.hotel.business.IBookingManagement#listBooking(java.util.Date)
+	 * @return the meta object for the '<em>List Bookings</em>' operation.
+	 * @see com.bodkink.hotel.business.IBookingManagement#listBookings(java.util.Date)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__ListBooking__Date();
+	EOperation getIBookingManagement__ListBookings__Date();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#listAvailableRooms(java.util.Date, java.util.Date, com.bodkink.hotel.business.model.Room) <em>List Available Rooms</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#listAvailableRooms(java.util.Date, java.util.Date) <em>List Available Rooms</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>List Available Rooms</em>' operation.
-	 * @see com.bodkink.hotel.business.IBookingManagement#listAvailableRooms(java.util.Date, java.util.Date, com.bodkink.hotel.business.model.Room)
+	 * @see com.bodkink.hotel.business.IBookingManagement#listAvailableRooms(java.util.Date, java.util.Date)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__ListAvailableRooms__Date_Date_Room();
+	EOperation getIBookingManagement__ListAvailableRooms__Date_Date();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#cancelBooking(com.bodkink.hotel.business.model.Booking) <em>Cancel Booking</em>}' operation.
@@ -1315,14 +1315,14 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBookingManagement__CancelBooking__Booking();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#getBookingStatus(long) <em>Get Booking Status</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#getBookingStatus(java.lang.String) <em>Get Booking Status</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Booking Status</em>' operation.
-	 * @see com.bodkink.hotel.business.IBookingManagement#getBookingStatus(long)
+	 * @see com.bodkink.hotel.business.IBookingManagement#getBookingStatus(java.lang.String)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__GetBookingStatus__long();
+	EOperation getIBookingManagement__GetBookingStatus__String();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#confirmAndPay(com.bodkink.hotel.business.model.Booking, com.bodkink.hotel.business.model.CardInformation) <em>Confirm And Pay</em>}' operation.
@@ -1345,14 +1345,14 @@ public interface BusinessPackage extends EPackage {
 	EClass getICustomerManagement();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.ICustomerManagement#createCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int) <em>Create Customer</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.ICustomerManagement#createCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, com.bodkink.hotel.business.model.CardInformation) <em>Create Customer</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Customer</em>' operation.
-	 * @see com.bodkink.hotel.business.ICustomerManagement#createCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int)
+	 * @see com.bodkink.hotel.business.ICustomerManagement#createCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, com.bodkink.hotel.business.model.CardInformation)
 	 * @generated
 	 */
-	EOperation getICustomerManagement__CreateCustomer__String_String_String_String_int();
+	EOperation getICustomerManagement__CreateCustomer__String_String_String_String_int_CardInformation();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.ICustomerManagement#editCustomer(com.bodkink.hotel.business.model.Customer) <em>Edit Customer</em>}' operation.
@@ -1463,7 +1463,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IGUEST_MANAGEMENT___CHECK_OUT__BOOKING_BOOLEAN = eINSTANCE.getIGuestManagement__CheckOut__Booking_boolean();
+		EOperation IGUEST_MANAGEMENT___CHECK_OUT__BOOKING = eINSTANCE.getIGuestManagement__CheckOut__Booking();
 
 		/**
 		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
@@ -1531,7 +1531,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRA = eINSTANCE.getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_RoomExtra();
+		EOperation IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST = eINSTANCE.getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_EList();
 
 		/**
 		 * The meta object literal for the '<em><b>List Rooms</b></em>' operation.
@@ -1555,7 +1555,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IROOM_MANAGEMENT___DISABLE_ROOM__LONG = eINSTANCE.getIRoomManagement__DisableRoom__long();
+		EOperation IROOM_MANAGEMENT___DISABLE_ROOM__STRING = eINSTANCE.getIRoomManagement__DisableRoom__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Find Room</b></em>' operation.
@@ -1563,7 +1563,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IROOM_MANAGEMENT___FIND_ROOM__LONG = eINSTANCE.getIRoomManagement__FindRoom__long();
+		EOperation IROOM_MANAGEMENT___FIND_ROOM__STRING = eINSTANCE.getIRoomManagement__FindRoom__String();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IRoomReservationManagement <em>IRoom Reservation Management</em>}' class.
@@ -1613,7 +1613,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__LONG = eINSTANCE.getIRoomReservationManagement__FindRoomReservation__long();
+		EOperation IROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__STRING = eINSTANCE.getIRoomReservationManagement__FindRoomReservation__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Room Reservation</b></em>' operation.
@@ -1621,7 +1621,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__ROOMRESERVATION = eINSTANCE.getIRoomReservationManagement__CancelRoomReservation__RoomReservation();
+		EOperation IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING = eINSTANCE.getIRoomReservationManagement__CancelRoomReservation__String();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IServiceManagement <em>IService Management</em>}' class.
@@ -1723,7 +1723,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS__BILLABLEITEM = eINSTANCE.getIBillableItemManagement__ListBillableItems__BillableItem();
+		EOperation IBILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS = eINSTANCE.getIBillableItemManagement__ListBillableItems();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IBillingManagement <em>IBilling Management</em>}' class.
@@ -1765,7 +1765,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBILLING_MANAGEMENT___FIND_ROOM_BILL__LONG = eINSTANCE.getIBillingManagement__FindRoomBill__long();
+		EOperation IBILLING_MANAGEMENT___FIND_ROOM_BILL__STRING = eINSTANCE.getIBillingManagement__FindRoomBill__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Make Payment</b></em>' operation.
@@ -1805,7 +1805,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING_BOOLEAN = eINSTANCE.getIBillingManagement__MakePayment__Booking_boolean();
+		EOperation IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING = eINSTANCE.getIBillingManagement__MakePayment__Booking();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IBookingManagement <em>IBooking Management</em>}' class.
@@ -1823,7 +1823,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ROOM_INT_CUSTOMER = eINSTANCE.getIBookingManagement__Create__Date_Date_Room_int_Customer();
+		EOperation IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER = eINSTANCE.getIBookingManagement__Create__Date_Date_EList_EList_int_Customer();
 
 		/**
 		 * The meta object literal for the '<em><b>List Bookings</b></em>' operation.
@@ -1839,15 +1839,15 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___FIND_BOOKING__LONG = eINSTANCE.getIBookingManagement__FindBooking__long();
+		EOperation IBOOKING_MANAGEMENT___FIND_BOOKING__STRING = eINSTANCE.getIBookingManagement__FindBooking__String();
 
 		/**
-		 * The meta object literal for the '<em><b>List Booking</b></em>' operation.
+		 * The meta object literal for the '<em><b>List Bookings</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___LIST_BOOKING__DATE = eINSTANCE.getIBookingManagement__ListBooking__Date();
+		EOperation IBOOKING_MANAGEMENT___LIST_BOOKINGS__DATE = eINSTANCE.getIBookingManagement__ListBookings__Date();
 
 		/**
 		 * The meta object literal for the '<em><b>List Available Rooms</b></em>' operation.
@@ -1855,7 +1855,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE_ROOM = eINSTANCE.getIBookingManagement__ListAvailableRooms__Date_Date_Room();
+		EOperation IBOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE = eINSTANCE.getIBookingManagement__ListAvailableRooms__Date_Date();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.
@@ -1871,7 +1871,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__LONG = eINSTANCE.getIBookingManagement__GetBookingStatus__long();
+		EOperation IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING = eINSTANCE.getIBookingManagement__GetBookingStatus__String();
 
 		/**
 		 * The meta object literal for the '<em><b>Confirm And Pay</b></em>' operation.
@@ -1897,7 +1897,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ICUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT = eINSTANCE.getICustomerManagement__CreateCustomer__String_String_String_String_int();
+		EOperation ICUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT_CARDINFORMATION = eINSTANCE.getICustomerManagement__CreateCustomer__String_String_String_String_int_CardInformation();
 
 		/**
 		 * The meta object literal for the '<em><b>Edit Customer</b></em>' operation.

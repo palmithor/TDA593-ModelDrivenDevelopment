@@ -82,7 +82,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUEST_MANAGEMENT___CHECK_OUT__BOOKING_BOOLEAN = BusinessPackage.IGUEST_MANAGEMENT___CHECK_OUT__BOOKING_BOOLEAN;
+	int GUEST_MANAGEMENT___CHECK_OUT__BOOKING = BusinessPackage.IGUEST_MANAGEMENT___CHECK_OUT__BOOKING;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -192,7 +192,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRA = BusinessPackage.IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRA;
+	int ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST = BusinessPackage.IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST;
 
 	/**
 	 * The operation id for the '<em>List Rooms</em>' operation.
@@ -219,7 +219,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGEMENT___DISABLE_ROOM__LONG = BusinessPackage.IROOM_MANAGEMENT___DISABLE_ROOM__LONG;
+	int ROOM_MANAGEMENT___DISABLE_ROOM__STRING = BusinessPackage.IROOM_MANAGEMENT___DISABLE_ROOM__STRING;
 
 	/**
 	 * The operation id for the '<em>Find Room</em>' operation.
@@ -228,7 +228,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_MANAGEMENT___FIND_ROOM__LONG = BusinessPackage.IROOM_MANAGEMENT___FIND_ROOM__LONG;
+	int ROOM_MANAGEMENT___FIND_ROOM__STRING = BusinessPackage.IROOM_MANAGEMENT___FIND_ROOM__STRING;
 
 	/**
 	 * The number of operations of the '<em>Room Management</em>' class.
@@ -301,7 +301,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__LONG = BusinessPackage.IROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__LONG;
+	int ROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__STRING = BusinessPackage.IROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Cancel Room Reservation</em>' operation.
@@ -310,7 +310,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__ROOMRESERVATION = BusinessPackage.IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__ROOMRESERVATION;
+	int ROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING = BusinessPackage.IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING;
 
 	/**
 	 * The number of operations of the '<em>Room Reservation Management</em>' class.
@@ -475,7 +475,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS__BILLABLEITEM = BusinessPackage.IBILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS__BILLABLEITEM;
+	int BILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS = BusinessPackage.IBILLABLE_ITEM_MANAGEMENT___LIST_BILLABLE_ITEMS;
 
 	/**
 	 * The number of operations of the '<em>Billable Item Management</em>' class.
@@ -539,7 +539,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_MANAGEMENT___FIND_ROOM_BILL__LONG = BusinessPackage.IBILLING_MANAGEMENT___FIND_ROOM_BILL__LONG;
+	int BILLING_MANAGEMENT___FIND_ROOM_BILL__STRING = BusinessPackage.IBILLING_MANAGEMENT___FIND_ROOM_BILL__STRING;
 
 	/**
 	 * The operation id for the '<em>Make Payment</em>' operation.
@@ -584,7 +584,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING_BOOLEAN = BusinessPackage.IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING_BOOLEAN;
+	int BILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING = BusinessPackage.IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING;
 
 	/**
 	 * The number of operations of the '<em>Billing Management</em>' class.
@@ -621,7 +621,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___CREATE__DATE_DATE_ROOM_INT_CUSTOMER = BusinessPackage.IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ROOM_INT_CUSTOMER;
+	int BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER = BusinessPackage.IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER;
 
 	/**
 	 * The operation id for the '<em>List Bookings</em>' operation.
@@ -639,16 +639,16 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___FIND_BOOKING__LONG = BusinessPackage.IBOOKING_MANAGEMENT___FIND_BOOKING__LONG;
+	int BOOKING_MANAGEMENT___FIND_BOOKING__STRING = BusinessPackage.IBOOKING_MANAGEMENT___FIND_BOOKING__STRING;
 
 	/**
-	 * The operation id for the '<em>List Booking</em>' operation.
+	 * The operation id for the '<em>List Bookings</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___LIST_BOOKING__DATE = BusinessPackage.IBOOKING_MANAGEMENT___LIST_BOOKING__DATE;
+	int BOOKING_MANAGEMENT___LIST_BOOKINGS__DATE = BusinessPackage.IBOOKING_MANAGEMENT___LIST_BOOKINGS__DATE;
 
 	/**
 	 * The operation id for the '<em>List Available Rooms</em>' operation.
@@ -657,7 +657,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE_ROOM = BusinessPackage.IBOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE_ROOM;
+	int BOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE = BusinessPackage.IBOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -675,7 +675,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___GET_BOOKING_STATUS__LONG = BusinessPackage.IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__LONG;
+	int BOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING = BusinessPackage.IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING;
 
 	/**
 	 * The operation id for the '<em>Confirm And Pay</em>' operation.
@@ -721,7 +721,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT = BusinessPackage.ICUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT;
+	int CUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT_CARDINFORMATION = BusinessPackage.ICUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT_CARDINFORMATION;
 
 	/**
 	 * The operation id for the '<em>Edit Customer</em>' operation.

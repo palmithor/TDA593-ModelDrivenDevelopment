@@ -4,14 +4,18 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.logic.RoomExtraManagement;
+
 import com.bodkink.hotel.business.model.RoomExtra;
+
+import java.lang.reflect.InvocationTargetException;
+
 import com.bodkink.hotel.persistence.IRoomExtraService;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import java.lang.reflect.InvocationTargetException;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +30,6 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 
 	@Inject
 	public IRoomExtraService roomExtraService;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,8 +101,7 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 		return super.eInvoke(operationID, arguments);
 	}
 
-
 	public void setRoomExtraService(IRoomExtraService roomExtraService) {
-		this.roomExtraService = roomExtraService;
+				this.roomExtraService = roomExtraService;
 	}
 } //RoomExtraManagementImpl

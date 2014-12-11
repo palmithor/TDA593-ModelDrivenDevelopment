@@ -8,8 +8,11 @@ import com.bodkink.hotel.business.model.Customer;
 import com.bodkink.hotel.business.model.Receipt;
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.business.model.Room;
+import com.bodkink.hotel.business.model.Service;
 
 import java.util.Date;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -27,18 +30,18 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomsRequired="true" roomsOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" customerRequired="true" customerOrdered="false"
+	 * @model required="true" ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomsMany="true" roomsOrdered="false" servicesMany="true" servicesOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	Booking create(Date start, Date end, Room rooms, int numberOfGuests, Customer customer);
+	Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, int numberOfGuests, Customer customer);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	Booking listBookings();
+	EList<Booking> listBookings();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -46,23 +49,23 @@ public interface IBookingManagement extends EObject {
 	 * @model required="true" ordered="false" bookingIdRequired="true" bookingIdOrdered="false"
 	 * @generated
 	 */
-	Booking findBooking(long bookingId);
+	Booking findBooking(String bookingId);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" startRequired="true" startOrdered="false"
+	 * @model ordered="false" startRequired="true" startOrdered="false"
 	 * @generated
 	 */
-	Booking listBooking(Date start);
+	EList<Booking> listBookings(Date start);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model startRequired="true" startOrdered="false" endDateRequired="true" endDateOrdered="false" roomsRequired="true" roomsOrdered="false"
+	 * @model ordered="false" startRequired="true" startOrdered="false" endDateRequired="true" endDateOrdered="false"
 	 * @generated
 	 */
-	void listAvailableRooms(Date start, Date endDate, Room rooms);
+	EList<Room> listAvailableRooms(Date start, Date endDate);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -75,10 +78,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" idRequired="true" idOrdered="false"
+	 * @model required="true" ordered="false" bookingIdRequired="true" bookingIdOrdered="false"
 	 * @generated
 	 */
-	ReservationStatusEnum getBookingStatus(long id);
+	ReservationStatusEnum getBookingStatus(String bookingId);
 
 	/**
 	 * <!-- begin-user-doc -->

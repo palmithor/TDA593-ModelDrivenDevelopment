@@ -6,6 +6,8 @@ import com.bodkink.hotel.business.model.BillableItem;
 
 import java.math.BigDecimal;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -38,9 +40,9 @@ public interface IBillableItemManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model itemsRequired="true" itemsOrdered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
-	void listBillableItems(BillableItem items);
+	EList<BillableItem> listBillableItems();
 
 } // IBillableItemManagement

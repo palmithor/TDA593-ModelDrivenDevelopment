@@ -53,7 +53,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomReservation listRoomReservations() {
+	public EList<RoomReservation> listRoomReservations() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -64,7 +64,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomReservation listRoomReservations(Date start, Date end) {
+	public EList<RoomReservation> listRoomReservations(Date start, Date end) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -75,7 +75,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomReservation listRoomReservations(Date start) {
+	public EList<RoomReservation> listRoomReservations(Date start) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -97,7 +97,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RoomReservation findRoomReservation(long roomReservationId) {
+	public RoomReservation findRoomReservation(String roomReservationId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -108,7 +108,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean cancelRoomReservation(RoomReservation roomReservation) {
+	public boolean cancelRoomReservation(String roomReservationId) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -131,10 +131,10 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___CREATE__ROOM_DATE_DATE_ROOMRESERVATIONTYPE:
 				create((Room)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (RoomReservationType)arguments.get(3));
 				return null;
-			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__LONG:
-				return findRoomReservation((Long)arguments.get(0));
-			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__ROOMRESERVATION:
-				return cancelRoomReservation((RoomReservation)arguments.get(0));
+			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___FIND_ROOM_RESERVATION__STRING:
+				return findRoomReservation((String)arguments.get(0));
+			case LogicPackage.ROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING:
+				return cancelRoomReservation((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -51,7 +51,7 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkOut(Booking booking, boolean result) {
+	public boolean checkOut(Booking booking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -87,9 +87,8 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LogicPackage.GUEST_MANAGEMENT___CHECK_OUT__BOOKING_BOOLEAN:
-				checkOut((Booking)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
+			case LogicPackage.GUEST_MANAGEMENT___CHECK_OUT__BOOKING:
+				return checkOut((Booking)arguments.get(0));
 			case LogicPackage.GUEST_MANAGEMENT___CHECK_IN__ROOMRESERVATION_GUEST:
 				return checkIn((RoomReservation)arguments.get(0), (Guest)arguments.get(1));
 			case LogicPackage.GUEST_MANAGEMENT___CHECK_OUT__ROOMRESERVATION:
