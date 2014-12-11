@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.UserAccountImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.UserAccountImpl#getUsername <em>Username</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.UserAccountImpl#getPassword <em>Password</em>}</li>
  * </ul>
@@ -27,6 +28,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class UserAccountImpl extends MinimalEObjectImpl.Container implements UserAccount {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getUsername() <em>Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,6 +112,27 @@ public class UserAccountImpl extends MinimalEObjectImpl.Container implements Use
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.USER_ACCOUNT__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getUsername() {
 		return username;
 	}
@@ -136,6 +178,8 @@ public class UserAccountImpl extends MinimalEObjectImpl.Container implements Use
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.USER_ACCOUNT__ID:
+				return getId();
 			case ModelPackage.USER_ACCOUNT__USERNAME:
 				return getUsername();
 			case ModelPackage.USER_ACCOUNT__PASSWORD:
@@ -152,6 +196,9 @@ public class UserAccountImpl extends MinimalEObjectImpl.Container implements Use
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.USER_ACCOUNT__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.USER_ACCOUNT__USERNAME:
 				setUsername((String)newValue);
 				return;
@@ -170,6 +217,9 @@ public class UserAccountImpl extends MinimalEObjectImpl.Container implements Use
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.USER_ACCOUNT__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.USER_ACCOUNT__USERNAME:
 				setUsername(USERNAME_EDEFAULT);
 				return;
@@ -188,6 +238,8 @@ public class UserAccountImpl extends MinimalEObjectImpl.Container implements Use
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.USER_ACCOUNT__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.USER_ACCOUNT__USERNAME:
 				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
 			case ModelPackage.USER_ACCOUNT__PASSWORD:
@@ -206,7 +258,9 @@ public class UserAccountImpl extends MinimalEObjectImpl.Container implements Use
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (username: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", username: ");
 		result.append(username);
 		result.append(", password: ");
 		result.append(password);

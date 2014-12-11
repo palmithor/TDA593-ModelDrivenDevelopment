@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -110,6 +111,17 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Room> searchRoom(int numberOfGuests, int numberOfRooms, Date start, Date end) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
@@ -124,6 +136,8 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 				return disableRoom((String)arguments.get(0));
 			case LogicPackage.ROOM_MANAGEMENT___FIND_ROOM__STRING:
 				return findRoom((String)arguments.get(0));
+			case LogicPackage.ROOM_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE:
+				return searchRoom((Integer)arguments.get(0), (Integer)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

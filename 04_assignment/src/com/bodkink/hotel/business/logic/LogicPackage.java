@@ -231,6 +231,15 @@ public interface LogicPackage extends EPackage {
 	int ROOM_MANAGEMENT___FIND_ROOM__STRING = BusinessPackage.IROOM_MANAGEMENT___FIND_ROOM__STRING;
 
 	/**
+	 * The operation id for the '<em>Search Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE = BusinessPackage.IROOM_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE;
+
+	/**
 	 * The number of operations of the '<em>Room Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

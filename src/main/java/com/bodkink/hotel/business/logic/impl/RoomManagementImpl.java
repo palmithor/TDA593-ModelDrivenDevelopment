@@ -13,6 +13,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -103,6 +104,11 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public EList<Room> searchRoom(int numberOfGuests, int numberOfRooms, Date start, Date end) {
+		return null;
 	}
 
 	/**

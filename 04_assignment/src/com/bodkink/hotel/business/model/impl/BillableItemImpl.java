@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.BillableItemImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BillableItemImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BillableItemImpl#getPrice <em>Price</em>}</li>
  * </ul>
@@ -29,6 +30,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class BillableItemImpl extends MinimalEObjectImpl.Container implements BillableItem {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,6 +114,27 @@ public class BillableItemImpl extends MinimalEObjectImpl.Container implements Bi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BILLABLE_ITEM__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -138,6 +180,8 @@ public class BillableItemImpl extends MinimalEObjectImpl.Container implements Bi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.BILLABLE_ITEM__ID:
+				return getId();
 			case ModelPackage.BILLABLE_ITEM__NAME:
 				return getName();
 			case ModelPackage.BILLABLE_ITEM__PRICE:
@@ -154,6 +198,9 @@ public class BillableItemImpl extends MinimalEObjectImpl.Container implements Bi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.BILLABLE_ITEM__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.BILLABLE_ITEM__NAME:
 				setName((String)newValue);
 				return;
@@ -172,6 +219,9 @@ public class BillableItemImpl extends MinimalEObjectImpl.Container implements Bi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BILLABLE_ITEM__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.BILLABLE_ITEM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -190,6 +240,8 @@ public class BillableItemImpl extends MinimalEObjectImpl.Container implements Bi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BILLABLE_ITEM__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.BILLABLE_ITEM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ModelPackage.BILLABLE_ITEM__PRICE:
@@ -208,7 +260,9 @@ public class BillableItemImpl extends MinimalEObjectImpl.Container implements Bi
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", name: ");
 		result.append(name);
 		result.append(", price: ");
 		result.append(price);

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.CardInformation#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.CardInformation#getCardNumber <em>Card Number</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.CardInformation#getCardHolderName <em>Card Holder Name</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.CardInformation#getExpirationDate <em>Expiration Date</em>}</li>
@@ -26,6 +27,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface CardInformation extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see com.bodkink.hotel.business.model.ModelPackage#getCardInformation_Id()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link com.bodkink.hotel.business.model.CardInformation#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Card Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->

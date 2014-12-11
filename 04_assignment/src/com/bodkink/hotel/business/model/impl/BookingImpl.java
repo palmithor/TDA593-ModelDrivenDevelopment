@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.BookingImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BookingImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BookingImpl#getRoomReservation <em>Room Reservation</em>}</li>
@@ -41,6 +42,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class BookingImpl extends MinimalEObjectImpl.Container implements Booking {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -118,6 +139,27 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	protected EClass eStaticClass() {
 		return ModelPackage.Literals.BOOKING;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BOOKING__ID, oldId, id));
 	}
 
 	/**
@@ -223,6 +265,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.BOOKING__ID:
+				return getId();
 			case ModelPackage.BOOKING__NUMBER:
 				return getNumber();
 			case ModelPackage.BOOKING__CUSTOMER:
@@ -247,6 +291,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.BOOKING__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.BOOKING__NUMBER:
 				setNumber((Double)newValue);
 				return;
@@ -277,6 +324,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BOOKING__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.BOOKING__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
@@ -304,6 +354,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BOOKING__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.BOOKING__NUMBER:
 				return number != NUMBER_EDEFAULT;
 			case ModelPackage.BOOKING__CUSTOMER:
@@ -328,7 +380,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (number: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", number: ");
 		result.append(number);
 		result.append(')');
 		return result.toString();

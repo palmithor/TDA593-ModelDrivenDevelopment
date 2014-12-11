@@ -40,15 +40,6 @@ public interface ModelFactory extends EFactory {
 	BedType createBedType();
 
 	/**
-	 * Returns a new object of class '<em>Bill</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bill</em>'.
-	 * @generated
-	 */
-	Bill createBill();
-
-	/**
 	 * Returns a new object of class '<em>Card Information</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

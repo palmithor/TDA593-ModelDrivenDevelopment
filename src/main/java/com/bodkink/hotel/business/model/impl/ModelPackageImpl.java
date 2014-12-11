@@ -23,7 +23,6 @@ import com.bodkink.hotel.business.model.Classification;
 import com.bodkink.hotel.business.model.Customer;
 import com.bodkink.hotel.business.model.CustomerUserAccount;
 import com.bodkink.hotel.business.model.Guest;
-import com.bodkink.hotel.business.model.IBill;
 import com.bodkink.hotel.business.model.ModelFactory;
 import com.bodkink.hotel.business.model.ModelPackage;
 import com.bodkink.hotel.business.model.Person;
@@ -86,13 +85,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EClass cardInformationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass iBillEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -334,7 +326,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddress_AddressLine1() {
+	public EAttribute getAddress_Id() {
 		return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -343,7 +335,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddress_AddressLine2() {
+	public EAttribute getAddress_AddressLine1() {
 		return (EAttribute)addressEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -352,7 +344,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddress_ZipCode() {
+	public EAttribute getAddress_AddressLine2() {
 		return (EAttribute)addressEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -361,7 +353,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddress_City() {
+	public EAttribute getAddress_ZipCode() {
 		return (EAttribute)addressEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -370,8 +362,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAddress_Country() {
+	public EAttribute getAddress_City() {
 		return (EAttribute)addressEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAddress_Country() {
+		return (EAttribute)addressEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -388,7 +389,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBedType_Name() {
+	public EAttribute getBedType_Id() {
 		return (EAttribute)bedTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -397,7 +398,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBedType_Length() {
+	public EAttribute getBedType_Name() {
 		return (EAttribute)bedTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -406,7 +407,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBedType_Width() {
+	public EAttribute getBedType_Length() {
 		return (EAttribute)bedTypeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -415,8 +416,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBedType_Places() {
+	public EAttribute getBedType_Width() {
 		return (EAttribute)bedTypeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBedType_Places() {
+		return (EAttribute)bedTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -433,7 +443,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBill_BillStatusEnum() {
+	public EAttribute getBill_Id() {
 		return (EAttribute)billEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -442,8 +452,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getBill_BillStatusEnum() {
+		return (EAttribute)billEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getBill_CardInformation() {
-		return (EReference)billEClass.getEStructuralFeatures().get(1);
+		return (EReference)billEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -460,7 +479,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardInformation_CardNumber() {
+	public EAttribute getCardInformation_Id() {
 		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -469,7 +488,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardInformation_CardHolderName() {
+	public EAttribute getCardInformation_CardNumber() {
 		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -478,7 +497,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardInformation_ExpirationDate() {
+	public EAttribute getCardInformation_CardHolderName() {
 		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -487,8 +506,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCardInformation_Address() {
-		return (EReference)cardInformationEClass.getEStructuralFeatures().get(3);
+	public EAttribute getCardInformation_ExpirationDate() {
+		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -496,8 +515,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIBill() {
-		return iBillEClass;
+	public EReference getCardInformation_Address() {
+		return (EReference)cardInformationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -514,7 +533,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBillableItem_Name() {
+	public EAttribute getBillableItem_Id() {
 		return (EAttribute)billableItemEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -523,8 +542,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBillableItem_Price() {
+	public EAttribute getBillableItem_Name() {
 		return (EAttribute)billableItemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBillableItem_Price() {
+		return (EAttribute)billableItemEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -541,7 +569,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBooking_Number() {
+	public EAttribute getBooking_Id() {
 		return (EAttribute)bookingEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -550,8 +578,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_Customer() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(1);
+	public EAttribute getBooking_Number() {
+		return (EAttribute)bookingEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -559,7 +587,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_RoomReservation() {
+	public EReference getBooking_Customer() {
 		return (EReference)bookingEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -568,7 +596,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_Service() {
+	public EReference getBooking_RoomReservation() {
 		return (EReference)bookingEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -577,8 +605,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_BookingBill() {
+	public EReference getBooking_Service() {
 		return (EReference)bookingEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBooking_BookingBill() {
+		return (EReference)bookingEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -640,7 +677,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPerson_FirstName() {
+	public EAttribute getPerson_Id() {
 		return (EAttribute)personEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -649,7 +686,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPerson_Surname() {
+	public EAttribute getPerson_FirstName() {
 		return (EAttribute)personEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -658,8 +695,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPerson_BirthYear() {
+	public EAttribute getPerson_Surname() {
 		return (EAttribute)personEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPerson_BirthYear() {
+		return (EAttribute)personEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -676,7 +722,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomReservation_StartDate() {
+	public EAttribute getRoomReservation_Id() {
 		return (EAttribute)roomReservationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -685,7 +731,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomReservation_EndDate() {
+	public EAttribute getRoomReservation_StartDate() {
 		return (EAttribute)roomReservationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -694,8 +740,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoomReservation_Guest() {
-		return (EReference)roomReservationEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRoomReservation_EndDate() {
+		return (EAttribute)roomReservationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -703,7 +749,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoomReservation_RoomReservationType() {
+	public EReference getRoomReservation_Guest() {
 		return (EReference)roomReservationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -712,7 +758,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoomReservation_Room() {
+	public EReference getRoomReservation_RoomReservationType() {
 		return (EReference)roomReservationEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -721,7 +767,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoomReservation_RoomBill() {
+	public EReference getRoomReservation_Room() {
 		return (EReference)roomReservationEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -730,8 +776,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getRoomReservation_RoomBill() {
+		return (EReference)roomReservationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getRoomReservation_ReservationStatusEnum() {
-		return (EAttribute)roomReservationEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)roomReservationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -757,8 +812,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomReservationType_Type() {
+	public EAttribute getRoomReservationType_Id() {
 		return (EAttribute)roomReservationTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomReservationType_Type() {
+		return (EAttribute)roomReservationTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -775,7 +839,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_Number() {
+	public EAttribute getRoom_Id() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -784,7 +848,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_Description() {
+	public EAttribute getRoom_Number() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -793,7 +857,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_AllowedGuests() {
+	public EAttribute getRoom_Description() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -802,7 +866,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_Size() {
+	public EAttribute getRoom_AllowedGuests() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -811,7 +875,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_NightPrice() {
+	public EAttribute getRoom_Size() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -820,7 +884,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_Pictures() {
+	public EAttribute getRoom_NightPrice() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -829,8 +893,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoom_Classification() {
-		return (EReference)roomEClass.getEStructuralFeatures().get(6);
+	public EAttribute getRoom_Pictures() {
+		return (EAttribute)roomEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -838,7 +902,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoom_BedType() {
+	public EReference getRoom_Classification() {
 		return (EReference)roomEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -847,8 +911,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoom_RoomExtra() {
+	public EReference getRoom_BedType() {
 		return (EReference)roomEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRoom_RoomExtra() {
+		return (EReference)roomEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -865,7 +938,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClassification_Title() {
+	public EAttribute getClassification_Id() {
 		return (EAttribute)classificationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -874,8 +947,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getClassification_Description() {
+	public EAttribute getClassification_Title() {
 		return (EAttribute)classificationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getClassification_Description() {
+		return (EAttribute)classificationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -892,7 +974,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomExtra_Title() {
+	public EAttribute getRoomExtra_Id() {
 		return (EAttribute)roomExtraEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -901,8 +983,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomExtra_Description() {
+	public EAttribute getRoomExtra_Title() {
 		return (EAttribute)roomExtraEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRoomExtra_Description() {
+		return (EAttribute)roomExtraEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -937,7 +1028,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getService_Title() {
+	public EAttribute getService_Id() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -946,7 +1037,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getService_Description() {
+	public EAttribute getService_Title() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -955,8 +1046,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getService_Price() {
+	public EAttribute getService_Description() {
 		return (EAttribute)serviceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getService_Price() {
+		return (EAttribute)serviceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -991,7 +1091,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomExtraTemplate_TemplateName() {
+	public EAttribute getRoomExtraTemplate_Id() {
 		return (EAttribute)roomExtraTemplateEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1000,8 +1100,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRoomExtraTemplate_TemplateName() {
+		return (EAttribute)roomExtraTemplateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getRoomExtraTemplate_RoomExtra() {
-		return (EReference)roomExtraTemplateEClass.getEStructuralFeatures().get(1);
+		return (EReference)roomExtraTemplateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1045,7 +1154,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUserAccount_Username() {
+	public EAttribute getUserAccount_Id() {
 		return (EAttribute)userAccountEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1054,8 +1163,17 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUserAccount_Password() {
+	public EAttribute getUserAccount_Username() {
 		return (EAttribute)userAccountEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUserAccount_Password() {
+		return (EAttribute)userAccountEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1150,6 +1268,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		// Create classes and their features
 		addressEClass = createEClass(ADDRESS);
+		createEAttribute(addressEClass, ADDRESS__ID);
 		createEAttribute(addressEClass, ADDRESS__ADDRESS_LINE1);
 		createEAttribute(addressEClass, ADDRESS__ADDRESS_LINE2);
 		createEAttribute(addressEClass, ADDRESS__ZIP_CODE);
@@ -1157,28 +1276,31 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(addressEClass, ADDRESS__COUNTRY);
 
 		bedTypeEClass = createEClass(BED_TYPE);
+		createEAttribute(bedTypeEClass, BED_TYPE__ID);
 		createEAttribute(bedTypeEClass, BED_TYPE__NAME);
 		createEAttribute(bedTypeEClass, BED_TYPE__LENGTH);
 		createEAttribute(bedTypeEClass, BED_TYPE__WIDTH);
 		createEAttribute(bedTypeEClass, BED_TYPE__PLACES);
 
 		billEClass = createEClass(BILL);
+		createEAttribute(billEClass, BILL__ID);
 		createEAttribute(billEClass, BILL__BILL_STATUS_ENUM);
 		createEReference(billEClass, BILL__CARD_INFORMATION);
 
 		cardInformationEClass = createEClass(CARD_INFORMATION);
+		createEAttribute(cardInformationEClass, CARD_INFORMATION__ID);
 		createEAttribute(cardInformationEClass, CARD_INFORMATION__CARD_NUMBER);
 		createEAttribute(cardInformationEClass, CARD_INFORMATION__CARD_HOLDER_NAME);
 		createEAttribute(cardInformationEClass, CARD_INFORMATION__EXPIRATION_DATE);
 		createEReference(cardInformationEClass, CARD_INFORMATION__ADDRESS);
 
-		iBillEClass = createEClass(IBILL);
-
 		billableItemEClass = createEClass(BILLABLE_ITEM);
+		createEAttribute(billableItemEClass, BILLABLE_ITEM__ID);
 		createEAttribute(billableItemEClass, BILLABLE_ITEM__NAME);
 		createEAttribute(billableItemEClass, BILLABLE_ITEM__PRICE);
 
 		bookingEClass = createEClass(BOOKING);
+		createEAttribute(bookingEClass, BOOKING__ID);
 		createEAttribute(bookingEClass, BOOKING__NUMBER);
 		createEReference(bookingEClass, BOOKING__CUSTOMER);
 		createEReference(bookingEClass, BOOKING__ROOM_RESERVATION);
@@ -1192,11 +1314,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(customerEClass, CUSTOMER__CARD_INFORMATION);
 
 		personEClass = createEClass(PERSON);
+		createEAttribute(personEClass, PERSON__ID);
 		createEAttribute(personEClass, PERSON__FIRST_NAME);
 		createEAttribute(personEClass, PERSON__SURNAME);
 		createEAttribute(personEClass, PERSON__BIRTH_YEAR);
 
 		roomReservationEClass = createEClass(ROOM_RESERVATION);
+		createEAttribute(roomReservationEClass, ROOM_RESERVATION__ID);
 		createEAttribute(roomReservationEClass, ROOM_RESERVATION__START_DATE);
 		createEAttribute(roomReservationEClass, ROOM_RESERVATION__END_DATE);
 		createEReference(roomReservationEClass, ROOM_RESERVATION__GUEST);
@@ -1208,9 +1332,11 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		guestEClass = createEClass(GUEST);
 
 		roomReservationTypeEClass = createEClass(ROOM_RESERVATION_TYPE);
+		createEAttribute(roomReservationTypeEClass, ROOM_RESERVATION_TYPE__ID);
 		createEAttribute(roomReservationTypeEClass, ROOM_RESERVATION_TYPE__TYPE);
 
 		roomEClass = createEClass(ROOM);
+		createEAttribute(roomEClass, ROOM__ID);
 		createEAttribute(roomEClass, ROOM__NUMBER);
 		createEAttribute(roomEClass, ROOM__DESCRIPTION);
 		createEAttribute(roomEClass, ROOM__ALLOWED_GUESTS);
@@ -1222,10 +1348,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(roomEClass, ROOM__ROOM_EXTRA);
 
 		classificationEClass = createEClass(CLASSIFICATION);
+		createEAttribute(classificationEClass, CLASSIFICATION__ID);
 		createEAttribute(classificationEClass, CLASSIFICATION__TITLE);
 		createEAttribute(classificationEClass, CLASSIFICATION__DESCRIPTION);
 
 		roomExtraEClass = createEClass(ROOM_EXTRA);
+		createEAttribute(roomExtraEClass, ROOM_EXTRA__ID);
 		createEAttribute(roomExtraEClass, ROOM_EXTRA__TITLE);
 		createEAttribute(roomExtraEClass, ROOM_EXTRA__DESCRIPTION);
 
@@ -1233,6 +1361,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(roomBillEClass, ROOM_BILL__BILLABLE_ITEM);
 
 		serviceEClass = createEClass(SERVICE);
+		createEAttribute(serviceEClass, SERVICE__ID);
 		createEAttribute(serviceEClass, SERVICE__TITLE);
 		createEAttribute(serviceEClass, SERVICE__DESCRIPTION);
 		createEAttribute(serviceEClass, SERVICE__PRICE);
@@ -1241,6 +1370,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(bookingBillEClass, BOOKING_BILL__BOOKING_BILL_TYPE);
 
 		roomExtraTemplateEClass = createEClass(ROOM_EXTRA_TEMPLATE);
+		createEAttribute(roomExtraTemplateEClass, ROOM_EXTRA_TEMPLATE__ID);
 		createEAttribute(roomExtraTemplateEClass, ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME);
 		createEReference(roomExtraTemplateEClass, ROOM_EXTRA_TEMPLATE__ROOM_EXTRA);
 
@@ -1250,6 +1380,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		receiptItemEClass = createEClass(RECEIPT_ITEM);
 
 		userAccountEClass = createEClass(USER_ACCOUNT);
+		createEAttribute(userAccountEClass, USER_ACCOUNT__ID);
 		createEAttribute(userAccountEClass, USER_ACCOUNT__USERNAME);
 		createEAttribute(userAccountEClass, USER_ACCOUNT__PASSWORD);
 
@@ -1295,7 +1426,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		billEClass.getESuperTypes().add(this.getIBill());
 		customerEClass.getESuperTypes().add(this.getPerson());
 		guestEClass.getESuperTypes().add(this.getPerson());
 		roomBillEClass.getESuperTypes().add(this.getBill());
@@ -1304,6 +1434,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAddress_Id(), theTypesPackage.getString(), "id", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAddress_AddressLine1(), theTypesPackage.getString(), "addressLine1", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAddress_AddressLine2(), theTypesPackage.getString(), "addressLine2", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAddress_ZipCode(), theTypesPackage.getString(), "zipCode", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1311,28 +1442,31 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getAddress_Country(), theTypesPackage.getString(), "country", null, 1, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bedTypeEClass, BedType.class, "BedType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBedType_Id(), theTypesPackage.getString(), "id", null, 1, 1, BedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBedType_Name(), theTypesPackage.getString(), "name", null, 1, 1, BedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBedType_Length(), theTypesPackage.getInteger(), "length", null, 1, 1, BedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBedType_Width(), theTypesPackage.getInteger(), "width", null, 1, 1, BedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBedType_Places(), theTypesPackage.getInteger(), "places", null, 1, 1, BedType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(billEClass, Bill.class, "Bill", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBill_Id(), theTypesPackage.getString(), "id", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBill_BillStatusEnum(), this.getBillStatusEnum(), "billStatusEnum", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBill_CardInformation(), this.getCardInformation(), null, "cardInformation", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(cardInformationEClass, CardInformation.class, "CardInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCardInformation_Id(), theTypesPackage.getString(), "id", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCardInformation_CardNumber(), theTypesPackage.getString(), "cardNumber", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCardInformation_CardHolderName(), theTypesPackage.getString(), "CardHolderName", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCardInformation_ExpirationDate(), ecorePackage.getEDate(), "expirationDate", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCardInformation_Address(), this.getAddress(), null, "address", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(iBillEClass, IBill.class, "IBill", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(billableItemEClass, BillableItem.class, "BillableItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBillableItem_Id(), theTypesPackage.getString(), "id", null, 1, 1, BillableItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBillableItem_Name(), theTypesPackage.getString(), "name", null, 1, 1, BillableItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBillableItem_Price(), ecorePackage.getEBigDecimal(), "price", null, 1, 1, BillableItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bookingEClass, Booking.class, "Booking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBooking_Id(), theTypesPackage.getString(), "id", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_Number(), theTypesPackage.getReal(), "number", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Customer(), this.getCustomer(), null, "customer", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_RoomReservation(), this.getRoomReservation(), null, "roomReservation", null, 0, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1346,11 +1480,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getCustomer_CardInformation(), this.getCardInformation(), null, "cardInformation", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPerson_Id(), theTypesPackage.getString(), "id", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPerson_FirstName(), theTypesPackage.getString(), "firstName", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPerson_Surname(), theTypesPackage.getString(), "Surname", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getPerson_BirthYear(), theTypesPackage.getInteger(), "BirthYear", null, 1, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomReservationEClass, RoomReservation.class, "RoomReservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoomReservation_Id(), theTypesPackage.getString(), "id", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomReservation_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomReservation_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomReservation_Guest(), this.getGuest(), null, "guest", null, 0, -1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1362,9 +1498,11 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(guestEClass, Guest.class, "Guest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(roomReservationTypeEClass, RoomReservationType.class, "RoomReservationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoomReservationType_Id(), theTypesPackage.getString(), "id", null, 1, 1, RoomReservationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomReservationType_Type(), theTypesPackage.getString(), "type", null, 1, 1, RoomReservationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoom_Id(), theTypesPackage.getString(), "id", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Number(), theTypesPackage.getString(), "number", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_Description(), theTypesPackage.getString(), "description", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_AllowedGuests(), theTypesPackage.getInteger(), "allowedGuests", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1376,10 +1514,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getRoom_RoomExtra(), this.getRoomExtra(), null, "roomExtra", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(classificationEClass, Classification.class, "Classification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClassification_Id(), theTypesPackage.getString(), "id", null, 1, 1, Classification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getClassification_Title(), theTypesPackage.getString(), "title", null, 1, 1, Classification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getClassification_Description(), theTypesPackage.getString(), "description", null, 1, 1, Classification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomExtraEClass, RoomExtra.class, "RoomExtra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoomExtra_Id(), theTypesPackage.getString(), "id", null, 1, 1, RoomExtra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomExtra_Title(), theTypesPackage.getString(), "title", null, 1, 1, RoomExtra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomExtra_Description(), theTypesPackage.getString(), "description", null, 1, 1, RoomExtra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1387,6 +1527,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getRoomBill_BillableItem(), this.getBillableItem(), null, "billableItem", null, 0, -1, RoomBill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getService_Id(), theTypesPackage.getString(), "id", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_Title(), theTypesPackage.getString(), "title", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_Description(), theTypesPackage.getString(), "description", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getService_Price(), ecorePackage.getEBigDecimal(), "price", null, 1, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1395,6 +1536,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getBookingBill_BookingBillType(), this.getBookingBillType(), "bookingBillType", null, 1, 1, BookingBill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomExtraTemplateEClass, RoomExtraTemplate.class, "RoomExtraTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoomExtraTemplate_Id(), theTypesPackage.getString(), "id", null, 1, 1, RoomExtraTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomExtraTemplate_TemplateName(), theTypesPackage.getString(), "templateName", null, 1, 1, RoomExtraTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomExtraTemplate_RoomExtra(), this.getRoomExtra(), null, "roomExtra", null, 0, -1, RoomExtraTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -1404,6 +1546,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEClass(receiptItemEClass, ReceiptItem.class, "ReceiptItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(userAccountEClass, UserAccount.class, "UserAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUserAccount_Id(), theTypesPackage.getString(), "id", null, 1, 1, UserAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUserAccount_Username(), ecorePackage.getEString(), "username", null, 1, 1, UserAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getUserAccount_Password(), ecorePackage.getEString(), "password", null, 1, 1, UserAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 

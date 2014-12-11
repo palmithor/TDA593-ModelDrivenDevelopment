@@ -68,13 +68,22 @@ public interface ModelPackage extends EPackage {
 	int ADDRESS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDRESS__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Address Line1</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__ADDRESS_LINE1 = 0;
+	int ADDRESS__ADDRESS_LINE1 = 1;
 
 	/**
 	 * The feature id for the '<em><b>Address Line2</b></em>' attribute.
@@ -83,7 +92,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__ADDRESS_LINE2 = 1;
+	int ADDRESS__ADDRESS_LINE2 = 2;
 
 	/**
 	 * The feature id for the '<em><b>Zip Code</b></em>' attribute.
@@ -92,7 +101,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__ZIP_CODE = 2;
+	int ADDRESS__ZIP_CODE = 3;
 
 	/**
 	 * The feature id for the '<em><b>City</b></em>' attribute.
@@ -101,7 +110,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__CITY = 3;
+	int ADDRESS__CITY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Country</b></em>' attribute.
@@ -110,7 +119,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS__COUNTRY = 4;
+	int ADDRESS__COUNTRY = 5;
 
 	/**
 	 * The number of structural features of the '<em>Address</em>' class.
@@ -119,7 +128,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDRESS_FEATURE_COUNT = 5;
+	int ADDRESS_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Address</em>' class.
@@ -141,13 +150,22 @@ public interface ModelPackage extends EPackage {
 	int BED_TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BED_TYPE__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BED_TYPE__NAME = 0;
+	int BED_TYPE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -156,7 +174,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BED_TYPE__LENGTH = 1;
+	int BED_TYPE__LENGTH = 2;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -165,7 +183,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BED_TYPE__WIDTH = 2;
+	int BED_TYPE__WIDTH = 3;
 
 	/**
 	 * The feature id for the '<em><b>Places</b></em>' attribute.
@@ -174,7 +192,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BED_TYPE__PLACES = 3;
+	int BED_TYPE__PLACES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Bed Type</em>' class.
@@ -183,7 +201,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BED_TYPE_FEATURE_COUNT = 4;
+	int BED_TYPE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Bed Type</em>' class.
@@ -193,34 +211,6 @@ public interface ModelPackage extends EPackage {
 	 * @ordered
 	 */
 	int BED_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link com.bodkink.hotel.business.model.IBill <em>IBill</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.bodkink.hotel.business.model.IBill
-	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getIBill()
-	 * @generated
-	 */
-	int IBILL = 4;
-
-	/**
-	 * The number of structural features of the '<em>IBill</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBILL_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>IBill</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBILL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.model.impl.BillImpl <em>Bill</em>}' class.
@@ -233,13 +223,22 @@ public interface ModelPackage extends EPackage {
 	int BILL = 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Bill Status Enum</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__BILL_STATUS_ENUM = IBILL_FEATURE_COUNT + 0;
+	int BILL__BILL_STATUS_ENUM = 1;
 
 	/**
 	 * The feature id for the '<em><b>Card Information</b></em>' reference.
@@ -248,7 +247,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL__CARD_INFORMATION = IBILL_FEATURE_COUNT + 1;
+	int BILL__CARD_INFORMATION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
@@ -257,7 +256,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = IBILL_FEATURE_COUNT + 2;
+	int BILL_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Bill</em>' class.
@@ -266,7 +265,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_OPERATION_COUNT = IBILL_OPERATION_COUNT + 0;
+	int BILL_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.model.impl.CardInformationImpl <em>Card Information</em>}' class.
@@ -279,13 +278,22 @@ public interface ModelPackage extends EPackage {
 	int CARD_INFORMATION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARD_INFORMATION__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__CARD_NUMBER = 0;
+	int CARD_INFORMATION__CARD_NUMBER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Card Holder Name</b></em>' attribute.
@@ -294,7 +302,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__CARD_HOLDER_NAME = 1;
+	int CARD_INFORMATION__CARD_HOLDER_NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
@@ -303,7 +311,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__EXPIRATION_DATE = 2;
+	int CARD_INFORMATION__EXPIRATION_DATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' reference.
@@ -312,7 +320,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__ADDRESS = 3;
+	int CARD_INFORMATION__ADDRESS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Card Information</em>' class.
@@ -321,7 +329,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION_FEATURE_COUNT = 4;
+	int CARD_INFORMATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Card Information</em>' class.
@@ -340,7 +348,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getBillableItem()
 	 * @generated
 	 */
-	int BILLABLE_ITEM = 5;
+	int BILLABLE_ITEM = 4;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLABLE_ITEM__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -349,7 +366,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLABLE_ITEM__NAME = 0;
+	int BILLABLE_ITEM__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -358,7 +375,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLABLE_ITEM__PRICE = 1;
+	int BILLABLE_ITEM__PRICE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Billable Item</em>' class.
@@ -367,7 +384,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLABLE_ITEM_FEATURE_COUNT = 2;
+	int BILLABLE_ITEM_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Billable Item</em>' class.
@@ -386,7 +403,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getBooking()
 	 * @generated
 	 */
-	int BOOKING = 6;
+	int BOOKING = 5;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -395,7 +421,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__NUMBER = 0;
+	int BOOKING__NUMBER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Customer</b></em>' reference.
@@ -404,7 +430,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__CUSTOMER = 1;
+	int BOOKING__CUSTOMER = 2;
 
 	/**
 	 * The feature id for the '<em><b>Room Reservation</b></em>' reference list.
@@ -413,7 +439,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__ROOM_RESERVATION = 2;
+	int BOOKING__ROOM_RESERVATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Service</b></em>' reference list.
@@ -422,7 +448,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__SERVICE = 3;
+	int BOOKING__SERVICE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Booking Bill</b></em>' reference list.
@@ -431,7 +457,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BOOKING_BILL = 4;
+	int BOOKING__BOOKING_BILL = 5;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -440,7 +466,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 5;
+	int BOOKING_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -459,7 +485,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getPerson()
 	 * @generated
 	 */
-	int PERSON = 8;
+	int PERSON = 7;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSON__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -468,7 +503,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__FIRST_NAME = 0;
+	int PERSON__FIRST_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Surname</b></em>' attribute.
@@ -477,7 +512,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__SURNAME = 1;
+	int PERSON__SURNAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Birth Year</b></em>' attribute.
@@ -486,7 +521,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON__BIRTH_YEAR = 2;
+	int PERSON__BIRTH_YEAR = 3;
 
 	/**
 	 * The number of structural features of the '<em>Person</em>' class.
@@ -495,7 +530,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSON_FEATURE_COUNT = 3;
+	int PERSON_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Person</em>' class.
@@ -514,7 +549,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 7;
+	int CUSTOMER = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__ID = PERSON__ID;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -605,7 +649,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomReservation()
 	 * @generated
 	 */
-	int ROOM_RESERVATION = 9;
+	int ROOM_RESERVATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_RESERVATION__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Start Date</b></em>' attribute.
@@ -614,7 +667,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION__START_DATE = 0;
+	int ROOM_RESERVATION__START_DATE = 1;
 
 	/**
 	 * The feature id for the '<em><b>End Date</b></em>' attribute.
@@ -623,7 +676,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION__END_DATE = 1;
+	int ROOM_RESERVATION__END_DATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Guest</b></em>' reference list.
@@ -632,7 +685,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION__GUEST = 2;
+	int ROOM_RESERVATION__GUEST = 3;
 
 	/**
 	 * The feature id for the '<em><b>Room Reservation Type</b></em>' reference.
@@ -641,7 +694,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION__ROOM_RESERVATION_TYPE = 3;
+	int ROOM_RESERVATION__ROOM_RESERVATION_TYPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Room</b></em>' reference.
@@ -650,7 +703,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION__ROOM = 4;
+	int ROOM_RESERVATION__ROOM = 5;
 
 	/**
 	 * The feature id for the '<em><b>Room Bill</b></em>' reference.
@@ -659,7 +712,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION__ROOM_BILL = 5;
+	int ROOM_RESERVATION__ROOM_BILL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Reservation Status Enum</b></em>' attribute.
@@ -668,7 +721,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION__RESERVATION_STATUS_ENUM = 6;
+	int ROOM_RESERVATION__RESERVATION_STATUS_ENUM = 7;
 
 	/**
 	 * The number of structural features of the '<em>Room Reservation</em>' class.
@@ -677,7 +730,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION_FEATURE_COUNT = 7;
+	int ROOM_RESERVATION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Room Reservation</em>' class.
@@ -696,7 +749,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getGuest()
 	 * @generated
 	 */
-	int GUEST = 10;
+	int GUEST = 9;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GUEST__ID = PERSON__ID;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -751,7 +813,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomReservationType()
 	 * @generated
 	 */
-	int ROOM_RESERVATION_TYPE = 11;
+	int ROOM_RESERVATION_TYPE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_RESERVATION_TYPE__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -760,7 +831,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION_TYPE__TYPE = 0;
+	int ROOM_RESERVATION_TYPE__TYPE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Room Reservation Type</em>' class.
@@ -769,7 +840,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_RESERVATION_TYPE_FEATURE_COUNT = 1;
+	int ROOM_RESERVATION_TYPE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Room Reservation Type</em>' class.
@@ -788,7 +859,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoom()
 	 * @generated
 	 */
-	int ROOM = 12;
+	int ROOM = 11;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -797,7 +877,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__NUMBER = 0;
+	int ROOM__NUMBER = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -806,7 +886,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__DESCRIPTION = 1;
+	int ROOM__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Allowed Guests</b></em>' attribute.
@@ -815,7 +895,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__ALLOWED_GUESTS = 2;
+	int ROOM__ALLOWED_GUESTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -824,7 +904,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__SIZE = 3;
+	int ROOM__SIZE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Night Price</b></em>' attribute.
@@ -833,7 +913,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__NIGHT_PRICE = 4;
+	int ROOM__NIGHT_PRICE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Pictures</b></em>' attribute list.
@@ -842,7 +922,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__PICTURES = 5;
+	int ROOM__PICTURES = 6;
 
 	/**
 	 * The feature id for the '<em><b>Classification</b></em>' reference.
@@ -851,7 +931,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__CLASSIFICATION = 6;
+	int ROOM__CLASSIFICATION = 7;
 
 	/**
 	 * The feature id for the '<em><b>Bed Type</b></em>' reference list.
@@ -860,7 +940,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__BED_TYPE = 7;
+	int ROOM__BED_TYPE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Room Extra</b></em>' reference list.
@@ -869,7 +949,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__ROOM_EXTRA = 8;
+	int ROOM__ROOM_EXTRA = 9;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -878,7 +958,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 9;
+	int ROOM_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -897,7 +977,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getClassification()
 	 * @generated
 	 */
-	int CLASSIFICATION = 13;
+	int CLASSIFICATION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLASSIFICATION__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -906,7 +995,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__TITLE = 0;
+	int CLASSIFICATION__TITLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -915,7 +1004,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION__DESCRIPTION = 1;
+	int CLASSIFICATION__DESCRIPTION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Classification</em>' class.
@@ -924,7 +1013,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLASSIFICATION_FEATURE_COUNT = 2;
+	int CLASSIFICATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Classification</em>' class.
@@ -943,7 +1032,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomExtra()
 	 * @generated
 	 */
-	int ROOM_EXTRA = 14;
+	int ROOM_EXTRA = 13;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_EXTRA__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -952,7 +1050,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_EXTRA__TITLE = 0;
+	int ROOM_EXTRA__TITLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -961,7 +1059,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_EXTRA__DESCRIPTION = 1;
+	int ROOM_EXTRA__DESCRIPTION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Room Extra</em>' class.
@@ -970,7 +1068,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_EXTRA_FEATURE_COUNT = 2;
+	int ROOM_EXTRA_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Room Extra</em>' class.
@@ -989,7 +1087,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomBill()
 	 * @generated
 	 */
-	int ROOM_BILL = 15;
+	int ROOM_BILL = 14;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_BILL__ID = BILL__ID;
 
 	/**
 	 * The feature id for the '<em><b>Bill Status Enum</b></em>' attribute.
@@ -1044,7 +1151,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 16;
+	int SERVICE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SERVICE__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -1053,7 +1169,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__TITLE = 0;
+	int SERVICE__TITLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1062,7 +1178,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__DESCRIPTION = 1;
+	int SERVICE__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -1071,7 +1187,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE__PRICE = 2;
+	int SERVICE__PRICE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Service</em>' class.
@@ -1080,7 +1196,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SERVICE_FEATURE_COUNT = 3;
+	int SERVICE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Service</em>' class.
@@ -1099,7 +1215,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getBookingBill()
 	 * @generated
 	 */
-	int BOOKING_BILL = 17;
+	int BOOKING_BILL = 16;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_BILL__ID = BILL__ID;
 
 	/**
 	 * The feature id for the '<em><b>Bill Status Enum</b></em>' attribute.
@@ -1154,7 +1279,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomExtraTemplate()
 	 * @generated
 	 */
-	int ROOM_EXTRA_TEMPLATE = 18;
+	int ROOM_EXTRA_TEMPLATE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_EXTRA_TEMPLATE__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Template Name</b></em>' attribute.
@@ -1163,7 +1297,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME = 0;
+	int ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Room Extra</b></em>' reference list.
@@ -1172,7 +1306,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_EXTRA_TEMPLATE__ROOM_EXTRA = 1;
+	int ROOM_EXTRA_TEMPLATE__ROOM_EXTRA = 2;
 
 	/**
 	 * The number of structural features of the '<em>Room Extra Template</em>' class.
@@ -1181,7 +1315,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_EXTRA_TEMPLATE_FEATURE_COUNT = 2;
+	int ROOM_EXTRA_TEMPLATE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Room Extra Template</em>' class.
@@ -1200,7 +1334,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getReceipt()
 	 * @generated
 	 */
-	int RECEIPT = 19;
+	int RECEIPT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Receipt Item</b></em>' reference list.
@@ -1237,7 +1371,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getReceiptItem()
 	 * @generated
 	 */
-	int RECEIPT_ITEM = 20;
+	int RECEIPT_ITEM = 19;
 
 	/**
 	 * The number of structural features of the '<em>Receipt Item</em>' class.
@@ -1265,7 +1399,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getUserAccount()
 	 * @generated
 	 */
-	int USER_ACCOUNT = 21;
+	int USER_ACCOUNT = 20;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USER_ACCOUNT__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -1274,7 +1417,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_ACCOUNT__USERNAME = 0;
+	int USER_ACCOUNT__USERNAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -1283,7 +1426,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_ACCOUNT__PASSWORD = 1;
+	int USER_ACCOUNT__PASSWORD = 2;
 
 	/**
 	 * The number of structural features of the '<em>User Account</em>' class.
@@ -1292,7 +1435,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int USER_ACCOUNT_FEATURE_COUNT = 2;
+	int USER_ACCOUNT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>User Account</em>' class.
@@ -1311,7 +1454,16 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getCustomerUserAccount()
 	 * @generated
 	 */
-	int CUSTOMER_USER_ACCOUNT = 22;
+	int CUSTOMER_USER_ACCOUNT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_USER_ACCOUNT__ID = USER_ACCOUNT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -1375,7 +1527,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getBillStatusEnum()
 	 * @generated
 	 */
-	int BILL_STATUS_ENUM = 23;
+	int BILL_STATUS_ENUM = 22;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.model.ReservationStatusEnum <em>Reservation Status Enum</em>}' enum.
@@ -1385,7 +1537,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getReservationStatusEnum()
 	 * @generated
 	 */
-	int RESERVATION_STATUS_ENUM = 24;
+	int RESERVATION_STATUS_ENUM = 23;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.model.BookingBillType <em>Booking Bill Type</em>}' enum.
@@ -1395,7 +1547,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getBookingBillType()
 	 * @generated
 	 */
-	int BOOKING_BILL_TYPE = 25;
+	int BOOKING_BILL_TYPE = 24;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.model.UserGroupEnum <em>User Group Enum</em>}' enum.
@@ -1405,7 +1557,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getUserGroupEnum()
 	 * @generated
 	 */
-	int USER_GROUP_ENUM = 26;
+	int USER_GROUP_ENUM = 25;
 
 
 	/**
@@ -1417,6 +1569,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAddress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Address#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.Address#getId()
+	 * @see #getAddress()
+	 * @generated
+	 */
+	EAttribute getAddress_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Address#getAddressLine1 <em>Address Line1</em>}'.
@@ -1484,6 +1647,17 @@ public interface ModelPackage extends EPackage {
 	EClass getBedType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.BedType#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.BedType#getId()
+	 * @see #getBedType()
+	 * @generated
+	 */
+	EAttribute getBedType_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.BedType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1538,6 +1712,17 @@ public interface ModelPackage extends EPackage {
 	EClass getBill();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Bill#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.Bill#getId()
+	 * @see #getBill()
+	 * @generated
+	 */
+	EAttribute getBill_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Bill#getBillStatusEnum <em>Bill Status Enum</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1568,6 +1753,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCardInformation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.CardInformation#getId()
+	 * @see #getCardInformation()
+	 * @generated
+	 */
+	EAttribute getCardInformation_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getCardNumber <em>Card Number</em>}'.
@@ -1614,16 +1810,6 @@ public interface ModelPackage extends EPackage {
 	EReference getCardInformation_Address();
 
 	/**
-	 * Returns the meta object for class '{@link com.bodkink.hotel.business.model.IBill <em>IBill</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>IBill</em>'.
-	 * @see com.bodkink.hotel.business.model.IBill
-	 * @generated
-	 */
-	EClass getIBill();
-
-	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.model.BillableItem <em>Billable Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1632,6 +1818,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBillableItem();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.BillableItem#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.BillableItem#getId()
+	 * @see #getBillableItem()
+	 * @generated
+	 */
+	EAttribute getBillableItem_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.BillableItem#getName <em>Name</em>}'.
@@ -1664,6 +1861,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getBooking();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Booking#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.Booking#getId()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EAttribute getBooking_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Booking#getNumber <em>Number</em>}'.
@@ -1785,6 +1993,17 @@ public interface ModelPackage extends EPackage {
 	EClass getPerson();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Person#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.Person#getId()
+	 * @see #getPerson()
+	 * @generated
+	 */
+	EAttribute getPerson_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Person#getFirstName <em>First Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1826,6 +2045,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRoomReservation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomReservation#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.RoomReservation#getId()
+	 * @see #getRoomReservation()
+	 * @generated
+	 */
+	EAttribute getRoomReservation_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomReservation#getStartDate <em>Start Date</em>}'.
@@ -1925,6 +2155,17 @@ public interface ModelPackage extends EPackage {
 	EClass getRoomReservationType();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomReservationType#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.RoomReservationType#getId()
+	 * @see #getRoomReservationType()
+	 * @generated
+	 */
+	EAttribute getRoomReservationType_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomReservationType#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1944,6 +2185,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRoom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Room#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.Room#getId()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Room#getNumber <em>Number</em>}'.
@@ -2055,6 +2307,17 @@ public interface ModelPackage extends EPackage {
 	EClass getClassification();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Classification#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.Classification#getId()
+	 * @see #getClassification()
+	 * @generated
+	 */
+	EAttribute getClassification_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Classification#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2085,6 +2348,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRoomExtra();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomExtra#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.RoomExtra#getId()
+	 * @see #getRoomExtra()
+	 * @generated
+	 */
+	EAttribute getRoomExtra_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomExtra#getTitle <em>Title</em>}'.
@@ -2138,6 +2412,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getService();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Service#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.Service#getId()
+	 * @see #getService()
+	 * @generated
+	 */
+	EAttribute getService_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.Service#getTitle <em>Title</em>}'.
@@ -2204,6 +2489,17 @@ public interface ModelPackage extends EPackage {
 	EClass getRoomExtraTemplate();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomExtraTemplate#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.RoomExtraTemplate#getId()
+	 * @see #getRoomExtraTemplate()
+	 * @generated
+	 */
+	EAttribute getRoomExtraTemplate_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomExtraTemplate#getTemplateName <em>Template Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2265,6 +2561,17 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getUserAccount();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.UserAccount#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see com.bodkink.hotel.business.model.UserAccount#getId()
+	 * @see #getUserAccount()
+	 * @generated
+	 */
+	EAttribute getUserAccount_Id();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.UserAccount#getUsername <em>Username</em>}'.
@@ -2394,6 +2701,14 @@ public interface ModelPackage extends EPackage {
 		EClass ADDRESS = eINSTANCE.getAddress();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ADDRESS__ID = eINSTANCE.getAddress_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Address Line1</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2444,6 +2759,14 @@ public interface ModelPackage extends EPackage {
 		EClass BED_TYPE = eINSTANCE.getBedType();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BED_TYPE__ID = eINSTANCE.getBedType_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2486,6 +2809,14 @@ public interface ModelPackage extends EPackage {
 		EClass BILL = eINSTANCE.getBill();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BILL__ID = eINSTANCE.getBill_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Bill Status Enum</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2510,6 +2841,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CARD_INFORMATION = eINSTANCE.getCardInformation();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CARD_INFORMATION__ID = eINSTANCE.getCardInformation_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Card Number</b></em>' attribute feature.
@@ -2544,16 +2883,6 @@ public interface ModelPackage extends EPackage {
 		EReference CARD_INFORMATION__ADDRESS = eINSTANCE.getCardInformation_Address();
 
 		/**
-		 * The meta object literal for the '{@link com.bodkink.hotel.business.model.IBill <em>IBill</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.bodkink.hotel.business.model.IBill
-		 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getIBill()
-		 * @generated
-		 */
-		EClass IBILL = eINSTANCE.getIBill();
-
-		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.model.impl.BillableItemImpl <em>Billable Item</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2562,6 +2891,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BILLABLE_ITEM = eINSTANCE.getBillableItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BILLABLE_ITEM__ID = eINSTANCE.getBillableItem_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2588,6 +2925,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass BOOKING = eINSTANCE.getBooking();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOKING__ID = eINSTANCE.getBooking_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
@@ -2682,6 +3027,14 @@ public interface ModelPackage extends EPackage {
 		EClass PERSON = eINSTANCE.getPerson();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSON__ID = eINSTANCE.getPerson_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2714,6 +3067,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOM_RESERVATION = eINSTANCE.getRoomReservation();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_RESERVATION__ID = eINSTANCE.getRoomReservation_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Start Date</b></em>' attribute feature.
@@ -2792,6 +3153,14 @@ public interface ModelPackage extends EPackage {
 		EClass ROOM_RESERVATION_TYPE = eINSTANCE.getRoomReservationType();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_RESERVATION_TYPE__ID = eINSTANCE.getRoomReservationType_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2808,6 +3177,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOM = eINSTANCE.getRoom();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__ID = eINSTANCE.getRoom_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
@@ -2892,6 +3269,14 @@ public interface ModelPackage extends EPackage {
 		EClass CLASSIFICATION = eINSTANCE.getClassification();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLASSIFICATION__ID = eINSTANCE.getClassification_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2916,6 +3301,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ROOM_EXTRA = eINSTANCE.getRoomExtra();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_EXTRA__ID = eINSTANCE.getRoomExtra_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -2960,6 +3353,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SERVICE = eINSTANCE.getService();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SERVICE__ID = eINSTANCE.getService_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
@@ -3014,6 +3415,14 @@ public interface ModelPackage extends EPackage {
 		EClass ROOM_EXTRA_TEMPLATE = eINSTANCE.getRoomExtraTemplate();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_EXTRA_TEMPLATE__ID = eINSTANCE.getRoomExtraTemplate_Id();
+
+		/**
 		 * The meta object literal for the '<em><b>Template Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3066,6 +3475,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass USER_ACCOUNT = eINSTANCE.getUserAccount();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USER_ACCOUNT__ID = eINSTANCE.getUserAccount_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.

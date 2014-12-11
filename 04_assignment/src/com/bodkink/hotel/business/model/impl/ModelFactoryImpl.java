@@ -59,7 +59,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		switch (eClass.getClassifierID()) {
 			case ModelPackage.ADDRESS: return createAddress();
 			case ModelPackage.BED_TYPE: return createBedType();
-			case ModelPackage.BILL: return createBill();
 			case ModelPackage.CARD_INFORMATION: return createCardInformation();
 			case ModelPackage.BILLABLE_ITEM: return createBillableItem();
 			case ModelPackage.BOOKING: return createBooking();
@@ -144,16 +143,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public BedType createBedType() {
 		BedTypeImpl bedType = new BedTypeImpl();
 		return bedType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Bill createBill() {
-		BillImpl bill = new BillImpl();
-		return bill;
 	}
 
 	/**

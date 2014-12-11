@@ -230,13 +230,22 @@ public interface BusinessPackage extends EPackage {
 	int IROOM_MANAGEMENT___FIND_ROOM__STRING = 4;
 
 	/**
+	 * The operation id for the '<em>Search Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE = 5;
+
+	/**
 	 * The number of operations of the '<em>IRoom Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT_OPERATION_COUNT = 5;
+	int IROOM_MANAGEMENT_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.IRoomReservationManagement <em>IRoom Reservation Management</em>}' class.
@@ -955,6 +964,16 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIRoomManagement__FindRoom__String();
 
 	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#searchRoom(int, int, java.util.Date, java.util.Date) <em>Search Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Search Room</em>' operation.
+	 * @see com.bodkink.hotel.business.IRoomManagement#searchRoom(int, int, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getIRoomManagement__SearchRoom__int_int_Date_Date();
+
+	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IRoomReservationManagement <em>IRoom Reservation Management</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1564,6 +1583,14 @@ public interface BusinessPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IROOM_MANAGEMENT___FIND_ROOM__STRING = eINSTANCE.getIRoomManagement__FindRoom__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Search Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE = eINSTANCE.getIRoomManagement__SearchRoom__int_int_Date_Date();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IRoomReservationManagement <em>IRoom Reservation Management</em>}' class.

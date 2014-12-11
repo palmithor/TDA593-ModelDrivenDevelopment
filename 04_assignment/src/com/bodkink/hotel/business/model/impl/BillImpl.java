@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.BillImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BillImpl#getBillStatusEnum <em>Bill Status Enum</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BillImpl#getCardInformation <em>Card Information</em>}</li>
  * </ul>
@@ -29,7 +30,27 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
+public abstract class BillImpl extends MinimalEObjectImpl.Container implements Bill {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getBillStatusEnum() <em>Bill Status Enum</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,6 +98,27 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	protected EClass eStaticClass() {
 		return ModelPackage.Literals.BILL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BILL__ID, oldId, id));
 	}
 
 	/**
@@ -146,6 +188,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.BILL__ID:
+				return getId();
 			case ModelPackage.BILL__BILL_STATUS_ENUM:
 				return getBillStatusEnum();
 			case ModelPackage.BILL__CARD_INFORMATION:
@@ -163,6 +207,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.BILL__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.BILL__BILL_STATUS_ENUM:
 				setBillStatusEnum((BillStatusEnum)newValue);
 				return;
@@ -181,6 +228,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BILL__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.BILL__BILL_STATUS_ENUM:
 				setBillStatusEnum(BILL_STATUS_ENUM_EDEFAULT);
 				return;
@@ -199,6 +249,8 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BILL__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.BILL__BILL_STATUS_ENUM:
 				return billStatusEnum != BILL_STATUS_ENUM_EDEFAULT;
 			case ModelPackage.BILL__CARD_INFORMATION:
@@ -217,7 +269,9 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (billStatusEnum: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", billStatusEnum: ");
 		result.append(billStatusEnum);
 		result.append(')');
 		return result.toString();

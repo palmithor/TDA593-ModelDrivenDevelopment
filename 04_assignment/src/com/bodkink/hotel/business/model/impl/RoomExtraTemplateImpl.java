@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.RoomExtraTemplateImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomExtraTemplateImpl#getTemplateName <em>Template Name</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomExtraTemplateImpl#getRoomExtra <em>Room Extra</em>}</li>
  * </ul>
@@ -34,6 +35,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implements RoomExtraTemplate {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getTemplateName() <em>Template Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,6 +109,27 @@ public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ROOM_EXTRA_TEMPLATE__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTemplateName() {
 		return templateName;
 	}
@@ -124,6 +166,8 @@ public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.ROOM_EXTRA_TEMPLATE__ID:
+				return getId();
 			case ModelPackage.ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME:
 				return getTemplateName();
 			case ModelPackage.ROOM_EXTRA_TEMPLATE__ROOM_EXTRA:
@@ -141,6 +185,9 @@ public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.ROOM_EXTRA_TEMPLATE__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME:
 				setTemplateName((String)newValue);
 				return;
@@ -160,6 +207,9 @@ public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM_EXTRA_TEMPLATE__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME:
 				setTemplateName(TEMPLATE_NAME_EDEFAULT);
 				return;
@@ -178,6 +228,8 @@ public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM_EXTRA_TEMPLATE__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME:
 				return TEMPLATE_NAME_EDEFAULT == null ? templateName != null : !TEMPLATE_NAME_EDEFAULT.equals(templateName);
 			case ModelPackage.ROOM_EXTRA_TEMPLATE__ROOM_EXTRA:
@@ -196,7 +248,9 @@ public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implemen
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (templateName: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", templateName: ");
 		result.append(templateName);
 		result.append(')');
 		return result.toString();

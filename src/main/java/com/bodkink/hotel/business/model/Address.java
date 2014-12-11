@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.Address#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.Address#getAddressLine1 <em>Address Line1</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.Address#getAddressLine2 <em>Address Line2</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.Address#getZipCode <em>Zip Code</em>}</li>
@@ -25,6 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Address extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see com.bodkink.hotel.business.model.ModelPackage#getAddress_Id()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link com.bodkink.hotel.business.model.Address#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Address Line1</b></em>' attribute.
 	 * <!-- begin-user-doc -->

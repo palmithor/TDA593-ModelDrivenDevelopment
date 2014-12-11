@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.ServiceImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.ServiceImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.ServiceImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.ServiceImpl#getPrice <em>Price</em>}</li>
@@ -30,6 +31,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class ServiceImpl extends MinimalEObjectImpl.Container implements Service {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,6 +135,27 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.SERVICE__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -180,6 +222,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.SERVICE__ID:
+				return getId();
 			case ModelPackage.SERVICE__TITLE:
 				return getTitle();
 			case ModelPackage.SERVICE__DESCRIPTION:
@@ -198,6 +242,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.SERVICE__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.SERVICE__TITLE:
 				setTitle((String)newValue);
 				return;
@@ -219,6 +266,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.SERVICE__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.SERVICE__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -240,6 +290,8 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.SERVICE__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.SERVICE__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case ModelPackage.SERVICE__DESCRIPTION:
@@ -260,7 +312,9 @@ public class ServiceImpl extends MinimalEObjectImpl.Container implements Service
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", title: ");
 		result.append(title);
 		result.append(", description: ");
 		result.append(description);

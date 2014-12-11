@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.AddressImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.AddressImpl#getAddressLine1 <em>Address Line1</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.AddressImpl#getAddressLine2 <em>Address Line2</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.AddressImpl#getZipCode <em>Zip Code</em>}</li>
@@ -30,6 +31,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class AddressImpl extends MinimalEObjectImpl.Container implements Address {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getAddressLine1() <em>Address Line1</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -154,6 +175,27 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ADDRESS__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getAddressLine1() {
 		return addressLine1;
 	}
@@ -262,6 +304,8 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.ADDRESS__ID:
+				return getId();
 			case ModelPackage.ADDRESS__ADDRESS_LINE1:
 				return getAddressLine1();
 			case ModelPackage.ADDRESS__ADDRESS_LINE2:
@@ -284,6 +328,9 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.ADDRESS__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.ADDRESS__ADDRESS_LINE1:
 				setAddressLine1((String)newValue);
 				return;
@@ -311,6 +358,9 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ADDRESS__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.ADDRESS__ADDRESS_LINE1:
 				setAddressLine1(ADDRESS_LINE1_EDEFAULT);
 				return;
@@ -338,6 +388,8 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ADDRESS__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.ADDRESS__ADDRESS_LINE1:
 				return ADDRESS_LINE1_EDEFAULT == null ? addressLine1 != null : !ADDRESS_LINE1_EDEFAULT.equals(addressLine1);
 			case ModelPackage.ADDRESS__ADDRESS_LINE2:
@@ -362,7 +414,9 @@ public class AddressImpl extends MinimalEObjectImpl.Container implements Address
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (addressLine1: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", addressLine1: ");
 		result.append(addressLine1);
 		result.append(", addressLine2: ");
 		result.append(addressLine2);

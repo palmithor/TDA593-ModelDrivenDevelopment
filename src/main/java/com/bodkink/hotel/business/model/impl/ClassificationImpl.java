@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.ClassificationImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.ClassificationImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.ClassificationImpl#getDescription <em>Description</em>}</li>
  * </ul>
@@ -27,6 +28,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class ClassificationImpl extends MinimalEObjectImpl.Container implements Classification {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -91,6 +112,27 @@ public class ClassificationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.CLASSIFICATION__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -136,6 +178,8 @@ public class ClassificationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.CLASSIFICATION__ID:
+				return getId();
 			case ModelPackage.CLASSIFICATION__TITLE:
 				return getTitle();
 			case ModelPackage.CLASSIFICATION__DESCRIPTION:
@@ -152,6 +196,9 @@ public class ClassificationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.CLASSIFICATION__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.CLASSIFICATION__TITLE:
 				setTitle((String)newValue);
 				return;
@@ -170,6 +217,9 @@ public class ClassificationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.CLASSIFICATION__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.CLASSIFICATION__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -188,6 +238,8 @@ public class ClassificationImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.CLASSIFICATION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.CLASSIFICATION__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case ModelPackage.CLASSIFICATION__DESCRIPTION:
@@ -206,7 +258,9 @@ public class ClassificationImpl extends MinimalEObjectImpl.Container implements 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", title: ");
 		result.append(title);
 		result.append(", description: ");
 		result.append(description);

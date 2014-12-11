@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.RoomImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomImpl#getAllowedGuests <em>Allowed Guests</em>}</li>
@@ -47,6 +48,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -204,6 +225,27 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	protected EClass eStaticClass() {
 		return ModelPackage.Literals.ROOM;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ROOM__ID, oldId, id));
 	}
 
 	/**
@@ -393,6 +435,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.ROOM__ID:
+				return getId();
 			case ModelPackage.ROOM__NUMBER:
 				return getNumber();
 			case ModelPackage.ROOM__DESCRIPTION:
@@ -425,6 +469,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.ROOM__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.ROOM__NUMBER:
 				setNumber((String)newValue);
 				return;
@@ -467,6 +514,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.ROOM__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
@@ -506,6 +556,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.ROOM__NUMBER:
 				return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
 			case ModelPackage.ROOM__DESCRIPTION:
@@ -538,7 +590,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (number: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", number: ");
 		result.append(number);
 		result.append(", description: ");
 		result.append(description);

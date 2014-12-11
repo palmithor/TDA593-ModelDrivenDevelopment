@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.BedTypeImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BedTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BedTypeImpl#getLength <em>Length</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.BedTypeImpl#getWidth <em>Width</em>}</li>
@@ -29,6 +30,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class BedTypeImpl extends MinimalEObjectImpl.Container implements BedType {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class BedTypeImpl extends MinimalEObjectImpl.Container implements BedType
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BED_TYPE__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getName() {
 		return name;
 	}
@@ -220,6 +262,8 @@ public class BedTypeImpl extends MinimalEObjectImpl.Container implements BedType
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.BED_TYPE__ID:
+				return getId();
 			case ModelPackage.BED_TYPE__NAME:
 				return getName();
 			case ModelPackage.BED_TYPE__LENGTH:
@@ -240,6 +284,9 @@ public class BedTypeImpl extends MinimalEObjectImpl.Container implements BedType
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.BED_TYPE__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.BED_TYPE__NAME:
 				setName((String)newValue);
 				return;
@@ -264,6 +311,9 @@ public class BedTypeImpl extends MinimalEObjectImpl.Container implements BedType
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BED_TYPE__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.BED_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -288,6 +338,8 @@ public class BedTypeImpl extends MinimalEObjectImpl.Container implements BedType
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.BED_TYPE__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.BED_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ModelPackage.BED_TYPE__LENGTH:
@@ -310,7 +362,9 @@ public class BedTypeImpl extends MinimalEObjectImpl.Container implements BedType
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", name: ");
 		result.append(name);
 		result.append(", length: ");
 		result.append(length);

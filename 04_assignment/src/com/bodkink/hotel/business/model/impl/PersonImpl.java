@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.PersonImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.PersonImpl#getFirstName <em>First Name</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.PersonImpl#getSurname <em>Surname</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.PersonImpl#getBirthYear <em>Birth Year</em>}</li>
@@ -28,6 +29,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,6 +133,27 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.PERSON__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getFirstName() {
 		return firstName;
 	}
@@ -178,6 +220,8 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.PERSON__ID:
+				return getId();
 			case ModelPackage.PERSON__FIRST_NAME:
 				return getFirstName();
 			case ModelPackage.PERSON__SURNAME:
@@ -196,6 +240,9 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.PERSON__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.PERSON__FIRST_NAME:
 				setFirstName((String)newValue);
 				return;
@@ -217,6 +264,9 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.PERSON__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.PERSON__FIRST_NAME:
 				setFirstName(FIRST_NAME_EDEFAULT);
 				return;
@@ -238,6 +288,8 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.PERSON__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.PERSON__FIRST_NAME:
 				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
 			case ModelPackage.PERSON__SURNAME:
@@ -258,7 +310,9 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (firstName: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", firstName: ");
 		result.append(firstName);
 		result.append(", Surname: ");
 		result.append(surname);

@@ -499,29 +499,6 @@
       <element xmi:type="uml:Class" href="business.uml#_tPDVoHk0EeSsOOo59CoEGw"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-zF3gXldEeSbENxhkq-Geg" x="891" y="160"/>
     </children>
-    <children xmi:type="notation:Shape" xmi:id="_AIPFgHleEeSbENxhkq-Geg" type="2004">
-      <children xmi:type="notation:DecorationNode" xmi:id="_AIYPcXleEeSbENxhkq-Geg" type="5011"/>
-      <children xmi:type="notation:BasicCompartment" xmi:id="_AIYPcnleEeSbENxhkq-Geg" type="7006">
-        <styles xmi:type="notation:TitleStyle" xmi:id="_AIYPc3leEeSbENxhkq-Geg"/>
-        <styles xmi:type="notation:SortingStyle" xmi:id="_AIYPdHleEeSbENxhkq-Geg"/>
-        <styles xmi:type="notation:FilteringStyle" xmi:id="_AIYPdXleEeSbENxhkq-Geg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AIYPdnleEeSbENxhkq-Geg"/>
-      </children>
-      <children xmi:type="notation:BasicCompartment" xmi:id="_AIYPd3leEeSbENxhkq-Geg" type="7007">
-        <styles xmi:type="notation:TitleStyle" xmi:id="_AIYPeHleEeSbENxhkq-Geg"/>
-        <styles xmi:type="notation:SortingStyle" xmi:id="_AIYPeXleEeSbENxhkq-Geg"/>
-        <styles xmi:type="notation:FilteringStyle" xmi:id="_AIYPenleEeSbENxhkq-Geg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AIYPe3leEeSbENxhkq-Geg"/>
-      </children>
-      <children xmi:type="notation:BasicCompartment" xmi:id="_AIYPfHleEeSbENxhkq-Geg" type="7008">
-        <styles xmi:type="notation:TitleStyle" xmi:id="_AIYPfXleEeSbENxhkq-Geg"/>
-        <styles xmi:type="notation:SortingStyle" xmi:id="_AIYPfnleEeSbENxhkq-Geg"/>
-        <styles xmi:type="notation:FilteringStyle" xmi:id="_AIYPf3leEeSbENxhkq-Geg"/>
-        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AIYPgHleEeSbENxhkq-Geg"/>
-      </children>
-      <element xmi:type="uml:Interface" href="business.uml#_cSAT8HlbEeSbENxhkq-Geg"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AIYPcHleEeSbENxhkq-Geg" x="855" y="-208"/>
-    </children>
     <children xmi:type="notation:Shape" xmi:id="_BcrI4HleEeSbENxhkq-Geg" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_BcrI4nleEeSbENxhkq-Geg" type="5029"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_BcrI43leEeSbENxhkq-Geg" type="7017">
@@ -1602,19 +1579,6 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KCjus3lgEeSbENxhkq-Geg" points="[-1, -8, 0, 155]$[1, -147, 2, 16]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KCs4oHlgEeSbENxhkq-Geg" id="(0.4,0.0)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KCs4oXlgEeSbENxhkq-Geg" id="(0.5621890547263682,1.0)"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_MwWKoXlgEeSbENxhkq-Geg" type="4003" source="_-zF3gHldEeSbENxhkq-Geg" target="_AIPFgHleEeSbENxhkq-Geg">
-      <children xmi:type="notation:DecorationNode" xmi:id="_MwWKpHlgEeSbENxhkq-Geg" type="6008">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_MwWKpXlgEeSbENxhkq-Geg" y="40"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_MwWKpnlgEeSbENxhkq-Geg" type="6009">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_MwWKp3lgEeSbENxhkq-Geg" y="60"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_MwWKonlgEeSbENxhkq-Geg"/>
-      <element xmi:type="uml:InterfaceRealization" href="business.uml#_MwWKoHlgEeSbENxhkq-Geg"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MwWKo3lgEeSbENxhkq-Geg" points="[-1, -11, -4, 170]$[-1, -233, -4, -52]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Mwf7oHlgEeSbENxhkq-Geg" id="(0.06047819971870605,0.0)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_nEOKQHlkEeSbENxhkq-Geg" id="(0.5033333333333333,1.0)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_k2aOgHuLEeSzntEGOwlLGA" type="4001" source="_EpBJEHleEeSbENxhkq-Geg" target="_rODxoHldEeSbENxhkq-Geg">
       <children xmi:type="notation:DecorationNode" xmi:id="_k2aOg3uLEeSzntEGOwlLGA" type="6001">

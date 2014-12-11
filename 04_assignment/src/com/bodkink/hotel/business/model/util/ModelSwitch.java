@@ -81,19 +81,12 @@ public class ModelSwitch<T> extends Switch<T> {
 			case ModelPackage.BILL: {
 				Bill bill = (Bill)theEObject;
 				T result = caseBill(bill);
-				if (result == null) result = caseIBill(bill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ModelPackage.CARD_INFORMATION: {
 				CardInformation cardInformation = (CardInformation)theEObject;
 				T result = caseCardInformation(cardInformation);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ModelPackage.IBILL: {
-				IBill iBill = (IBill)theEObject;
-				T result = caseIBill(iBill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -163,7 +156,6 @@ public class ModelSwitch<T> extends Switch<T> {
 				RoomBill roomBill = (RoomBill)theEObject;
 				T result = caseRoomBill(roomBill);
 				if (result == null) result = caseBill(roomBill);
-				if (result == null) result = caseIBill(roomBill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -177,7 +169,6 @@ public class ModelSwitch<T> extends Switch<T> {
 				BookingBill bookingBill = (BookingBill)theEObject;
 				T result = caseBookingBill(bookingBill);
 				if (result == null) result = caseBill(bookingBill);
-				if (result == null) result = caseIBill(bookingBill);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -273,21 +264,6 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCardInformation(CardInformation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>IBill</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>IBill</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIBill(IBill object) {
 		return null;
 	}
 

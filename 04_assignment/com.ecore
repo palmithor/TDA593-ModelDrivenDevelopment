@@ -54,6 +54,12 @@
           <eOperations name="findRoom" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Room">
             <eParameters name="roomId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
+          <eOperations name="searchRoom" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Room">
+            <eParameters name="numberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            <eParameters name="numberOfRooms" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="IRoomReservationManagement" abstract="true"
             interface="true">
@@ -226,6 +232,8 @@
         <eSubpackages name="model" nsURI="http:///com/bodkink/hotel/business/model.ecore"
             nsPrefix="com.bodkink.hotel.business.model">
           <eClassifiers xsi:type="ecore:EClass" name="Address">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="addressLine1" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="addressLine2" ordered="false"
@@ -238,6 +246,8 @@
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="BedType">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" ordered="false"
@@ -247,7 +257,9 @@
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="places" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="Bill" eSuperTypes="#//bodkink/hotel/business/model/IBill">
+          <eClassifiers xsi:type="ecore:EClass" name="Bill" abstract="true">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="billStatusEnum"
                 ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/BillStatusEnum"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="cardInformation"
@@ -258,6 +270,8 @@
             <eLiterals name="NOT_PAID" value="1"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="CardInformation">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="CardHolderName"
@@ -267,14 +281,17 @@
             <eStructuralFeatures xsi:type="ecore:EReference" name="address" ordered="false"
                 lowerBound="1" eType="#//bodkink/hotel/business/model/Address"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="IBill" abstract="true" interface="true"/>
           <eClassifiers xsi:type="ecore:EClass" name="BillableItem">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Booking">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//Real"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
@@ -297,6 +314,8 @@
                 ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/CardInformation"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Person">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="Surname" ordered="false"
@@ -305,6 +324,8 @@
                 lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="RoomReservation">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" ordered="false"
@@ -322,10 +343,14 @@
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//bodkink/hotel/business/model/Person"/>
           <eClassifiers xsi:type="ecore:EClass" name="RoomReservationType">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Room">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
@@ -346,12 +371,16 @@
                 upperBound="-1" eType="#//bodkink/hotel/business/model/RoomExtra"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Classification">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="RoomExtra">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
@@ -367,6 +396,8 @@
             <eLiterals name="RESERVED" value="2"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Service">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
@@ -383,6 +414,8 @@
             <eLiterals name="FINALIZE" value="1"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="RoomExtraTemplate">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="templateName" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="roomExtra" ordered="false"
@@ -394,6 +427,8 @@
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="ReceiptItem"/>
           <eClassifiers xsi:type="ecore:EClass" name="UserAccount">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"

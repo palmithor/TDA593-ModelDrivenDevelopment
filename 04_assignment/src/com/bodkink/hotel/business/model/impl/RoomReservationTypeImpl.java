@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.RoomReservationTypeImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomReservationTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
@@ -26,6 +27,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class RoomReservationTypeImpl extends MinimalEObjectImpl.Container implements RoomReservationType {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -70,6 +91,27 @@ public class RoomReservationTypeImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ROOM_RESERVATION_TYPE__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getType() {
 		return type;
 	}
@@ -94,6 +136,8 @@ public class RoomReservationTypeImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION_TYPE__ID:
+				return getId();
 			case ModelPackage.ROOM_RESERVATION_TYPE__TYPE:
 				return getType();
 		}
@@ -108,6 +152,9 @@ public class RoomReservationTypeImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION_TYPE__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.ROOM_RESERVATION_TYPE__TYPE:
 				setType((String)newValue);
 				return;
@@ -123,6 +170,9 @@ public class RoomReservationTypeImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION_TYPE__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.ROOM_RESERVATION_TYPE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -138,6 +188,8 @@ public class RoomReservationTypeImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION_TYPE__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.ROOM_RESERVATION_TYPE__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
@@ -154,7 +206,9 @@ public class RoomReservationTypeImpl extends MinimalEObjectImpl.Container implem
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (type: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", type: ");
 		result.append(type);
 		result.append(')');
 		return result.toString();

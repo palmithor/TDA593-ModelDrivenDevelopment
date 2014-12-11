@@ -8,6 +8,7 @@ import com.bodkink.hotel.business.model.RoomExtra;
 
 import java.math.BigDecimal;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
@@ -64,5 +65,13 @@ public interface IRoomManagement extends EObject {
 	 * @generated
 	 */
 	Room findRoom(String roomId);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false" numberOfGuestsDataType="org.eclipse.uml2.types.Integer" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" numberOfRoomsDataType="org.eclipse.uml2.types.Integer" numberOfRoomsRequired="true" numberOfRoomsOrdered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false"
+	 * @generated
+	 */
+	EList<Room> searchRoom(int numberOfGuests, int numberOfRooms, Date start, Date end);
 
 } // IRoomManagement

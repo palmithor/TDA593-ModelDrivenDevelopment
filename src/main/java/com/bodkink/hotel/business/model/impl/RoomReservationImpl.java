@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.bodkink.hotel.business.model.impl.RoomReservationImpl#getId <em>Id</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomReservationImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomReservationImpl#getEndDate <em>End Date</em>}</li>
  *   <li>{@link com.bodkink.hotel.business.model.impl.RoomReservationImpl#getGuest <em>Guest</em>}</li>
@@ -45,6 +46,26 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * @generated
  */
 public class RoomReservationImpl extends MinimalEObjectImpl.Container implements RoomReservation {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getStartDate() <em>Start Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -162,6 +183,27 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	protected EClass eStaticClass() {
 		return ModelPackage.Literals.ROOM_RESERVATION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ROOM_RESERVATION__ID, oldId, id));
 	}
 
 	/**
@@ -361,6 +403,8 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION__ID:
+				return getId();
 			case ModelPackage.ROOM_RESERVATION__START_DATE:
 				return getStartDate();
 			case ModelPackage.ROOM_RESERVATION__END_DATE:
@@ -391,6 +435,9 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION__ID:
+				setId((String)newValue);
+				return;
 			case ModelPackage.ROOM_RESERVATION__START_DATE:
 				setStartDate((Date)newValue);
 				return;
@@ -425,6 +472,9 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case ModelPackage.ROOM_RESERVATION__START_DATE:
 				setStartDate(START_DATE_EDEFAULT);
 				return;
@@ -458,6 +508,8 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ModelPackage.ROOM_RESERVATION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case ModelPackage.ROOM_RESERVATION__START_DATE:
 				return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
 			case ModelPackage.ROOM_RESERVATION__END_DATE:
@@ -486,7 +538,9 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (startDate: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", startDate: ");
 		result.append(startDate);
 		result.append(", endDate: ");
 		result.append(endDate);
