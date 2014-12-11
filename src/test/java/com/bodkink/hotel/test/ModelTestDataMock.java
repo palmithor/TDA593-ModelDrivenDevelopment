@@ -4,6 +4,7 @@ import com.bodkink.hotel.business.model.*;
 import org.apache.commons.lang.StringUtils;
 import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
+import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -113,4 +114,35 @@ public class ModelTestDataMock {
         return roomReservationTypes;
     }
 
+    public static Customer getCustomer() {
+        Customer customer = ModelFactory.eINSTANCE.createCustomer();
+        customer.setId(ObjectId.get().toString());
+        customer.setCardInformation(getCardInformation());
+        customer.setEmail("olof.palme@mail.com");
+        customer.setPhone("+46707235555");
+        customer.setBirthYear(1927);
+        customer.setFirstName("Olof");
+        customer.setSurname("Palme");
+        return customer;
+    }
+
+    public static CardInformation getCardInformation() {
+        CardInformation cardInformation = ModelFactory.eINSTANCE.createCardInformation();
+        cardInformation.setId(ObjectId.get().toString());
+        cardInformation.setAddress(getAddress());
+        cardInformation.setCardHolderName("Olof Palme");
+        cardInformation.setCardNumber("4000000000000002");
+        cardInformation.setExpirationDate(DateTime.now().plusYears(1).toDate());
+        return cardInformation;
+    }
+
+    public static Address getAddress() {
+        Address address = ModelFactory.eINSTANCE.createAddress();
+        address.setId(ObjectId.get().toString());
+        address.setAddressLine1("Street 1");
+        address.setCity("Gothenburg");
+        address.setCountry("Sweden");
+        address.setZipCode("4891");
+        return address;
+    }
 }

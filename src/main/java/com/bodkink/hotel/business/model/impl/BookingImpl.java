@@ -2,26 +2,17 @@
  */
 package com.bodkink.hotel.business.model.impl;
 
-import com.bodkink.hotel.business.model.Booking;
-import com.bodkink.hotel.business.model.BookingBill;
-import com.bodkink.hotel.business.model.Customer;
-import com.bodkink.hotel.business.model.ModelPackage;
-import com.bodkink.hotel.business.model.RoomReservation;
-import com.bodkink.hotel.business.model.Service;
-
-import java.util.Collection;
-
+import com.bodkink.hotel.business.model.*;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +32,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *
  * @generated
  */
-public class BookingImpl extends MinimalEObjectImpl.Container implements Booking {
+public class BookingImpl extends MinimalEObjectImpl.Container implements Booking, Serializable {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,17 +42,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected static final String ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String id = ID_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,7 +51,15 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected static final double NUMBER_EDEFAULT = 0.0;
-
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -205,8 +193,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer basicGetCustomer() {
-		return customer;
+	public void setCustomer(Customer newCustomer) {
+		Customer oldCustomer = customer;
+		customer = newCustomer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BOOKING__CUSTOMER, oldCustomer, customer));
 	}
 
 	/**
@@ -214,11 +205,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCustomer(Customer newCustomer) {
-		Customer oldCustomer = customer;
-		customer = newCustomer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.BOOKING__CUSTOMER, oldCustomer, customer));
+	public Customer basicGetCustomer() {
+		return customer;
 	}
 
 	/**

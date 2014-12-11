@@ -13,6 +13,7 @@ import com.bodkink.hotel.util.DateInterval;
 import com.bodkink.hotel.util.DateUtil;
 import com.google.inject.Inject;
 import ninja.cache.NinjaCache;
+import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -36,18 +37,15 @@ import java.util.Date;
 public class BookingManagementImpl extends MinimalEObjectImpl.Container implements BookingManagement {
 
     private static final Logger logger = LoggerFactory.getLogger(BookingManagementImpl.class);
-
     @Inject
-    NinjaCache ninjaCache;
-
+    NinjaCache bookingCache;
     @Inject
     IBookingService bookingService;
-
     @Inject
     IRoomReservationManagement roomReservationManagement;
-
     @Inject
     IRoomManagement roomManagement;
+    private String cacheTimeToLive = "5mn";
 
     /**
      * <!-- begin-user-doc -->
@@ -76,10 +74,27 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      *
      * @generated
      */
-    public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, int numberOfGuests, Customer customer) {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+    public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, /*TODO remove number of guests*/int numberOfGuests, Customer customer) {
+        // TODO check availability
+        Booking booking = ModelFactory.eINSTANCE.createBooking();
+        booking.setId(ObjectId.get().toString());
+
+        for (Room r : rooms) {
+            RoomReservation roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
+            roomReservation.setStartDate(start);
+            roomReservation.setEndDate(end);
+            // roomReservation.setRoomReservationType(); TODO get as a input parameter or even change to enum?
+            roomReservation.setRoom(r);
+            roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
+            booking.getRoomReservation().add(roomReservation);
+        }
+        if (services != null) {
+            booking.getService().addAll(services);
+        }
+        booking.setCustomer(customer);
+
+        bookingCache.add(booking.getId(), booking, cacheTimeToLive);
+        return booking;
     }
 
     /**
@@ -222,9 +237,12 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         throw new UnsupportedOperationException();
     }
 
+    public NinjaCache getBookingCache() {
+        return bookingCache;
+    }
 
-    public void setNinjaCache(NinjaCache ninjaCache) {
-        this.ninjaCache = ninjaCache;
+    public void setBookingCache(NinjaCache bookingCache) {
+        this.bookingCache = bookingCache;
     }
 
     public void setBookingService(IBookingService bookingService) {
@@ -237,5 +255,9 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 
     public void setRoomManagement(IRoomManagement roomManagement) {
         this.roomManagement = roomManagement;
+    }
+
+    public void setCacheTimeToLive(String cacheTimeToLive) {
+        this.cacheTimeToLive = cacheTimeToLive;
     }
 } //BookingManagementImpl

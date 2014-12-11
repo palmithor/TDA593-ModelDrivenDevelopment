@@ -4,12 +4,11 @@ import com.bodkink.hotel.business.IBookingManagement;
 import com.bodkink.hotel.business.IRoomManagement;
 import com.bodkink.hotel.business.IRoomReservationManagement;
 import com.bodkink.hotel.business.logic.LogicFactory;
-import com.bodkink.hotel.business.model.ModelFactory;
-import com.bodkink.hotel.business.model.ReservationStatusEnum;
-import com.bodkink.hotel.business.model.Room;
-import com.bodkink.hotel.business.model.RoomReservation;
+import com.bodkink.hotel.business.model.*;
 import com.bodkink.hotel.test.ModelTestDataMock;
 import com.bodkink.hotel.util.DateInterval;
+import ninja.cache.CacheEhCacheImpl;
+import ninja.cache.NinjaCache;
 import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -18,10 +17,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.anyString;
@@ -37,6 +38,7 @@ public class BookingManagementImplTest {
     private static final DateInterval dateIntervalNoAvailable = new DateInterval(now.minusDays(7).toDate(), now.plusDays(24).toDate());
 
     List<Room> rooms = ModelTestDataMock.getRooms();
+    Customer customer = ModelTestDataMock.getCustomer();
 
     IBookingManagement bookingManagement;
 
@@ -49,6 +51,8 @@ public class BookingManagementImplTest {
 
         ((BookingManagementImpl) bookingManagement).setRoomReservationManagement(roomReservationMock);
         ((BookingManagementImpl) bookingManagement).setRoomManagement(roomManagementMock);
+        ((BookingManagementImpl) bookingManagement).setBookingCache(new NinjaCache(new CacheEhCacheImpl(LoggerFactory.getLogger(this.getClass().getName())) {
+        }));
     }
 
 
@@ -86,6 +90,21 @@ public class BookingManagementImplTest {
     public void testSearchSuccess() {
         EList<Room> availableRooms = bookingManagement.searchRoom(2, 4, dateIntervalAllAvailable.getStart(), dateIntervalAllAvailable.getEnd());
         assertThat(availableRooms.size(), is(30));
+    }
+
+    @Test
+    public void testCreateBooking() {
+        EList<Room> bookedRooms = new BasicEList<>();
+        bookedRooms.add(rooms.get(0));
+        bookedRooms.add(rooms.get(1));
+        Booking booking = bookingManagement.create(dateIntervalAllAvailable.getStart(), dateIntervalAllAvailable.getEnd(),
+                bookedRooms, null, 0, customer);
+        assertThat(booking.getId(), is(notNullValue()));
+        assertThat(booking.getCustomer().getEmail(), is(customer.getEmail()));
+        assertThat(booking.getCustomer().getFirstName(), is(customer.getFirstName()));
+        assertThat(booking.getService().size(), is(0));
+        assertThat(((Booking) ((BookingManagementImpl) bookingManagement).getBookingCache().get(booking.getId())).getRoomReservation().size(), is(2));
+
     }
 
     private IRoomReservationManagement mockRoomReservation() {
