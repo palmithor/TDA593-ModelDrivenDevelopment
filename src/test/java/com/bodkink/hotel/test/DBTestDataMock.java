@@ -33,8 +33,9 @@ public class DBTestDataMock {
             }
             final BigDecimal nightPrice = BigDecimal.TEN.multiply(BigDecimal.TEN).multiply(new BigDecimal(allowedGuests));
             RoomEntity roomEntity = new RoomEntity(ObjectId.get(), roomNumber, "Room " + i, allowedGuests, BigDecimal.TEN,
-                    nightPrice, (List<String>) Arrays.asList(PICTURE_URL), classifications.get(i % 2),
+                    nightPrice, Arrays.asList(PICTURE_URL), classifications.get(i % 2),
                     getRoomExtraEntities(), bedTypeCount);
+            roomEntities.add(roomEntity);
         }
         return roomEntities;
     }
