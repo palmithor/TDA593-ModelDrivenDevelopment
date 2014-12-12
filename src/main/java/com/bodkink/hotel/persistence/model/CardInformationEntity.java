@@ -3,8 +3,9 @@ package com.bodkink.hotel.persistence.model;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Reference;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * @author palmithor
@@ -17,31 +18,34 @@ public class CardInformationEntity {
     private final ObjectId id;
     private final String cardNumber;
     private final String cardHolderName;
-    private final LocalDate expirationDate;
-    private final AddressEntity addressEntity;
+    private final Date expirationDate;
+    @Reference
+    private final AddressEntity address;
 
     public CardInformationEntity() {
-        this.addressEntity = null;
+        this.address = null;
         this.expirationDate = null;
         this.cardHolderName = null;
         this.cardNumber = null;
         this.id = null;
     }
 
-    public CardInformationEntity(String cardNumber, String cardHolderName, LocalDate expirationDate, AddressEntity addressEntity) {
+    public CardInformationEntity(final String cardNumber, final String cardHolderName, final Date expirationDate,
+                                 final AddressEntity address) {
         this.id = null;
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
         this.expirationDate = expirationDate;
-        this.addressEntity = addressEntity;
+        this.address = address;
     }
 
-    public CardInformationEntity(ObjectId id, String cardNumber, String cardHolderName, LocalDate expirationDate, AddressEntity addressEntity) {
+    public CardInformationEntity(final ObjectId id, final String cardNumber, final String cardHolderName,
+                                 final Date expirationDate, final AddressEntity address) {
         this.id = id;
         this.cardNumber = cardNumber;
         this.cardHolderName = cardHolderName;
         this.expirationDate = expirationDate;
-        this.addressEntity = addressEntity;
+        this.address = address;
     }
 
     public ObjectId getId() {
@@ -56,11 +60,11 @@ public class CardInformationEntity {
         return cardHolderName;
     }
 
-    public LocalDate getExpirationDate() {
+    public Date getExpirationDate() {
         return expirationDate;
     }
 
-    public AddressEntity getAddressEntity() {
-        return addressEntity;
+    public AddressEntity getAddress() {
+        return address;
     }
 }

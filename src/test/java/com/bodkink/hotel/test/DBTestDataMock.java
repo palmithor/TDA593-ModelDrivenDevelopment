@@ -1,11 +1,9 @@
 package com.bodkink.hotel.test;
 
-import com.bodkink.hotel.persistence.model.BedTypeEntity;
-import com.bodkink.hotel.persistence.model.ClassificationEntity;
-import com.bodkink.hotel.persistence.model.RoomEntity;
-import com.bodkink.hotel.persistence.model.RoomExtraEntity;
+import com.bodkink.hotel.persistence.model.*;
 import org.apache.commons.lang.StringUtils;
 import org.bson.types.ObjectId;
+import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -60,4 +58,27 @@ public class DBTestDataMock {
             add(new BedTypeEntity(1, 90, 200, "Single Bed"));
         }};
     }
+
+    public static List<RoomReservationTypeEntity> getRoomReservationTypesEntities() {
+        return new ArrayList<RoomReservationTypeEntity>() {{
+            add(new RoomReservationTypeEntity(ObjectId.get(), "Booking"));
+            add(new RoomReservationTypeEntity(ObjectId.get(), "Maintenance"));
+        }};
+    }
+
+    public static CustomerEntity getCustomerEntity() {
+        return new CustomerEntity(ObjectId.get(), "Olof", "Palme", 1927,
+                "+46707235555", "olof.palme@mail.com", new ArrayList<>(), getCardInformationEntity());
+    }
+
+    public static CardInformationEntity getCardInformationEntity() {
+        return new CardInformationEntity(ObjectId.get(), "4000000000000002",
+                "Olof Palme", DateTime.now().plusYears(1).toDate(), getAddressEntity());
+    }
+
+    public static AddressEntity getAddressEntity() {
+        return new AddressEntity(ObjectId.get(), "Sweden", "Gothenburg", "48911",
+                "Apt. 1", "Street 1");
+    }
+
 }

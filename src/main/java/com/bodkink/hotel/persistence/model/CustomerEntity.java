@@ -41,9 +41,9 @@ public class CustomerEntity extends Person {
         this.cardInformation = cardInformation;
     }
 
-    public CustomerEntity(final ObjectId id, final String firstName, final String lastName, final Integer age,
+    public CustomerEntity(final ObjectId id, final String firstName, final String lastName, final Integer birthYear,
                           final String phone, final String email, final List<String> notes, final CardInformationEntity cardInformation) {
-        super(firstName, lastName, age);
+        super(firstName, lastName, birthYear);
         this.id = id;
         this.phone = phone;
         this.email = email;

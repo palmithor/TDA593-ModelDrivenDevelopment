@@ -1,5 +1,6 @@
 package com.bodkink.hotel.persistence.model;
 
+import com.bodkink.hotel.business.model.BillStatusEnum;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
@@ -17,24 +18,30 @@ public class RoomBillEntity {
     private final ObjectId id;
     private final CardInformationEntity cardInformation;
     private final List<BillableItemEntity> items;
+    private final BillStatusEnum billStatus;
 
     public RoomBillEntity() {
         this.id = null;
         this.cardInformation = null;
         this.items = null;
+        this.billStatus = null;
     }
 
 
-    public RoomBillEntity(CardInformationEntity cardInformation, List<BillableItemEntity> items) {
+    public RoomBillEntity(final CardInformationEntity cardInformation, final List<BillableItemEntity> items,
+                          final BillStatusEnum billStatus) {
         this.id = null;
         this.cardInformation = cardInformation;
         this.items = items;
+        this.billStatus = billStatus;
     }
 
-    public RoomBillEntity(ObjectId id, CardInformationEntity cardInformation, List<BillableItemEntity> items) {
+    public RoomBillEntity(final ObjectId id, final CardInformationEntity cardInformation,
+                          final List<BillableItemEntity> items, final BillStatusEnum billStatus) {
         this.id = id;
         this.cardInformation = cardInformation;
         this.items = items;
+        this.billStatus = billStatus;
     }
 
     public ObjectId getId() {
@@ -47,5 +54,9 @@ public class RoomBillEntity {
 
     public List<BillableItemEntity> getItems() {
         return items;
+    }
+
+    public BillStatusEnum getBillStatus() {
+        return billStatus;
     }
 }

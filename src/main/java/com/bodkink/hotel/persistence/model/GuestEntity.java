@@ -29,5 +29,7 @@ public class GuestEntity extends Person {
         this.id = id;
     }
 
-
+    public ObjectId getId() {
+        return id;
+    }
 }

@@ -1,11 +1,12 @@
 package com.bodkink.hotel.persistence.model;
 
+import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 import org.mongodb.morphia.annotations.Reference;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,8 +18,8 @@ public class RoomReservationEntity {
 
     @Id
     private final ObjectId id;
-    private final LocalDate startDate;
-    private final LocalDate endDate;
+    private final Date startDate;
+    private final Date endDate;
     @Reference
     private final RoomReservationTypeEntity type;
     @Reference
@@ -28,6 +29,8 @@ public class RoomReservationEntity {
     @Reference
     private final RoomBillEntity roomBill;
 
+    private final ReservationStatusEnum reservationStatus;
+
     public RoomReservationEntity() {
         this.id = null;
         this.startDate = null;
@@ -36,9 +39,12 @@ public class RoomReservationEntity {
         this.room = null;
         this.guests = null;
         this.roomBill = null;
+        reservationStatus = null;
     }
 
-    public RoomReservationEntity(LocalDate startDate, LocalDate endDate, RoomReservationTypeEntity type, RoomEntity room, List<GuestEntity> guests, RoomBillEntity roomBill) {
+    public RoomReservationEntity(final Date startDate, final Date endDate, final RoomReservationTypeEntity type,
+                                 final RoomEntity room, final List<GuestEntity> guests, final RoomBillEntity roomBill,
+                                 final ReservationStatusEnum reservationStatus) {
         this.id = null;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -46,10 +52,14 @@ public class RoomReservationEntity {
         this.room = room;
         this.guests = guests;
         this.roomBill = roomBill;
+        this.reservationStatus = reservationStatus;
     }
 
 
-    public RoomReservationEntity(ObjectId id, LocalDate startDate, LocalDate endDate, RoomReservationTypeEntity type, RoomEntity room, List<GuestEntity> guests, RoomBillEntity roomBill) {
+    public RoomReservationEntity(final ObjectId id, final Date startDate, final Date endDate,
+                                 final RoomReservationTypeEntity type, final RoomEntity room,
+                                 final List<GuestEntity> guests, final RoomBillEntity roomBill,
+                                 final ReservationStatusEnum reservationStatus) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -57,17 +67,18 @@ public class RoomReservationEntity {
         this.room = room;
         this.guests = guests;
         this.roomBill = roomBill;
+        this.reservationStatus = reservationStatus;
     }
 
     public ObjectId getId() {
         return id;
     }
 
-    public LocalDate getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public LocalDate getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
@@ -86,4 +97,9 @@ public class RoomReservationEntity {
     public RoomBillEntity getRoomBill() {
         return roomBill;
     }
+
+    public ReservationStatusEnum getReservationStatus() {
+        return reservationStatus;
+    }
+
 }

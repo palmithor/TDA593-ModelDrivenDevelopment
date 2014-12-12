@@ -7,8 +7,10 @@ import com.bodkink.hotel.business.IRoomReservationManagement;
 import com.bodkink.hotel.business.logic.BookingManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.model.*;
+import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.business.util.RoomUtil;
 import com.bodkink.hotel.persistence.IBookingService;
+import com.bodkink.hotel.persistence.model.BookingEntity;
 import com.bodkink.hotel.util.DateInterval;
 import com.bodkink.hotel.util.DateUtil;
 import com.google.inject.Inject;
@@ -23,6 +25,7 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -104,9 +107,12 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     public EList<Booking> listBookings() {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        List<BookingEntity> bookingEntityList = bookingService.list();
+        EList<Booking> bookings = new BasicEList<>(bookingEntityList.size());
+        bookingEntityList.forEach(entity -> {
+            bookings.add(EntityToModelConverter.convertBooking(entity));
+        });
+        return bookings;
     }
 
     /**
