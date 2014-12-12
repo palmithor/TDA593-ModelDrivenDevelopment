@@ -2,6 +2,7 @@ package com.bodkink.hotel.test;
 
 import com.bodkink.hotel.business.model.*;
 import com.bodkink.hotel.business.util.EntityToModelConverter;
+import com.bodkink.hotel.persistence.model.RoomEntity;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
@@ -22,6 +23,14 @@ public class ModelTestDataMock {
             rooms.add(EntityToModelConverter.convertRoom(entity));
         });
         return rooms;
+    }
+
+    public static EList<RoomReservation> getRoomReservations(List<RoomEntity> roomEntities) {
+        EList<RoomReservation> roomReservations = new BasicEList<>();
+        DBTestDataMock.getRoomReservations(roomEntities).forEach(entity -> {
+            roomReservations.add(EntityToModelConverter.convertRoomReservation(entity));
+        });
+        return roomReservations;
     }
 
     public static EList<Classification> getClassifications() {

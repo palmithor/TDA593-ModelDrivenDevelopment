@@ -94,10 +94,13 @@ public class EntityToModelConverter {
     }
 
     public static RoomBill convertRoomBill(final RoomBillEntity entity) {
-        RoomBill roomBill = ModelFactory.eINSTANCE.createRoomBill();
-        roomBill.setId(entity.getId() != null ? entity.getId().toString() : null);
-        roomBill.setBillStatusEnum(entity.getBillStatus());
-        roomBill.setCardInformation(convertCardInformation(entity.getCardInformation()));
+        RoomBill roomBill = null;
+        if (entity != null) {
+            roomBill = ModelFactory.eINSTANCE.createRoomBill();
+            roomBill.setId(entity.getId() != null ? entity.getId().toString() : null);
+            roomBill.setBillStatusEnum(entity.getBillStatus());
+            roomBill.setCardInformation(convertCardInformation(entity.getCardInformation()));
+        }
         return roomBill;
     }
 
@@ -160,5 +163,4 @@ public class EntityToModelConverter {
         address.setAddressLine2(entity.getAddressLine2());
         return address;
     }
-
 }

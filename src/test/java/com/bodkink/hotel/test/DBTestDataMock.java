@@ -1,6 +1,8 @@
 package com.bodkink.hotel.test;
 
+import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.persistence.model.*;
+import com.bodkink.hotel.util.DateInterval;
 import org.apache.commons.lang.StringUtils;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTime;
@@ -15,6 +17,29 @@ import java.util.*;
 public class DBTestDataMock {
 
     public static final String PICTURE_URL = "http://www.doylecollection.com/var/doyle/storage/images/media/photo-galleries/the-dupont-circle-hotel-gallery/rooms/dupont-circle-hotel-superior-king-room/36016-1-eng-US/dupont-circle-hotel-superior-king-room_gallery_image.jpg";
+    private static DateTime now = DateTime.now();
+    public static final DateInterval dateIntervalHalfAvailable1 = new DateInterval(now.minusDays(2).toDate(), now.plusDays(1).toDate());
+    public static final DateInterval dateIntervalHalfAvailable2 = new DateInterval(now.minusDays(6).toDate(), now.minusDays(4).toDate());
+    public static final DateInterval dateIntervalAllAvailable = new DateInterval(now.plusDays(20).toDate(), now.plusDays(23).toDate());
+    public static final DateInterval dateIntervalNoAvailable = new DateInterval(now.minusDays(7).toDate(), now.plusDays(24).toDate());
+
+
+    public static List<RoomReservationEntity> getRoomReservations(List<RoomEntity> rooms) {
+        List<RoomReservationEntity> roomReservations = new ArrayList<>();
+        for (int i = 0; i < rooms.size(); i++) {
+            roomReservations.add(new RoomReservationEntity(
+                    ObjectId.get(),
+                    i % 2 == 0 ? DBTestDataMock.dateIntervalHalfAvailable1.getStart() : DBTestDataMock.dateIntervalHalfAvailable2.getStart(),
+                    i % 2 == 0 ? DBTestDataMock.dateIntervalHalfAvailable1.getEnd() : DBTestDataMock.dateIntervalHalfAvailable2.getEnd(),
+                    getRoomReservationTypesEntities().get(0),
+                    rooms.get(i),
+                    new ArrayList<GuestEntity>(),   // TODO ADD guests ?
+                    null,                           // TODO add room bill?
+                    ReservationStatusEnum.RESERVED
+            ));
+        }
+        return roomReservations;
+    }
 
     public static List<RoomEntity> getRoomEntities() {
         List<RoomEntity> roomEntities = new ArrayList<>();
@@ -81,4 +106,18 @@ public class DBTestDataMock {
                 "Apt. 1", "Street 1");
     }
 
+    public static List<BookingEntity> getBookings(final List<RoomEntity> rooms) {
+        List<BookingEntity> bookings = new ArrayList<BookingEntity>();
+        getRoomReservations(rooms).forEach(roomReservation -> {
+            bookings.add(new BookingEntity(
+                    ObjectId.get(),
+                    null,
+                    getCustomerEntity(),
+                    new ArrayList<ServiceEntity>(), // TODO add services?
+                    Arrays.asList(roomReservation),
+                    new ArrayList<BookingBillEntity>() // TODO add booking bills?
+            ));
+        });
+        return bookings;
+    }
 }
