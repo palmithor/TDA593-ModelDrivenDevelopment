@@ -3,6 +3,7 @@ package com.bodkink.hotel.persistence.model;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Reference;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ public class CustomerEntity extends Person {
     private final ObjectId id;
     private final String phone;
     private final String email;
+    @Reference
+    private final CardInformationEntity cardInformation;
     private final List<String> notes;
 
     public CustomerEntity() {
@@ -25,22 +28,27 @@ public class CustomerEntity extends Person {
         this.phone = null;
         this.email = null;
         this.notes = null;
+        this.cardInformation = null;
     }
 
-    public CustomerEntity(String firstName, String lastName, Integer age, String phone, String email, List<String> notes) {
+    public CustomerEntity(final String firstName, final String lastName, final Integer age, final String phone,
+                          final String email, final List<String> notes, final CardInformationEntity cardInformation) {
         super(firstName, lastName, age);
         this.id = null;
         this.phone = phone;
         this.email = email;
         this.notes = notes;
+        this.cardInformation = cardInformation;
     }
 
-    public CustomerEntity(ObjectId id, String firstName, String lastName, Integer age, String phone, String email, List<String> notes) {
+    public CustomerEntity(final ObjectId id, final String firstName, final String lastName, final Integer age,
+                          final String phone, final String email, final List<String> notes, final CardInformationEntity cardInformation) {
         super(firstName, lastName, age);
         this.id = id;
         this.phone = phone;
         this.email = email;
         this.notes = notes;
+        this.cardInformation = cardInformation;
     }
 
    /* public CustomerEntity(final ObjectId id, final Customer customer) {
@@ -62,5 +70,9 @@ public class CustomerEntity extends Person {
 
     public List<String> getNotes() {
         return notes;
+    }
+
+    public CardInformationEntity getCardInformation() {
+        return cardInformation;
     }
 }
