@@ -1,6 +1,5 @@
 package com.bodkink.hotel.persistence;
 
-import com.bodkink.hotel.persistence.model.AddressEntity;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import org.mongodb.morphia.Datastore;
@@ -43,7 +42,6 @@ public class MongoDB {
         if (datastore == null) {
             initMorphia();
         }
-
         return datastore;
     }
 
@@ -58,7 +56,26 @@ public class MongoDB {
 
     private static void initMorphia() {
         morphia = new Morphia()
-                .map(AddressEntity.class);
+                .map(
+                        // AddressEntity.class,
+                        // BedTypeEntity.class,
+                        // BillableItemEntity.class,
+                        // BookingBillEntity.class,
+                        // CardInformationEntity.class,
+                        // ClassificationEntity.class,
+                        // CollectionNames.class,
+                        // CustomerEntity.class,
+                        // GuestEntity.class,
+                        // RoomBillEntity.class,
+                        // RoomEntity.class,
+                        // RoomExtraEntity.class,
+                        // RoomExtrasTemplateEntity.class,
+                        // RoomReservationEntity.class,
+                        // ServiceEntity.class,
+                        // UserAccountEntity.class
+                );
         datastore = morphia.createDatastore(getMongoClient(), DB_NAME);
+        datastore.ensureIndexes();
+
     }
 }

@@ -32,7 +32,6 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -125,7 +124,7 @@ public class BookingManagementImplTest {
         assertThat(booking.getCustomer().getEmail(), is(customer.getEmail()));
         assertThat(booking.getCustomer().getFirstName(), is(customer.getFirstName()));
         assertThat(booking.getService().size(), is(0));
-        assertThat(((Booking) ((BookingManagementImpl) bookingManagement).bookingCache.get(booking.getId())).getRoomReservation().size(), is(2));
+        assertThat((((BookingManagementImpl) bookingManagement).bookingCache.get(booking.getId())).getRoomReservation().size(), is(2));
     }
 
     @Test
@@ -140,12 +139,6 @@ public class BookingManagementImplTest {
         when(bookingServiceMock.list()).thenReturn(new ArrayList<BookingEntity>());
         EList<Booking> bookings = bookingManagement.listBookings();
         assertThat(bookings.size(), is(0));
-    }
-
-    private IRoomReservationManagement mockRoomReservation() {
-        IRoomReservationManagement roomReservationManagement = mock(IRoomReservationManagement.class);
-
-        return roomReservationManagement;
     }
 
     private void mockRoomManagement() {

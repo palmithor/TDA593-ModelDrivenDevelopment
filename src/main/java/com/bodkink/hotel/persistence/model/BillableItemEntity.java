@@ -24,6 +24,12 @@ public class BillableItemEntity {
         this.price = null;
     }
 
+    public BillableItemEntity(final String name, final BigDecimal price) {
+        this.id = null;
+        this.name = name;
+        this.price = price;
+    }
+
     public BillableItemEntity(final ObjectId id, final String name, final BigDecimal price) {
         this.id = id;
         this.name = name;

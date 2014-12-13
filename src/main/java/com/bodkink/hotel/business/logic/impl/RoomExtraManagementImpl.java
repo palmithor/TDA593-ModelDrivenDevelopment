@@ -4,18 +4,18 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.logic.RoomExtraManagement;
-
 import com.bodkink.hotel.business.model.RoomExtra;
+import com.bodkink.hotel.business.util.EntityToModelConverter;
+import com.bodkink.hotel.persistence.IRoomExtraService;
+import com.bodkink.hotel.persistence.model.RoomExtraEntity;
+import com.google.inject.Inject;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
-
-import com.bodkink.hotel.persistence.IRoomExtraService;
-import com.google.inject.Inject;
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,10 +76,12 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	public EList<RoomExtra> listRoomExtras() {
-		// TODO: implement this method
-		roomExtraService.listAll();
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<RoomExtraEntity> roomExtraEntityList = roomExtraService.listAll();
+		EList<RoomExtra> roomExtras = new BasicEList<>(roomExtraEntityList.size());
+		roomExtraEntityList.forEach(entity -> {
+			roomExtras.add(EntityToModelConverter.convertRoomExtra(entity));
+		});
+		return roomExtras;
 	}
 
 	/**

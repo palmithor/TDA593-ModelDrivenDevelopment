@@ -3,6 +3,7 @@ package com.bodkink.hotel.persistence.service;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.dao.*;
 import com.bodkink.hotel.persistence.model.BookingEntity;
+import com.bodkink.hotel.persistence.model.RoomReservationEntity;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.bson.types.ObjectId;
@@ -54,6 +55,16 @@ public class BookingServiceImpl implements IBookingService {
     @Override
     public BookingEntity find(String bookingId) {
         return bookingDAO.get(new ObjectId(bookingId));
+    }
+
+    @Override
+    public List<BookingEntity> findByRoomReservation(List<RoomReservationEntity> roomReservations) {
+        return bookingDAO
+                .getDatastore()
+                .createQuery(BookingEntity.class)
+                .field("roomReservations")
+                .in(roomReservations)
+                .asList();
     }
 
     private void persistCustomer(BookingEntity booking) {

@@ -2,6 +2,7 @@
  */
 package com.bodkink.hotel.business.logic.impl;
 
+import com.bodkink.hotel.business.IBillingManagement;
 import com.bodkink.hotel.business.IRoomManagement;
 import com.bodkink.hotel.business.IRoomReservationManagement;
 import com.bodkink.hotel.business.logic.BookingManagement;
@@ -9,9 +10,11 @@ import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.model.*;
 import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.business.util.IBookingCache;
+import com.bodkink.hotel.business.util.ModelToEntityConverter;
 import com.bodkink.hotel.business.util.RoomUtil;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.model.BookingEntity;
+import com.bodkink.hotel.persistence.model.RoomReservationEntity;
 import com.bodkink.hotel.util.DateInterval;
 import com.bodkink.hotel.util.DateUtil;
 import com.google.inject.Inject;
@@ -25,6 +28,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -45,13 +49,15 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 
     @Inject
     IBookingCache bookingCache;
-
     @Inject
     IBookingService bookingService;
     @Inject
     IRoomReservationManagement roomReservationManagement;
     @Inject
     IRoomManagement roomManagement;
+    @Inject
+    IBillingManagement billingManagement;
+
 
     /**
      * <!-- begin-user-doc -->
@@ -93,6 +99,8 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
             roomReservation.setRoom(r);
             roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
             booking.getRoomReservation().add(roomReservation);
+            // TODO room reservation type enum?
+            roomReservationManagement.create(r, start, end, null);
         });
         if (services != null) {
             booking.getService().addAll(services);
@@ -140,9 +148,14 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     public EList<Booking> listBookings(Date start) {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        EList<RoomReservation> roomReservation = roomReservationManagement.listRoomReservations(start);
+        List<RoomReservationEntity> roomReservationEntities = new ArrayList<>(roomReservation.size());
+
+        roomReservation.forEach(model -> {
+            roomReservationEntities.add(ModelToEntityConverter.convertRoomReservation(model));
+        });
+        bookingService.findByRoomReservation(roomReservationEntities);
+        return null;
     }
 
     /**
@@ -220,7 +233,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     public boolean cancelBooking(Booking booking) {
-        // TODO: implement this method
+        // TODO: when we cancel a booking, shouldn't we delete all room reservations?
         // Ensure that you remove @generated or mark it @generated NOT
         throw new UnsupportedOperationException();
     }
@@ -232,7 +245,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     public ReservationStatusEnum getBookingStatus(String bookingId) {
-        // TODO: implement this method
+        // TODO: what is booking status?????
         // Ensure that you remove @generated or mark it @generated NOT
         throw new UnsupportedOperationException();
     }
@@ -244,8 +257,8 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     public Receipt confirmAndPay(Booking booking, CardInformation cardInformation) {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
+        // TODO add total price for booking bill
+        // TODO Maybe we should create both bills here but only pay the reservation fee one
         throw new UnsupportedOperationException();
     }
 

@@ -4,7 +4,9 @@ import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
+import org.mongodb.morphia.annotations.Indexed;
 import org.mongodb.morphia.annotations.Reference;
+import org.mongodb.morphia.utils.IndexDirection;
 
 import java.util.Date;
 import java.util.List;
@@ -18,6 +20,7 @@ public class RoomReservationEntity {
 
     @Id
     private final ObjectId id;
+    @Indexed(value = IndexDirection.ASC, name = "upc")
     private final Date startDate;
     private final Date endDate;
     @Reference
