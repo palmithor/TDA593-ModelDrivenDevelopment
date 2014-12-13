@@ -18,6 +18,8 @@ package conf;
 
 import com.bodkink.hotel.business.*;
 import com.bodkink.hotel.business.logic.impl.*;
+import com.bodkink.hotel.business.util.BookingCache;
+import com.bodkink.hotel.business.util.IBookingCache;
 import com.bodkink.hotel.persistence.IBedTypeService;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.IRoomExtraService;
@@ -61,8 +63,6 @@ public class Module extends AbstractModule {
         bind(IBedTypeService.class).to(BedTypeServiceImpl.class);
         bind(IRoomReservationService.class).to(RoomReservationServiceImpl.class);
 
-
-
         // persistence dao
         Reflections reflections = new Reflections(AddressDAO.class.getPackage().getName());
 
@@ -74,6 +74,8 @@ public class Module extends AbstractModule {
             }
         }
 
+        // Utility
+        bind(IBookingCache.class).to(BookingCache.class);
 
     }
 

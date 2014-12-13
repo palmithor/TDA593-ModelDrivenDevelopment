@@ -7,14 +7,13 @@ import com.bodkink.hotel.business.logic.LogicFactory;
 import com.bodkink.hotel.business.model.Booking;
 import com.bodkink.hotel.business.model.Customer;
 import com.bodkink.hotel.business.model.Room;
+import com.bodkink.hotel.business.util.BookingCache;
 import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.model.BookingEntity;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.test.DBTestDataMock;
 import com.bodkink.hotel.test.ModelTestDataMock;
-import ninja.cache.CacheEhCacheImpl;
-import ninja.cache.NinjaCache;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
@@ -24,7 +23,6 @@ import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +48,7 @@ public class BookingManagementImplTest {
     @Mock
     IBookingService bookingServiceMock;
 
+
     List<RoomEntity> roomEntities = DBTestDataMock.getRoomEntities();
     List<Room> rooms;
     Customer customer = ModelTestDataMock.getCustomer();
@@ -67,8 +66,6 @@ public class BookingManagementImplTest {
         ((BookingManagementImpl) bookingManagement).roomReservationManagement = roomReservationMock;
         ((BookingManagementImpl) bookingManagement).roomManagement = roomManagementMock;
         ((BookingManagementImpl) bookingManagement).bookingService = bookingServiceMock;
-        ((BookingManagementImpl) bookingManagement).bookingCache = new NinjaCache(new CacheEhCacheImpl(LoggerFactory.getLogger(this.getClass().getName())) {
-        });
     }
 
 
@@ -118,6 +115,7 @@ public class BookingManagementImplTest {
 
     @Test
     public void testCreateBooking() {
+        ((BookingManagementImpl) bookingManagement).bookingCache = new BookingCache();
         EList<Room> bookedRooms = new BasicEList<>();
         bookedRooms.add(rooms.get(0));
         bookedRooms.add(rooms.get(1));

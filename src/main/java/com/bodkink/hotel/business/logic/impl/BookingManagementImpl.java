@@ -8,6 +8,7 @@ import com.bodkink.hotel.business.logic.BookingManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.model.*;
 import com.bodkink.hotel.business.util.EntityToModelConverter;
+import com.bodkink.hotel.business.util.IBookingCache;
 import com.bodkink.hotel.business.util.RoomUtil;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.model.BookingEntity;
@@ -15,7 +16,6 @@ import com.bodkink.hotel.util.DateInterval;
 import com.bodkink.hotel.util.DateUtil;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import ninja.cache.NinjaCache;
 import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -44,14 +44,14 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
     private static final Logger logger = LoggerFactory.getLogger(BookingManagementImpl.class);
 
     @Inject
-    NinjaCache bookingCache;
+    IBookingCache bookingCache;
+
     @Inject
     IBookingService bookingService;
     @Inject
     IRoomReservationManagement roomReservationManagement;
     @Inject
     IRoomManagement roomManagement;
-    private String cacheTimeToLive = "5mn";
 
     /**
      * <!-- begin-user-doc -->
@@ -85,7 +85,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         Booking booking = ModelFactory.eINSTANCE.createBooking();
         booking.setId(ObjectId.get().toString());
 
-        for (Room r : rooms) {
+        rooms.forEach(r -> {
             RoomReservation roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
             roomReservation.setStartDate(start);
             roomReservation.setEndDate(end);
@@ -93,13 +93,13 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
             roomReservation.setRoom(r);
             roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
             booking.getRoomReservation().add(roomReservation);
-        }
+        });
         if (services != null) {
             booking.getService().addAll(services);
         }
         booking.setCustomer(customer);
 
-        bookingCache.add(booking.getId(), booking, cacheTimeToLive);
+        bookingCache.put(booking);
         return booking;
     }
 
@@ -155,12 +155,12 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         EList<RoomReservation> roomReservations = roomReservationManagement.listRoomReservations(start, endDate);
         EList<Room> availableRooms = new BasicEList<>();
         DateInterval compareDateInterval = new DateInterval(start, endDate);
-        for (RoomReservation roomReservation : roomReservations) {
+        roomReservations.forEach(roomReservation -> {
             DateInterval roomReservedDateInterval = new DateInterval(roomReservation.getStartDate(), roomReservation.getEndDate());
             if (!DateUtil.isOverlapping(roomReservedDateInterval, compareDateInterval)) {
                 availableRooms.add(roomManagement.findRoom(roomReservation.getRoom().getId()));
             }
-        }
+        });
 
         return availableRooms;
     }
@@ -249,8 +249,4 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         throw new UnsupportedOperationException();
     }
 
-
-    public void setCacheTimeToLive(String cacheTimeToLive) {
-        this.cacheTimeToLive = cacheTimeToLive;
-    }
 } //BookingManagementImpl
