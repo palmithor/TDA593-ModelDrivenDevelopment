@@ -15,4 +15,5 @@ import com.bodkink.hotel.business.IGuestManagement;
  * @generated
  */
 public interface GuestManagement extends IGuestManagement {
+
 } // GuestManagement

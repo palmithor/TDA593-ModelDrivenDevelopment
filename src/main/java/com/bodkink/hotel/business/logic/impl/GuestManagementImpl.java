@@ -5,22 +5,18 @@ package com.bodkink.hotel.business.logic.impl;
 import com.bodkink.hotel.business.IBillingManagement;
 import com.bodkink.hotel.business.logic.GuestManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
-
 import com.bodkink.hotel.business.model.Booking;
 import com.bodkink.hotel.business.model.Guest;
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.business.model.RoomReservation;
-
-import java.lang.reflect.InvocationTargetException;
-
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,7 +73,13 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
      * @return
      */
     private boolean rdyForCheckOut(Booking booking){
-        // TODO implement this.
+        for (RoomReservation reservation : booking.getRoomReservation()) {
+            if(reservation.getReservationStatusEnum() == ReservationStatusEnum.CHECKED_IN
+                    && !reservation.getGuest().equals(booking.getCustomer())){
+                logger.error("Not all guests have been checked out from the booking.");
+                return false;
+            }
+        }
         return true;
     }
 
@@ -87,8 +89,13 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
      * @return
      */
     private boolean checkOutCustomer(Booking booking){
-        // TODO: find customer Room reservation.
-        return true;
+        // find customer room reservation and check out.
+        for (RoomReservation reservation : booking.getRoomReservation()){
+            if (reservation.getGuest().equals(booking.getCustomer()))
+                return checkOut(reservation);
+        }
+        logger.error("The customer is not checked in to any room in the booking");
+        return false;
     }
 
     /**
@@ -118,7 +125,7 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
             logger.error("Illegal room reservation.");
             return false;
         }
-        // TODO: remove guest from room.
+        // TODO: remove guest from room. roomReservation.setGuest(null)
         roomReservation.setReservationStatusEnum(ReservationStatusEnum.CHECKED_OUT);
         return true;
 	}
