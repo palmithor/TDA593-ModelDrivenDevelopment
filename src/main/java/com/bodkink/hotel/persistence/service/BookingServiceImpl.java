@@ -5,6 +5,7 @@ import com.bodkink.hotel.persistence.dao.*;
 import com.bodkink.hotel.persistence.model.BookingEntity;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.bson.types.ObjectId;
 import org.mongodb.morphia.Key;
 
 import java.util.List;
@@ -48,6 +49,11 @@ public class BookingServiceImpl implements IBookingService {
     @Override
     public List<BookingEntity> list() {
         return bookingDAO.find().asList();
+    }
+
+    @Override
+    public BookingEntity find(String bookingId) {
+        return bookingDAO.get(new ObjectId(bookingId));
     }
 
     private void persistCustomer(BookingEntity booking) {

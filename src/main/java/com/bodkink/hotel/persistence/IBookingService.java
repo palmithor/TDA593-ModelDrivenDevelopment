@@ -14,4 +14,6 @@ public interface IBookingService {
     Key<BookingEntity> persist(final BookingEntity booking);
 
     List<BookingEntity> list();
+
+    BookingEntity find(String bookingId);
 }

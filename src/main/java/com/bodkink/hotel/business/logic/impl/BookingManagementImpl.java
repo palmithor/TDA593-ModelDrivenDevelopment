@@ -14,6 +14,7 @@ import com.bodkink.hotel.persistence.model.BookingEntity;
 import com.bodkink.hotel.util.DateInterval;
 import com.bodkink.hotel.util.DateUtil;
 import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import ninja.cache.NinjaCache;
 import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
@@ -37,6 +38,7 @@ import java.util.List;
  *
  * @generated
  */
+@Singleton
 public class BookingManagementImpl extends MinimalEObjectImpl.Container implements BookingManagement {
 
     private static final Logger logger = LoggerFactory.getLogger(BookingManagementImpl.class);
@@ -122,9 +124,12 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     public Booking findBooking(String bookingId) {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        BookingEntity entity = bookingService.find(bookingId);
+        if (entity != null) {
+            return EntityToModelConverter.convertBooking(entity);
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -243,25 +248,6 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         throw new UnsupportedOperationException();
     }
 
-    public NinjaCache getBookingCache() {
-        return bookingCache;
-    }
-
-    public void setBookingCache(NinjaCache bookingCache) {
-        this.bookingCache = bookingCache;
-    }
-
-    public void setBookingService(IBookingService bookingService) {
-        this.bookingService = bookingService;
-    }
-
-    public void setRoomReservationManagement(IRoomReservationManagement roomReservationManagement) {
-        this.roomReservationManagement = roomReservationManagement;
-    }
-
-    public void setRoomManagement(IRoomManagement roomManagement) {
-        this.roomManagement = roomManagement;
-    }
 
     public void setCacheTimeToLive(String cacheTimeToLive) {
         this.cacheTimeToLive = cacheTimeToLive;
