@@ -42,6 +42,7 @@ import java.util.List;
 public class BookingManagementImpl extends MinimalEObjectImpl.Container implements BookingManagement {
 
     private static final Logger logger = LoggerFactory.getLogger(BookingManagementImpl.class);
+
     @Inject
     NinjaCache bookingCache;
     @Inject

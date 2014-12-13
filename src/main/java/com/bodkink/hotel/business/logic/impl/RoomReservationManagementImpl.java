@@ -4,26 +4,18 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.logic.RoomReservationManagement;
-
-import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.business.model.Room;
 import com.bodkink.hotel.business.model.RoomReservation;
 import com.bodkink.hotel.business.model.RoomReservationType;
-
-import java.lang.reflect.InvocationTargetException;
-
-import java.util.Date;
-
 import com.bodkink.hotel.business.model.impl.ModelFactoryImpl;
-import com.bodkink.hotel.business.model.impl.RoomReservationImpl;
-import com.bodkink.hotel.business.model.util.ModelAdapterFactory;
 import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,7 +55,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 */
 	public EList<RoomReservation> listRoomReservations() {
-		return roomReservationService.list();
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -71,7 +63,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 */
 	public EList<RoomReservation> listRoomReservations(Date start, Date end) {
-		return roomReservationService.list(start, end);
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -79,7 +71,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 */
 	public EList<RoomReservation> listRoomReservations(Date start) {
-		return roomReservationService.list(start);
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -101,7 +93,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 */
 	public RoomReservation findRoomReservation(String roomReservationId) {
-		return roomReservationService.find(roomReservationId);
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -109,9 +101,11 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 	 * <!-- end-user-doc -->
 	 */
 	public boolean cancelRoomReservation(String roomReservationId) {
-		RoomReservation roomReservation = roomReservationService.find(roomReservationId);
-		roomReservation.setReservationStatusEnum(ReservationStatusEnum.CANCELED);
-		return roomReservationService.edit(roomReservation);
+		throw new UnsupportedOperationException();
+
+		// RoomReservation roomReservation = roomReservationService.find(roomReservationId);
+		// roomReservation.setReservationStatusEnum(ReservationStatusEnum.CANCELED);
+		// return roomReservationService.edit(roomReservation);
 	}
 
 	/**

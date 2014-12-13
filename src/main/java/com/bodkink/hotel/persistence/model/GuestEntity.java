@@ -19,13 +19,13 @@ public class GuestEntity extends Person {
         this.id = null;
     }
 
-    public GuestEntity(final String firstName, final String lastName, final Integer age) {
-        super(firstName, lastName, age);
+    public GuestEntity(final String firstName, final String lastName, final Integer birthYear) {
+        super(firstName, lastName, birthYear);
         this.id = null;
     }
 
-    public GuestEntity(final ObjectId id, final String firstName, final String lastName, final Integer age) {
-        super(firstName, lastName, age);
+    public GuestEntity(final ObjectId id, final String firstName, final String lastName, final Integer birthYear) {
+        super(firstName, lastName, birthYear);
         this.id = id;
     }
 
