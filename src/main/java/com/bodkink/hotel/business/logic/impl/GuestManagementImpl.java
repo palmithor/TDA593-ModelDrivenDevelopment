@@ -2,20 +2,25 @@
  */
 package com.bodkink.hotel.business.logic.impl;
 
+import com.bodkink.hotel.business.IBillingManagement;
 import com.bodkink.hotel.business.logic.GuestManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
 
 import com.bodkink.hotel.business.model.Booking;
 import com.bodkink.hotel.business.model.Guest;
+import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.business.model.RoomReservation;
 
 import java.lang.reflect.InvocationTargetException;
 
+import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +32,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class GuestManagementImpl extends MinimalEObjectImpl.Container implements GuestManagement {
-	/**
+    private static final Logger logger = LoggerFactory.getLogger(BookingManagementImpl.class);
+    @Inject
+    IBillingManagement billManager;
+    /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -46,37 +54,73 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
 		return LogicPackage.Literals.GUEST_MANAGEMENT;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+    /**
+     * Check out the customer and charge the customer for the stay.
+     * @param booking
+     * @return true on successful check out, otherwise false.
+     */
 	public boolean checkOut(Booking booking) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if(booking == null || !rdyForCheckOut(booking)){
+            logger.error("Booking not ready for check out.");
+            return false;
+        }
+        // Try to pay all remaining bills.
+        if(!billManager.makePayment(booking))
+            return false;
+
+        return checkOutCustomer(booking);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+    /**
+     * Check if all guests have checked out.
+     * @param booking
+     * @return
+     */
+    private boolean rdyForCheckOut(Booking booking){
+        // TODO implement this.
+        return true;
+    }
+
+    /**
+     * Check out customer from room reservation.
+     * @param booking
+     * @return
+     */
+    private boolean checkOutCustomer(Booking booking){
+        // TODO: find customer Room reservation.
+        return true;
+    }
+
+    /**
+     * Check guest/customer in to room.
+     * @param roomReservation
+     * @param guests
+     * @return true on successful check in, otherwise false.
+     */
 	public boolean checkIn(RoomReservation roomReservation, Guest guests) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        if(roomReservation == null || roomReservation.getReservationStatusEnum() == ReservationStatusEnum.CHECKED_IN) {
+            logger.error("Illegal room reservation.");
+            return false;
+        }
+        // TODO add this setter, roomReservation.setGuest(guests);
+        roomReservation.setReservationStatusEnum(ReservationStatusEnum.CHECKED_IN);
+        return true;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+    /**
+     * Check the guest out from the room.
+     * @param roomReservation
+     * @return true on successful check out, otherwise false.
+     */
 	public boolean checkOut(RoomReservation roomReservation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+        //return roomReservation.checkOut
+        if(roomReservation == null || roomReservation.getReservationStatusEnum() == ReservationStatusEnum.CHECKED_OUT){
+            logger.error("Illegal room reservation.");
+            return false;
+        }
+        // TODO: remove guest from room.
+        roomReservation.setReservationStatusEnum(ReservationStatusEnum.CHECKED_OUT);
+        return true;
 	}
 
 	/**
@@ -97,4 +141,7 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
 		return super.eInvoke(operationID, arguments);
 	}
 
+    public void setBillManager(IBillingManagement billManager) {
+        this.billManager = billManager;
+    }
 } //GuestManagementImpl
