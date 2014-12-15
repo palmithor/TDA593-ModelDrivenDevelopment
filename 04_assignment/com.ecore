@@ -275,12 +275,18 @@
           <eClassifiers xsi:type="ecore:EClass" name="CardInformation">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" ordered="false"
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ccNumber" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="CardHolderName"
-                ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="expirationDate"
-                ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="ccv" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiryMonth" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiryYear" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="address" ordered="false"
                 lowerBound="1" eType="#//bodkink/hotel/business/model/Address"/>
           </eClassifiers>

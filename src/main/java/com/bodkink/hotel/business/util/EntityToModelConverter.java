@@ -139,10 +139,14 @@ public class EntityToModelConverter {
     public static CardInformation convertCardInformation(final CardInformationEntity entity) {
         CardInformation cardInformation = ModelFactory.eINSTANCE.createCardInformation();
         cardInformation.setId(entity.getId() != null ? entity.getId().toString() : null);
-        cardInformation.setExpirationDate(entity.getExpirationDate());
-        cardInformation.setCardNumber(entity.getCardNumber());
-        cardInformation.setCardHolderName(entity.getCardHolderName());
-        cardInformation.setAddress(convertAddress(entity.getAddress()));
+        cardInformation.setCcNumber(entity.getCcNumber());
+        cardInformation.setCcv(entity.getCcv());
+        cardInformation.setExpiryMonth(entity.getExpiryMonth());
+        cardInformation.setExpiryYear(entity.getExpiryYear());
+        cardInformation.setFirstName(entity.getFirstName());
+        cardInformation.setLastName(entity.getLastName());
+        cardInformation.setAddress(EntityToModelConverter.convertAddress(entity.getAddress()));
+
         return cardInformation;
     }
 

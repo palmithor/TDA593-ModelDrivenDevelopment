@@ -296,9 +296,12 @@
             </genClasses>
             <genClasses xsi:type="genmodel:GenClass" ecoreClass="com.ecore#//bodkink/hotel/business/model/CardInformation">
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/id"/>
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/cardNumber"/>
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/CardHolderName"/>
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/expirationDate"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/ccNumber"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/ccv"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/expiryMonth"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/expiryYear"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/firstName"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/CardInformation/lastName"/>
               <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                   propertySortChoices="true" ecoreFeature="ecore:EReference com.ecore#//bodkink/hotel/business/model/CardInformation/address"/>
             </genClasses>

@@ -91,8 +91,7 @@ public class DBTestDataMock {
     }
 
     public static CardInformationEntity getCardInformationEntity() {
-        return new CardInformationEntity(ObjectId.get(), "4000000000000002",
-                "Olof Palme", DateTime.now().plusYears(1).toDate(), getAddressEntity());
+        return new CardInformationEntity(ObjectId.get(), "4000000000000002", "123", 4, 1992, "Olof", "Palme", getAddressEntity());
     }
 
     public static AddressEntity getAddressEntity() {
