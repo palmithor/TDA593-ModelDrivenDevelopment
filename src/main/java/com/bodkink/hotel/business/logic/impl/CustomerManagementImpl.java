@@ -2,6 +2,7 @@
  */
 package com.bodkink.hotel.business.logic.impl;
 
+
 import com.bodkink.hotel.business.logic.CustomerManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
 
@@ -11,11 +12,22 @@ import com.bodkink.hotel.business.model.Customer;
 import java.lang.reflect.InvocationTargetException;
 
 import com.bodkink.hotel.business.model.ModelFactory;
+import com.bodkink.hotel.business.util.ModelToEntityConverter;
+import com.bodkink.hotel.persistence.ICustomerService;
+import com.bodkink.hotel.persistence.model.CustomerEntity;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.mongodb.morphia.Key;
+import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
+
+import javax.inject.Inject;
+import javax.xml.soap.SOAPException;
+
+
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +39,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class CustomerManagementImpl extends MinimalEObjectImpl.Container implements CustomerManagement {
-	/**
+
+    @Inject
+    ICustomerService customerService;
+
+    /**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -51,11 +67,43 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+	public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) throws SOAPException {
+        // TODO: implement this method
+
+        try {
+            // Acquire CustomerRequires object
+            se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires banking = se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires
+                    .instance();
+
+            if (banking.isCreditCardValid(cardInformation.getCcNumber(), cardInformation.getCcv(), cardInformation.getExpiryMonth(), cardInformation.getExpiryYear(), cardInformation.getFirstName(), cardInformation.getLastName())) {
+                // System.out.println("Valid credit card");
+                // TODO: Create a customer here
+                Customer customer = ModelFactory.eINSTANCE.createCustomer();
+
+
+                customer.setFirstName(firstName);
+                customer.setSurname(lastName);
+                customer.setPhone(phone);
+                customer.setEmail(email);
+                customer.setBirthYear(birthYear);
+                customer.setCardInformation(cardInformation);
+
+                Key<CustomerEntity> key = customerService.persist(ModelToEntityConverter.convertCustomer(customer));
+
+                customer.setId(key.getId().toString());
+
+                return customer;
+            } else{
+                throw new UnsupportedOperationException("Error while adding credit card");
+            }
+
+        } catch(SOAPException e){
+                System.err
+                        .println("Error occurred while communicating with the bank");
+                e.printStackTrace();
+            throw e;
+            }
+    }
 
 	/**
 	 * <!-- begin-user-doc -->
