@@ -109,7 +109,10 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
             logger.error("Illegal room reservation.");
             return false;
         }
-        // TODO add this setter, roomReservation.setGuest(guests);
+        EList roomGuests = roomReservation.getGuest();
+        roomGuests.clear();
+        roomGuests.add(guests);
+
         roomReservation.setReservationStatusEnum(ReservationStatusEnum.CHECKED_IN);
         return true;
 	}
@@ -125,7 +128,8 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
             logger.error("Illegal room reservation.");
             return false;
         }
-        // TODO: remove guest from room. roomReservation.setGuest(null)
+        EList roomGuests = roomReservation.getGuest();
+        roomGuests.clear();
         roomReservation.setReservationStatusEnum(ReservationStatusEnum.CHECKED_OUT);
         return true;
 	}
