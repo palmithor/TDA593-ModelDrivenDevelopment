@@ -15,6 +15,38 @@ import java.util.Map;
  */
 public class ModelToEntityConverter {
 
+
+    public static BookingEntity convertBooking(final Booking model) {
+        List<ServiceEntity> services = new ArrayList<>(model.getService().size());
+        model.getService().forEach(service -> {
+            services.add(convertService(service));
+        });
+
+        List<RoomReservationEntity> roomReservations = new ArrayList<>(model.getRoomReservation().size());
+
+        model.getRoomReservation().forEach(roomReservation -> {
+            roomReservations.add(convertRoomReservation(roomReservation));
+        });
+
+        List<BookingBillEntity> bookingBills = new ArrayList<>(model.getBookingBill().size());
+        model.getBookingBill().forEach(bill -> {
+            bookingBills.add(convertBookingBill(bill));
+        });
+        return new BookingEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+                convertCustomer(model.getCustomer()), services, roomReservations, bookingBills);
+    }
+
+    public static CustomerEntity convertCustomer(final Customer model) {
+        return new CustomerEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+                model.getFirstName(), model.getSurname(), model.getBirthYear(), model.getPhone(),
+                model.getEmail(), model.getNotes(), convertCardInformation(model.getCardInformation()));
+    }
+
+    public static ServiceEntity convertService(final Service model) {
+        return new ServiceEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+                model.getTitle(), model.getDescription(), model.getPrice());
+    }
+
     public static RoomReservationEntity convertRoomReservation(final RoomReservation model) {
         List<GuestEntity> guests = new ArrayList<>(model.getGuest().size());
         model.getGuest().forEach(guest -> {
@@ -83,5 +115,12 @@ public class ModelToEntityConverter {
     public static BillableItemEntity convertBillableItem(final BillableItem model) {
         return new BillableItemEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
                 model.getName(), model.getPrice());
+    }
+
+
+    public static BookingBillEntity convertBookingBill(final BookingBill model) {
+        return new BookingBillEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+                convertCardInformation(model.getCardInformation()), model.getBillStatusEnum(),
+                model.getBookingBillType());
     }
 }

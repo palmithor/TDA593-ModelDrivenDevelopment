@@ -16,7 +16,6 @@ public class BookingEntity {
 
     @Id
     private final ObjectId id;
-    private final Long number;
     private final CustomerEntity customer;
     @Reference
     private final List<ServiceEntity> services;
@@ -30,44 +29,27 @@ public class BookingEntity {
         this.roomReservations = null;
         this.services = null;
         this.customer = null;
-        this.number = null;
         this.id = null;
     }
 
-    public BookingEntity(Long number, CustomerEntity customer, List<ServiceEntity> services, List<RoomReservationEntity> roomReservations, List<BookingBillEntity> bookingBills) {
+    public BookingEntity(CustomerEntity customer, List<ServiceEntity> services, List<RoomReservationEntity> roomReservations, List<BookingBillEntity> bookingBills) {
         this.id = null;
-        this.number = number;
         this.customer = customer;
         this.services = services;
         this.roomReservations = roomReservations;
         this.bookingBills = bookingBills;
     }
 
-    public BookingEntity(ObjectId id, Long number, CustomerEntity customer, List<ServiceEntity> services, List<RoomReservationEntity> roomReservations, List<BookingBillEntity> bookingBills) {
+    public BookingEntity(ObjectId id, CustomerEntity customer, List<ServiceEntity> services, List<RoomReservationEntity> roomReservations, List<BookingBillEntity> bookingBills) {
         this.id = id;
-        this.number = number;
         this.customer = customer;
         this.services = services;
         this.roomReservations = roomReservations;
         this.bookingBills = bookingBills;
     }
-
-   /* public BookingEntity(final ObjectId id, final Booking booking) {
-        this.id = id;
-        this.number = new BigDecimal(booking.getNumber()).longValue();
-        this.customer = new CustomerEntity(booking.getCustomer().getFirstName(), booking.getCustomer().getSurname(),
-                booking.getCustomer().getBirthYear(), booking.);
-        this.services = booking.getService();
-        this.roomReservations = roomReservations;
-        this.bookingBills = bookingBills;
-    }*/
 
     public ObjectId getId() {
         return id;
-    }
-
-    public Long getNumber() {
-        return number;
     }
 
     public CustomerEntity getCustomer() {

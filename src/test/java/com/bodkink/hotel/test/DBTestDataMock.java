@@ -104,7 +104,6 @@ public class DBTestDataMock {
         getRoomReservations(rooms).forEach(roomReservation -> {
             bookings.add(new BookingEntity(
                     ObjectId.get(),
-                    null,
                     getCustomerEntity(),
                     new ArrayList<ServiceEntity>(), // TODO add services?
                     Arrays.asList(roomReservation),

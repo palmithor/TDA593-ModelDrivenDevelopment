@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.mongodb.morphia.Key;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -172,7 +173,8 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         DateInterval compareDateInterval = new DateInterval(start, endDate);
         roomReservations.forEach(roomReservation -> {
             DateInterval roomReservedDateInterval = new DateInterval(roomReservation.getStartDate(), roomReservation.getEndDate());
-            if (!DateUtil.isOverlapping(roomReservedDateInterval, compareDateInterval)) {
+            if (!DateUtil.isOverlapping(roomReservedDateInterval, compareDateInterval)
+                    || roomReservation.getReservationStatusEnum() == ReservationStatusEnum.CANCELED) {
                 availableRooms.add(roomManagement.findRoom(roomReservation.getRoom().getId()));
             }
         });
@@ -199,6 +201,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
@@ -206,23 +209,23 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
     public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
         switch (operationID) {
             case LogicPackage.BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_CUSTOMER:
-                return create((Date)arguments.get(0), (Date)arguments.get(1), (EList<Room>)arguments.get(2), (EList<Service>)arguments.get(3), (Customer)arguments.get(4));
+                return create((Date) arguments.get(0), (Date) arguments.get(1), (EList<Room>) arguments.get(2), (EList<Service>) arguments.get(3), (Customer) arguments.get(4));
             case LogicPackage.BOOKING_MANAGEMENT___LIST_BOOKINGS:
                 return listBookings();
             case LogicPackage.BOOKING_MANAGEMENT___FIND_BOOKING__STRING:
-                return findBooking((String)arguments.get(0));
+                return findBooking((String) arguments.get(0));
             case LogicPackage.BOOKING_MANAGEMENT___LIST_BOOKINGS__DATE:
-                return listBookings((Date)arguments.get(0));
+                return listBookings((Date) arguments.get(0));
             case LogicPackage.BOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE:
-                return listAvailableRooms((Date)arguments.get(0), (Date)arguments.get(1));
+                return listAvailableRooms((Date) arguments.get(0), (Date) arguments.get(1));
             case LogicPackage.BOOKING_MANAGEMENT___CANCEL_BOOKING__BOOKING:
-                return cancelBooking((Booking)arguments.get(0));
+                return cancelBooking((Booking) arguments.get(0));
             case LogicPackage.BOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING:
-                return getBookingStatus((String)arguments.get(0));
+                return getBookingStatus((String) arguments.get(0));
             case LogicPackage.BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING:
-                return confirmAndPay((Booking)arguments.get(0));
+                return confirmAndPay((Booking) arguments.get(0));
             case LogicPackage.BOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE:
-                return searchRoom((Integer)arguments.get(0), (Integer)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3));
+                return searchRoom((Integer) arguments.get(0), (Integer) arguments.get(1), (Date) arguments.get(2), (Date) arguments.get(3));
         }
         return super.eInvoke(operationID, arguments);
     }
@@ -232,24 +235,26 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public boolean cancelBooking(Booking booking) {
-        // TODO: when we cancel a booking, shouldn't we delete all room reservations?
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        EList<RoomReservation> roomReservations = booking.getRoomReservation();
+        roomReservations.forEach(roomReservation -> {
+            roomReservation.setReservationStatusEnum(ReservationStatusEnum.CANCELED);
+        });
+        Key<BookingEntity> bookingEntityKey = bookingService.persist(ModelToEntityConverter.convertBooking(booking));
+        return bookingEntityKey != null;
     }
 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public ReservationStatusEnum getBookingStatus(String bookingId) {
-        // TODO: what is booking status?????
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        // TODO Implement
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
     /**
@@ -258,20 +263,28 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      *
      * @generated
      */
-    public Receipt confirmAndPay(Booking booking) {
-        // TODO add total price for booking bill
-        // TODO Maybe we should create both bills here but only pay the reservation fee one
-        throw new UnsupportedOperationException();
+    public Receipt confirmAndPay(final Booking booking) {
+        BookingBill bookingBill = ModelFactory.eINSTANCE.createBookingBill();
+        bookingBill.setBookingBillType(BookingBillType.RESERVATION_FEE);
+        if (billingManagement.makePayment(booking)) {
+            booking.getBookingBill().add(bookingBill);
+            return billingManagement.generateReceipt(bookingBill);
+        } else {
+            // TODO Payment failed - try again?
+            return null;
+        }
     }
 
 
     private boolean areAvailable(EList<Room> rooms, final Date start, final Date end) {
-        rooms.forEach(room -> {
-            // if(!roomReservationManagement.isAvailable(room, start, end)) {
-            //  return false;
-            //}
-        });
-        return true;
+        boolean result = true;
+        for (Room r : rooms) {
+            if (!roomReservationManagement.isAvailable(r, start, end)) {
+                result = false;
+                break;
+            }
+        }
+        return result;
     }
 
 } //BookingManagementImpl

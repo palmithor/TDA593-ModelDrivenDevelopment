@@ -4,9 +4,7 @@ import com.bodkink.hotel.business.IBookingManagement;
 import com.bodkink.hotel.business.IRoomManagement;
 import com.bodkink.hotel.business.IRoomReservationManagement;
 import com.bodkink.hotel.business.logic.LogicFactory;
-import com.bodkink.hotel.business.model.Booking;
-import com.bodkink.hotel.business.model.Customer;
-import com.bodkink.hotel.business.model.Room;
+import com.bodkink.hotel.business.model.*;
 import com.bodkink.hotel.business.util.BookingCache;
 import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.persistence.IBookingService;
@@ -83,12 +81,20 @@ public class BookingManagementImplTest {
     }
 
     @Test
+    public void testListAvailableRoomsOneAvailableDueToCancelled() {
+        EList<RoomReservation> roomReservations = ModelTestDataMock.getRoomReservations(roomEntities);
+        roomReservations.get(0).setReservationStatusEnum(ReservationStatusEnum.CANCELED);
+        when(roomReservationMock.listRoomReservations(anyObject(), anyObject())).thenReturn(roomReservations);
+        EList<Room> availableRooms = bookingManagement.listAvailableRooms(DBTestDataMock.dateIntervalNoAvailable.getStart(), DBTestDataMock.dateIntervalNoAvailable.getEnd());
+        assertThat(availableRooms.size(), is(1));
+    }
+
+    @Test
     public void testListAvailableRoomsAllAvailable() {
         when(roomReservationMock.listRoomReservations(anyObject(), anyObject())).thenReturn(ModelTestDataMock.getRoomReservations(roomEntities));
         EList<Room> availableRooms = bookingManagement.listAvailableRooms(DBTestDataMock.dateIntervalAllAvailable.getStart(), DBTestDataMock.dateIntervalAllAvailable.getEnd());
         assertThat(availableRooms.size(), is(30));
     }
-
     @Test
     public void testSearchRoomsTooManyRooms() {
         when(roomReservationMock.listRoomReservations(anyObject(), anyObject())).thenReturn(ModelTestDataMock.getRoomReservations(roomEntities));
@@ -114,6 +120,10 @@ public class BookingManagementImplTest {
 
     @Test
     public void testCreateBooking() {
+        ((BookingManagementImpl) bookingManagement).roomReservationManagement = roomReservationMock;
+        when(roomReservationMock.create(anyObject(), anyObject(), anyObject(), anyObject()))
+                .thenReturn(ModelFactory.eINSTANCE.createRoomReservation());
+        when(roomReservationMock.isAvailable(anyObject(), anyObject(), anyObject())).thenReturn(Boolean.TRUE);
         ((BookingManagementImpl) bookingManagement).bookingCache = new BookingCache();
         EList<Room> bookedRooms = new BasicEList<>();
         bookedRooms.add(rooms.get(0));
