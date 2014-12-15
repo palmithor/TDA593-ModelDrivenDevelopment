@@ -17,9 +17,6 @@ public class EntityToModelConverter {
         Booking booking = ModelFactory.eINSTANCE.createBooking();
         booking.setId(entity.getId() != null ? entity.getId().toString() : null);
         booking.setCustomer(convertCustomer(entity.getCustomer()));
-        if (entity.getNumber() != null) {
-            booking.setNumber(entity.getNumber());
-        } // TODO should we generate booking no?
         entity.getServices().forEach(service -> {
             booking.getService().add(convertService(service));
         });
