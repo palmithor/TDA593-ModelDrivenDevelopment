@@ -332,7 +332,7 @@
                 lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="guest" ordered="false"
                 upperBound="-1" eType="#//bodkink/hotel/business/model/Guest"/>
-            <eStructuralFeatures xsi:type="ecore:EReference" name="roomReservationType"
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomReservationType"
                 ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomReservationType"/>
             <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false"
                 lowerBound="1" eType="#//bodkink/hotel/business/model/Room"/>
@@ -342,11 +342,9 @@
                 ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/ReservationStatusEnum"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Guest" eSuperTypes="#//bodkink/hotel/business/model/Person"/>
-          <eClassifiers xsi:type="ecore:EClass" name="RoomReservationType">
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
-                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
-            <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false"
-                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+          <eClassifiers xsi:type="ecore:EEnum" name="RoomReservationType">
+            <eLiterals name="BOOKING"/>
+            <eLiterals name="IN_SERVICE" value="1"/>
           </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="Room">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"

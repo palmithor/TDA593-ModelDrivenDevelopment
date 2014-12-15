@@ -117,14 +117,24 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	protected EList<Guest> guest;
 
 	/**
-	 * The cached value of the '{@link #getRoomReservationType() <em>Room Reservation Type</em>}' reference.
+	 * The default value of the '{@link #getRoomReservationType() <em>Room Reservation Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomReservationType()
 	 * @generated
 	 * @ordered
 	 */
-	protected RoomReservationType roomReservationType;
+	protected static final RoomReservationType ROOM_RESERVATION_TYPE_EDEFAULT = RoomReservationType.BOOKING;
+
+	/**
+	 * The cached value of the '{@link #getRoomReservationType() <em>Room Reservation Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomReservationType()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoomReservationType roomReservationType = ROOM_RESERVATION_TYPE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference.
@@ -266,23 +276,6 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	public RoomReservationType getRoomReservationType() {
-		if (roomReservationType != null && roomReservationType.eIsProxy()) {
-			InternalEObject oldRoomReservationType = (InternalEObject)roomReservationType;
-			roomReservationType = (RoomReservationType)eResolveProxy(oldRoomReservationType);
-			if (roomReservationType != oldRoomReservationType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.ROOM_RESERVATION__ROOM_RESERVATION_TYPE, oldRoomReservationType, roomReservationType));
-			}
-		}
-		return roomReservationType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomReservationType basicGetRoomReservationType() {
 		return roomReservationType;
 	}
 
@@ -293,7 +286,7 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	 */
 	public void setRoomReservationType(RoomReservationType newRoomReservationType) {
 		RoomReservationType oldRoomReservationType = roomReservationType;
-		roomReservationType = newRoomReservationType;
+		roomReservationType = newRoomReservationType == null ? ROOM_RESERVATION_TYPE_EDEFAULT : newRoomReservationType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.ROOM_RESERVATION__ROOM_RESERVATION_TYPE, oldRoomReservationType, roomReservationType));
 	}
@@ -412,8 +405,7 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.ROOM_RESERVATION__GUEST:
 				return getGuest();
 			case ModelPackage.ROOM_RESERVATION__ROOM_RESERVATION_TYPE:
-				if (resolve) return getRoomReservationType();
-				return basicGetRoomReservationType();
+				return getRoomReservationType();
 			case ModelPackage.ROOM_RESERVATION__ROOM:
 				if (resolve) return getRoom();
 				return basicGetRoom();
@@ -485,7 +477,7 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 				getGuest().clear();
 				return;
 			case ModelPackage.ROOM_RESERVATION__ROOM_RESERVATION_TYPE:
-				setRoomReservationType((RoomReservationType)null);
+				setRoomReservationType(ROOM_RESERVATION_TYPE_EDEFAULT);
 				return;
 			case ModelPackage.ROOM_RESERVATION__ROOM:
 				setRoom((Room)null);
@@ -517,7 +509,7 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 			case ModelPackage.ROOM_RESERVATION__GUEST:
 				return guest != null && !guest.isEmpty();
 			case ModelPackage.ROOM_RESERVATION__ROOM_RESERVATION_TYPE:
-				return roomReservationType != null;
+				return roomReservationType != ROOM_RESERVATION_TYPE_EDEFAULT;
 			case ModelPackage.ROOM_RESERVATION__ROOM:
 				return room != null;
 			case ModelPackage.ROOM_RESERVATION__ROOM_BILL:
@@ -544,6 +536,8 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 		result.append(startDate);
 		result.append(", endDate: ");
 		result.append(endDate);
+		result.append(", roomReservationType: ");
+		result.append(roomReservationType);
 		result.append(", reservationStatusEnum: ");
 		result.append(reservationStatusEnum);
 		result.append(')');

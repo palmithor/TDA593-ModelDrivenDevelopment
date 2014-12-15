@@ -75,7 +75,7 @@ public class BedTypeManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<BedType> listBedTypes() {
 		List<BedTypeEntity> bedTypeEntityList = bedTypeService.listAll();

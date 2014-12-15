@@ -128,12 +128,6 @@ public class ModelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ModelPackage.ROOM_RESERVATION_TYPE: {
-				RoomReservationType roomReservationType = (RoomReservationType)theEObject;
-				T result = caseRoomReservationType(roomReservationType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ModelPackage.ROOM: {
 				Room room = (Room)theEObject;
 				T result = caseRoom(room);
@@ -354,21 +348,6 @@ public class ModelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGuest(Guest object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Room Reservation Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Room Reservation Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRoomReservationType(RoomReservationType object) {
 		return null;
 	}
 

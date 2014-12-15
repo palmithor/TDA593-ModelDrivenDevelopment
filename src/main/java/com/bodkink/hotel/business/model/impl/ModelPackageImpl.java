@@ -133,13 +133,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass roomReservationTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass roomEClass = null;
 
 	/**
@@ -218,6 +211,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EEnum billStatusEnumEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum roomReservationTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -758,8 +758,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoomReservation_RoomReservationType() {
-		return (EReference)roomReservationEClass.getEStructuralFeatures().get(4);
+	public EAttribute getRoomReservation_RoomReservationType() {
+		return (EAttribute)roomReservationEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -796,33 +796,6 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 */
 	public EClass getGuest() {
 		return guestEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRoomReservationType() {
-		return roomReservationTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomReservationType_Id() {
-		return (EAttribute)roomReservationTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRoomReservationType_Type() {
-		return (EAttribute)roomReservationTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1217,6 +1190,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getRoomReservationType() {
+		return roomReservationTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getReservationStatusEnum() {
 		return reservationStatusEnumEEnum;
 	}
@@ -1324,16 +1306,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(roomReservationEClass, ROOM_RESERVATION__START_DATE);
 		createEAttribute(roomReservationEClass, ROOM_RESERVATION__END_DATE);
 		createEReference(roomReservationEClass, ROOM_RESERVATION__GUEST);
-		createEReference(roomReservationEClass, ROOM_RESERVATION__ROOM_RESERVATION_TYPE);
+		createEAttribute(roomReservationEClass, ROOM_RESERVATION__ROOM_RESERVATION_TYPE);
 		createEReference(roomReservationEClass, ROOM_RESERVATION__ROOM);
 		createEReference(roomReservationEClass, ROOM_RESERVATION__ROOM_BILL);
 		createEAttribute(roomReservationEClass, ROOM_RESERVATION__RESERVATION_STATUS_ENUM);
 
 		guestEClass = createEClass(GUEST);
-
-		roomReservationTypeEClass = createEClass(ROOM_RESERVATION_TYPE);
-		createEAttribute(roomReservationTypeEClass, ROOM_RESERVATION_TYPE__ID);
-		createEAttribute(roomReservationTypeEClass, ROOM_RESERVATION_TYPE__TYPE);
 
 		roomEClass = createEClass(ROOM);
 		createEAttribute(roomEClass, ROOM__ID);
@@ -1390,6 +1368,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		// Create enums
 		billStatusEnumEEnum = createEEnum(BILL_STATUS_ENUM);
+		roomReservationTypeEEnum = createEEnum(ROOM_RESERVATION_TYPE);
 		reservationStatusEnumEEnum = createEEnum(RESERVATION_STATUS_ENUM);
 		bookingBillTypeEEnum = createEEnum(BOOKING_BILL_TYPE);
 		userGroupEnumEEnum = createEEnum(USER_GROUP_ENUM);
@@ -1490,16 +1469,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getRoomReservation_StartDate(), ecorePackage.getEDate(), "startDate", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomReservation_EndDate(), ecorePackage.getEDate(), "endDate", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomReservation_Guest(), this.getGuest(), null, "guest", null, 0, -1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoomReservation_RoomReservationType(), this.getRoomReservationType(), null, "roomReservationType", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomReservation_RoomReservationType(), this.getRoomReservationType(), "roomReservationType", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomReservation_Room(), this.getRoom(), null, "room", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoomReservation_RoomBill(), this.getRoomBill(), null, "roomBill", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomReservation_ReservationStatusEnum(), this.getReservationStatusEnum(), "reservationStatusEnum", null, 1, 1, RoomReservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(guestEClass, Guest.class, "Guest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(roomReservationTypeEClass, RoomReservationType.class, "RoomReservationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoomReservationType_Id(), theTypesPackage.getString(), "id", null, 1, 1, RoomReservationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getRoomReservationType_Type(), theTypesPackage.getString(), "type", null, 1, 1, RoomReservationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoom_Id(), theTypesPackage.getString(), "id", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1559,10 +1534,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		addEEnumLiteral(billStatusEnumEEnum, BillStatusEnum.PAID);
 		addEEnumLiteral(billStatusEnumEEnum, BillStatusEnum.NOT_PAID);
 
+		initEEnum(roomReservationTypeEEnum, RoomReservationType.class, "RoomReservationType");
+		addEEnumLiteral(roomReservationTypeEEnum, RoomReservationType.BOOKING);
+		addEEnumLiteral(roomReservationTypeEEnum, RoomReservationType.IN_SERVICE);
+
 		initEEnum(reservationStatusEnumEEnum, ReservationStatusEnum.class, "ReservationStatusEnum");
 		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.CHECKED_IN);
 		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.CHECKED_OUT);
 		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.RESERVED);
+		addEEnumLiteral(reservationStatusEnumEEnum, ReservationStatusEnum.CANCELED);
 
 		initEEnum(bookingBillTypeEEnum, BookingBillType.class, "BookingBillType");
 		addEEnumLiteral(bookingBillTypeEEnum, BookingBillType.RESERVATION_FEE);

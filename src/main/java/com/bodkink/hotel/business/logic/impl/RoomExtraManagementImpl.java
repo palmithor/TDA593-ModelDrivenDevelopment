@@ -73,7 +73,7 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<RoomExtra> listRoomExtras() {
 		List<RoomExtraEntity> roomExtraEntityList = roomExtraService.listAll();

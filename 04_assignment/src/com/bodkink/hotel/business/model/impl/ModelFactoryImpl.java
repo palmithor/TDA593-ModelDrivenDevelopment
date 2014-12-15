@@ -66,7 +66,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 			case ModelPackage.PERSON: return createPerson();
 			case ModelPackage.ROOM_RESERVATION: return createRoomReservation();
 			case ModelPackage.GUEST: return createGuest();
-			case ModelPackage.ROOM_RESERVATION_TYPE: return createRoomReservationType();
 			case ModelPackage.ROOM: return createRoom();
 			case ModelPackage.CLASSIFICATION: return createClassification();
 			case ModelPackage.ROOM_EXTRA: return createRoomExtra();
@@ -93,6 +92,8 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		switch (eDataType.getClassifierID()) {
 			case ModelPackage.BILL_STATUS_ENUM:
 				return createBillStatusEnumFromString(eDataType, initialValue);
+			case ModelPackage.ROOM_RESERVATION_TYPE:
+				return createRoomReservationTypeFromString(eDataType, initialValue);
 			case ModelPackage.RESERVATION_STATUS_ENUM:
 				return createReservationStatusEnumFromString(eDataType, initialValue);
 			case ModelPackage.BOOKING_BILL_TYPE:
@@ -114,6 +115,8 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 		switch (eDataType.getClassifierID()) {
 			case ModelPackage.BILL_STATUS_ENUM:
 				return convertBillStatusEnumToString(eDataType, instanceValue);
+			case ModelPackage.ROOM_RESERVATION_TYPE:
+				return convertRoomReservationTypeToString(eDataType, instanceValue);
 			case ModelPackage.RESERVATION_STATUS_ENUM:
 				return convertReservationStatusEnumToString(eDataType, instanceValue);
 			case ModelPackage.BOOKING_BILL_TYPE:
@@ -213,16 +216,6 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	public Guest createGuest() {
 		GuestImpl guest = new GuestImpl();
 		return guest;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RoomReservationType createRoomReservationType() {
-		RoomReservationTypeImpl roomReservationType = new RoomReservationTypeImpl();
-		return roomReservationType;
 	}
 
 	/**
@@ -352,6 +345,26 @@ public class ModelFactoryImpl extends EFactoryImpl implements ModelFactory {
 	 * @generated
 	 */
 	public String convertBillStatusEnumToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomReservationType createRoomReservationTypeFromString(EDataType eDataType, String initialValue) {
+		RoomReservationType result = RoomReservationType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoomReservationTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

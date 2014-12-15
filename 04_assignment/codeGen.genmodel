@@ -250,6 +250,10 @@
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/BillStatusEnum/PAID"/>
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/BillStatusEnum/NOT_PAID"/>
             </genEnums>
+            <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="com.ecore#//bodkink/hotel/business/model/RoomReservationType">
+              <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/RoomReservationType/BOOKING"/>
+              <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/RoomReservationType/IN_SERVICE"/>
+            </genEnums>
             <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="com.ecore#//bodkink/hotel/business/model/ReservationStatusEnum">
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/ReservationStatusEnum/CHECKED_IN"/>
               <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="com.ecore#//bodkink/hotel/business/model/ReservationStatusEnum/CHECKED_OUT"/>
@@ -331,8 +335,7 @@
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/RoomReservation/endDate"/>
               <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                   propertySortChoices="true" ecoreFeature="ecore:EReference com.ecore#//bodkink/hotel/business/model/RoomReservation/guest"/>
-              <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-                  propertySortChoices="true" ecoreFeature="ecore:EReference com.ecore#//bodkink/hotel/business/model/RoomReservation/roomReservationType"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/RoomReservation/roomReservationType"/>
               <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                   propertySortChoices="true" ecoreFeature="ecore:EReference com.ecore#//bodkink/hotel/business/model/RoomReservation/room"/>
               <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -340,10 +343,6 @@
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/RoomReservation/reservationStatusEnum"/>
             </genClasses>
             <genClasses xsi:type="genmodel:GenClass" ecoreClass="com.ecore#//bodkink/hotel/business/model/Guest"/>
-            <genClasses xsi:type="genmodel:GenClass" ecoreClass="com.ecore#//bodkink/hotel/business/model/RoomReservationType">
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/RoomReservationType/id"/>
-              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/RoomReservationType/type"/>
-            </genClasses>
             <genClasses xsi:type="genmodel:GenClass" ecoreClass="com.ecore#//bodkink/hotel/business/model/Room">
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/Room/id"/>
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/Room/number"/>

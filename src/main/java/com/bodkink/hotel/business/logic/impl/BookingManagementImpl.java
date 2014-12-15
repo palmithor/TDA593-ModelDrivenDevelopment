@@ -84,7 +84,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, /*TODO remove number of guests*/int numberOfGuests, Customer customer) {
         // TODO check availability
@@ -115,7 +115,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public EList<Booking> listBookings() {
         List<BookingEntity> bookingEntityList = bookingService.list();
@@ -130,7 +130,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public Booking findBooking(String bookingId) {
         BookingEntity entity = bookingService.find(bookingId);
@@ -145,7 +145,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public EList<Booking> listBookings(Date start) {
         EList<RoomReservation> roomReservation = roomReservationManagement.listRoomReservations(start);
@@ -162,7 +162,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public EList<Room> listAvailableRooms(Date start, Date endDate) {
         EList<RoomReservation> roomReservations = roomReservationManagement.listRoomReservations(start, endDate);
@@ -182,7 +182,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     public EList<Room> searchRoom(int numberOfGuests, int numberOfRooms, Date start, Date end) {
         EList<Room> availableRooms = listAvailableRooms(start, end);

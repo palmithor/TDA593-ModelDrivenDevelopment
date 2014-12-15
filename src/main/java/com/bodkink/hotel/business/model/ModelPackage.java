@@ -688,7 +688,7 @@ public interface ModelPackage extends EPackage {
 	int ROOM_RESERVATION__GUEST = 3;
 
 	/**
-	 * The feature id for the '<em><b>Room Reservation Type</b></em>' reference.
+	 * The feature id for the '<em><b>Room Reservation Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -806,52 +806,6 @@ public interface ModelPackage extends EPackage {
 	int GUEST_OPERATION_COUNT = PERSON_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link com.bodkink.hotel.business.model.impl.RoomReservationTypeImpl <em>Room Reservation Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see com.bodkink.hotel.business.model.impl.RoomReservationTypeImpl
-	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomReservationType()
-	 * @generated
-	 */
-	int ROOM_RESERVATION_TYPE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_RESERVATION_TYPE__ID = 0;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_RESERVATION_TYPE__TYPE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Room Reservation Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_RESERVATION_TYPE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Room Reservation Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_RESERVATION_TYPE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.model.impl.RoomImpl <em>Room</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -859,7 +813,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoom()
 	 * @generated
 	 */
-	int ROOM = 11;
+	int ROOM = 10;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -977,7 +931,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getClassification()
 	 * @generated
 	 */
-	int CLASSIFICATION = 12;
+	int CLASSIFICATION = 11;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1032,7 +986,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomExtra()
 	 * @generated
 	 */
-	int ROOM_EXTRA = 13;
+	int ROOM_EXTRA = 12;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1087,7 +1041,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomBill()
 	 * @generated
 	 */
-	int ROOM_BILL = 14;
+	int ROOM_BILL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1151,7 +1105,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getService()
 	 * @generated
 	 */
-	int SERVICE = 15;
+	int SERVICE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1215,7 +1169,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getBookingBill()
 	 * @generated
 	 */
-	int BOOKING_BILL = 16;
+	int BOOKING_BILL = 15;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1279,7 +1233,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomExtraTemplate()
 	 * @generated
 	 */
-	int ROOM_EXTRA_TEMPLATE = 17;
+	int ROOM_EXTRA_TEMPLATE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1334,7 +1288,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getReceipt()
 	 * @generated
 	 */
-	int RECEIPT = 18;
+	int RECEIPT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Receipt Item</b></em>' reference list.
@@ -1371,7 +1325,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getReceiptItem()
 	 * @generated
 	 */
-	int RECEIPT_ITEM = 19;
+	int RECEIPT_ITEM = 18;
 
 	/**
 	 * The number of structural features of the '<em>Receipt Item</em>' class.
@@ -1399,7 +1353,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getUserAccount()
 	 * @generated
 	 */
-	int USER_ACCOUNT = 20;
+	int USER_ACCOUNT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1454,7 +1408,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getCustomerUserAccount()
 	 * @generated
 	 */
-	int CUSTOMER_USER_ACCOUNT = 21;
+	int CUSTOMER_USER_ACCOUNT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -1527,7 +1481,17 @@ public interface ModelPackage extends EPackage {
 	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getBillStatusEnum()
 	 * @generated
 	 */
-	int BILL_STATUS_ENUM = 22;
+	int BILL_STATUS_ENUM = 21;
+
+	/**
+	 * The meta object id for the '{@link com.bodkink.hotel.business.model.RoomReservationType <em>Room Reservation Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.bodkink.hotel.business.model.RoomReservationType
+	 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomReservationType()
+	 * @generated
+	 */
+	int ROOM_RESERVATION_TYPE = 22;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.model.ReservationStatusEnum <em>Reservation Status Enum</em>}' enum.
@@ -2091,15 +2055,15 @@ public interface ModelPackage extends EPackage {
 	EReference getRoomReservation_Guest();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.bodkink.hotel.business.model.RoomReservation#getRoomReservationType <em>Room Reservation Type</em>}'.
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomReservation#getRoomReservationType <em>Room Reservation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room Reservation Type</em>'.
+	 * @return the meta object for the attribute '<em>Room Reservation Type</em>'.
 	 * @see com.bodkink.hotel.business.model.RoomReservation#getRoomReservationType()
 	 * @see #getRoomReservation()
 	 * @generated
 	 */
-	EReference getRoomReservation_RoomReservationType();
+	EAttribute getRoomReservation_RoomReservationType();
 
 	/**
 	 * Returns the meta object for the reference '{@link com.bodkink.hotel.business.model.RoomReservation#getRoom <em>Room</em>}'.
@@ -2143,38 +2107,6 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGuest();
-
-	/**
-	 * Returns the meta object for class '{@link com.bodkink.hotel.business.model.RoomReservationType <em>Room Reservation Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Room Reservation Type</em>'.
-	 * @see com.bodkink.hotel.business.model.RoomReservationType
-	 * @generated
-	 */
-	EClass getRoomReservationType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomReservationType#getId <em>Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see com.bodkink.hotel.business.model.RoomReservationType#getId()
-	 * @see #getRoomReservationType()
-	 * @generated
-	 */
-	EAttribute getRoomReservationType_Id();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.RoomReservationType#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see com.bodkink.hotel.business.model.RoomReservationType#getType()
-	 * @see #getRoomReservationType()
-	 * @generated
-	 */
-	EAttribute getRoomReservationType_Type();
 
 	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.model.Room <em>Room</em>}'.
@@ -2636,6 +2568,16 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getBillStatusEnum();
+
+	/**
+	 * Returns the meta object for enum '{@link com.bodkink.hotel.business.model.RoomReservationType <em>Room Reservation Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Room Reservation Type</em>'.
+	 * @see com.bodkink.hotel.business.model.RoomReservationType
+	 * @generated
+	 */
+	EEnum getRoomReservationType();
 
 	/**
 	 * Returns the meta object for enum '{@link com.bodkink.hotel.business.model.ReservationStatusEnum <em>Reservation Status Enum</em>}'.
@@ -3101,12 +3043,12 @@ public interface ModelPackage extends EPackage {
 		EReference ROOM_RESERVATION__GUEST = eINSTANCE.getRoomReservation_Guest();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Reservation Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Room Reservation Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOM_RESERVATION__ROOM_RESERVATION_TYPE = eINSTANCE.getRoomReservation_RoomReservationType();
+		EAttribute ROOM_RESERVATION__ROOM_RESERVATION_TYPE = eINSTANCE.getRoomReservation_RoomReservationType();
 
 		/**
 		 * The meta object literal for the '<em><b>Room</b></em>' reference feature.
@@ -3141,32 +3083,6 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass GUEST = eINSTANCE.getGuest();
-
-		/**
-		 * The meta object literal for the '{@link com.bodkink.hotel.business.model.impl.RoomReservationTypeImpl <em>Room Reservation Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see com.bodkink.hotel.business.model.impl.RoomReservationTypeImpl
-		 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomReservationType()
-		 * @generated
-		 */
-		EClass ROOM_RESERVATION_TYPE = eINSTANCE.getRoomReservationType();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_RESERVATION_TYPE__ID = eINSTANCE.getRoomReservationType_Id();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM_RESERVATION_TYPE__TYPE = eINSTANCE.getRoomReservationType_Type();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.model.impl.RoomImpl <em>Room</em>}' class.
@@ -3535,6 +3451,16 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum BILL_STATUS_ENUM = eINSTANCE.getBillStatusEnum();
+
+		/**
+		 * The meta object literal for the '{@link com.bodkink.hotel.business.model.RoomReservationType <em>Room Reservation Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.bodkink.hotel.business.model.RoomReservationType
+		 * @see com.bodkink.hotel.business.model.impl.ModelPackageImpl#getRoomReservationType()
+		 * @generated
+		 */
+		EEnum ROOM_RESERVATION_TYPE = eINSTANCE.getRoomReservationType();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.model.ReservationStatusEnum <em>Reservation Status Enum</em>}' enum.

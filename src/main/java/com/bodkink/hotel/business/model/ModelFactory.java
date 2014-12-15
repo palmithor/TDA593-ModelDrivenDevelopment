@@ -103,15 +103,6 @@ public interface ModelFactory extends EFactory {
 	Guest createGuest();
 
 	/**
-	 * Returns a new object of class '<em>Room Reservation Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Room Reservation Type</em>'.
-	 * @generated
-	 */
-	RoomReservationType createRoomReservationType();
-
-	/**
 	 * Returns a new object of class '<em>Room</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

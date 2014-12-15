@@ -127,14 +127,16 @@ public interface RoomReservation extends EObject {
 	EList<Guest> getGuest();
 
 	/**
-	 * Returns the value of the '<em><b>Room Reservation Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Room Reservation Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link com.bodkink.hotel.business.model.RoomReservationType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Room Reservation Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>Room Reservation Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Reservation Type</em>' reference.
+	 * @return the value of the '<em>Room Reservation Type</em>' attribute.
+	 * @see com.bodkink.hotel.business.model.RoomReservationType
 	 * @see #setRoomReservationType(RoomReservationType)
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getRoomReservation_RoomReservationType()
 	 * @model required="true" ordered="false"
@@ -143,10 +145,11 @@ public interface RoomReservation extends EObject {
 	RoomReservationType getRoomReservationType();
 
 	/**
-	 * Sets the value of the '{@link com.bodkink.hotel.business.model.RoomReservation#getRoomReservationType <em>Room Reservation Type</em>}' reference.
+	 * Sets the value of the '{@link com.bodkink.hotel.business.model.RoomReservation#getRoomReservationType <em>Room Reservation Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room Reservation Type</em>' reference.
+	 * @param value the new value of the '<em>Room Reservation Type</em>' attribute.
+	 * @see com.bodkink.hotel.business.model.RoomReservationType
 	 * @see #getRoomReservationType()
 	 * @generated
 	 */
