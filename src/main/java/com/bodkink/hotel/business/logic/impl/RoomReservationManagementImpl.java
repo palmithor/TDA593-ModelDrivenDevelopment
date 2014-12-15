@@ -13,6 +13,8 @@ import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.business.util.ModelToEntityConverter;
 import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.bodkink.hotel.persistence.model.RoomReservationEntity;
+import com.bodkink.hotel.util.DateInterval;
+import com.bodkink.hotel.util.DateUtil;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -174,12 +176,20 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @generated
+     * @generated NOT
      */
     public boolean isAvailable(Room room, Date start, Date end) {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
+        List<RoomReservationEntity> roomReservationEntityList = roomReservationService.list(ModelToEntityConverter.convertRoom(room));
+        DateInterval wantedDateInterval = new DateInterval(start, end);
+
+        for(RoomReservationEntity entity : roomReservationEntityList) {
+            DateInterval entityDateInterval = new DateInterval(entity.getStartDate(), entity.getEndDate());
+            if(DateUtil.isOverlapping(wantedDateInterval, entityDateInterval)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 } //RoomReservationManagementImpl
