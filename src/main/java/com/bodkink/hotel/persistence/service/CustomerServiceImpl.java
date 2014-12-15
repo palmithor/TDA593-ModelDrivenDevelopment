@@ -1,17 +1,12 @@
 package com.bodkink.hotel.persistence.service;
 
-import com.bodkink.hotel.business.model.CardInformation;
-import com.bodkink.hotel.persistence.IBedTypeService;
 import com.bodkink.hotel.persistence.ICustomerService;
-import com.bodkink.hotel.persistence.dao.BedTypeDAO;
 import com.bodkink.hotel.persistence.dao.CardInformationDAO;
 import com.bodkink.hotel.persistence.dao.CustomerDAO;
-import com.bodkink.hotel.persistence.model.BedTypeEntity;
 import com.bodkink.hotel.persistence.model.CustomerEntity;
 import com.google.inject.Inject;
 import org.mongodb.morphia.Key;
 
-import javax.inject.Inject;
 import java.util.List;
 
 /**
