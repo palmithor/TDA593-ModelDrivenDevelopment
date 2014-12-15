@@ -1,6 +1,7 @@
 package com.bodkink.hotel.business.util;
 
 import com.bodkink.hotel.business.model.Booking;
+import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.google.common.cache.*;
 import com.google.inject.Inject;
@@ -70,7 +71,8 @@ public class BookingCache implements IBookingCache {
             if (booking != null) {
                 if (booking.getRoomReservation() != null && booking.getRoomReservation().size() > 0) {
                     booking.getRoomReservation().forEach(roomReservation -> {
-                        roomReservationService.delete(ModelToEntityConverter.convertRoomReservation(roomReservation));
+                        roomReservation.setReservationStatusEnum(ReservationStatusEnum.CANCELED);
+                        roomReservationService.edit(ModelToEntityConverter.convertRoomReservation(roomReservation));
                     });
                 }
             }

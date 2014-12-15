@@ -10,6 +10,7 @@ import com.bodkink.hotel.business.model.Customer;
 
 import java.lang.reflect.InvocationTargetException;
 
+import com.bodkink.hotel.business.model.ModelFactory;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
