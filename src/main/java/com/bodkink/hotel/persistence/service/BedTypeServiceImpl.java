@@ -20,4 +20,20 @@ public class BedTypeServiceImpl implements IBedTypeService {
     public List<BedTypeEntity> listAll() {
         return bedTypeDAO.find().asList();
     }
+
+    @Override
+    public BedTypeEntity edit(BedTypeEntity bedTypeEntity) {
+        BedTypeEntity fromDb = bedTypeDAO.get(bedTypeEntity.getId());
+        if (fromDb != null) {
+            bedTypeDAO.save(bedTypeEntity);
+            return bedTypeEntity;
+        } else
+            return null;
+    }
+
+    @Override
+    public BedTypeEntity persist(BedTypeEntity bedTypeEntity) {
+        bedTypeDAO.save(bedTypeEntity);
+        return bedTypeEntity;
+    }
 }
