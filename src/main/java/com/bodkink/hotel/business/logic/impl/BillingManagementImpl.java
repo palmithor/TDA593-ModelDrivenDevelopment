@@ -5,24 +5,23 @@ package com.bodkink.hotel.business.logic.impl;
 import com.bodkink.hotel.business.logic.BillingManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
 
-import com.bodkink.hotel.business.model.Bill;
-import com.bodkink.hotel.business.model.BillableItem;
-import com.bodkink.hotel.business.model.Booking;
-import com.bodkink.hotel.business.model.BookingBill;
-import com.bodkink.hotel.business.model.BookingBillType;
-import com.bodkink.hotel.business.model.CardInformation;
-import com.bodkink.hotel.business.model.Customer;
-import com.bodkink.hotel.business.model.Receipt;
-import com.bodkink.hotel.business.model.RoomBill;
-import com.bodkink.hotel.business.model.RoomReservation;
+import com.bodkink.hotel.business.model.*;
 
 import java.lang.reflect.InvocationTargetException;
 
+import com.bodkink.hotel.business.model.impl.ModelFactoryImpl;
+import com.bodkink.hotel.business.model.impl.ReceiptImpl;
+import com.bodkink.hotel.business.util.ModelToEntityConverter;
+import com.bodkink.hotel.persistence.IRoomBillService;
+import com.bodkink.hotel.persistence.IRoomReservationService;
+import com.bodkink.hotel.persistence.service.RoomReservationServiceImpl;
+import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +33,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class BillingManagementImpl extends MinimalEObjectImpl.Container implements BillingManagement {
+
+	@Inject
+	IRoomReservationService roomReservationService;
+
+	@Inject
+	IRoomBillService roomBillService;
+
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,34 +63,55 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public RoomBill createRoomBill(RoomReservation roomReservation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if (roomReservation.getRoomBill() == null) {
+
+			RoomBill bill = ModelFactory.eINSTANCE.createRoomBill();
+			bill.setBillStatusEnum(BillStatusEnum.NOT_PAID);
+
+			roomReservation.setRoomBill(bill);
+
+			roomReservationService.persist(ModelToEntityConverter.convertRoomReservation(roomReservation));
+
+			return bill;
+
+		} else {
+			return roomReservation.getRoomBill();
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public BookingBill createBookingBill(Booking booking, BookingBillType bookingBillType) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		BookingBill bill = ModelFactory.eINSTANCE.createBookingBill();
+		bill.setBookingBillType(bookingBillType);
+		bill.setBillStatusEnum(BillStatusEnum.NOT_PAID);
+		bill.setCardInformation(booking.getCustomer().getCardInformation());
+
+		return bill;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean addBillableItem(RoomBill roomBill, BillableItem item, int quantity) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if(roomBill.getBillStatusEnum().equals(BillStatusEnum.NOT_PAID) && quantity > 0){
+
+			for (int i = 1; i <= quantity; i++) {
+				roomBill.getBillableItem().add(item);
+			}
+			roomBillService.persist(ModelToEntityConverter.convertRoomBill(roomBill));
+
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -125,6 +153,16 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public Receipt generateReceipt(Bill bill) {
+		Receipt receipt = ModelFactory.eINSTANCE.createReceipt();
+		EList<ReceiptItem> items = receipt.getReceiptItem();
+
+		if (bill instanceof RoomBill){
+			RoomBill rBill = (RoomBill)bill;
+			for ( BillableItem item: rBill.getBillableItem()){
+
+
+			}
+		}
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -147,6 +185,11 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public boolean makePayment(Booking booking) {
+		booking.getBookingBill()
+
+
+		double amount = 0;
+
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -180,6 +223,19 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 				return makePayment((Booking)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/*
+	Private method that actually handles payments. Called from all public makePayment methods.
+	 */
+	private boolean makePayment(CardInformation cInf, double amount){
+		try {
+			CustomerRequires.instance().makePayment(cInf.getCcNumber(), cInf.getCcv(), cInf.getExpiryMonth(),
+					cInf.getExpiryYear(), cInf.getFirstName(), cInf.getLastName(), amount);
+		} catch (javax.xml.soap.SOAPException e){
+			return false;
+		}
+		return true;
 	}
 
 } //BillingManagementImpl
