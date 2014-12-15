@@ -119,7 +119,7 @@ public class BookingManagementImplTest {
         bookedRooms.add(rooms.get(0));
         bookedRooms.add(rooms.get(1));
         Booking booking = bookingManagement.create(DBTestDataMock.dateIntervalAllAvailable.getStart(), DBTestDataMock.dateIntervalAllAvailable.getEnd(),
-                bookedRooms, null, 0, customer);
+                bookedRooms, null, customer);
         assertThat(booking.getId(), is(notNullValue()));
         assertThat(booking.getCustomer().getEmail(), is(customer.getEmail()));
         assertThat(booking.getCustomer().getFirstName(), is(customer.getFirstName()));

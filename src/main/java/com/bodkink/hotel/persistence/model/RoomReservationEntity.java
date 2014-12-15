@@ -26,6 +26,7 @@ public class RoomReservationEntity {
     private final Date endDate;
     private final RoomReservationType reservationType;
     @Reference
+    @Indexed
     private final RoomEntity room;
     @Reference
     private final List<GuestEntity> guests;

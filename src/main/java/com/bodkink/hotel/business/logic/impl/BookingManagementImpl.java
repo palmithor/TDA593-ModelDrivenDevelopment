@@ -86,29 +86,31 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      *
      * @generated NOT
      */
-    public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, /*TODO remove number of guests*/int numberOfGuests, Customer customer) {
-        // TODO check availability
-        Booking booking = ModelFactory.eINSTANCE.createBooking();
-        booking.setId(ObjectId.get().toString());
+    public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, Customer customer) {
+        if (areAvailable(rooms, start, end)) {
+            Booking booking = ModelFactory.eINSTANCE.createBooking();
+            booking.setId(ObjectId.get().toString());
 
-        rooms.forEach(r -> {
-            RoomReservation roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
-            roomReservation.setStartDate(start);
-            roomReservation.setEndDate(end);
-            // roomReservation.setRoomReservationType(); TODO get as a input parameter or even change to enum?
-            roomReservation.setRoom(r);
-            roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
-            booking.getRoomReservation().add(roomReservation);
-            // TODO room reservation type enum?
-            roomReservationManagement.create(r, start, end, null);
-        });
-        if (services != null) {
-            booking.getService().addAll(services);
+            rooms.forEach(r -> {
+                RoomReservation roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
+                roomReservation.setStartDate(start);
+                roomReservation.setEndDate(end);
+                roomReservation.setRoom(r);
+                roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
+                roomReservation.setRoomReservationType(RoomReservationType.BOOKING);
+                booking.getRoomReservation().add(roomReservation);
+                roomReservationManagement.create(r, start, end, null);
+            });
+            if (services != null) {
+                booking.getService().addAll(services);
+            }
+            booking.setCustomer(customer);
+
+            bookingCache.put(booking);
+            return booking;
+        } else {
+            return null;
         }
-        booking.setCustomer(customer);
-
-        bookingCache.put(booking);
-        return booking;
     }
 
     /**
@@ -205,7 +207,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
     public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
         switch (operationID) {
             case LogicPackage.BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER:
-                return create((Date) arguments.get(0), (Date) arguments.get(1), (EList<Room>) arguments.get(2), (EList<Service>) arguments.get(3), (Integer) arguments.get(4), (Customer) arguments.get(5));
+                return create((Date) arguments.get(0), (Date) arguments.get(1), (EList<Room>) arguments.get(2), (EList<Service>) arguments.get(3), (Customer) arguments.get(5));
             case LogicPackage.BOOKING_MANAGEMENT___LIST_BOOKINGS:
                 return listBookings();
             case LogicPackage.BOOKING_MANAGEMENT___FIND_BOOKING__STRING:
@@ -260,6 +262,16 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         // TODO add total price for booking bill
         // TODO Maybe we should create both bills here but only pay the reservation fee one
         throw new UnsupportedOperationException();
+    }
+
+
+    private boolean areAvailable(EList<Room> rooms, final Date start, final Date end) {
+        rooms.forEach(room -> {
+            // if(!roomReservationManagement.isAvailable(room, start, end)) {
+            //  return false;
+            //}
+        });
+        return true;
     }
 
 } //BookingManagementImpl
