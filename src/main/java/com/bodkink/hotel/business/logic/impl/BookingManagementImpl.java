@@ -157,8 +157,14 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         roomReservation.forEach(model -> {
             roomReservationEntities.add(ModelToEntityConverter.convertRoomReservation(model));
         });
-        bookingService.findByRoomReservation(roomReservationEntities);
-        return null;
+        List<BookingEntity> bookingEntities = bookingService.findByRoomReservation(roomReservationEntities);
+
+        EList<Booking> bookings = new BasicEList<>();
+        bookingEntities.forEach(entity -> {
+            bookings.add(EntityToModelConverter.convertBooking(entity));
+        });
+
+        return bookings;
     }
 
     /**
@@ -264,11 +270,10 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated
      */
     public Receipt confirmAndPay(final Booking booking) {
-        BookingBill bookingBill = ModelFactory.eINSTANCE.createBookingBill();
-        bookingBill.setBookingBillType(BookingBillType.RESERVATION_FEE);
+        BookingBill bookingBill = billingManagement.createBookingBill(booking, BookingBillType.RESERVATION_FEE);
         if (billingManagement.makePayment(booking)) {
             booking.getBookingBill().add(bookingBill);
-            return billingManagement.generateReceipt(bookingBill);
+            return billingManagement.generateReceipts(booking).get(0);
         } else {
             // TODO Payment failed - try again?
             return null;
