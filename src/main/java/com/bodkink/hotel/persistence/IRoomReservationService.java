@@ -1,6 +1,7 @@
 package com.bodkink.hotel.persistence;
 
 import com.bodkink.hotel.business.model.RoomReservation;
+import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.persistence.model.RoomReservationEntity;
 import org.eclipse.emf.common.util.EList;
 
@@ -17,6 +18,8 @@ public interface IRoomReservationService {
     public EList<RoomReservationEntity> list(Date start, Date end);
 
     public EList<RoomReservationEntity> list(Date start);
+
+    public EList<RoomReservationEntity> list(RoomEntity room);
 
     public RoomReservationEntity find(String id);
 

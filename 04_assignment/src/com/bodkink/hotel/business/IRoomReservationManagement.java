@@ -71,4 +71,12 @@ public interface IRoomReservationManagement extends EObject {
 	 */
 	boolean cancelRoomReservation(String roomReservationId);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false" roomRequired="true" roomOrdered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false"
+	 * @generated
+	 */
+	boolean isAvailable(Room room, Date start, Date end);
+
 } // IRoomReservationManagement

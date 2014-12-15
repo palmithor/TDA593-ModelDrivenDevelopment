@@ -3,7 +3,6 @@
 package com.bodkink.hotel.business;
 
 import com.bodkink.hotel.business.model.Booking;
-import com.bodkink.hotel.business.model.CardInformation;
 import com.bodkink.hotel.business.model.Customer;
 import com.bodkink.hotel.business.model.Receipt;
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
@@ -30,10 +29,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomsMany="true" roomsOrdered="false" servicesMany="true" servicesOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" customerRequired="true" customerOrdered="false"
+	 * @model required="true" ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomsMany="true" roomsOrdered="false" servicesMany="true" servicesOrdered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, int numberOfGuests, Customer customer);
+	Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, Customer customer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,10 +85,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false" cardInformationRequired="true" cardInformationOrdered="false"
+	 * @model required="true" ordered="false" bookingRequired="true" bookingOrdered="false"
 	 * @generated
 	 */
-	Receipt confirmAndPay(Booking booking, CardInformation cardInformation);
+	Receipt confirmAndPay(Booking booking);
 
 	/**
 	 * <!-- begin-user-doc -->

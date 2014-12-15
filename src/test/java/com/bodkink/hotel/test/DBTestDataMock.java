@@ -91,8 +91,7 @@ public class DBTestDataMock {
     }
 
     public static CardInformationEntity getCardInformationEntity() {
-        return new CardInformationEntity(ObjectId.get(), "4000000000000002",
-                "Olof Palme", DateTime.now().plusYears(1).toDate(), getAddressEntity());
+        return new CardInformationEntity(ObjectId.get(), "4000000000000002", "123", 4, 1992, "Olof", "Palme", getAddressEntity());
     }
 
     public static AddressEntity getAddressEntity() {
@@ -105,7 +104,6 @@ public class DBTestDataMock {
         getRoomReservations(rooms).forEach(roomReservation -> {
             bookings.add(new BookingEntity(
                     ObjectId.get(),
-                    null,
                     getCustomerEntity(),
                     new ArrayList<ServiceEntity>(), // TODO add services?
                     Arrays.asList(roomReservation),

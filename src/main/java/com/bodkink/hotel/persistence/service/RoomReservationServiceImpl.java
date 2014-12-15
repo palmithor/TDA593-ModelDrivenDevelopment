@@ -3,6 +3,7 @@ package com.bodkink.hotel.persistence.service;
 import com.bodkink.hotel.business.model.RoomReservation;
 import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.bodkink.hotel.persistence.dao.RoomReservationDAO;
+import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.persistence.model.RoomReservationEntity;
 import com.google.inject.Inject;
 import com.mongodb.WriteResult;
@@ -31,6 +32,11 @@ public class RoomReservationServiceImpl implements IRoomReservationService {
 
     @Override
     public EList<RoomReservationEntity> list(Date start) {
+        return null;
+    }
+
+    @Override
+    public EList<RoomReservationEntity> list(RoomEntity room) {
         return null;
     }
 

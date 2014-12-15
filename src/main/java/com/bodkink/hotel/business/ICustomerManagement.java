@@ -7,6 +7,8 @@ import com.bodkink.hotel.business.model.Customer;
 
 import org.eclipse.emf.ecore.EObject;
 
+import javax.xml.soap.SOAPException;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>ICustomer Management</b></em>'.
@@ -24,7 +26,7 @@ public interface ICustomerManagement extends EObject {
 	 * @model required="true" ordered="false" firstNameRequired="true" firstNameOrdered="false" lastNameRequired="true" lastNameOrdered="false" phoneRequired="true" phoneOrdered="false" emailRequired="true" emailOrdered="false" birthYearRequired="true" birthYearOrdered="false" cardInformationRequired="true" cardInformationOrdered="false"
 	 * @generated
 	 */
-	Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation);
+	Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) throws SOAPException;
 
 	/**
 	 * <!-- begin-user-doc -->

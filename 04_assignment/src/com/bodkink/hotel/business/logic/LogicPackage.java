@@ -313,6 +313,15 @@ public interface LogicPackage extends EPackage {
 	int ROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING = BusinessPackage.IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING;
 
 	/**
+	 * The operation id for the '<em>Is Available</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_RESERVATION_MANAGEMENT___IS_AVAILABLE__ROOM_DATE_DATE = BusinessPackage.IROOM_RESERVATION_MANAGEMENT___IS_AVAILABLE__ROOM_DATE_DATE;
+
+	/**
 	 * The number of operations of the '<em>Room Reservation Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -621,7 +630,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER = BusinessPackage.IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER;
+	int BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_CUSTOMER = BusinessPackage.IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_CUSTOMER;
 
 	/**
 	 * The operation id for the '<em>List Bookings</em>' operation.
@@ -684,7 +693,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION = BusinessPackage.IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION;
+	int BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING = BusinessPackage.IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING;
 
 	/**
 	 * The operation id for the '<em>Search Room</em>' operation.
