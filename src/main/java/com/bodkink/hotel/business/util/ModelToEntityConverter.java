@@ -71,8 +71,7 @@ public class ModelToEntityConverter {
     }
 
     public static CardInformationEntity convertCardInformation(final CardInformation model) {
-        return new CardInformationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getCardNumber(),
-                model.getCardHolderName(), model.getExpirationDate(), convertAddress(model.getAddress()));
+        return new CardInformationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getCcNumber(), model.getCcv(), model.getExpiryMonth(), model.getExpiryYear(), model.getFirstName(), model.getLastName(), ModelToEntityConverter.convertAddress(model.getAddress()));
     }
 
     public static AddressEntity convertAddress(final Address model) {

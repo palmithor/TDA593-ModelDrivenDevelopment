@@ -1,5 +1,6 @@
 package com.bodkink.hotel.persistence.model;
 
+import com.bodkink.hotel.business.model.Address;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
@@ -16,35 +17,46 @@ public class CardInformationEntity {
 
     @Id
     private final ObjectId id;
-    private final String cardNumber;
-    private final String cardHolderName;
-    private final Date expirationDate;
+    private final String ccNumber;
+    private final String ccv;
+    private final Integer expiryMonth;
+    private final Integer expiryYear;
+    private final String firstName;
+    private final String lastName;
+
     @Reference
     private final AddressEntity address;
 
     public CardInformationEntity() {
-        this.address = null;
-        this.expirationDate = null;
-        this.cardHolderName = null;
-        this.cardNumber = null;
         this.id = null;
+        this.ccNumber = null;
+        this.ccv = null;
+        this.expiryMonth = null;
+        this.expiryYear = null;
+        this.firstName = null;
+        this.lastName = null;
+        this.address = null;
     }
 
-    public CardInformationEntity(final String cardNumber, final String cardHolderName, final Date expirationDate,
-                                 final AddressEntity address) {
+    public CardInformationEntity(final String ccNumber, final String ccv, final Integer expiryMonth, final Integer expiryYear, final String firstName, final String lastName, final AddressEntity address) {
         this.id = null;
-        this.cardNumber = cardNumber;
-        this.cardHolderName = cardHolderName;
-        this.expirationDate = expirationDate;
+        this.ccNumber = ccNumber;
+        this.ccv = ccv;
+        this.expiryMonth = expiryMonth;
+        this.expiryYear = expiryYear;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
     }
 
-    public CardInformationEntity(final ObjectId id, final String cardNumber, final String cardHolderName,
-                                 final Date expirationDate, final AddressEntity address) {
+    public CardInformationEntity(final ObjectId id, final String ccNumber, final String ccv, final Integer expiryMonth, final Integer expiryYear, final String firstName, final String lastName, final AddressEntity address) {
         this.id = id;
-        this.cardNumber = cardNumber;
-        this.cardHolderName = cardHolderName;
-        this.expirationDate = expirationDate;
+        this.ccNumber = ccNumber;
+        this.ccv = ccv;
+        this.expiryMonth = expiryMonth;
+        this.expiryYear = expiryYear;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
     }
 
@@ -52,16 +64,28 @@ public class CardInformationEntity {
         return id;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public String getCcNumber() {
+        return ccNumber;
     }
 
-    public String getCardHolderName() {
-        return cardHolderName;
+    public String getCcv() {
+        return ccv;
     }
 
-    public Date getExpirationDate() {
-        return expirationDate;
+    public Integer getExpiryMonth() {
+        return expiryMonth;
+    }
+
+    public Integer getExpiryYear() {
+        return expiryYear;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public AddressEntity getAddress() {

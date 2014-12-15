@@ -488,7 +488,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardInformation_CardNumber() {
+	public EAttribute getCardInformation_CcNumber() {
 		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -497,7 +497,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardInformation_CardHolderName() {
+	public EAttribute getCardInformation_Ccv() {
 		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -506,7 +506,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCardInformation_ExpirationDate() {
+	public EAttribute getCardInformation_ExpiryMonth() {
 		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -515,8 +515,35 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCardInformation_ExpiryYear() {
+		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCardInformation_FirstName() {
+		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCardInformation_LastName() {
+		return (EAttribute)cardInformationEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCardInformation_Address() {
-		return (EReference)cardInformationEClass.getEStructuralFeatures().get(4);
+		return (EReference)cardInformationEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1271,9 +1298,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		cardInformationEClass = createEClass(CARD_INFORMATION);
 		createEAttribute(cardInformationEClass, CARD_INFORMATION__ID);
-		createEAttribute(cardInformationEClass, CARD_INFORMATION__CARD_NUMBER);
-		createEAttribute(cardInformationEClass, CARD_INFORMATION__CARD_HOLDER_NAME);
-		createEAttribute(cardInformationEClass, CARD_INFORMATION__EXPIRATION_DATE);
+		createEAttribute(cardInformationEClass, CARD_INFORMATION__CC_NUMBER);
+		createEAttribute(cardInformationEClass, CARD_INFORMATION__CCV);
+		createEAttribute(cardInformationEClass, CARD_INFORMATION__EXPIRY_MONTH);
+		createEAttribute(cardInformationEClass, CARD_INFORMATION__EXPIRY_YEAR);
+		createEAttribute(cardInformationEClass, CARD_INFORMATION__FIRST_NAME);
+		createEAttribute(cardInformationEClass, CARD_INFORMATION__LAST_NAME);
 		createEReference(cardInformationEClass, CARD_INFORMATION__ADDRESS);
 
 		billableItemEClass = createEClass(BILLABLE_ITEM);
@@ -1434,9 +1464,12 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		initEClass(cardInformationEClass, CardInformation.class, "CardInformation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCardInformation_Id(), theTypesPackage.getString(), "id", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCardInformation_CardNumber(), theTypesPackage.getString(), "cardNumber", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCardInformation_CardHolderName(), theTypesPackage.getString(), "CardHolderName", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getCardInformation_ExpirationDate(), ecorePackage.getEDate(), "expirationDate", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCardInformation_CcNumber(), theTypesPackage.getString(), "ccNumber", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCardInformation_Ccv(), theTypesPackage.getString(), "ccv", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCardInformation_ExpiryMonth(), theTypesPackage.getInteger(), "expiryMonth", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCardInformation_ExpiryYear(), theTypesPackage.getInteger(), "expiryYear", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCardInformation_FirstName(), theTypesPackage.getString(), "firstName", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCardInformation_LastName(), theTypesPackage.getString(), "lastName", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCardInformation_Address(), this.getAddress(), null, "address", null, 1, 1, CardInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(billableItemEClass, BillableItem.class, "BillableItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

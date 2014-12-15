@@ -287,31 +287,58 @@ public interface ModelPackage extends EPackage {
 	int CARD_INFORMATION__ID = 0;
 
 	/**
-	 * The feature id for the '<em><b>Card Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Cc Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__CARD_NUMBER = 1;
+	int CARD_INFORMATION__CC_NUMBER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Card Holder Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Ccv</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__CARD_HOLDER_NAME = 2;
+	int CARD_INFORMATION__CCV = 2;
 
 	/**
-	 * The feature id for the '<em><b>Expiration Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Expiry Month</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__EXPIRATION_DATE = 3;
+	int CARD_INFORMATION__EXPIRY_MONTH = 3;
+
+	/**
+	 * The feature id for the '<em><b>Expiry Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARD_INFORMATION__EXPIRY_YEAR = 4;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARD_INFORMATION__FIRST_NAME = 5;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARD_INFORMATION__LAST_NAME = 6;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' reference.
@@ -320,7 +347,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION__ADDRESS = 4;
+	int CARD_INFORMATION__ADDRESS = 7;
 
 	/**
 	 * The number of structural features of the '<em>Card Information</em>' class.
@@ -329,7 +356,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CARD_INFORMATION_FEATURE_COUNT = 5;
+	int CARD_INFORMATION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Card Information</em>' class.
@@ -1730,37 +1757,70 @@ public interface ModelPackage extends EPackage {
 	EAttribute getCardInformation_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getCardNumber <em>Card Number</em>}'.
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getCcNumber <em>Cc Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Card Number</em>'.
-	 * @see com.bodkink.hotel.business.model.CardInformation#getCardNumber()
+	 * @return the meta object for the attribute '<em>Cc Number</em>'.
+	 * @see com.bodkink.hotel.business.model.CardInformation#getCcNumber()
 	 * @see #getCardInformation()
 	 * @generated
 	 */
-	EAttribute getCardInformation_CardNumber();
+	EAttribute getCardInformation_CcNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getCardHolderName <em>Card Holder Name</em>}'.
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getCcv <em>Ccv</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Card Holder Name</em>'.
-	 * @see com.bodkink.hotel.business.model.CardInformation#getCardHolderName()
+	 * @return the meta object for the attribute '<em>Ccv</em>'.
+	 * @see com.bodkink.hotel.business.model.CardInformation#getCcv()
 	 * @see #getCardInformation()
 	 * @generated
 	 */
-	EAttribute getCardInformation_CardHolderName();
+	EAttribute getCardInformation_Ccv();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getExpirationDate <em>Expiration Date</em>}'.
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getExpiryMonth <em>Expiry Month</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Expiration Date</em>'.
-	 * @see com.bodkink.hotel.business.model.CardInformation#getExpirationDate()
+	 * @return the meta object for the attribute '<em>Expiry Month</em>'.
+	 * @see com.bodkink.hotel.business.model.CardInformation#getExpiryMonth()
 	 * @see #getCardInformation()
 	 * @generated
 	 */
-	EAttribute getCardInformation_ExpirationDate();
+	EAttribute getCardInformation_ExpiryMonth();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getExpiryYear <em>Expiry Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expiry Year</em>'.
+	 * @see com.bodkink.hotel.business.model.CardInformation#getExpiryYear()
+	 * @see #getCardInformation()
+	 * @generated
+	 */
+	EAttribute getCardInformation_ExpiryYear();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getFirstName <em>First Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>First Name</em>'.
+	 * @see com.bodkink.hotel.business.model.CardInformation#getFirstName()
+	 * @see #getCardInformation()
+	 * @generated
+	 */
+	EAttribute getCardInformation_FirstName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.CardInformation#getLastName <em>Last Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Name</em>'.
+	 * @see com.bodkink.hotel.business.model.CardInformation#getLastName()
+	 * @see #getCardInformation()
+	 * @generated
+	 */
+	EAttribute getCardInformation_LastName();
 
 	/**
 	 * Returns the meta object for the reference '{@link com.bodkink.hotel.business.model.CardInformation#getAddress <em>Address</em>}'.
@@ -2793,28 +2853,52 @@ public interface ModelPackage extends EPackage {
 		EAttribute CARD_INFORMATION__ID = eINSTANCE.getCardInformation_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Card Number</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cc Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CARD_INFORMATION__CARD_NUMBER = eINSTANCE.getCardInformation_CardNumber();
+		EAttribute CARD_INFORMATION__CC_NUMBER = eINSTANCE.getCardInformation_CcNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Card Holder Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ccv</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CARD_INFORMATION__CARD_HOLDER_NAME = eINSTANCE.getCardInformation_CardHolderName();
+		EAttribute CARD_INFORMATION__CCV = eINSTANCE.getCardInformation_Ccv();
 
 		/**
-		 * The meta object literal for the '<em><b>Expiration Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Expiry Month</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CARD_INFORMATION__EXPIRATION_DATE = eINSTANCE.getCardInformation_ExpirationDate();
+		EAttribute CARD_INFORMATION__EXPIRY_MONTH = eINSTANCE.getCardInformation_ExpiryMonth();
+
+		/**
+		 * The meta object literal for the '<em><b>Expiry Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CARD_INFORMATION__EXPIRY_YEAR = eINSTANCE.getCardInformation_ExpiryYear();
+
+		/**
+		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CARD_INFORMATION__FIRST_NAME = eINSTANCE.getCardInformation_FirstName();
+
+		/**
+		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CARD_INFORMATION__LAST_NAME = eINSTANCE.getCardInformation_LastName();
 
 		/**
 		 * The meta object literal for the '<em><b>Address</b></em>' reference feature.

@@ -112,19 +112,25 @@
             <ownedAttribute xmi:type="uml:Property" xmi:id="_AK8gMIE-EeS9mJsE6MGidw" name="id" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_maUH4HkzEeSsOOo59CoEGw" name="cardNumber" visibility="private">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_maUH4HkzEeSsOOo59CoEGw" name="ccNumber" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_m2AlYHkzEeSsOOo59CoEGw" name="CardHolderName" visibility="private">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_m2AlYHkzEeSsOOo59CoEGw" name="ccv" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_nGZKwHkzEeSsOOo59CoEGw" name="expirationDate" visibility="private">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_mfOK0IRcEeSYNfsqk6WiPg" name="expiryMonth" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
             </ownedAttribute>
-            <ownedAttribute xmi:type="uml:Property" xmi:id="_XWs2MHuNEeSzntEGOwlLGA" name="address" visibility="private" type="_dCV90HkxEeSsOOo59CoEGw">
-              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XWs2MXuNEeSzntEGOwlLGA" value="1"/>
-              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XWs2MnuNEeSzntEGOwlLGA" value="1"/>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_oc2VIIRcEeSYNfsqk6WiPg" name="expiryYear" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
             </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_xzi-wIRcEeSYNfsqk6WiPg" name="firstName" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_6F52gIRcEeSYNfsqk6WiPg" name="lastName" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_nzZBEIRfEeSYNfsqk6WiPg" name="address" visibility="private" type="_dCV90HkxEeSsOOo59CoEGw"/>
           </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_IyTPQHk1EeSsOOo59CoEGw" name="Classification">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_GNDMkIE-EeS9mJsE6MGidw" name="id" visibility="private">
