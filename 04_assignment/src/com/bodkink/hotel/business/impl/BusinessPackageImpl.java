@@ -663,7 +663,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__ConfirmAndPay__Booking_CardInformation() {
+	public EOperation getIBookingManagement__ConfirmAndPay__Booking() {
 		return iBookingManagementEClass.getEOperations().get(7);
 	}
 
@@ -845,7 +845,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___LIST_AVAILABLE_ROOMS__DATE_DATE);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CANCEL_BOOKING__BOOKING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION);
+		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE);
 
 		iCustomerManagementEClass = createEClass(ICUSTOMER_MANAGEMENT);
@@ -1071,9 +1071,8 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		op = initEOperation(getIBookingManagement__GetBookingStatus__String(), theModelPackage.getReservationStatusEnum(), "getBookingStatus", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "bookingId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIBookingManagement__ConfirmAndPay__Booking_CardInformation(), theModelPackage.getReceipt(), "confirmAndPay", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIBookingManagement__ConfirmAndPay__Booking(), theModelPackage.getReceipt(), "confirmAndPay", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theModelPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theModelPackage.getCardInformation(), "cardInformation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIBookingManagement__SearchRoom__int_int_Date_Date(), theModelPackage.getRoom(), "searchRoom", 0, -1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theTypesPackage.getInteger(), "numberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);

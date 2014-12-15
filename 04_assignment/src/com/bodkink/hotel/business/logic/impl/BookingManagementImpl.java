@@ -6,7 +6,6 @@ import com.bodkink.hotel.business.logic.BookingManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
 
 import com.bodkink.hotel.business.model.Booking;
-import com.bodkink.hotel.business.model.CardInformation;
 import com.bodkink.hotel.business.model.Customer;
 import com.bodkink.hotel.business.model.Receipt;
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
@@ -134,7 +133,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Receipt confirmAndPay(Booking booking, CardInformation cardInformation) {
+	public Receipt confirmAndPay(Booking booking) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -174,8 +173,8 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 				return cancelBooking((Booking)arguments.get(0));
 			case LogicPackage.BOOKING_MANAGEMENT___GET_BOOKING_STATUS__STRING:
 				return getBookingStatus((String)arguments.get(0));
-			case LogicPackage.BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION:
-				return confirmAndPay((Booking)arguments.get(0), (CardInformation)arguments.get(1));
+			case LogicPackage.BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING:
+				return confirmAndPay((Booking)arguments.get(0));
 			case LogicPackage.BOOKING_MANAGEMENT___SEARCH_ROOM__INT_INT_DATE_DATE:
 				return searchRoom((Integer)arguments.get(0), (Integer)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3));
 		}

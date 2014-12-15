@@ -206,7 +206,6 @@
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IBookingManagement/confirmAndPay">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/confirmAndPay/booking"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/confirmAndPay/cardInformation"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IBookingManagement/searchRoom">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IBookingManagement/searchRoom/numberOfGuests"/>

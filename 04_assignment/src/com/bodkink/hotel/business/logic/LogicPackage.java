@@ -693,7 +693,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION = BusinessPackage.IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION;
+	int BOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING = BusinessPackage.IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING;
 
 	/**
 	 * The operation id for the '<em>Search Room</em>' operation.

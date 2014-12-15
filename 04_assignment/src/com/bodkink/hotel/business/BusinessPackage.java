@@ -692,7 +692,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION = 7;
+	int IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING = 7;
 
 	/**
 	 * The operation id for the '<em>Search Room</em>' operation.
@@ -1353,14 +1353,14 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBookingManagement__GetBookingStatus__String();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#confirmAndPay(com.bodkink.hotel.business.model.Booking, com.bodkink.hotel.business.model.CardInformation) <em>Confirm And Pay</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#confirmAndPay(com.bodkink.hotel.business.model.Booking) <em>Confirm And Pay</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Confirm And Pay</em>' operation.
-	 * @see com.bodkink.hotel.business.IBookingManagement#confirmAndPay(com.bodkink.hotel.business.model.Booking, com.bodkink.hotel.business.model.CardInformation)
+	 * @see com.bodkink.hotel.business.IBookingManagement#confirmAndPay(com.bodkink.hotel.business.model.Booking)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__ConfirmAndPay__Booking_CardInformation();
+	EOperation getIBookingManagement__ConfirmAndPay__Booking();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#searchRoom(int, int, java.util.Date, java.util.Date) <em>Search Room</em>}' operation.
@@ -1925,7 +1925,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING_CARDINFORMATION = eINSTANCE.getIBookingManagement__ConfirmAndPay__Booking_CardInformation();
+		EOperation IBOOKING_MANAGEMENT___CONFIRM_AND_PAY__BOOKING = eINSTANCE.getIBookingManagement__ConfirmAndPay__Booking();
 
 		/**
 		 * The meta object literal for the '<em><b>Search Room</b></em>' operation.

@@ -187,7 +187,6 @@
           </eOperations>
           <eOperations name="confirmAndPay" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Receipt">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Booking"/>
-            <eParameters name="cardInformation" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/CardInformation"/>
           </eOperations>
           <eOperations name="searchRoom" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Room">
             <eParameters name="numberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>

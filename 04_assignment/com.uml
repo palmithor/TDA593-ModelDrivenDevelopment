@@ -556,7 +556,6 @@
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_tphgwHvJEeSKovwTcU7VCQ" name="confirmAndPay">
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_zV7p8HvJEeSKovwTcU7VCQ" name="booking" type="_jNDPwHk1EeSsOOo59CoEGw"/>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_1kt1sHvJEeSKovwTcU7VCQ" name="cardInformation" type="_jeP_YHkzEeSsOOo59CoEGw"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_-FjOUHvJEeSKovwTcU7VCQ" name="receipt" type="_n1220Hu6EeSKovwTcU7VCQ" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_on5TUIFCEeS9mJsE6MGidw" name="searchRoom">
