@@ -1,6 +1,7 @@
 package com.bodkink.hotel.persistence.model;
 
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
+import com.bodkink.hotel.business.model.RoomReservationType;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
@@ -23,8 +24,7 @@ public class RoomReservationEntity {
     @Indexed(value = IndexDirection.ASC, name = "upc")
     private final Date startDate;
     private final Date endDate;
-    @Reference
-    private final RoomReservationTypeEntity type;
+    private final RoomReservationType reservationType;
     @Reference
     private final RoomEntity room;
     @Reference
@@ -38,20 +38,20 @@ public class RoomReservationEntity {
         this.id = null;
         this.startDate = null;
         this.endDate = null;
-        this.type = null;
+        this.reservationType = null;
         this.room = null;
         this.guests = null;
         this.roomBill = null;
         reservationStatus = null;
     }
 
-    public RoomReservationEntity(final Date startDate, final Date endDate, final RoomReservationTypeEntity type,
+    public RoomReservationEntity(final Date startDate, final Date endDate, final RoomReservationType RoomReservationType,
                                  final RoomEntity room, final List<GuestEntity> guests, final RoomBillEntity roomBill,
                                  final ReservationStatusEnum reservationStatus) {
         this.id = null;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.type = type;
+        this.reservationType = RoomReservationType;
         this.room = room;
         this.guests = guests;
         this.roomBill = roomBill;
@@ -60,13 +60,13 @@ public class RoomReservationEntity {
 
 
     public RoomReservationEntity(final ObjectId id, final Date startDate, final Date endDate,
-                                 final RoomReservationTypeEntity type, final RoomEntity room,
+                                 final RoomReservationType RoomReservationType, final RoomEntity room,
                                  final List<GuestEntity> guests, final RoomBillEntity roomBill,
                                  final ReservationStatusEnum reservationStatus) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.type = type;
+        this.reservationType = RoomReservationType;
         this.room = room;
         this.guests = guests;
         this.roomBill = roomBill;
@@ -85,8 +85,8 @@ public class RoomReservationEntity {
         return endDate;
     }
 
-    public RoomReservationTypeEntity getType() {
-        return type;
+    public RoomReservationType getReservationType() {
+        return reservationType;
     }
 
     public RoomEntity getRoom() {

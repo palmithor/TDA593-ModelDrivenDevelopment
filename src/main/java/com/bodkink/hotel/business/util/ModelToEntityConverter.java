@@ -22,7 +22,7 @@ public class ModelToEntityConverter {
         });
 
         return new RoomReservationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getStartDate(),
-                model.getEndDate(), convertRoomReservationType(model.getRoomReservationType()), convertRoom(model.getRoom()),
+                model.getEndDate(), model.getRoomReservationType(), convertRoom(model.getRoom()),
                 guests, convertRoomBill(model.getRoomBill()), model.getReservationStatusEnum());
     }
 
@@ -54,10 +54,6 @@ public class ModelToEntityConverter {
 
     public static RoomExtraEntity convertRoomExtra(final RoomExtra model) {
         return new RoomExtraEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getTitle(), model.getDescription());
-    }
-
-    public static RoomReservationTypeEntity convertRoomReservationType(final RoomReservationType model) {
-        return new RoomReservationTypeEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getType());
     }
 
     public static GuestEntity convertGuest(final Guest model) {

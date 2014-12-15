@@ -77,7 +77,7 @@ public class EntityToModelConverter {
         RoomReservation roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
         roomReservation.setId(entity.getId() != null ? entity.getId().toString() : null);
         roomReservation.setReservationStatusEnum(entity.getReservationStatus());
-        roomReservation.setRoomReservationType(convertRoomReservationType(entity.getType()));
+        roomReservation.setRoomReservationType(entity.getReservationType());
         roomReservation.setRoom(convertRoom(entity.getRoom()));
         roomReservation.setRoomBill(convertRoomBill(entity.getRoomBill()));
         entity.getGuests().forEach(guest -> {
@@ -88,12 +88,6 @@ public class EntityToModelConverter {
         return roomReservation;
     }
 
-    public static RoomReservationType convertRoomReservationType(final RoomReservationTypeEntity entity) {
-        RoomReservationType roomReservationType = ModelFactory.eINSTANCE.createRoomReservationType();
-        roomReservationType.setId(entity.getId() != null ? entity.getId().toString() : null);
-        roomReservationType.setType(entity.getType());
-        return roomReservationType;
-    }
 
     public static RoomBill convertRoomBill(final RoomBillEntity entity) {
         RoomBill roomBill = null;

@@ -1,6 +1,7 @@
 package com.bodkink.hotel.test;
 
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
+import com.bodkink.hotel.business.model.RoomReservationType;
 import com.bodkink.hotel.persistence.model.*;
 import com.bodkink.hotel.util.DateInterval;
 import org.apache.commons.lang.StringUtils;
@@ -31,7 +32,7 @@ public class DBTestDataMock {
                     ObjectId.get(),
                     i % 2 == 0 ? DBTestDataMock.dateIntervalHalfAvailable1.getStart() : DBTestDataMock.dateIntervalHalfAvailable2.getStart(),
                     i % 2 == 0 ? DBTestDataMock.dateIntervalHalfAvailable1.getEnd() : DBTestDataMock.dateIntervalHalfAvailable2.getEnd(),
-                    getRoomReservationTypesEntities().get(0),
+                    RoomReservationType.BOOKING,
                     rooms.get(i),
                     new ArrayList<GuestEntity>(),   // TODO ADD guests ?
                     null,                           // TODO add room bill?
@@ -81,13 +82,6 @@ public class DBTestDataMock {
         return new ArrayList<BedTypeEntity>() {{
             add(new BedTypeEntity(2, 160, 200, "Double Bed"));
             add(new BedTypeEntity(1, 90, 200, "Single Bed"));
-        }};
-    }
-
-    public static List<RoomReservationTypeEntity> getRoomReservationTypesEntities() {
-        return new ArrayList<RoomReservationTypeEntity>() {{
-            add(new RoomReservationTypeEntity(ObjectId.get(), "Booking"));
-            add(new RoomReservationTypeEntity(ObjectId.get(), "Maintenance"));
         }};
     }
 

@@ -57,14 +57,6 @@ public class ModelTestDataMock {
         return bedTypes;
     }
 
-    public static List<RoomReservationType> getRoomReservationTypes() {
-        EList<RoomReservationType> roomReservationTypes = new BasicEList<>();
-        DBTestDataMock.getRoomReservationTypesEntities().forEach(entity -> {
-            roomReservationTypes.add(EntityToModelConverter.convertRoomReservationType(entity));
-        });
-        return roomReservationTypes;
-    }
-
     public static Customer getCustomer() {
         return EntityToModelConverter.convertCustomer(DBTestDataMock.getCustomerEntity());
     }
