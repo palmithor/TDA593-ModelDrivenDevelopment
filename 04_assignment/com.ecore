@@ -82,6 +82,11 @@
               eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
             <eParameters name="roomReservationId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
+          <eOperations name="isAvailable" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean">
+            <eParameters name="room" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Room"/>
+            <eParameters name="start" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+            <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="IServiceManagement" abstract="true"
             interface="true">
@@ -161,7 +166,6 @@
             <eParameters name="end" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
             <eParameters name="rooms" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Room"/>
             <eParameters name="services" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Service"/>
-            <eParameters name="numberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Customer"/>
           </eOperations>
           <eOperations name="listBookings" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Booking"/>

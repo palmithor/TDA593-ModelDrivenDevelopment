@@ -312,13 +312,22 @@ public interface BusinessPackage extends EPackage {
 	int IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING = 5;
 
 	/**
+	 * The operation id for the '<em>Is Available</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_RESERVATION_MANAGEMENT___IS_AVAILABLE__ROOM_DATE_DATE = 6;
+
+	/**
 	 * The number of operations of the '<em>IRoom Reservation Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_RESERVATION_MANAGEMENT_OPERATION_COUNT = 6;
+	int IROOM_RESERVATION_MANAGEMENT_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.IServiceManagement <em>IService Management</em>}' class.
@@ -620,7 +629,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER = 0;
+	int IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_CUSTOMER = 0;
 
 	/**
 	 * The operation id for the '<em>List Bookings</em>' operation.
@@ -1034,6 +1043,16 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIRoomReservationManagement__CancelRoomReservation__String();
 
 	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomReservationManagement#isAvailable(com.bodkink.hotel.business.model.Room, java.util.Date, java.util.Date) <em>Is Available</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Available</em>' operation.
+	 * @see com.bodkink.hotel.business.IRoomReservationManagement#isAvailable(com.bodkink.hotel.business.model.Room, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getIRoomReservationManagement__IsAvailable__Room_Date_Date();
+
+	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IServiceManagement <em>IService Management</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1264,14 +1283,14 @@ public interface BusinessPackage extends EPackage {
 	EClass getIBookingManagement();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, int, com.bodkink.hotel.business.model.Customer) <em>Create</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, com.bodkink.hotel.business.model.Customer) <em>Create</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create</em>' operation.
-	 * @see com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, int, com.bodkink.hotel.business.model.Customer)
+	 * @see com.bodkink.hotel.business.IBookingManagement#create(java.util.Date, java.util.Date, org.eclipse.emf.common.util.EList, org.eclipse.emf.common.util.EList, com.bodkink.hotel.business.model.Customer)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__Create__Date_Date_EList_EList_int_Customer();
+	EOperation getIBookingManagement__Create__Date_Date_EList_EList_Customer();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBookingManagement#listBookings() <em>List Bookings</em>}' operation.
@@ -1643,6 +1662,14 @@ public interface BusinessPackage extends EPackage {
 		EOperation IROOM_RESERVATION_MANAGEMENT___CANCEL_ROOM_RESERVATION__STRING = eINSTANCE.getIRoomReservationManagement__CancelRoomReservation__String();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Available</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_RESERVATION_MANAGEMENT___IS_AVAILABLE__ROOM_DATE_DATE = eINSTANCE.getIRoomReservationManagement__IsAvailable__Room_Date_Date();
+
+		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IServiceManagement <em>IService Management</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1842,7 +1869,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER = eINSTANCE.getIBookingManagement__Create__Date_Date_EList_EList_int_Customer();
+		EOperation IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_CUSTOMER = eINSTANCE.getIBookingManagement__Create__Date_Date_EList_EList_Customer();
 
 		/**
 		 * The meta object literal for the '<em><b>List Bookings</b></em>' operation.

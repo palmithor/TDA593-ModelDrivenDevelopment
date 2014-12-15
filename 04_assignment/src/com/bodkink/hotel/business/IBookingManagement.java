@@ -30,10 +30,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomsMany="true" roomsOrdered="false" servicesMany="true" servicesOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" customerRequired="true" customerOrdered="false"
+	 * @model required="true" ordered="false" startRequired="true" startOrdered="false" endRequired="true" endOrdered="false" roomsMany="true" roomsOrdered="false" servicesMany="true" servicesOrdered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, int numberOfGuests, Customer customer);
+	Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, Customer customer);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -422,6 +422,18 @@
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
             </ownedParameter>
           </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_Es5O4IRTEeSYNfsqk6WiPg" name="isAvailable">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_TnqlEIRTEeSYNfsqk6WiPg" name="room" type="_YQh30Hk1EeSsOOo59CoEGw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_jaWasIRTEeSYNfsqk6WiPg" name="start">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_rQJSQIRTEeSYNfsqk6WiPg" name="end">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_vcLN0IRTEeSYNfsqk6WiPg" name="result" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            </ownedParameter>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_yhwDgHuTEeSKovwTcU7VCQ" name="IRoomManagement">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_yhwDgXuTEeSKovwTcU7VCQ" name="create" visibility="public">
@@ -493,9 +505,6 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_JHvXsIEgEeSb758rJAZ_gA" name="services" type="_d5SQEHk1EeSsOOo59CoEGw">
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JyRicIEgEeSb758rJAZ_gA"/>
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Jyb6gIEgEeSb758rJAZ_gA" value="*"/>
-            </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_SGoX0HuaEeSKovwTcU7VCQ" name="numberOfGuests">
-              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_cMso4HuaEeSKovwTcU7VCQ" name="customer" type="_OsIJYHk1EeSsOOo59CoEGw"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_hYGWwHuaEeSKovwTcU7VCQ" name="booking" type="_jNDPwHk1EeSsOOo59CoEGw" direction="return"/>

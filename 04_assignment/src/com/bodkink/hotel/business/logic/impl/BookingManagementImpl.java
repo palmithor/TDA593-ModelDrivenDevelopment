@@ -57,7 +57,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, int numberOfGuests, Customer customer) {
+	public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, Customer customer) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -160,8 +160,8 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LogicPackage.BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_INT_CUSTOMER:
-				return create((Date)arguments.get(0), (Date)arguments.get(1), (EList<Room>)arguments.get(2), (EList<Service>)arguments.get(3), (Integer)arguments.get(4), (Customer)arguments.get(5));
+			case LogicPackage.BOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_CUSTOMER:
+				return create((Date)arguments.get(0), (Date)arguments.get(1), (EList<Room>)arguments.get(2), (EList<Service>)arguments.get(3), (Customer)arguments.get(4));
 			case LogicPackage.BOOKING_MANAGEMENT___LIST_BOOKINGS:
 				return listBookings();
 			case LogicPackage.BOOKING_MANAGEMENT___FIND_BOOKING__STRING:

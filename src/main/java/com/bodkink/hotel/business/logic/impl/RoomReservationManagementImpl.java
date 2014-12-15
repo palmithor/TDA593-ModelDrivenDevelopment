@@ -171,4 +171,15 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
         return super.eInvoke(operationID, arguments);
     }
 
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean isAvailable(Room room, Date start, Date end) {
+        // TODO: implement this method
+        // Ensure that you remove @generated or mark it @generated NOT
+        throw new UnsupportedOperationException();
+    }
+
 } //RoomReservationManagementImpl
