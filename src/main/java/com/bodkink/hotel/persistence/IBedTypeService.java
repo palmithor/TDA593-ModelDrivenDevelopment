@@ -12,4 +12,8 @@ public interface IBedTypeService {
 
     public List<BedTypeEntity> listAll();
 
+    public BedTypeEntity edit(BedTypeEntity bedTypeEntity);
+
+    public BedTypeEntity persist(BedTypeEntity bedTypeEntity);
+
 }

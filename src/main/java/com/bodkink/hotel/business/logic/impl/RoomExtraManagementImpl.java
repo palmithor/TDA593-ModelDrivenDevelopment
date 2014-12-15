@@ -27,6 +27,7 @@ import java.util.List;
  * @generated
  */
 public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implements RoomExtraManagement {
+
 	@Inject
 	public IRoomExtraService roomExtraService;
 	/**
@@ -100,10 +101,6 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 				return listRoomExtras();
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public void setRoomExtraService(IRoomExtraService roomExtraService) {
-				this.roomExtraService = roomExtraService;
 	}
 
 } //RoomExtraManagementImpl
