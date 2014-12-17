@@ -595,13 +595,22 @@ public interface BusinessPackage extends EPackage {
 	int IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING = 8;
 
 	/**
+	 * The operation id for the '<em>Mark Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBILLING_MANAGEMENT___MARK_PAID__BILL = 9;
+
+	/**
 	 * The number of operations of the '<em>IBilling Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBILLING_MANAGEMENT_OPERATION_COUNT = 9;
+	int IBILLING_MANAGEMENT_OPERATION_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.IBookingManagement <em>IBooking Management</em>}' class.
@@ -1273,6 +1282,16 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBillingManagement__MakePayment__Booking();
 
 	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#markPaid(com.bodkink.hotel.business.model.Bill) <em>Mark Paid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Mark Paid</em>' operation.
+	 * @see com.bodkink.hotel.business.IBillingManagement#markPaid(com.bodkink.hotel.business.model.Bill)
+	 * @generated
+	 */
+	EOperation getIBillingManagement__MarkPaid__Bill();
+
+	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IBookingManagement <em>IBooking Management</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1852,6 +1871,14 @@ public interface BusinessPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING = eINSTANCE.getIBillingManagement__MakePayment__Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Mark Paid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBILLING_MANAGEMENT___MARK_PAID__BILL = eINSTANCE.getIBillingManagement__MarkPaid__Bill();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IBookingManagement <em>IBooking Management</em>}' class.

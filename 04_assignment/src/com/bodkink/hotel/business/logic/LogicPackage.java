@@ -596,6 +596,15 @@ public interface LogicPackage extends EPackage {
 	int BILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING = BusinessPackage.IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING;
 
 	/**
+	 * The operation id for the '<em>Mark Paid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILLING_MANAGEMENT___MARK_PAID__BILL = BusinessPackage.IBILLING_MANAGEMENT___MARK_PAID__BILL;
+
+	/**
 	 * The number of operations of the '<em>Billing Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

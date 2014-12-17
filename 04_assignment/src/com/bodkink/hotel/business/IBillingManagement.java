@@ -2,6 +2,7 @@
  */
 package com.bodkink.hotel.business;
 
+import com.bodkink.hotel.business.model.Bill;
 import com.bodkink.hotel.business.model.BillableItem;
 import com.bodkink.hotel.business.model.Booking;
 import com.bodkink.hotel.business.model.BookingBill;
@@ -98,5 +99,13 @@ public interface IBillingManagement extends EObject {
 	 * @generated
 	 */
 	boolean makePayment(Booking booking);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model billRequired="true" billOrdered="false"
+	 * @generated
+	 */
+	void markPaid(Bill bill);
 
 } // IBillingManagement

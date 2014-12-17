@@ -591,6 +591,15 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIBillingManagement__MarkPaid__Bill() {
+		return iBillingManagementEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIBookingManagement() {
 		return iBookingManagementEClass;
 	}
@@ -836,6 +845,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		createEOperation(iBillingManagementEClass, IBILLING_MANAGEMENT___GENERATE_RECEIPT__ROOMBILL);
 		createEOperation(iBillingManagementEClass, IBILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CUSTOMER);
 		createEOperation(iBillingManagementEClass, IBILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING);
+		createEOperation(iBillingManagementEClass, IBILLING_MANAGEMENT___MARK_PAID__BILL);
 
 		iBookingManagementEClass = createEClass(IBOOKING_MANAGEMENT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CREATE__DATE_DATE_ELIST_ELIST_CUSTOMER);
@@ -1043,6 +1053,9 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 
 		op = initEOperation(getIBillingManagement__MakePayment__Booking(), ecorePackage.getEBoolean(), "makePayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theModelPackage.getBooking(), "booking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIBillingManagement__MarkPaid__Bill(), null, "markPaid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theModelPackage.getBill(), "bill", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iBookingManagementEClass, IBookingManagement.class, "IBookingManagement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

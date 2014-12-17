@@ -5,6 +5,7 @@ package com.bodkink.hotel.business.logic.impl;
 import com.bodkink.hotel.business.logic.BillingManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
 
+import com.bodkink.hotel.business.model.Bill;
 import com.bodkink.hotel.business.model.BillableItem;
 import com.bodkink.hotel.business.model.Booking;
 import com.bodkink.hotel.business.model.BookingBill;
@@ -156,6 +157,17 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void markPaid(Bill bill) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -177,6 +189,9 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 				return makePayment((RoomBill)arguments.get(0), (Customer)arguments.get(1));
 			case LogicPackage.BILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING:
 				return makePayment((Booking)arguments.get(0));
+			case LogicPackage.BILLING_MANAGEMENT___MARK_PAID__BILL:
+				markPaid((Bill)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

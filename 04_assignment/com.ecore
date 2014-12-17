@@ -158,6 +158,9 @@
           <eOperations name="makePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Booking"/>
           </eOperations>
+          <eOperations name="markPaid" ordered="false" lowerBound="1">
+            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Bill"/>
+          </eOperations>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="IBookingManagement" abstract="true"
             interface="true">
