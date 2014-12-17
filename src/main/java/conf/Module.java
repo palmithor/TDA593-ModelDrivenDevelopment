@@ -20,15 +20,9 @@ import com.bodkink.hotel.business.*;
 import com.bodkink.hotel.business.logic.impl.*;
 import com.bodkink.hotel.business.util.BookingCache;
 import com.bodkink.hotel.business.util.IBookingCache;
-import com.bodkink.hotel.persistence.IBedTypeService;
-import com.bodkink.hotel.persistence.IBookingService;
-import com.bodkink.hotel.persistence.IRoomExtraService;
-import com.bodkink.hotel.persistence.IRoomReservationService;
+import com.bodkink.hotel.persistence.*;
 import com.bodkink.hotel.persistence.dao.AddressDAO;
-import com.bodkink.hotel.persistence.service.BedTypeServiceImpl;
-import com.bodkink.hotel.persistence.service.BookingServiceImpl;
-import com.bodkink.hotel.persistence.service.RoomExtraServiceImpl;
-import com.bodkink.hotel.persistence.service.RoomReservationServiceImpl;
+import com.bodkink.hotel.persistence.service.*;
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 import org.reflections.Reflections;
@@ -62,6 +56,8 @@ public class Module extends AbstractModule {
         bind(IRoomExtraService.class).to(RoomExtraServiceImpl.class);
         bind(IBedTypeService.class).to(BedTypeServiceImpl.class);
         bind(IRoomReservationService.class).to(RoomReservationServiceImpl.class);
+        bind(ICustomerService.class).to(CustomerServiceImpl.class);
+        bind(IRoomBillService.class).to(RoomBillServiceImpl.class);
 
         // persistence dao
         Reflections reflections = new Reflections(AddressDAO.class.getPackage().getName());
