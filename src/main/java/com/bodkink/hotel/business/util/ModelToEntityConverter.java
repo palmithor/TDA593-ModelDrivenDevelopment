@@ -55,7 +55,7 @@ public class ModelToEntityConverter {
 
         return new RoomReservationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getStartDate(),
                 model.getEndDate(), model.getRoomReservationType(), convertRoom(model.getRoom()),
-                guests, convertRoomBill(model.getRoomBill()), model.getReservationStatusEnum());
+                guests, model.getRoomBill() != null ? convertRoomBill(model.getRoomBill()) : null, model.getReservationStatusEnum());
     }
 
     public static RoomEntity convertRoom(final Room model) {

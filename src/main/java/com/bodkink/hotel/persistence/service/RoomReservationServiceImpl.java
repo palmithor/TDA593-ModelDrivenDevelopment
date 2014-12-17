@@ -51,7 +51,7 @@ public class RoomReservationServiceImpl implements IRoomReservationService {
     }
 
     @Override
-    public RoomReservation persist(RoomReservationEntity roomReservation) {
+    public RoomReservationEntity persist(RoomReservationEntity roomReservation) {
         return null;
     }
 
