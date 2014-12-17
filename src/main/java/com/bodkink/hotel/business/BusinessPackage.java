@@ -556,7 +556,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CARDINFORMATION = 4;
+	int IBILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CARDINFORMATION = 4;
 
 	/**
 	 * The operation id for the '<em>Generate Receipts</em>' operation.
@@ -574,7 +574,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBILLING_MANAGEMENT___GENERATE_RECEIPT__BILL = 6;
+	int IBILLING_MANAGEMENT___GENERATE_RECEIPT__ROOMBILL = 6;
 
 	/**
 	 * The operation id for the '<em>Make Payment</em>' operation.
@@ -583,7 +583,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CUSTOMER = 7;
+	int IBILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CUSTOMER = 7;
 
 	/**
 	 * The operation id for the '<em>Make Payment</em>' operation.
@@ -1223,14 +1223,14 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBillingManagement__FindRoomBill__String();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Bill, com.bodkink.hotel.business.model.CardInformation) <em>Make Payment</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.RoomBill, com.bodkink.hotel.business.model.CardInformation) <em>Make Payment</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Make Payment</em>' operation.
-	 * @see com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Bill, com.bodkink.hotel.business.model.CardInformation)
+	 * @see com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.RoomBill, com.bodkink.hotel.business.model.CardInformation)
 	 * @generated
 	 */
-	EOperation getIBillingManagement__MakePayment__Bill_CardInformation();
+	EOperation getIBillingManagement__MakePayment__RoomBill_CardInformation();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#generateReceipts(com.bodkink.hotel.business.model.Booking) <em>Generate Receipts</em>}' operation.
@@ -1243,24 +1243,24 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIBillingManagement__GenerateReceipts__Booking();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#generateReceipt(com.bodkink.hotel.business.model.Bill) <em>Generate Receipt</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#generateReceipt(com.bodkink.hotel.business.model.RoomBill) <em>Generate Receipt</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Generate Receipt</em>' operation.
-	 * @see com.bodkink.hotel.business.IBillingManagement#generateReceipt(com.bodkink.hotel.business.model.Bill)
+	 * @see com.bodkink.hotel.business.IBillingManagement#generateReceipt(com.bodkink.hotel.business.model.RoomBill)
 	 * @generated
 	 */
-	EOperation getIBillingManagement__GenerateReceipt__Bill();
+	EOperation getIBillingManagement__GenerateReceipt__RoomBill();
 
 	/**
-	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Bill, com.bodkink.hotel.business.model.Customer) <em>Make Payment</em>}' operation.
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.RoomBill, com.bodkink.hotel.business.model.Customer) <em>Make Payment</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Make Payment</em>' operation.
-	 * @see com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Bill, com.bodkink.hotel.business.model.Customer)
+	 * @see com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.RoomBill, com.bodkink.hotel.business.model.Customer)
 	 * @generated
 	 */
-	EOperation getIBillingManagement__MakePayment__Bill_Customer();
+	EOperation getIBillingManagement__MakePayment__RoomBill_Customer();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IBillingManagement#makePayment(com.bodkink.hotel.business.model.Booking) <em>Make Payment</em>}' operation.
@@ -1819,7 +1819,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CARDINFORMATION = eINSTANCE.getIBillingManagement__MakePayment__Bill_CardInformation();
+		EOperation IBILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CARDINFORMATION = eINSTANCE.getIBillingManagement__MakePayment__RoomBill_CardInformation();
 
 		/**
 		 * The meta object literal for the '<em><b>Generate Receipts</b></em>' operation.
@@ -1835,7 +1835,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBILLING_MANAGEMENT___GENERATE_RECEIPT__BILL = eINSTANCE.getIBillingManagement__GenerateReceipt__Bill();
+		EOperation IBILLING_MANAGEMENT___GENERATE_RECEIPT__ROOMBILL = eINSTANCE.getIBillingManagement__GenerateReceipt__RoomBill();
 
 		/**
 		 * The meta object literal for the '<em><b>Make Payment</b></em>' operation.
@@ -1843,7 +1843,7 @@ public interface BusinessPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CUSTOMER = eINSTANCE.getIBillingManagement__MakePayment__Bill_Customer();
+		EOperation IBILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CUSTOMER = eINSTANCE.getIBillingManagement__MakePayment__RoomBill_Customer();
 
 		/**
 		 * The meta object literal for the '<em><b>Make Payment</b></em>' operation.

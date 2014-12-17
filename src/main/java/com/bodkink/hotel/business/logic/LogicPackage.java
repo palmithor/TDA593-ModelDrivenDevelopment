@@ -557,7 +557,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CARDINFORMATION = BusinessPackage.IBILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CARDINFORMATION;
+	int BILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CARDINFORMATION = BusinessPackage.IBILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CARDINFORMATION;
 
 	/**
 	 * The operation id for the '<em>Generate Receipts</em>' operation.
@@ -575,7 +575,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_MANAGEMENT___GENERATE_RECEIPT__BILL = BusinessPackage.IBILLING_MANAGEMENT___GENERATE_RECEIPT__BILL;
+	int BILLING_MANAGEMENT___GENERATE_RECEIPT__ROOMBILL = BusinessPackage.IBILLING_MANAGEMENT___GENERATE_RECEIPT__ROOMBILL;
 
 	/**
 	 * The operation id for the '<em>Make Payment</em>' operation.
@@ -584,7 +584,7 @@ public interface LogicPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CUSTOMER = BusinessPackage.IBILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CUSTOMER;
+	int BILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CUSTOMER = BusinessPackage.IBILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CUSTOMER;
 
 	/**
 	 * The operation id for the '<em>Make Payment</em>' operation.

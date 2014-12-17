@@ -142,17 +142,17 @@
             <eParameters name="roomReservationId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
           </eOperations>
           <eOperations name="makePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Bill"/>
+            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomBill"/>
             <eParameters name="cardInformation" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/CardInformation"/>
           </eOperations>
           <eOperations name="generateReceipts" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Receipt">
             <eParameters name="booking" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Booking"/>
           </eOperations>
           <eOperations name="generateReceipt" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Receipt">
-            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Bill"/>
+            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomBill"/>
           </eOperations>
           <eOperations name="makePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Bill"/>
+            <eParameters name="bill" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomBill"/>
             <eParameters name="customer" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Customer"/>
           </eOperations>
           <eOperations name="makePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
