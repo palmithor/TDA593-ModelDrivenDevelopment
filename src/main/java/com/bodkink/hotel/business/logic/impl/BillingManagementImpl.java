@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 import com.bodkink.hotel.business.model.impl.ModelFactoryImpl;
 import com.bodkink.hotel.business.model.impl.ReceiptImpl;
 import com.bodkink.hotel.business.util.ModelToEntityConverter;
+import com.bodkink.hotel.persistence.IBookingBillService;
 import com.bodkink.hotel.persistence.IRoomBillService;
 import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.bodkink.hotel.persistence.service.RoomReservationServiceImpl;
@@ -41,6 +42,9 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 
 	@Inject
 	IRoomBillService roomBillService;
+
+	@Inject
+	IBookingBillService bookingBillService;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -207,9 +211,13 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public void markPaid(Bill bill) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		bill.setBillStatusEnum(BillStatusEnum.PAID);
+
+		if (bill instanceof RoomBill) {
+			roomBillService.persist(ModelToEntityConverter.convertRoomBill((RoomBill)bill));
+		} else if (bill instanceof BookingBill) {
+			bookingBillService.persist(ModelToEntityConverter.convertBookingBill((BookingBill)bill));
+		}
 	}
 
 	/**
