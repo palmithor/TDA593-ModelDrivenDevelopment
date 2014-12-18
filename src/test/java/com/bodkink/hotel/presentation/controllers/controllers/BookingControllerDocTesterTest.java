@@ -63,7 +63,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
     private BookingRequest getBookingRequest() {
         RoomDAO roomDAO = new RoomDAO();
         List<RoomMessage> rooms = new ArrayList<>();
-        RoomEntity roomEntity = roomDAO.find().asList().get(0);
+         RoomEntity roomEntity = roomDAO.find().asList().get(0);
         rooms.add(new RoomMessage(roomEntity.getId().toString(), roomEntity.getNumber(), roomEntity.getDescription(), roomEntity.getAllowedGuests(), roomEntity.getSize(),
                 roomEntity.getNightPrice(), roomEntity.getPictures(), null, null, null)); // TODO CONVERTER FOR THESE THREE
         CustomerMessage customerMessage = new CustomerMessage("Olof", "Palme", 1927, "+46707235555", "olof.palme@mail.com", new ArrayList<>(),

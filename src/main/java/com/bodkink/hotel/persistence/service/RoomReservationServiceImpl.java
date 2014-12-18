@@ -56,8 +56,10 @@ public class RoomReservationServiceImpl implements IRoomReservationService {
 
     @Override
     public RoomReservationEntity persist(RoomReservationEntity roomReservation) {
-        roomBillDAO.save(roomReservation.getRoomBill());
-        roomReservation.getGuests().forEach(guestDAO::save);
+        if(roomReservation.getRoomBill() != null)
+         roomBillDAO.save(roomReservation.getRoomBill());
+        if(roomReservation.getGuests() != null)
+            roomReservation.getGuests().forEach(guestDAO::save);
         roomReservationDAO.save(roomReservation);
 
         return roomReservation;
