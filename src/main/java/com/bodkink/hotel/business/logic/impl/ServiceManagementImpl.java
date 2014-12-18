@@ -5,17 +5,24 @@ package com.bodkink.hotel.business.logic.impl;
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.logic.ServiceManagement;
 
+import com.bodkink.hotel.business.model.ModelFactory;
 import com.bodkink.hotel.business.model.Service;
 
 import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
 
+import com.bodkink.hotel.business.util.ModelToEntityConverter;
+import com.bodkink.hotel.persistence.IServiceService;
+import com.bodkink.hotel.persistence.model.ServiceEntity;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.mongodb.morphia.Key;
+
+import javax.inject.Inject;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +34,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class ServiceManagementImpl extends MinimalEObjectImpl.Container implements ServiceManagement {
+
+	@Inject
+	IServiceService serviceService;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,12 +60,18 @@ public class ServiceManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Service createService(String title, String description, BigDecimal price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Service service = ModelFactory.eINSTANCE.createService();
+		service.setTitle(title);
+		service.setDescription(description);
+		service.setPrice(price);
+
+		ServiceEntity serviceEntity = ModelToEntityConverter.convertService(service);
+		serviceService.persist(serviceEntity);
+
+		return service;
 	}
 
 	/**
