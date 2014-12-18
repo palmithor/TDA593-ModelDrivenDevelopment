@@ -9,6 +9,8 @@ import com.bodkink.hotel.business.model.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -149,13 +151,20 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public EList<Receipt> generateReceipts(Booking booking) {
 		EList<Receipt> rList = new BasicEList<Receipt>();
+		Receipt rooms = ModelFactory.eINSTANCE.createReceipt();
 
-		for( RoomReservation RoomRes: booking.getRoomReservation()){
-			rList.add(generateReceipt(RoomRes.getRoomBill()));
+		for( RoomReservation roomRes: booking.getRoomReservation()){
+			rList.add(generateReceipt(roomRes.getRoomBill()));
+
+			ReceiptItem tmpItem = ModelFactory.eINSTANCE.createReceiptItem();
+			tmpItem.setTitle("Room: " + roomRes.getRoom().getNumber());
+			tmpItem.setDescription("From: " + roomRes.getStartDate() + " To: " + roomRes.getEndDate());
+			tmpItem.setPrice(roomRes.getRoom().getNightPrice());
+			tmpItem.setQuantity((int)daysBetween(roomRes.getStartDate(), roomRes.getEndDate()));
+			rooms.getReceiptItem().add(tmpItem);
 		}
+		rList.add(rooms);
 
-		// TODO: include services in the booking?
-		// TODO: include rooms and nbr of nights?
 		return rList;
 	}
 
@@ -203,17 +212,44 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean makePayment(Booking booking) {
-		booking.getBookingBill();
+		BookingBill bill = null;
 
+		// Find the finalize bill
+		for (BookingBill b: booking.getBookingBill()){
+			if (b.getBookingBillType() == BookingBillType.FINALIZE){
+				bill = b;
+			}
+		}
+		// If booking alr paid return false
+		if (bill.getBillStatusEnum() == BillStatusEnum.PAID){
+			return false;
+		}
 
-		double amount = 0;
+		BigDecimal amount = BigDecimal.ZERO;
 
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// Add all unpaid room reservations to the bill
+		for (RoomReservation room: booking.getRoomReservation()){
+			if (room.getRoomBill() != null && room.getRoomBill().getBillStatusEnum() != BillStatusEnum.PAID) {
+				amount = amount.add(getRoomBillPrice(room.getRoomBill()));
+			}
+
+			// amount = amount + price*nights
+			amount = amount.add(room.getRoom().getNightPrice().multiply(new BigDecimal(daysBetween(room.getStartDate(), room.getEndDate()))));
+		}
+
+		// Make the payment ond if success save new bill info.
+		boolean paid =  makePayment(booking.getCustomer().getCardInformation(), amount);
+		if (paid){
+			bill.setBillStatusEnum(BillStatusEnum.PAID);
+			bookingBillService.persist(ModelToEntityConverter.convertBookingBill(bill));
+			for (RoomReservation room: booking.getRoomReservation()){
+				roomBillService.persist(ModelToEntityConverter.convertRoomBill(room.getRoomBill()));
+			}
+		}
+		return paid;
 	}
 
 	/**
@@ -283,11 +319,31 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	Get the total price for a room bill.
 	 */
 	private BigDecimal getRoomBillPrice(RoomBill rBill){
+		if (rBill == null) {
+			return BigDecimal.ZERO;
+		}
 		BigDecimal amount = BigDecimal.ZERO;
 		for (BillableItem item: rBill.getBillableItem()){
 			amount = amount.add(item.getPrice());
 		}
 		return amount;
+	}
+
+	/*
+	Safely find the number of days between 2 dates.
+	 */
+	private long daysBetween(Date startDate, Date endDate) {
+		Calendar s = Calendar.getInstance();
+		s.setTime(startDate);
+		Calendar e = Calendar.getInstance();
+		e.setTime(endDate);
+
+		long daysBetween = 0;
+		while (s.before(e)) {
+			s.add(Calendar.DAY_OF_MONTH, 1);
+			daysBetween++;
+		}
+		return daysBetween;
 	}
 
 
