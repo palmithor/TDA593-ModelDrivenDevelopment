@@ -110,11 +110,6 @@ public class RoomReservationManagementImplTest {
 
         Room room = EntityToModelConverter.convertRoom(roomEntities.get(0));
 
-        RoomReservation roomReservation = roomReservationManagement.create(room,
-        new Date(System.currentTimeMillis()),
-        new Date(System.currentTimeMillis() + TimeUnit.MILLISECONDS.convert(3, TimeUnit.DAYS)),
-        RoomReservationType.BOOKING);
-
         assertThat(roomReservationEntities.size(), is(31));
     }
 
