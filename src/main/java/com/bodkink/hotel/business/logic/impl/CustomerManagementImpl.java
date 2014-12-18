@@ -5,21 +5,27 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.logic.CustomerManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
+
 import com.bodkink.hotel.business.model.CardInformation;
 import com.bodkink.hotel.business.model.Customer;
+
+import java.lang.reflect.InvocationTargetException;
+
 import com.bodkink.hotel.business.model.ModelFactory;
 import com.bodkink.hotel.business.util.ModelToEntityConverter;
 import com.bodkink.hotel.persistence.ICustomerService;
 import com.bodkink.hotel.persistence.model.CustomerEntity;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.mongodb.morphia.Key;
+import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 
 import javax.inject.Inject;
 import javax.xml.soap.SOAPException;
-import java.lang.reflect.InvocationTargetException;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -36,34 +42,30 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
     ICustomerService customerService;
 
     /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected CustomerManagementImpl() {
-        super();
-    }
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomerManagementImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return LogicPackage.Literals.CUSTOMER_MANAGEMENT;
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LogicPackage.Literals.CUSTOMER_MANAGEMENT;
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) {
-        // TODO: implement this method
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) throws SOAPException {
 
         try {
             // Acquire CustomerRequires object
@@ -71,10 +73,8 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
                     .instance();
 
             if (banking.isCreditCardValid(cardInformation.getCcNumber(), cardInformation.getCcv(), cardInformation.getExpiryMonth(), cardInformation.getExpiryYear(), cardInformation.getFirstName(), cardInformation.getLastName())) {
-                // System.out.println("Valid credit card");
-                // TODO: Create a customer here
-                Customer customer = ModelFactory.eINSTANCE.createCustomer();
 
+                Customer customer = ModelFactory.eINSTANCE.createCustomer();
 
                 customer.setFirstName(firstName);
                 customer.setSurname(lastName);
@@ -88,45 +88,48 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
                 customer.setId(key.getId().toString());
 
                 return customer;
-            } else {
+            } else{
                 throw new UnsupportedOperationException("Error while adding credit card");
             }
 
-        } catch (SOAPException e) {
-            System.err
-                    .println("Error occurred while communicating with the bank");
-            e.printStackTrace();
-            return null; // TODO
-        }
+        } catch(SOAPException e){
+                System.err
+                        .println("Error occurred while communicating with the bank");
+                e.printStackTrace();
+            return null;
+            }
     }
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Customer editCustomer(Customer customer) {
-        // TODO: implement this method
-        // Ensure that you remove @generated or mark it @generated NOT
-        throw new UnsupportedOperationException();
-    }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer editCustomer(Customer customer) {
+		// TODO: implement this method
+        CustomerEntity customerEntity = ModelToEntityConverter.convertCustomer(customer);
+        customerService.edit(customerEntity);
+        return customer;
+	}
 
-    /**
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-        switch (operationID) {
-            case LogicPackage.CUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT_CARDINFORMATION:
-                return createCustomer((String) arguments.get(0), (String) arguments.get(1), (String) arguments.get(2), (String) arguments.get(3), (Integer) arguments.get(4), (CardInformation) arguments.get(5));
-            case LogicPackage.CUSTOMER_MANAGEMENT___EDIT_CUSTOMER__CUSTOMER:
-                return editCustomer((Customer) arguments.get(0));
-        }
-        return super.eInvoke(operationID, arguments);
-    }
+
+
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case LogicPackage.CUSTOMER_MANAGEMENT___CREATE_CUSTOMER__STRING_STRING_STRING_STRING_INT_CARDINFORMATION:
+				return createCustomer((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (Integer)arguments.get(4), (CardInformation)arguments.get(5));
+			case LogicPackage.CUSTOMER_MANAGEMENT___EDIT_CUSTOMER__CUSTOMER:
+				return editCustomer((Customer)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 
 } //CustomerManagementImpl

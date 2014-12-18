@@ -9,6 +9,8 @@ import com.bodkink.hotel.business.model.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.bodkink.hotel.business.model.impl.ModelFactoryImpl;
 import com.bodkink.hotel.business.model.impl.ReceiptImpl;
@@ -133,18 +135,17 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean makePayment(RoomBill bill, CardInformation cardInformation) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		return makePayment(cardInformation, getRoomBillPrice(bill));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Receipt> generateReceipts(Booking booking) {
 		EList<Receipt> rList = new BasicEList<Receipt>();
@@ -154,39 +155,49 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 		}
 
 		// TODO: include services in the booking?
+		// TODO: include rooms and nbr of nights?
 		return rList;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Receipt generateReceipt(RoomBill bill) {
 		Receipt receipt = ModelFactory.eINSTANCE.createReceipt();
 		EList<ReceiptItem> items = receipt.getReceiptItem();
 
-		if (bill instanceof RoomBill){
-			RoomBill rBill = (RoomBill)bill;
-			for ( BillableItem item: rBill.getBillableItem()){
+		Map<BillableItem, Integer> map = new HashMap<>();
 
+		for ( BillableItem item: bill.getBillableItem()){
 
+			if (map.containsKey(item)){
+				map.replace(item, map.get(item), map.get(item) + 1);
+			} else {
+				map.put(item, 1);
 			}
 		}
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		for (Map.Entry<BillableItem, Integer> entry : map.entrySet()){
+			ReceiptItem tmpItem = ModelFactory.eINSTANCE.createReceiptItem();
+			tmpItem.setTitle(entry.getKey().getName());
+			tmpItem.setPrice(entry.getKey().getPrice());
+			tmpItem.setQuantity(entry.getValue());
+
+			items.add(tmpItem);
+		}
+		return receipt;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean makePayment(RoomBill bill, Customer customer) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		return makePayment(customer.getCardInformation(), getRoomBillPrice(bill));
 	}
 
 	/**
@@ -256,11 +267,11 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	/*
 	Private method that actually handles payments. Called from all public makePayment methods.
 	 */
-	private boolean makePayment(CardInformation cInf, double amount){
+	private boolean makePayment(CardInformation c, BigDecimal amount){
 		boolean success = false;
 		try {
-			success = CustomerRequires.instance().makePayment(cInf.getCcNumber(), cInf.getCcv(), cInf.getExpiryMonth(),
-					cInf.getExpiryYear(), cInf.getFirstName(), cInf.getLastName(), amount);
+			success = CustomerRequires.instance().makePayment(c.getCcNumber(), c.getCcv(), c.getExpiryMonth(),
+					c.getExpiryYear(), c.getFirstName(), c.getLastName(), amount.doubleValue());
 
 		} catch (javax.xml.soap.SOAPException e){
 			return false;
@@ -269,14 +280,14 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/*
-	Get the total decimal price for a room bill.
+	Get the total price for a room bill.
 	 */
-	private double getRoomBillPrice(RoomBill rBill){
+	private BigDecimal getRoomBillPrice(RoomBill rBill){
 		BigDecimal amount = BigDecimal.ZERO;
 		for (BillableItem item: rBill.getBillableItem()){
 			amount = amount.add(item.getPrice());
 		}
-		return amount.doubleValue();
+		return amount;
 	}
 
 
