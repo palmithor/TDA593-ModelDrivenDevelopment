@@ -99,7 +99,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
                 roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
                 roomReservation.setRoomReservationType(RoomReservationType.BOOKING);
                 booking.getRoomReservation().add(roomReservation);
-                roomReservationManagement.create(r, start, end, null);
+                roomReservationManagement.create(r, start, end, RoomReservationType.BOOKING);
             });
             if (services != null) {
                 booking.getService().addAll(services);
