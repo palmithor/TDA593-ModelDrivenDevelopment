@@ -66,7 +66,7 @@ public interface IBillingManagement extends EObject {
 	 * @model required="true" ordered="false" billRequired="true" billOrdered="false" cardInformationRequired="true" cardInformationOrdered="false"
 	 * @generated
 	 */
-	boolean makePayment(Bill bill, CardInformation cardInformation);
+	boolean makePayment(RoomBill bill, CardInformation cardInformation);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public interface IBillingManagement extends EObject {
 	 * @model required="true" ordered="false" billRequired="true" billOrdered="false"
 	 * @generated
 	 */
-	Receipt generateReceipt(Bill bill);
+	Receipt generateReceipt(RoomBill bill);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,7 +90,7 @@ public interface IBillingManagement extends EObject {
 	 * @model required="true" ordered="false" billRequired="true" billOrdered="false" customerRequired="true" customerOrdered="false"
 	 * @generated
 	 */
-	boolean makePayment(Bill bill, Customer customer);
+	boolean makePayment(RoomBill bill, Customer customer);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,5 +99,13 @@ public interface IBillingManagement extends EObject {
 	 * @generated
 	 */
 	boolean makePayment(Booking booking);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model billRequired="true" billOrdered="false"
+	 * @generated
+	 */
+	void markPaid(Bill bill);
 
 } // IBillingManagement

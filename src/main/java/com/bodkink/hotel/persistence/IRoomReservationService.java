@@ -25,7 +25,7 @@ public interface IRoomReservationService {
 
     public boolean edit(RoomReservationEntity roomReservation);
 
-    public RoomReservation persist(RoomReservationEntity roomReservation);
+    public RoomReservationEntity persist(RoomReservationEntity roomReservation);
 
     public boolean delete(RoomReservationEntity roomReservation);
 }

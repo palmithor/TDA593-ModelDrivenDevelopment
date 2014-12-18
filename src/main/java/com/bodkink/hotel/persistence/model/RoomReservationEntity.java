@@ -61,13 +61,13 @@ public class RoomReservationEntity {
 
 
     public RoomReservationEntity(final ObjectId id, final Date startDate, final Date endDate,
-                                 final RoomReservationType RoomReservationType, final RoomEntity room,
+                                 final RoomReservationType roomReservationType, final RoomEntity room,
                                  final List<GuestEntity> guests, final RoomBillEntity roomBill,
                                  final ReservationStatusEnum reservationStatus) {
         this.id = id;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.reservationType = RoomReservationType;
+        this.reservationType = roomReservationType;
         this.room = room;
         this.guests = guests;
         this.roomBill = roomBill;

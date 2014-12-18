@@ -52,6 +52,7 @@ public class Module extends AbstractModule {
         bind(IAccountManagement.class).to(AccountManagementImpl.class);
 
         // persistence services
+        bind(IRoomService.class).to(RoomServiceImpl.class);
         bind(IBookingService.class).to(BookingServiceImpl.class);
         bind(IRoomExtraService.class).to(RoomExtraServiceImpl.class);
         bind(IBedTypeService.class).to(BedTypeServiceImpl.class);

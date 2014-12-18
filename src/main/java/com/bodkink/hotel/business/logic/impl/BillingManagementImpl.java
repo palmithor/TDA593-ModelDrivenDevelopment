@@ -123,7 +123,7 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean makePayment(Bill bill, CardInformation cardInformation) {
+	public boolean makePayment(RoomBill bill, CardInformation cardInformation) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -145,7 +145,7 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Receipt generateReceipt(Bill bill) {
+	public Receipt generateReceipt(RoomBill bill) {
 		Receipt receipt = ModelFactory.eINSTANCE.createReceipt();
 		EList<ReceiptItem> items = receipt.getReceiptItem();
 
@@ -166,7 +166,7 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean makePayment(Bill bill, Customer customer) {
+	public boolean makePayment(RoomBill bill, Customer customer) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -193,6 +193,17 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void markPaid(Bill bill) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -204,16 +215,19 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 				return addBillableItem((RoomBill)arguments.get(0), (BillableItem)arguments.get(1), (Integer)arguments.get(2));
 			case LogicPackage.BILLING_MANAGEMENT___FIND_ROOM_BILL__STRING:
 				return findRoomBill((String)arguments.get(0));
-			case LogicPackage.BILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CARDINFORMATION:
-				return makePayment((Bill)arguments.get(0), (CardInformation)arguments.get(1));
+			case LogicPackage.BILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CARDINFORMATION:
+				return makePayment((RoomBill)arguments.get(0), (CardInformation)arguments.get(1));
 			case LogicPackage.BILLING_MANAGEMENT___GENERATE_RECEIPTS__BOOKING:
 				return generateReceipts((Booking)arguments.get(0));
-			case LogicPackage.BILLING_MANAGEMENT___GENERATE_RECEIPT__BILL:
-				return generateReceipt((Bill)arguments.get(0));
-			case LogicPackage.BILLING_MANAGEMENT___MAKE_PAYMENT__BILL_CUSTOMER:
-				return makePayment((Bill)arguments.get(0), (Customer)arguments.get(1));
+			case LogicPackage.BILLING_MANAGEMENT___GENERATE_RECEIPT__ROOMBILL:
+				return generateReceipt((RoomBill)arguments.get(0));
+			case LogicPackage.BILLING_MANAGEMENT___MAKE_PAYMENT__ROOMBILL_CUSTOMER:
+				return makePayment((RoomBill)arguments.get(0), (Customer)arguments.get(1));
 			case LogicPackage.BILLING_MANAGEMENT___MAKE_PAYMENT__BOOKING:
 				return makePayment((Booking)arguments.get(0));
+			case LogicPackage.BILLING_MANAGEMENT___MARK_PAID__BILL:
+				markPaid((Bill)arguments.get(0));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -631,7 +631,7 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_yvEjcHu3EeSKovwTcU7VCQ" name="roomBill" type="_-LPJ8Hk0EeSsOOo59CoEGw" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_3FOEUHu3EeSKovwTcU7VCQ" name="makePayment">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_98NKQHu3EeSKovwTcU7VCQ" name="bill" type="_tPDVoHk0EeSsOOo59CoEGw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_98NKQHu3EeSKovwTcU7VCQ" name="bill" type="_-LPJ8Hk0EeSsOOo59CoEGw"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_BGFFQHu4EeSKovwTcU7VCQ" name="cardInformation" type="_jeP_YHkzEeSsOOo59CoEGw"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_NldXEHu4EeSKovwTcU7VCQ" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
@@ -645,11 +645,11 @@
             </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_BahVIHvBEeSKovwTcU7VCQ" name="generateReceipt">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_GcrncHvBEeSKovwTcU7VCQ" name="bill" type="_tPDVoHk0EeSsOOo59CoEGw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_GcrncHvBEeSKovwTcU7VCQ" name="bill" type="_-LPJ8Hk0EeSsOOo59CoEGw"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_IEZMIHvBEeSKovwTcU7VCQ" type="_n1220Hu6EeSKovwTcU7VCQ" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:type="uml:Operation" xmi:id="_JpRfQHvBEeSKovwTcU7VCQ" name="makePayment">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_MEmSMHvBEeSKovwTcU7VCQ" name="bill" type="_tPDVoHk0EeSsOOo59CoEGw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_MEmSMHvBEeSKovwTcU7VCQ" name="bill" type="_-LPJ8Hk0EeSsOOo59CoEGw"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_Obq3QHvBEeSKovwTcU7VCQ" name="customer" type="_OsIJYHk1EeSsOOo59CoEGw"/>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_QtJxsHvBEeSKovwTcU7VCQ" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
@@ -660,6 +660,9 @@
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_YphLUHvBEeSKovwTcU7VCQ" name="result" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
             </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_coREwIXFEeSVIb3vMgzxug" name="markPaid">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_i6ROUIXFEeSVIb3vMgzxug" name="bill" type="_tPDVoHk0EeSsOOo59CoEGw"/>
           </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_gDzLkHvBEeSKovwTcU7VCQ" name="IAccountManagement">
