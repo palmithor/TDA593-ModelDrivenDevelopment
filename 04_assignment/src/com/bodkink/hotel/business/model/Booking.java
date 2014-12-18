@@ -107,15 +107,15 @@ public interface Booking extends EObject {
 	void setCustomer(Customer value);
 
 	/**
-	 * Returns the value of the '<em><b>Room Reservation</b></em>' reference list.
-	 * The list contents are of type {@link com.bodkink.hotel.business.model.RoomReservation}.
+	 * Returns the value of the '<em><b>Room Reservation</b></em>' reference listByDate.
+	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.RoomReservation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Room Reservation</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Room Reservation</em>' reference listByDate isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Reservation</em>' reference list.
+	 * @return the value of the '<em>Room Reservation</em>' reference listByDate.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getBooking_RoomReservation()
 	 * @model ordered="false"
 	 * @generated
@@ -123,15 +123,15 @@ public interface Booking extends EObject {
 	EList<RoomReservation> getRoomReservation();
 
 	/**
-	 * Returns the value of the '<em><b>Service</b></em>' reference list.
-	 * The list contents are of type {@link com.bodkink.hotel.business.model.Service}.
+	 * Returns the value of the '<em><b>Service</b></em>' reference listByDate.
+	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.Service}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Service</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Service</em>' reference listByDate isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Service</em>' reference list.
+	 * @return the value of the '<em>Service</em>' reference listByDate.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getBooking_Service()
 	 * @model ordered="false"
 	 * @generated
@@ -139,15 +139,15 @@ public interface Booking extends EObject {
 	EList<Service> getService();
 
 	/**
-	 * Returns the value of the '<em><b>Booking Bill</b></em>' reference list.
-	 * The list contents are of type {@link com.bodkink.hotel.business.model.BookingBill}.
+	 * Returns the value of the '<em><b>Booking Bill</b></em>' reference listByDate.
+	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.BookingBill}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Booking Bill</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Booking Bill</em>' reference listByDate isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booking Bill</em>' reference list.
+	 * @return the value of the '<em>Booking Bill</em>' reference listByDate.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getBooking_BookingBill()
 	 * @model ordered="false"
 	 * @generated

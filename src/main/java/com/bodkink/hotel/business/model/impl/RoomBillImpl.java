@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class RoomBillImpl extends BillImpl implements RoomBill {
 	/**
-	 * The cached value of the '{@link #getBillableItem() <em>Billable Item</em>}' reference list.
+	 * The cached value of the '{@link #getBillableItem() <em>Billable Item</em>}' reference listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBillableItem()

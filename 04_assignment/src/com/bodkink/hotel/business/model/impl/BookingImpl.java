@@ -93,7 +93,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected Customer customer;
 
 	/**
-	 * The cached value of the '{@link #getRoomReservation() <em>Room Reservation</em>}' reference list.
+	 * The cached value of the '{@link #getRoomReservation() <em>Room Reservation</em>}' reference listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomReservation()
@@ -103,7 +103,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<RoomReservation> roomReservation;
 
 	/**
-	 * The cached value of the '{@link #getService() <em>Service</em>}' reference list.
+	 * The cached value of the '{@link #getService() <em>Service</em>}' reference listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getService()
@@ -113,7 +113,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected EList<Service> service;
 
 	/**
-	 * The cached value of the '{@link #getBookingBill() <em>Booking Bill</em>}' reference list.
+	 * The cached value of the '{@link #getBookingBill() <em>Booking Bill</em>}' reference listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBookingBill()
