@@ -114,9 +114,9 @@
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="com.ecore#//bodkink/hotel/business/IServiceManagement">
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IServiceManagement/createService">
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IServiceManagement/createService/name"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IServiceManagement/createService/title"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IServiceManagement/createService/description"/>
-              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IServiceManagement/createService/width"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IServiceManagement/createService/price"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IServiceManagement/editService">
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IServiceManagement/editService/service"/>

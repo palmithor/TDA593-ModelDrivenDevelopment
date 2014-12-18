@@ -51,7 +51,7 @@ public class ServiceManagementImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Service createService(String name, String description, BigDecimal width) {
+	public Service createService(String title, String description, BigDecimal price) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

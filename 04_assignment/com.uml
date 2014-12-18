@@ -780,13 +780,13 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_OzXQPnxeEeSPj6QVkF0MsQ" name="IServiceManagement">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_OzXQP3xeEeSPj6QVkF0MsQ" name="createService">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQHxeEeSPj6QVkF0MsQ" name="name">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQHxeEeSPj6QVkF0MsQ" name="title">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQXxeEeSPj6QVkF0MsQ" name="description">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQnxeEeSPj6QVkF0MsQ" name="width">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQnxeEeSPj6QVkF0MsQ" name="price">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQ3xeEeSPj6QVkF0MsQ" name="service" type="_d5SQEHk1EeSsOOo59CoEGw" direction="return"/>
