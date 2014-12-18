@@ -154,8 +154,11 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 		Receipt rooms = ModelFactory.eINSTANCE.createReceipt();
 
 		for( RoomReservation roomRes: booking.getRoomReservation()){
-			rList.add(generateReceipt(roomRes.getRoomBill()));
+			if (roomRes.getRoomBill() != null) {
+				rList.add(generateReceipt(roomRes.getRoomBill()));
+			}
 
+			// Add nights and price for this roomRes
 			ReceiptItem tmpItem = ModelFactory.eINSTANCE.createReceiptItem();
 			tmpItem.setTitle("Room: " + roomRes.getRoom().getNumber());
 			tmpItem.setDescription("From: " + roomRes.getStartDate() + " To: " + roomRes.getEndDate());
