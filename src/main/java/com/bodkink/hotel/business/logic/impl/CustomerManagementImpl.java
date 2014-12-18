@@ -107,7 +107,7 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public Customer editCustomer(Customer customer) {
 		// TODO: implement this method
-        Customer customerEntity = ModelToEntityConverter.convertCustomer(customer);
+        CustomerEntity customerEntity = ModelToEntityConverter.convertCustomer(customer);
         customerService.edit(customerEntity);
         return customer;
 	}
