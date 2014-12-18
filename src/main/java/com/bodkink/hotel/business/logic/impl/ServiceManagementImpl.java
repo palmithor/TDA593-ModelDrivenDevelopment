@@ -11,11 +11,14 @@ import com.bodkink.hotel.business.model.Service;
 import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.business.util.ModelToEntityConverter;
 import com.bodkink.hotel.persistence.IServiceService;
 import com.bodkink.hotel.persistence.model.ServiceEntity;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.BasicEList;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -77,23 +80,26 @@ public class ServiceManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Service editService(Service service) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		ServiceEntity serviceEntity = ModelToEntityConverter.convertService(service);
+		serviceService.edit(serviceEntity);
+		return service;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<Service> listServices() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<ServiceEntity> serviceEntityList = serviceService.listAll();
+		EList<Service> services = new BasicEList<>(serviceEntityList.size());
+		serviceEntityList.forEach( entity -> {
+			services.add(EntityToModelConverter.convertService(entity));
+		});
+		return services;
 	}
 
 	/**
