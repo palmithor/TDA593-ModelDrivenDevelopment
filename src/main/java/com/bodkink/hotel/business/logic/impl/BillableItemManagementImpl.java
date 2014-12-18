@@ -11,6 +11,10 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
 
+import com.bodkink.hotel.business.model.ModelFactory;
+import com.bodkink.hotel.business.util.ModelToEntityConverter;
+import com.bodkink.hotel.persistence.model.BillableItemEntity;
+import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,6 +31,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class BillableItemManagementImpl extends MinimalEObjectImpl.Container implements BillableItemManagement {
+
+	@Inject
+	IBillableItemService
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,7 +60,14 @@ public class BillableItemManagementImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public BillableItem createBillableItem(String name, BigDecimal price) {
-		// TODO: implement this method
+
+		BillableItem billableItem = ModelFactory.eINSTANCE.createBillableItem();
+		billableItem.setName(name);
+		billableItem.setPrice(price);
+
+		BillableItemEntity billableItemEntity = ModelToEntityConverter.convertBillableItem(billableItem);
+
+
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
