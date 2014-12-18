@@ -31,4 +31,15 @@ public class CustomerServiceImpl implements ICustomerService {
         cardInformationDAO.save(customerEntity.getCardInformation());
         return customerDAO.save(customerEntity);
     }
+
+    @Override
+    public CustomerEntity edit(CustomerEntity customerEntity){
+        CustomerEntity fromDatabase = customerEntity.get(customerEntity.getId());
+        if (fromDatabase != null){
+            customerDAO.save(customerEntity);
+            return customer;
+        } else{
+            return null;
+        }
+    }
 }

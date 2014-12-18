@@ -1,5 +1,6 @@
 package com.bodkink.hotel.persistence;
 
+import com.bodkink.hotel.business.model.Customer;
 import com.bodkink.hotel.persistence.model.BedTypeEntity;
 import com.bodkink.hotel.persistence.model.CustomerEntity;
 import org.mongodb.morphia.Key;
@@ -16,4 +17,5 @@ public interface ICustomerService {
 
     public Key<CustomerEntity> persist(CustomerEntity customerEntity);
 
+    public CustomerEntity edit(CustomerEntity customerEntity);
 }
