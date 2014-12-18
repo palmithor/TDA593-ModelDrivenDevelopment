@@ -306,7 +306,20 @@
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dBmNknu7EeSKovwTcU7VCQ" value="*"/>
             </ownedAttribute>
           </packagedElement>
-          <packagedElement xmi:type="uml:Class" xmi:id="_plIcEHu6EeSKovwTcU7VCQ" name="ReceiptItem"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_plIcEHu6EeSKovwTcU7VCQ" name="ReceiptItem">
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_YHot8IaQEeSo-NrGps9JOw" name="title" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_cHvtYIaQEeSo-NrGps9JOw" name="description" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_hZLx0IaQEeSo-NrGps9JOw" name="quantity" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedAttribute>
+            <ownedAttribute xmi:type="uml:Property" xmi:id="_v-Qk0IaQEeSo-NrGps9JOw" name="price" visibility="private">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
+            </ownedAttribute>
+          </packagedElement>
           <packagedElement xmi:type="uml:Class" xmi:id="_2ca98HvCEeSKovwTcU7VCQ" name="UserAccount">
             <ownedAttribute xmi:type="uml:Property" xmi:id="_L52FYIFAEeS9mJsE6MGidw" name="id" visibility="private">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -780,13 +793,13 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_OzXQPnxeEeSPj6QVkF0MsQ" name="IServiceManagement">
           <ownedOperation xmi:type="uml:Operation" xmi:id="_OzXQP3xeEeSPj6QVkF0MsQ" name="createService">
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQHxeEeSPj6QVkF0MsQ" name="name">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQHxeEeSPj6QVkF0MsQ" name="title">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQXxeEeSPj6QVkF0MsQ" name="description">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
             </ownedParameter>
-            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQnxeEeSPj6QVkF0MsQ" name="width">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQnxeEeSPj6QVkF0MsQ" name="price">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBigDecimal"/>
             </ownedParameter>
             <ownedParameter xmi:type="uml:Parameter" xmi:id="_OzXQQ3xeEeSPj6QVkF0MsQ" name="service" type="_d5SQEHk1EeSsOOo59CoEGw" direction="return"/>

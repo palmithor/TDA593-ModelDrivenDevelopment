@@ -987,9 +987,9 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		initEClass(iServiceManagementEClass, IServiceManagement.class, "IServiceManagement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = initEOperation(getIServiceManagement__CreateService__String_String_BigDecimal(), theModelPackage.getService(), "createService", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "title", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBigDecimal(), "width", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBigDecimal(), "price", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIServiceManagement__EditService__Service(), theModelPackage.getService(), "editService", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theModelPackage.getService(), "service", 1, 1, IS_UNIQUE, !IS_ORDERED);

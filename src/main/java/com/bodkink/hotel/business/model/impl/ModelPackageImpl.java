@@ -1145,6 +1145,42 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getReceiptItem_Title() {
+		return (EAttribute)receiptItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReceiptItem_Description() {
+		return (EAttribute)receiptItemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReceiptItem_Quantity() {
+		return (EAttribute)receiptItemEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReceiptItem_Price() {
+		return (EAttribute)receiptItemEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUserAccount() {
 		return userAccountEClass;
 	}
@@ -1386,6 +1422,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(receiptEClass, RECEIPT__RECEIPT_ITEM);
 
 		receiptItemEClass = createEClass(RECEIPT_ITEM);
+		createEAttribute(receiptItemEClass, RECEIPT_ITEM__TITLE);
+		createEAttribute(receiptItemEClass, RECEIPT_ITEM__DESCRIPTION);
+		createEAttribute(receiptItemEClass, RECEIPT_ITEM__QUANTITY);
+		createEAttribute(receiptItemEClass, RECEIPT_ITEM__PRICE);
 
 		userAccountEClass = createEClass(USER_ACCOUNT);
 		createEAttribute(userAccountEClass, USER_ACCOUNT__ID);
@@ -1552,6 +1592,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getReceipt_ReceiptItem(), this.getReceiptItem(), null, "receiptItem", null, 0, -1, Receipt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(receiptItemEClass, ReceiptItem.class, "ReceiptItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReceiptItem_Title(), theTypesPackage.getString(), "title", null, 1, 1, ReceiptItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getReceiptItem_Description(), theTypesPackage.getString(), "description", null, 1, 1, ReceiptItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getReceiptItem_Quantity(), theTypesPackage.getInteger(), "quantity", null, 1, 1, ReceiptItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getReceiptItem_Price(), ecorePackage.getEBigDecimal(), "price", null, 1, 1, ReceiptItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(userAccountEClass, UserAccount.class, "UserAccount", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUserAccount_Id(), theTypesPackage.getString(), "id", null, 1, 1, UserAccount.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

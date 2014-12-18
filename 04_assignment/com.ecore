@@ -91,9 +91,9 @@
         <eClassifiers xsi:type="ecore:EClass" name="IServiceManagement" abstract="true"
             interface="true">
           <eOperations name="createService" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Service">
-            <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+            <eParameters name="title" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
             <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-            <eParameters name="width" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            <eParameters name="price" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
           </eOperations>
           <eOperations name="editService" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Service">
             <eParameters name="service" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Service"/>
@@ -436,7 +436,16 @@
             <eStructuralFeatures xsi:type="ecore:EReference" name="receiptItem" ordered="false"
                 upperBound="-1" eType="#//bodkink/hotel/business/model/ReceiptItem"/>
           </eClassifiers>
-          <eClassifiers xsi:type="ecore:EClass" name="ReceiptItem"/>
+          <eClassifiers xsi:type="ecore:EClass" name="ReceiptItem">
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" ordered="false"
+                lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
+            <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" ordered="false"
+                lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+          </eClassifiers>
           <eClassifiers xsi:type="ecore:EClass" name="UserAccount">
             <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false"
                 lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>

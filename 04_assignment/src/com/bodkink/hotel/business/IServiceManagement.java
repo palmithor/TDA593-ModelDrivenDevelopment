@@ -24,10 +24,10 @@ public interface IServiceManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" nameRequired="true" nameOrdered="false" descriptionRequired="true" descriptionOrdered="false" widthRequired="true" widthOrdered="false"
+	 * @model required="true" ordered="false" titleRequired="true" titleOrdered="false" descriptionRequired="true" descriptionOrdered="false" priceRequired="true" priceOrdered="false"
 	 * @generated
 	 */
-	Service createService(String name, String description, BigDecimal width);
+	Service createService(String title, String description, BigDecimal price);
 
 	/**
 	 * <!-- begin-user-doc -->
