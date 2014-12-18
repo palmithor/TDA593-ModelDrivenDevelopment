@@ -14,13 +14,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.bodkink.hotel.business.model.impl.ModelFactoryImpl;
-import com.bodkink.hotel.business.model.impl.ReceiptImpl;
 import com.bodkink.hotel.business.util.ModelToEntityConverter;
 import com.bodkink.hotel.persistence.IBookingBillService;
 import com.bodkink.hotel.persistence.IRoomBillService;
 import com.bodkink.hotel.persistence.IRoomReservationService;
-import com.bodkink.hotel.persistence.service.RoomReservationServiceImpl;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -178,7 +175,6 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public Receipt generateReceipt(RoomBill bill) {
 		Receipt receipt = ModelFactory.eINSTANCE.createReceipt();
-		EList<ReceiptItem> items = receipt.getReceiptItem();
 
 		Map<BillableItem, Integer> map = new HashMap<>();
 
@@ -197,7 +193,7 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 			tmpItem.setPrice(entry.getKey().getPrice());
 			tmpItem.setQuantity(entry.getValue());
 
-			items.add(tmpItem);
+			receipt.getReceiptItem().add(tmpItem);
 		}
 		return receipt;
 	}
@@ -236,6 +232,7 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 		// Add all unpaid room reservations to the bill
 		for (RoomReservation room: booking.getRoomReservation()){
 			if (room.getRoomBill() != null && room.getRoomBill().getBillStatusEnum() != BillStatusEnum.PAID) {
+				// amount = amount + RommBill price
 				amount = amount.add(getRoomBillPrice(room.getRoomBill()));
 			}
 
@@ -243,13 +240,16 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 			amount = amount.add(room.getRoom().getNightPrice().multiply(new BigDecimal(daysBetween(room.getStartDate(), room.getEndDate()))));
 		}
 
-		// Make the payment ond if success save new bill info.
+		// Make the payment and if success save new bill info.
 		boolean paid =  makePayment(booking.getCustomer().getCardInformation(), amount);
 		if (paid){
 			bill.setBillStatusEnum(BillStatusEnum.PAID);
 			bookingBillService.persist(ModelToEntityConverter.convertBookingBill(bill));
 			for (RoomReservation room: booking.getRoomReservation()){
-				roomBillService.persist(ModelToEntityConverter.convertRoomBill(room.getRoomBill()));
+				if (room.getRoomBill() != null && room.getRoomBill().getBillStatusEnum() != BillStatusEnum.PAID) {
+					room.getRoomBill().setBillStatusEnum(BillStatusEnum.PAID);
+					roomBillService.persist(ModelToEntityConverter.convertRoomBill(room.getRoomBill()));
+				}
 			}
 		}
 		return paid;
@@ -258,7 +258,7 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void markPaid(Bill bill) {
 		bill.setBillStatusEnum(BillStatusEnum.PAID);
