@@ -28,7 +28,7 @@ import java.lang.reflect.InvocationTargetException;
  * @generated
  */
 public class GuestManagementImpl extends MinimalEObjectImpl.Container implements GuestManagement {
-    private static final Logger logger = LoggerFactory.getLogger(BookingManagementImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(GuestManagementImpl.class);
     @Inject
     IBillingManagement billManager;
     /**
