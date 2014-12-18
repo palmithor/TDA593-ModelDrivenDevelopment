@@ -37,7 +37,7 @@ import java.util.List;
 public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container implements RoomReservationManagement {
 
     @Inject
-    IRoomReservationService roomReservationService;
+    public IRoomReservationService roomReservationService;
 
     /**
      * <!-- begin-user-doc -->
@@ -117,6 +117,9 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
         result.setEndDate(end);
         result.setRoomReservationType(roomReservationType);
 
+        RoomReservationEntity entity = ModelToEntityConverter.convertRoomReservation(result);
+
+        roomReservationService.persist(entity);
         return result;
     }
 

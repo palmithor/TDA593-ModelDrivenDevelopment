@@ -55,24 +55,27 @@ public class ModelToEntityConverter {
 
         return new RoomReservationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getStartDate(),
                 model.getEndDate(), model.getRoomReservationType(), convertRoom(model.getRoom()),
-                guests, convertRoomBill(model.getRoomBill()), model.getReservationStatusEnum());
+                guests, model.getRoomBill() != null ? convertRoomBill(model.getRoomBill()) : null, model.getReservationStatusEnum());
     }
 
     public static RoomEntity convertRoom(final Room model) {
+        if (model != null) {
+            Map<ObjectId, Integer> bedTypeCount = new HashMap<>(model.getBedType().size());
 
-        Map<ObjectId, Integer> bedTypeCount = new HashMap<>(model.getBedType().size());
-        model.getBedType().forEach(bedTypeModel -> {
-            bedTypeCount.put(model.getId() != null ? new ObjectId(model.getId()) : null, 1);
-        });
+            model.getBedType().forEach(bedTypeModel -> {
+                bedTypeCount.put(model.getId() != null ? new ObjectId(model.getId()) : null, 1);
+            });
 
-        List<RoomExtraEntity> roomExtras = new ArrayList<>(model.getRoomExtra().size());
-        model.getRoomExtra().forEach(roomExtraModel -> {
-            roomExtras.add(convertRoomExtra(roomExtraModel));
-        });
+            List<RoomExtraEntity> roomExtras = new ArrayList<>(model.getRoomExtra().size());
+            model.getRoomExtra().forEach(roomExtraModel -> {
+                roomExtras.add(convertRoomExtra(roomExtraModel));
+            });
 
-        return new RoomEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getNumber(), model.getDescription(),
-                model.getAllowedGuests(), model.getSize(), model.getNightPrice(), model.getPictures(),
-                convertClassification(model.getClassification()), roomExtras, bedTypeCount);
+            return new RoomEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getNumber(), model.getDescription(),
+                    model.getAllowedGuests(), model.getSize(), model.getNightPrice(), model.getPictures(),
+                    convertClassification(model.getClassification()), roomExtras, bedTypeCount);
+        }
+        return null;
     }
 
     public static ClassificationEntity convertClassification(final Classification model) {
@@ -94,12 +97,15 @@ public class ModelToEntityConverter {
     }
 
     public static RoomBillEntity convertRoomBill(final RoomBill model) {
-        List<BillableItemEntity> billableItems = new ArrayList<>(model.getBillableItem().size());
-        model.getBillableItem().forEach(item -> {
-            billableItems.add(convertBillableItem(item));
-        });
-        return new RoomBillEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
-                convertCardInformation(model.getCardInformation()), billableItems, model.getBillStatusEnum());
+        if (model != null) {
+            List<BillableItemEntity> billableItems = new ArrayList<>(model.getBillableItem().size());
+            model.getBillableItem().forEach(item -> {
+                billableItems.add(convertBillableItem(item));
+            });
+            return new RoomBillEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+                    convertCardInformation(model.getCardInformation()), billableItems, model.getBillStatusEnum());
+        }
+        return null;
     }
 
     public static CardInformationEntity convertCardInformation(final CardInformation model) {
