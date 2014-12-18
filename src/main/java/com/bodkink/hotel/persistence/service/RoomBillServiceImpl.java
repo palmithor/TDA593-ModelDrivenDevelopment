@@ -22,7 +22,7 @@ public class RoomBillServiceImpl implements IRoomBillService {
 
     @Override
     public RoomBill persist(RoomBillEntity roomBillEntity) {
-        //TODO Persist!
+        roomBillDAO.save(roomBillEntity);
         return null;
     }
 }
