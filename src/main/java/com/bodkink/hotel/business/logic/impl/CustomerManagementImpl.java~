@@ -65,7 +65,7 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) {
+	public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) throws SOAPException {
 
         try {
             // Acquire CustomerRequires object
