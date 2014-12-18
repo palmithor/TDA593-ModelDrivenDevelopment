@@ -14,8 +14,6 @@ public interface IRoomReservationService {
 
     public List<RoomReservationEntity> list();
 
-    public List<RoomReservationEntity> listByDate(Date start);
-
     public List<RoomReservationEntity> listByRoom(RoomEntity room);
 
     public RoomReservationEntity find(String id);

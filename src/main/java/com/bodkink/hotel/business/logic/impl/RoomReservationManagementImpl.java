@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -80,8 +81,22 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
      */
     public EList<RoomReservation> listRoomReservations(Date start) {
         EList<RoomReservation> roomReservations = new BasicEList<>();
-        roomReservationService.listByDate(start).forEach(entity -> {
-            roomReservations.add(EntityToModelConverter.convertRoomReservation(entity));
+        Calendar c1 = Calendar.getInstance();
+        Calendar c2 = Calendar.getInstance();
+        c1.setTime(start);
+        c1.set(Calendar.HOUR_OF_DAY, 0);
+        c1.set(Calendar.MINUTE, 0);
+        c2.setTime(c1.getTime());
+        c2.set(Calendar.HOUR_OF_DAY, 23);
+        c2.set(Calendar.MINUTE, 59);
+
+        DateInterval interval = new DateInterval(c1.getTime(), c2.getTime());
+        roomReservationService.list().forEach(entity -> {
+
+
+            DateInterval entityInterval = new DateInterval(entity.getStartDate(), entity.getEndDate());
+            if(DateUtil.isOverlapping(interval, entityInterval))
+                roomReservations.add(EntityToModelConverter.convertRoomReservation(entity));
         });
 
         return roomReservations;

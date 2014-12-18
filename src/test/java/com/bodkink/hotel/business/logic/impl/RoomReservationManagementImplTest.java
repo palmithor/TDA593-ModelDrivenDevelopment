@@ -64,13 +64,9 @@ public class RoomReservationManagementImplTest {
 
     @Test
     public void testListRoomReservationsByDateStart() throws Exception {
-        when(roomReservationServiceMock.listByDate(anyObject())).then(invocationOnMock -> {
-            Date startDate = (Date)invocationOnMock.getArguments()[0];
+        when(roomReservationServiceMock.list()).then(invocationOnMock -> {
             List<RoomReservationEntity> result = new ArrayList<>();
-            roomReservationEntities.forEach(entity -> {
-                if(DateUtil.isSameDay(entity.getStartDate(), startDate))
-                    result.add(entity);
-            });
+            roomReservationEntities.forEach((entity) -> result.add(entity));
 
             return result;
         });
