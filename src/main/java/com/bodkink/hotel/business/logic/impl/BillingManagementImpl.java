@@ -226,17 +226,6 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
     public boolean makePayment(Booking booking) {
         BookingBill bill = null;
 
-        // Find the finalize bill
-        for (BookingBill b : booking.getBookingBill()) {
-            if (b.getBookingBillType() == BookingBillType.FINALIZE) {
-                bill = b;
-            }
-        }
-        // If booking alr paid return false
-        if (bill == null || bill.getBillStatusEnum() == BillStatusEnum.PAID) {
-            return false;
-        }
-
         BigDecimal amount = BigDecimal.ZERO;
 
         // Add all unpaid room reservations to the bill
@@ -250,6 +239,18 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
             amount = amount.add(room.getRoom().getNightPrice().multiply(new BigDecimal(daysBetween(room.getStartDate(), room.getEndDate()))));
         }
 
+        BigDecimal percentageToPay = BigDecimal.ZERO;
+        for (BookingBill b : booking.getBookingBill()) {
+            if (b.getBillStatusEnum() == BillStatusEnum.NOT_PAID) {
+                if (b.getBookingBillType() == BookingBillType.RESERVATION_FEE) {
+                    percentageToPay = percentageToPay.add(new BigDecimal("0.1"));
+                } else if (b.getBookingBillType() == BookingBillType.FINALIZE) {
+                    percentageToPay = percentageToPay.add(new BigDecimal("0.9"));
+                }
+            }
+        }
+
+        amount = amount.multiply(percentageToPay);
         // Make the payment and if success save new bill info.
         boolean paid = makePayment(booking.getCustomer().getCardInformation(), amount);
         if (paid) {

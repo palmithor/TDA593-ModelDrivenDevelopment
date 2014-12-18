@@ -11,4 +11,6 @@ public interface IBookingCache {
     Booking get(final String id);
 
     void put(final Booking booking);
+
+    void remove(final String id);
 }

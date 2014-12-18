@@ -1,6 +1,7 @@
 package com.bodkink.hotel.presentation.controllers.controllers;
 
 import com.bodkink.hotel.business.util.BookingCache;
+import com.bodkink.hotel.persistence.dao.BookingDAO;
 import com.bodkink.hotel.persistence.dao.RoomDAO;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.presentation.message.*;
@@ -18,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
 
@@ -45,18 +47,26 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
                         testServerUrl().path(BASE_URL)));
 
         assertThat(response.httpStatus, is(200));
-        verifyCache();
+        verifyCache(1L);
 
         response = makeRequest(
                 Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
                         testServerUrl().path(BASE_URL + "/confirm")));
-        System.out.println("woohoo");
+        ReceiptMessage receipt = response.payloadAs(ReceiptMessage.class);
+        assertThat(receipt, is(notNullValue()));
+        verifyCache(0L);
+        assertThatBookingIsSaved();
     }
 
-    private void verifyCache() {
+    private void assertThatBookingIsSaved() {
+        BookingDAO bookingDAO = new BookingDAO();
+        assertThat(bookingDAO.find().asList().size(), is(1));
+    }
+
+    private void verifyCache(final Long expectedSize) {
         Injector injector = getInjector();
         BookingCache bookingCache = injector.getInstance(BookingCache.class);
-        assertThat(bookingCache.getCache().size(), is(1L));
+        assertThat(bookingCache.getCache().size(), is(expectedSize));
     }
 
 

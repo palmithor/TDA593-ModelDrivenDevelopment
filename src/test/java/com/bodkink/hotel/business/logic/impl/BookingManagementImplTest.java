@@ -193,6 +193,7 @@ public class BookingManagementImplTest {
         Receipt receipt = ModelFactory.eINSTANCE.createReceipt();
         EList<Receipt> receipts = new BasicEList<>();
         receipts.add(receipt);
+        when(billingManagementMock.createBookingBill(anyObject(), anyObject())).thenReturn(ModelFactory.eINSTANCE.createBookingBill());
         when(billingManagementMock.makePayment(anyObject())).thenReturn(false);
         ((BookingManagementImpl) bookingManagement).bookingCache = new BookingCache();
         EList<Room> bookedRooms = new BasicEList<>();

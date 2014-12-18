@@ -63,6 +63,11 @@ public class BookingCache implements IBookingCache {
         cache.put(booking.getId(), booking);
     }
 
+    @Override
+    public void remove(String id) {
+        cache.invalidate(id);
+    }
+
     public LoadingCache<String, Booking> getCache() {
         return cache;
     }
