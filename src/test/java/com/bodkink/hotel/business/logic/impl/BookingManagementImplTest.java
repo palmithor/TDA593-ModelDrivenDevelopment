@@ -13,7 +13,6 @@ import com.bodkink.hotel.persistence.model.BookingEntity;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.test.DBTestDataMock;
 import com.bodkink.hotel.test.ModelTestDataMock;
-import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
@@ -23,7 +22,6 @@ import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
-import org.mongodb.morphia.Key;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -182,6 +180,7 @@ public class BookingManagementImplTest {
         when(billingManagementMock.makePayment(anyObject())).thenReturn(true);
         when(billingManagementMock.createBookingBill(anyObject(), anyObject())).thenReturn(ModelFactory.eINSTANCE.createBookingBill());
         when(billingManagementMock.generateReceipts(anyObject())).thenReturn(receipts);
+        when(bookingServiceMock.persist(anyObject())).thenReturn(new BookingEntity());
         ((BookingManagementImpl) bookingManagement).bookingCache = new BookingCache();
         EList<Room> bookedRooms = new BasicEList<>();
         Booking booking = bookingManagement.create(DBTestDataMock.dateIntervalAllAvailable.getStart(), DBTestDataMock.dateIntervalAllAvailable.getEnd(),
@@ -247,7 +246,13 @@ public class BookingManagementImplTest {
     @Test
     public void testCancelBooking() {
         Booking booking = EntityToModelConverter.convertBooking(DBTestDataMock.getBookings(roomEntities).get(0));
-        when(bookingServiceMock.persist(anyObject())).thenReturn(new Key<>(BookingEntity.class, ObjectId.get()));
+        when(bookingServiceMock.persist(anyObject()))
+                .then(new Answer<BookingEntity>() {
+                    @Override
+                    public BookingEntity answer(InvocationOnMock invocationOnMock) throws Throwable {
+                        return (BookingEntity) invocationOnMock.getArguments()[0];
+                    }
+                });
         boolean result = bookingManagement.cancelBooking(booking);
         assertThat(result, is(Boolean.TRUE));
         booking.getRoomReservation().forEach(reservation -> {

@@ -7,7 +7,6 @@ import com.bodkink.hotel.persistence.model.RoomReservationEntity;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import org.bson.types.ObjectId;
-import org.mongodb.morphia.Key;
 
 import java.util.List;
 
@@ -37,14 +36,14 @@ public class BookingServiceImpl implements IBookingService {
     AddressDAO addressDAO;
 
     @Override
-    public Key<BookingEntity> persist(final BookingEntity booking) {
+    public BookingEntity persist(final BookingEntity booking) {
         booking.getRoomReservations().forEach(roomReservationDAO::save);
 
         booking.getBookingBills().forEach(bookingBillDAO::save);
 
         persistCustomer(booking);
-
-        return bookingDAO.save(booking);
+        bookingDAO.save(booking);
+        return booking;
     }
 
     @Override

@@ -111,7 +111,11 @@ public class ModelToEntityConverter {
     }
 
     public static CardInformationEntity convertCardInformation(final CardInformation model) {
-        return new CardInformationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getCcNumber(), model.getCcv(), model.getExpiryMonth(), model.getExpiryYear(), model.getFirstName(), model.getLastName(), ModelToEntityConverter.convertAddress(model.getAddress()));
+        if (model != null) {
+            return new CardInformationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getCcNumber(), model.getCcv(), model.getExpiryMonth(), model.getExpiryYear(), model.getFirstName(), model.getLastName(), ModelToEntityConverter.convertAddress(model.getAddress()));
+        } else {
+            return null;
+        }
     }
 
     public static AddressEntity convertAddress(final Address model) {
