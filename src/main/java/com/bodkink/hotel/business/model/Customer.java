@@ -77,15 +77,15 @@ public interface Customer extends Person {
 	void setEmail(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Notes</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Notes</b></em>' attribute listByDate.
+	 * The listByDate contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Notes</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Notes</em>' attribute listByDate isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Notes</em>' attribute list.
+	 * @return the value of the '<em>Notes</em>' attribute listByDate.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getCustomer_Notes()
 	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated

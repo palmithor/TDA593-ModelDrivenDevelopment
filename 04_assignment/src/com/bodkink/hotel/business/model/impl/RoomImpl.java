@@ -169,7 +169,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected BigDecimal nightPrice = NIGHT_PRICE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPictures() <em>Pictures</em>}' attribute list.
+	 * The cached value of the '{@link #getPictures() <em>Pictures</em>}' attribute listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPictures()
@@ -189,7 +189,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected Classification classification;
 
 	/**
-	 * The cached value of the '{@link #getBedType() <em>Bed Type</em>}' reference list.
+	 * The cached value of the '{@link #getBedType() <em>Bed Type</em>}' reference listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBedType()
@@ -199,7 +199,7 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected EList<BedType> bedType;
 
 	/**
-	 * The cached value of the '{@link #getRoomExtra() <em>Room Extra</em>}' reference list.
+	 * The cached value of the '{@link #getRoomExtra() <em>Room Extra</em>}' reference listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomExtra()

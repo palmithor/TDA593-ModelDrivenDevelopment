@@ -77,7 +77,7 @@ public class CustomerImpl extends PersonImpl implements Customer {
 	protected String email = EMAIL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getNotes() <em>Notes</em>}' attribute list.
+	 * The cached value of the '{@link #getNotes() <em>Notes</em>}' attribute listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNotes()

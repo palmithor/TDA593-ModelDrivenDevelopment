@@ -133,7 +133,7 @@ public enum UserGroupEnum implements Enumerator {
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>User Group Enum</b></em>' enumerators.
+	 * A public read-only listByDate of all the '<em><b>User Group Enum</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

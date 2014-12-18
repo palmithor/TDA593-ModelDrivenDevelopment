@@ -24,7 +24,6 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.mongodb.morphia.Key;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -248,8 +247,8 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         roomReservations.forEach(roomReservation -> {
             roomReservation.setReservationStatusEnum(ReservationStatusEnum.CANCELED);
         });
-        Key<BookingEntity> bookingEntityKey = bookingService.persist(ModelToEntityConverter.convertBooking(booking));
-        return bookingEntityKey != null;
+        BookingEntity bookingEntity = bookingService.persist(ModelToEntityConverter.convertBooking(booking));
+        return bookingEntity.getId() != null;
     }
 
     /**
@@ -273,9 +272,9 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         BookingBill bookingBill = billingManagement.createBookingBill(booking, BookingBillType.RESERVATION_FEE);
         if (billingManagement.makePayment(booking)) {
             booking.getBookingBill().add(bookingBill);
+            bookingService.persist(ModelToEntityConverter.convertBooking(booking));
             return billingManagement.generateReceipts(booking).get(0);
         } else {
-            // TODO Payment failed - try again?
             return null;
         }
     }

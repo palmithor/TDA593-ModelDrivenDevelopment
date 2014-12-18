@@ -65,7 +65,7 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) throws SOAPException {
+	public Customer createCustomer(String firstName, String lastName, String phone, String email, int birthYear, CardInformation cardInformation) {
 
         try {
             // Acquire CustomerRequires object
@@ -107,7 +107,7 @@ public class CustomerManagementImpl extends MinimalEObjectImpl.Container impleme
 	 */
 	public Customer editCustomer(Customer customer) {
 		// TODO: implement this method
-        Customer customerEntity = ModelToEntityConverter.convertCustomer(customer);
+        CustomerEntity customerEntity = ModelToEntityConverter.convertCustomer(customer);
         customerService.edit(customerEntity);
         return customer;
 	}

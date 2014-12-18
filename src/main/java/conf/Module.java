@@ -58,10 +58,8 @@ public class Module extends AbstractModule {
         bind(IBedTypeService.class).to(BedTypeServiceImpl.class);
         bind(IRoomReservationService.class).to(RoomReservationServiceImpl.class);
         bind(ICustomerService.class).to(CustomerServiceImpl.class);
-<<<<<<< Updated upstream
         bind(IRoomBillService.class).to(RoomBillServiceImpl.class);
-=======
->>>>>>> Stashed changes
+        bind(IBookingBillService.class).to(BookingBillServiceImpl.class);
 
         // persistence dao
         Reflections reflections = new Reflections(AddressDAO.class.getPackage().getName());

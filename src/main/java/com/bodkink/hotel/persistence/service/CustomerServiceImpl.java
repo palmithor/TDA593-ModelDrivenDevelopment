@@ -34,10 +34,10 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public CustomerEntity edit(CustomerEntity customerEntity){
-        CustomerEntity fromDatabase = customerEntity.get(customerEntity.getId());
+        CustomerEntity fromDatabase = customerDAO.get(customerEntity.getId());
         if (fromDatabase != null){
             customerDAO.save(customerEntity);
-            return customer;
+            return customerEntity;
         } else{
             return null;
         }

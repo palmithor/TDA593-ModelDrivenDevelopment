@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class ReceiptImpl extends MinimalEObjectImpl.Container implements Receipt {
 	/**
-	 * The cached value of the '{@link #getReceiptItem() <em>Receipt Item</em>}' reference list.
+	 * The cached value of the '{@link #getReceiptItem() <em>Receipt Item</em>}' reference listByDate.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getReceiptItem()

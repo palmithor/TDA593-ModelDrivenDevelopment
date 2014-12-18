@@ -22,15 +22,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface RoomBill extends Bill {
 	/**
-	 * Returns the value of the '<em><b>Billable Item</b></em>' reference list.
-	 * The list contents are of type {@link com.bodkink.hotel.business.model.BillableItem}.
+	 * Returns the value of the '<em><b>Billable Item</b></em>' reference listByDate.
+	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.BillableItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Billable Item</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Billable Item</em>' reference listByDate isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Billable Item</em>' reference list.
+	 * @return the value of the '<em>Billable Item</em>' reference listByDate.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getRoomBill_BillableItem()
 	 * @model ordered="false"
 	 * @generated

@@ -63,6 +63,10 @@ public class BookingCache implements IBookingCache {
         cache.put(booking.getId(), booking);
     }
 
+    public LoadingCache<String, Booking> getCache() {
+        return cache;
+    }
+
     public class BookingRemovalListener implements RemovalListener<String, Booking> {
 
         @Override

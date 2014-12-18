@@ -1,3 +1,4 @@
+
 package com.bodkink.hotel.test;
 
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
@@ -24,7 +25,6 @@ public class DBTestDataMock {
     public static final DateInterval dateIntervalAllAvailable = new DateInterval(now.plusDays(20).toDate(), now.plusDays(23).toDate());
     public static final DateInterval dateIntervalNoAvailable = new DateInterval(now.minusDays(7).toDate(), now.plusDays(24).toDate());
 
-
     public static List<RoomReservationEntity> getRoomReservations(List<RoomEntity> rooms) {
         List<RoomReservationEntity> roomReservations = new ArrayList<>();
         for (int i = 0; i < rooms.size(); i++) {
@@ -39,6 +39,7 @@ public class DBTestDataMock {
                     ReservationStatusEnum.RESERVED
             ));
         }
+
         return roomReservations;
     }
 

@@ -2,7 +2,6 @@ package com.bodkink.hotel.persistence;
 
 import com.bodkink.hotel.persistence.model.BookingEntity;
 import com.bodkink.hotel.persistence.model.RoomReservationEntity;
-import org.mongodb.morphia.Key;
 
 import java.util.List;
 
@@ -12,7 +11,7 @@ import java.util.List;
  */
 public interface IBookingService {
 
-    Key<BookingEntity> persist(final BookingEntity booking);
+    BookingEntity persist(final BookingEntity booking);
 
     List<BookingEntity> list();
 

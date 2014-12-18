@@ -66,7 +66,11 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
      * @generated NOT
      */
     public EList<RoomReservation> listRoomReservations() {
-        return listRoomReservations(null, null);
+        EList<RoomReservation> roomReservations = new BasicEList<>();
+        roomReservationService.list().forEach(entity -> {
+            roomReservations.add(EntityToModelConverter.convertRoomReservation(entity));
+        });
+        return roomReservations;
     }
 
     /**
@@ -75,7 +79,12 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
      * @generated NOT
      */
     public EList<RoomReservation> listRoomReservations(Date start) {
-        return listRoomReservations(start, null);
+        EList<RoomReservation> roomReservations = new BasicEList<>();
+        roomReservationService.listByDate(start).forEach(entity -> {
+            roomReservations.add(EntityToModelConverter.convertRoomReservation(entity));
+        });
+
+        return roomReservations;
     }
 
     /**
@@ -84,26 +93,17 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
      * @generated NOT
      */
     public EList<RoomReservation> listRoomReservations(Date start, Date end) {
-        List<RoomReservationEntity> roomReservationEntityList;
+        EList<RoomReservation> roomReservations = new BasicEList<>();
+        DateInterval interval = new DateInterval(start, end);
 
-        if (start == null)
-            roomReservationEntityList = roomReservationService.list();
-        else {
-            if (end == null)
-                roomReservationEntityList = roomReservationService.list(start);
-            else
-                roomReservationEntityList = roomReservationService.list(start, end);
-        }
-
-        EList<RoomReservation> roomReservations = new BasicEList<>(roomReservationEntityList.size());
-
-        roomReservationEntityList.forEach(entity -> {
-            roomReservations.add(EntityToModelConverter.convertRoomReservation(entity));
+        listRoomReservations().forEach(reservation -> {
+            DateInterval tmp = new DateInterval(reservation.getStartDate(), reservation.getEndDate());
+            if(DateUtil.isOverlapping(interval, tmp))
+                roomReservations.add(reservation);
         });
 
         return roomReservations;
     }
-
 
     /**
      * <!-- begin-user-doc -->
@@ -130,7 +130,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
      */
     public RoomReservation findRoomReservation(String roomReservationId) {
         RoomReservationEntity entity = roomReservationService.find(roomReservationId);
-        if(entity != null)
+        if (entity != null)
             return EntityToModelConverter.convertRoomReservation(entity);
         else
             return null;
@@ -182,12 +182,12 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
      * @generated NOT
      */
     public boolean isAvailable(Room room, Date start, Date end) {
-        List<RoomReservationEntity> roomReservationEntityList = roomReservationService.list(ModelToEntityConverter.convertRoom(room));
+        List<RoomReservationEntity> roomReservationEntityList = roomReservationService.listByRoom(ModelToEntityConverter.convertRoom(room));
         DateInterval wantedDateInterval = new DateInterval(start, end);
 
-        for(RoomReservationEntity entity : roomReservationEntityList) {
+        for (RoomReservationEntity entity : roomReservationEntityList) {
             DateInterval entityDateInterval = new DateInterval(entity.getStartDate(), entity.getEndDate());
-            if(DateUtil.isOverlapping(wantedDateInterval, entityDateInterval)) {
+            if (DateUtil.isOverlapping(wantedDateInterval, entityDateInterval)) {
                 return false;
             }
         }
