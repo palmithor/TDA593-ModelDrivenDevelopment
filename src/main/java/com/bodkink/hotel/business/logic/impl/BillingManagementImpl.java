@@ -4,29 +4,20 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.logic.BillingManagement;
 import com.bodkink.hotel.business.logic.LogicPackage;
-
 import com.bodkink.hotel.business.model.*;
-
-import java.lang.reflect.InvocationTargetException;
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.bodkink.hotel.business.model.impl.ModelFactoryImpl;
-import com.bodkink.hotel.business.model.impl.ReceiptImpl;
 import com.bodkink.hotel.business.util.ModelToEntityConverter;
 import com.bodkink.hotel.persistence.IBookingBillService;
 import com.bodkink.hotel.persistence.IRoomBillService;
 import com.bodkink.hotel.persistence.IRoomReservationService;
-import com.bodkink.hotel.persistence.service.RoomReservationServiceImpl;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
+
+import java.lang.reflect.InvocationTargetException;
+import java.math.BigDecimal;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,17 +126,18 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean makePayment(RoomBill bill, CardInformation cardInformation) {
-
-		return makePayment(cardInformation, getRoomBillPrice(bill));
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public EList<Receipt> generateReceipts(Booking booking) {
 		EList<Receipt> rList = new BasicEList<Receipt>();
@@ -155,49 +147,39 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 		}
 
 		// TODO: include services in the booking?
-		// TODO: include rooms and nbr of nights?
 		return rList;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public Receipt generateReceipt(RoomBill bill) {
 		Receipt receipt = ModelFactory.eINSTANCE.createReceipt();
 		EList<ReceiptItem> items = receipt.getReceiptItem();
 
-		Map<BillableItem, Integer> map = new HashMap<>();
+		if (bill instanceof RoomBill){
+			RoomBill rBill = (RoomBill)bill;
+			for ( BillableItem item: rBill.getBillableItem()){
 
-		for ( BillableItem item: bill.getBillableItem()){
 
-			if (map.containsKey(item)){
-				map.replace(item, map.get(item), map.get(item) + 1);
-			} else {
-				map.put(item, 1);
 			}
 		}
-
-		for (Map.Entry<BillableItem, Integer> entry : map.entrySet()){
-			ReceiptItem tmpItem = ModelFactory.eINSTANCE.createReceiptItem();
-			tmpItem.setTitle(entry.getKey().getName());
-			tmpItem.setPrice(entry.getKey().getPrice());
-			tmpItem.setQuantity(entry.getValue());
-
-			items.add(tmpItem);
-		}
-		return receipt;
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public boolean makePayment(RoomBill bill, Customer customer) {
-
-		return makePayment(customer.getCardInformation(), getRoomBillPrice(bill));
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -267,11 +249,11 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	/*
 	Private method that actually handles payments. Called from all public makePayment methods.
 	 */
-	private boolean makePayment(CardInformation c, BigDecimal amount){
+	private boolean makePayment(CardInformation cInf, double amount){
 		boolean success = false;
 		try {
-			success = CustomerRequires.instance().makePayment(c.getCcNumber(), c.getCcv(), c.getExpiryMonth(),
-					c.getExpiryYear(), c.getFirstName(), c.getLastName(), amount.doubleValue());
+			success = CustomerRequires.instance().makePayment(cInf.getCcNumber(), cInf.getCcv(), cInf.getExpiryMonth(),
+					cInf.getExpiryYear(), cInf.getFirstName(), cInf.getLastName(), amount);
 
 		} catch (javax.xml.soap.SOAPException e){
 			return false;
@@ -280,14 +262,14 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/*
-	Get the total price for a room bill.
+	Get the total decimal price for a room bill.
 	 */
-	private BigDecimal getRoomBillPrice(RoomBill rBill){
+	private double getRoomBillPrice(RoomBill rBill){
 		BigDecimal amount = BigDecimal.ZERO;
 		for (BillableItem item: rBill.getBillableItem()){
 			amount = amount.add(item.getPrice());
 		}
-		return amount;
+		return amount.doubleValue();
 	}
 
 

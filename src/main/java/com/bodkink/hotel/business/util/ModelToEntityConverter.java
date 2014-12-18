@@ -15,6 +15,8 @@ import java.util.Map;
  */
 public class ModelToEntityConverter {
 
+    private ModelToEntityConverter() {
+    }
 
     public static BookingEntity convertBooking(final Booking model) {
         List<ServiceEntity> services = new ArrayList<>(model.getService().size());

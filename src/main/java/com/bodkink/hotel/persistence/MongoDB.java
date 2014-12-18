@@ -1,5 +1,6 @@
 package com.bodkink.hotel.persistence;
 
+import com.bodkink.hotel.persistence.util.BigDecimalConverter;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import org.mongodb.morphia.Datastore;
@@ -74,6 +75,7 @@ public class MongoDB {
                         // ServiceEntity.class,
                         // UserAccountEntity.class
                 );
+        morphia.getMapper().getConverters().addConverter(BigDecimalConverter.class);
         datastore = morphia.createDatastore(getMongoClient(), DB_NAME);
         datastore.ensureIndexes();
 

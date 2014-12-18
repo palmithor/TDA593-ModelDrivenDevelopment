@@ -63,6 +63,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     public EList<RoomReservation> listRoomReservations() {
@@ -76,6 +77,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     public EList<RoomReservation> listRoomReservations(Date start) {
@@ -90,6 +92,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     public EList<RoomReservation> listRoomReservations(Date start, Date end) {
@@ -108,6 +111,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     public RoomReservation create(Room room, Date start, Date end, RoomReservationType roomReservationType) {
@@ -126,11 +130,12 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     public RoomReservation findRoomReservation(String roomReservationId) {
         RoomReservationEntity entity = roomReservationService.find(roomReservationId);
-        if(entity != null)
+        if (entity != null)
             return EntityToModelConverter.convertRoomReservation(entity);
         else
             return null;
@@ -139,6 +144,7 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     public boolean cancelRoomReservation(String roomReservationId) {
@@ -179,20 +185,25 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated NOT
      */
     public boolean isAvailable(Room room, Date start, Date end) {
         List<RoomReservationEntity> roomReservationEntityList = roomReservationService.listByRoom(ModelToEntityConverter.convertRoom(room));
         DateInterval wantedDateInterval = new DateInterval(start, end);
+        if (roomReservationEntityList != null) {
 
-        for(RoomReservationEntity entity : roomReservationEntityList) {
-            DateInterval entityDateInterval = new DateInterval(entity.getStartDate(), entity.getEndDate());
-            if(DateUtil.isOverlapping(wantedDateInterval, entityDateInterval)) {
-                return false;
+
+            for (RoomReservationEntity entity : roomReservationEntityList) {
+                DateInterval entityDateInterval = new DateInterval(entity.getStartDate(), entity.getEndDate());
+                if (DateUtil.isOverlapping(wantedDateInterval, entityDateInterval)) {
+                    return false;
+                }
             }
+            return true;
+        } else {
+            return false;
         }
 
-        return true;
-    }
-
-} //RoomReservationManagementImpl
+    } //RoomReservationManagementImpl
+}

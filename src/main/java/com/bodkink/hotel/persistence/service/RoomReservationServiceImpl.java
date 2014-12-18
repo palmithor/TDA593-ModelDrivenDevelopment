@@ -24,15 +24,19 @@ public class RoomReservationServiceImpl implements IRoomReservationService {
         return null;
     }
 
-
     @Override
-    public List<RoomReservationEntity> listByDate(Date start) {
+    public List<RoomReservationEntity> list(Date start, Date end) {
         return null;
     }
 
     @Override
-    public List<RoomReservationEntity> listByRoom(RoomEntity room) {
+    public List<RoomReservationEntity> list(Date start) {
         return null;
+    }
+
+    @Override
+    public List<RoomReservationEntity> list(RoomEntity room) {
+        return roomReservationDAO.find().asList();
     }
 
     @Override
