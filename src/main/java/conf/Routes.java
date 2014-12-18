@@ -48,7 +48,8 @@ public class Routes implements ApplicationRoutes {
         router.GET().route("/api/bed/types").with(BedTypesController.class, "list");
 
         // Booking endpoint
-        router.POST().route("/api/booking").with(BookingController.class, "post");
+        router.POST().route("/api/booking").with(BookingController.class, "create");
+        router.POST().route("/api/booking/confirm").with(BookingController.class, "confirm");
     }
 
 }

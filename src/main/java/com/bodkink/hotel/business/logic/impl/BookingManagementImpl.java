@@ -273,6 +273,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
         BookingBill bookingBill = billingManagement.createBookingBill(booking, BookingBillType.RESERVATION_FEE);
         if (billingManagement.makePayment(booking)) {
             booking.getBookingBill().add(bookingBill);
+            bookingService.persist(ModelToEntityConverter.convertBooking(booking));
             return billingManagement.generateReceipts(booking).get(0);
         } else {
             return null;

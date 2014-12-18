@@ -4,12 +4,13 @@ import com.bodkink.hotel.business.util.BookingCache;
 import com.bodkink.hotel.persistence.dao.RoomDAO;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.presentation.message.*;
-import com.google.gson.Gson;
 import com.google.inject.Injector;
+import conf.StartupActions;
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
 import org.joda.time.DateTime;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -26,8 +27,14 @@ import static org.junit.Assert.assertThat;
  */
 public class BookingControllerDocTesterTest extends NinjaDocTester {
 
-    String BASE_URL = "/api/booking/";
-    Gson gson = new Gson();
+    String BASE_URL = "/api/booking";
+
+    @Before
+    public void setUp() throws Exception {
+        Injector injector = getInjector();
+        StartupActions startupActions = injector.getInstance(StartupActions.class);
+        startupActions.generateDummyDataWhenInDev();
+    }
 
     @Test
     public void testCreateBooking() {
@@ -41,14 +48,15 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         verifyCache();
 
         response = makeRequest(
-                Request.POST().contentTypeApplicationJson().payload(response.payloadAsString()).url(
-                        testServerUrl().path(BASE_URL + "confirm")));
+                Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
+                        testServerUrl().path(BASE_URL + "/confirm")));
+        System.out.println("woohoo");
     }
 
     private void verifyCache() {
         Injector injector = getInjector();
         BookingCache bookingCache = injector.getInstance(BookingCache.class);
-        assertThat(bookingCache.getCache().size(), is(1));
+        assertThat(bookingCache.getCache().size(), is(1L));
     }
 
 

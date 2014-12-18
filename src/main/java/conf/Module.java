@@ -59,6 +59,7 @@ public class Module extends AbstractModule {
         bind(IRoomReservationService.class).to(RoomReservationServiceImpl.class);
         bind(ICustomerService.class).to(CustomerServiceImpl.class);
         bind(IRoomBillService.class).to(RoomBillServiceImpl.class);
+        bind(IBookingBillService.class).to(BookingBillServiceImpl.class);
 
         // persistence dao
         Reflections reflections = new Reflections(AddressDAO.class.getPackage().getName());

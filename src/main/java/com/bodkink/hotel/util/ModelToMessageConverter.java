@@ -20,18 +20,18 @@ public class ModelToMessageConverter {
     }
 
     public static BookingMessage convertBooking(final Booking model) {
-        List<ServiceMessage> services = new ArrayList<>(model.getService().size());
+        List<ServiceMessage> services = new ArrayList<>();
         model.getService().forEach(service -> {
             services.add(convertService(service));
         });
 
-        List<RoomReservationMessage> roomReservations = new ArrayList<>(model.getRoomReservation().size());
+        List<RoomReservationMessage> roomReservations = new ArrayList<>();
 
         model.getRoomReservation().forEach(roomReservation -> {
             roomReservations.add(convertRoomReservation(roomReservation));
         });
 
-        List<BookingBillMessage> bookingBills = new ArrayList<>(model.getBookingBill().size());
+        List<BookingBillMessage> bookingBills = new ArrayList<>();
         model.getBookingBill().forEach(bill -> {
             bookingBills.add(convertBookingBill(bill));
         });
@@ -146,9 +146,8 @@ public class ModelToMessageConverter {
     }
 
     private static ReceiptItem convertReceiptItem(final com.bodkink.hotel.business.model.ReceiptItem model) {
-        return new ReceiptItem();
-        // return new ReceiptItem(model.getTitle(), model.getDescription(), model.getQuantity(),
-        //        model.getPrice());
+        return new ReceiptItem(model.getTitle(), model.getDescription(), model.getQuantity(),
+                model.getPrice());
     }
 
 }

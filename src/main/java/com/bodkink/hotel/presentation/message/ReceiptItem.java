@@ -1,5 +1,7 @@
 package com.bodkink.hotel.presentation.message;
 
+import java.math.BigDecimal;
+
 /**
  * @author palmithor
  * @since 18/12/14.
@@ -8,8 +10,8 @@ public class ReceiptItem {
 
     private final String title;
     private final String description;
-    private final String quantity;
-    private final String price;
+    private final Integer quantity;
+    private final BigDecimal price;
 
     public ReceiptItem() {
         this.title = null;
@@ -18,7 +20,7 @@ public class ReceiptItem {
         this.price = null;
     }
 
-    public ReceiptItem(String title, String description, String quantity, String price) {
+    public ReceiptItem(final String title, final String description, final Integer quantity, final BigDecimal price) {
         this.title = title;
         this.description = description;
         this.quantity = quantity;
@@ -33,11 +35,11 @@ public class ReceiptItem {
         return description;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public String getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 }

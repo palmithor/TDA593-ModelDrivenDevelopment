@@ -33,6 +33,8 @@ public class StartupActions {
     ServiceDAO serviceDAO;
     @Inject
     RoomDAO roomDAO;
+    @Inject
+    RoomReservationDAO roomReservationDAO;
 
 
     private NinjaProperties ninjaProperties;
@@ -43,12 +45,13 @@ public class StartupActions {
     }
 
     @Start(order = 100)
-    public void generateDummyDataWhenInTest() {
+    public void generateDummyDataWhenInDev() {
 
-        if (ninjaProperties.isDev()) {
+        if (ninjaProperties.isDev() || ninjaProperties.isTest()) {
             dropAndCreateDefaultRooms();
             dropAndCreateDefaultBillableItems();
             dropAndCreateDefaultServices();
+            dropRoomReservation();
         }
     }
 
@@ -115,6 +118,10 @@ public class StartupActions {
         }
     }
 
+
+    private void dropRoomReservation() {
+        roomReservationDAO.getDatastore().getDB().getCollection(CollectionNames.ROOM_RESERVATION).drop();
+    }
 
     private void dropAndCreateDefaultBillableItems() {
         billableItemDAO.getDatastore().getDB().getCollection(CollectionNames.BILLABLE_ITEM).drop();

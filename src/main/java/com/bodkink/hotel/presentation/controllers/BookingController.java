@@ -49,12 +49,13 @@ public class BookingController {
             });
         }
 
-
         Booking b = bookingManagement.create(bookingRequest.getStart(), bookingRequest.getEnd(), rooms,
                 services, MessageToModelConverter.convertCustomer(bookingRequest.getCustomer()));
-
-
-        return Results.json().render(ModelToMessageConverter.convertBooking(b));
+        if (b != null) {
+            return Results.json().render(ModelToMessageConverter.convertBooking(b));
+        } else {
+            return Results.json().status(403);
+        }
     }
 
     public Result confirm(final BookingMessage bookingMessage) {
