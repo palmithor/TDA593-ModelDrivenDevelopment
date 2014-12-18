@@ -400,7 +400,12 @@
               <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
                   propertySortChoices="true" ecoreFeature="ecore:EReference com.ecore#//bodkink/hotel/business/model/Receipt/receiptItem"/>
             </genClasses>
-            <genClasses xsi:type="genmodel:GenClass" ecoreClass="com.ecore#//bodkink/hotel/business/model/ReceiptItem"/>
+            <genClasses xsi:type="genmodel:GenClass" ecoreClass="com.ecore#//bodkink/hotel/business/model/ReceiptItem">
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/ReceiptItem/title"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/ReceiptItem/description"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/ReceiptItem/quantity"/>
+              <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/ReceiptItem/price"/>
+            </genClasses>
             <genClasses xsi:type="genmodel:GenClass" ecoreClass="com.ecore#//bodkink/hotel/business/model/UserAccount">
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/UserAccount/id"/>
               <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute com.ecore#//bodkink/hotel/business/model/UserAccount/username"/>

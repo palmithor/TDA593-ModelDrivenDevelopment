@@ -1355,13 +1355,49 @@ public interface ModelPackage extends EPackage {
 	int RECEIPT_ITEM = 18;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIPT_ITEM__TITLE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIPT_ITEM__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIPT_ITEM__QUANTITY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RECEIPT_ITEM__PRICE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Receipt Item</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RECEIPT_ITEM_FEATURE_COUNT = 0;
+	int RECEIPT_ITEM_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Receipt Item</em>' class.
@@ -2545,6 +2581,50 @@ public interface ModelPackage extends EPackage {
 	EClass getReceiptItem();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.ReceiptItem#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see com.bodkink.hotel.business.model.ReceiptItem#getTitle()
+	 * @see #getReceiptItem()
+	 * @generated
+	 */
+	EAttribute getReceiptItem_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.ReceiptItem#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.bodkink.hotel.business.model.ReceiptItem#getDescription()
+	 * @see #getReceiptItem()
+	 * @generated
+	 */
+	EAttribute getReceiptItem_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.ReceiptItem#getQuantity <em>Quantity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Quantity</em>'.
+	 * @see com.bodkink.hotel.business.model.ReceiptItem#getQuantity()
+	 * @see #getReceiptItem()
+	 * @generated
+	 */
+	EAttribute getReceiptItem_Quantity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.bodkink.hotel.business.model.ReceiptItem#getPrice <em>Price</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Price</em>'.
+	 * @see com.bodkink.hotel.business.model.ReceiptItem#getPrice()
+	 * @see #getReceiptItem()
+	 * @generated
+	 */
+	EAttribute getReceiptItem_Price();
+
+	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.model.UserAccount <em>User Account</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3465,6 +3545,38 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RECEIPT_ITEM = eINSTANCE.getReceiptItem();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECEIPT_ITEM__TITLE = eINSTANCE.getReceiptItem_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECEIPT_ITEM__DESCRIPTION = eINSTANCE.getReceiptItem_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECEIPT_ITEM__QUANTITY = eINSTANCE.getReceiptItem_Quantity();
+
+		/**
+		 * The meta object literal for the '<em><b>Price</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RECEIPT_ITEM__PRICE = eINSTANCE.getReceiptItem_Price();
 
 		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.model.impl.UserAccountImpl <em>User Account</em>}' class.
