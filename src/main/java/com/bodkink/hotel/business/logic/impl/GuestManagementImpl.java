@@ -60,9 +60,12 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
             logger.error("Booking not ready for check out.");
             return false;
         }
+        // TODO create bill for the stay. (Comment on this in the report), this will not allow the guest to pay whenever
         // Try to pay all remaining bills.
-        if(!billManager.makePayment(booking))
+        if(!billManager.makePayment(booking)){
+            logger.error("Booking payment failed.");
             return false;
+        }
 
         return checkOutCustomer(booking);
 	}
@@ -72,12 +75,18 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
      * @param booking
      * @return
      */
-    private boolean rdyForCheckOut(Booking booking){
+    private boolean rdyForCheckOut(final Booking booking){
+        boolean foundCustomer = false;
         for (RoomReservation reservation : booking.getRoomReservation()) {
-            if(reservation.getReservationStatusEnum() == ReservationStatusEnum.CHECKED_IN
-                    && !reservation.getGuest().equals(booking.getCustomer())){
-                logger.error("Not all guests have been checked out from the booking.");
-                return false;
+            if(reservation.getReservationStatusEnum() == ReservationStatusEnum.CHECKED_IN) {
+                for (Guest guest : reservation.getGuest()) {
+                    if (guest.getId().equals(booking.getCustomer().getId()))
+                        foundCustomer = true;
+                }
+                if (!foundCustomer) {
+                    logger.error("Not all guests have been checked out from the booking.");
+                    return false;
+                }
             }
         }
         return true;
@@ -88,13 +97,18 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
      * @param booking
      * @return
      */
-    private boolean checkOutCustomer(Booking booking){
+    private boolean checkOutCustomer(final Booking booking){
         // find customer room reservation and check out.
+
         for (RoomReservation reservation : booking.getRoomReservation()){
-            if (reservation.getGuest().equals(booking.getCustomer()))
-                return checkOut(reservation);
+            if(reservation.getReservationStatusEnum() == ReservationStatusEnum.CHECKED_IN) {
+                for (Guest guest : reservation.getGuest()) {
+                    if (guest.getId().equals(booking.getCustomer().getId()))
+                        return checkOut(reservation);
+                }
+            }
         }
-        logger.error("The customer is not checked in to any room in the booking");
+        logger.error("The customer is not  checked in to any room in the booking");
         return false;
     }
 
@@ -124,12 +138,12 @@ public class GuestManagementImpl extends MinimalEObjectImpl.Container implements
      */
 	public boolean checkOut(RoomReservation roomReservation) {
         //return roomReservation.checkOut
+        // he wants.
         if(roomReservation == null || roomReservation.getReservationStatusEnum() == ReservationStatusEnum.CHECKED_OUT){
             logger.error("Illegal room reservation.");
             return false;
         }
-        EList roomGuests = roomReservation.getGuest();
-        roomGuests.clear();
+        roomReservation.getGuest().clear();
         roomReservation.setReservationStatusEnum(ReservationStatusEnum.CHECKED_OUT);
         return true;
 	}
