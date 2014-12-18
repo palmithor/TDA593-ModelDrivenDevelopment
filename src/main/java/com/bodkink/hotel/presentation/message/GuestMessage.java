@@ -8,22 +8,22 @@ import org.mongodb.morphia.annotations.Entity;
  * @since 27/11/14.
  */
 @Entity(CollectionNames.GUEST)
-public class GuestEntity extends Person {
+public class GuestMessage extends Person {
 
 
     private final String id;
 
-    public GuestEntity() {
+    public GuestMessage() {
         super();
         this.id = null;
     }
 
-    public GuestEntity(final String firstName, final String lastName, final Integer birthYear) {
+    public GuestMessage(final String firstName, final String lastName, final Integer birthYear) {
         super(firstName, lastName, birthYear);
         this.id = null;
     }
 
-    public GuestEntity(final String id, final String firstName, final String lastName, final Integer birthYear) {
+    public GuestMessage(final String id, final String firstName, final String lastName, final Integer birthYear) {
         super(firstName, lastName, birthYear);
         this.id = id;
     }

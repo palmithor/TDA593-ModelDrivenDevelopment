@@ -1,15 +1,14 @@
 package com.bodkink.hotel.persistence.service;
 
-import com.bodkink.hotel.business.model.RoomReservation;
 import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.bodkink.hotel.persistence.dao.RoomReservationDAO;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.persistence.model.RoomReservationEntity;
 import com.google.inject.Inject;
 import com.mongodb.WriteResult;
-import org.eclipse.emf.common.util.EList;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author palmithor
@@ -21,23 +20,23 @@ public class RoomReservationServiceImpl implements IRoomReservationService {
     RoomReservationDAO roomReservationDAO;
 
     @Override
-    public EList<RoomReservationEntity> list() {
+    public List<RoomReservationEntity> list() {
         return null;
     }
 
     @Override
-    public EList<RoomReservationEntity> list(Date start, Date end) {
+    public List<RoomReservationEntity> list(Date start, Date end) {
         return null;
     }
 
     @Override
-    public EList<RoomReservationEntity> list(Date start) {
+    public List<RoomReservationEntity> list(Date start) {
         return null;
     }
 
     @Override
-    public EList<RoomReservationEntity> list(RoomEntity room) {
-        return null;
+    public List<RoomReservationEntity> list(RoomEntity room) {
+        return roomReservationDAO.find().asList();
     }
 
     @Override

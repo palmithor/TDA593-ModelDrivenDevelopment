@@ -1,9 +1,11 @@
 package com.bodkink.hotel.presentation.controllers.controllers;
 
+import com.bodkink.hotel.business.util.BookingCache;
 import com.bodkink.hotel.persistence.dao.RoomDAO;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.presentation.message.*;
 import com.google.gson.Gson;
+import com.google.inject.Injector;
 import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
@@ -24,11 +26,33 @@ import static org.junit.Assert.assertThat;
  */
 public class BookingControllerDocTesterTest extends NinjaDocTester {
 
-    String BASE_URL = "/api/booking";
+    String BASE_URL = "/api/booking/";
     Gson gson = new Gson();
 
     @Test
     public void testCreateBooking() {
+        BookingRequest request = getBookingRequest();
+
+        Response response = makeRequest(
+                Request.POST().contentTypeApplicationJson().payload(request).url(
+                        testServerUrl().path(BASE_URL)));
+
+        assertThat(response.httpStatus, is(200));
+        verifyCache();
+
+        response = makeRequest(
+                Request.POST().contentTypeApplicationJson().payload(response.payloadAsString()).url(
+                        testServerUrl().path(BASE_URL + "confirm")));
+    }
+
+    private void verifyCache() {
+        Injector injector = getInjector();
+        BookingCache bookingCache = injector.getInstance(BookingCache.class);
+        assertThat(bookingCache.getCache().size(), is(1));
+    }
+
+
+    private BookingRequest getBookingRequest() {
         RoomDAO roomDAO = new RoomDAO();
         List<RoomMessage> rooms = new ArrayList<>();
         RoomEntity roomEntity = roomDAO.find().asList().get(0);
@@ -38,13 +62,8 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
                 new CardInformationMessage("4000000000000002", "123", 10, 2014, "Olof", "Palme",
                         new AddressMessage("Sweden", "Gothenburg", "45475", "Apt. 2", "Street 1")));
 
-        BookingRequest request = new BookingRequest(new Date(), DateTime.now().plusDays(1).toDate(),
+        return new BookingRequest(new Date(), DateTime.now().plusDays(1).toDate(),
                 customerMessage, new ArrayList<>(), rooms);
-
-        Response response = makeRequest(
-                Request.POST().contentTypeApplicationJson().payload(request).url(
-                        testServerUrl().path(BASE_URL)));
-        assertThat(response.httpStatus, is(200));
     }
 
 }

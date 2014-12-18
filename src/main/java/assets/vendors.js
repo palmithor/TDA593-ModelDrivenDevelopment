@@ -3631,7 +3631,7 @@
  *        },
  *        // Call this to save the tracked events to the trackingUrl
  *        save: function() {
- *          $http.post(trackingUrl, trackedEvents);
+ *          $http.create(trackingUrl, trackedEvents);
  *        }
  *      };
  *    }];
@@ -3656,7 +3656,7 @@
  *    }));
  *
  *    it('saves to the tracking url', inject(function(eventTracker, $http) {
- *      postSpy = spyOn($http, 'post');
+ *      postSpy = spyOn($http, 'create');
  *      eventTracker.event('login');
  *      eventTracker.save();
  *      expect(postSpy).toHaveBeenCalled();
@@ -5297,7 +5297,7 @@
  *       compile: function compile(tElement, tAttrs, transclude) {
  *         return {
  *           pre: function preLink(scope, iElement, iAttrs, controller) { ... },
- *           post: function postLink(scope, iElement, iAttrs, controller) { ... }
+ *           create: function postLink(scope, iElement, iAttrs, controller) { ... }
  *         }
  *         // or
  *         // return function postLink( ... ) { ... }
@@ -5305,7 +5305,7 @@
  *       // or
  *       // link: {
  *       //  pre: function preLink(scope, iElement, iAttrs, controller) { ... },
- *       //  post: function postLink(scope, iElement, iAttrs, controller) { ... }
+ *       //  create: function postLink(scope, iElement, iAttrs, controller) { ... }
  *       // }
  *       // or
  *       // link: function postLink( ... ) { ... }
@@ -5345,7 +5345,7 @@
      * is necessary to specify the order in which the directives are applied. The `priority` is used
      * to sort the directives before their `compile` functions get called. Priority is defined as a
      * number. Directives with greater numerical `priority` are compiled first. Pre-link functions
-     * are also run in priority order, but post-link functions are run in reverse order. The order
+     * are also run in priority order, but create-link functions are run in reverse order. The order
      * of directives with the same priority is undefined. The default priority is `0`.
      *
      * #### `terminal`
@@ -5540,12 +5540,12 @@
 
      * A compile function can have a return value which can be either a function or an object.
      *
-     * * returning a (post-link) function - is equivalent to registering the linking function via the
+     * * returning a (create-link) function - is equivalent to registering the linking function via the
      *   `link` property of the config object when the compile function is empty.
      *
-     * * returning an object with function(s) registered via `pre` and `post` properties - allows you to
+     * * returning an object with function(s) registered via `pre` and `create` properties - allows you to
      *   control when a linking function should be called during the linking phase. See info about
-     *   pre-linking and post-linking functions below.
+     *   pre-linking and create-linking functions below.
      *
      *
      * #### `link`
@@ -5586,7 +5586,7 @@
      *
      * #### Post-linking function
      *
-     * Executed after the child elements are linked. It is safe to do DOM transformation in the post-linking function.
+     * Executed after the child elements are linked. It is safe to do DOM transformation in the create-linking function.
      *
      * <a name="Attributes"></a>
      * ### Attributes
@@ -7560,7 +7560,7 @@
          * Refer to {@link ng.$http#setting-http-headers $http} for documentation on
          * setting default headers.
          *     - **`defaults.headers.common`**
-         *     - **`defaults.headers.post`**
+         *     - **`defaults.headers.create`**
          *     - **`defaults.headers.put`**
          *     - **`defaults.headers.patch`**
          **/
@@ -7725,14 +7725,14 @@
                  *
                  * ```js
                  *   $http.get('/someUrl').success(successCallback);
-                 *   $http.post('/someUrl', data).success(successCallback);
+                 *   $http.create('/someUrl', data).success(successCallback);
                  * ```
                  *
                  * Complete list of shortcut methods:
                  *
                  * - {@link ng.$http#get $http.get}
                  * - {@link ng.$http#head $http.head}
-                 * - {@link ng.$http#post $http.post}
+                 * - {@link ng.$http#post $http.create}
                  * - {@link ng.$http#put $http.put}
                  * - {@link ng.$http#delete $http.delete}
                  * - {@link ng.$http#jsonp $http.jsonp}
@@ -7747,7 +7747,7 @@
                  *
                  * - `$httpProvider.defaults.headers.common` (headers that are common for all requests):
                  *   - `Accept: application/json, text/plain, * / *`
-                 * - `$httpProvider.defaults.headers.post`: (header defaults for POST requests)
+                 * - `$httpProvider.defaults.headers.create`: (header defaults for POST requests)
                  *   - `Content-Type: application/json`
                  * - `$httpProvider.defaults.headers.put` (header defaults for PUT requests)
                  *   - `Content-Type: application/json`
@@ -8325,7 +8325,7 @@
 
                 /**
                  * @ngdoc method
-                 * @name $http#post
+                 * @name $http#create
                  *
                  * @description
                  * Shortcut method to perform `POST` request.
@@ -25055,7 +25055,7 @@
                             rbuggyQSA.push(":enabled", ":disabled");
                         }
 
-                        // Opera 10-11 does not throw on post-comma invalid pseudos
+                        // Opera 10-11 does not throw on create-comma invalid pseudos
                         div.querySelectorAll("*,:x");
                         rbuggyQSA.push(",.*:");
                     });

@@ -275,7 +275,6 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
             booking.getBookingBill().add(bookingBill);
             return billingManagement.generateReceipts(booking).get(0);
         } else {
-            // TODO Payment failed - try again?
             return null;
         }
     }

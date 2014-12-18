@@ -18,7 +18,7 @@ public class RoomReservationMessage {
     private final Date endDate;
     private final RoomReservationType reservationType;
     private final RoomMessage room;
-    private final List<GuestEntity> guests;
+    private final List<GuestMessage> guests;
     private final RoomBillMessage roomBill;
 
     private final ReservationStatusEnum reservationStatus;
@@ -35,7 +35,7 @@ public class RoomReservationMessage {
     }
 
     public RoomReservationMessage(final Date startDate, final Date endDate, final RoomReservationType RoomReservationType,
-                                  final RoomMessage room, final List<GuestEntity> guests, final RoomBillMessage roomBill,
+                                  final RoomMessage room, final List<GuestMessage> guests, final RoomBillMessage roomBill,
                                   final ReservationStatusEnum reservationStatus) {
         this.id = null;
         this.startDate = startDate;
@@ -50,7 +50,7 @@ public class RoomReservationMessage {
 
     public RoomReservationMessage(final String id, final Date startDate, final Date endDate,
                                   final RoomReservationType RoomReservationType, final RoomMessage room,
-                                  final List<GuestEntity> guests, final RoomBillMessage roomBill,
+                                  final List<GuestMessage> guests, final RoomBillMessage roomBill,
                                   final ReservationStatusEnum reservationStatus) {
         this.id = id;
         this.startDate = startDate;
@@ -82,7 +82,7 @@ public class RoomReservationMessage {
         return room;
     }
 
-    public List<GuestEntity> getGuests() {
+    public List<GuestMessage> getGuests() {
         return guests;
     }
 
