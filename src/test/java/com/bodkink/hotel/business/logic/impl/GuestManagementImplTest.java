@@ -2,16 +2,14 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.*;
 import com.bodkink.hotel.business.logic.LogicFactory;
-import com.bodkink.hotel.business.model.Booking;
-import com.bodkink.hotel.business.model.Customer;
-import com.bodkink.hotel.business.model.ModelFactory;
-import com.bodkink.hotel.business.model.Room;
+import com.bodkink.hotel.business.model.*;
 import com.bodkink.hotel.business.util.BookingCache;
 import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.persistence.IBookingService;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.test.DBTestDataMock;
 import com.bodkink.hotel.test.ModelTestDataMock;
+import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
@@ -85,6 +83,32 @@ public class GuestManagementImplTest {
 
         booking = bookingManagement.create(DBTestDataMock.dateIntervalAllAvailable.getStart(), DBTestDataMock.dateIntervalAllAvailable.getEnd(),
                 bookedRooms, null, customer);
+    }
+
+    private Booking setUpBooking2(){
+        Booking booking = ModelFactory.eINSTANCE.createBooking();
+        booking.setId("testBooking1");
+
+       // booking.getRoomReservation() = new BasicEList<>();
+
+
+        RoomReservation roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
+        roomReservation.setStartDate(null);
+        roomReservation.setEndDate(null);
+        roomReservation.setRoom(null);
+        roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
+        roomReservation.setRoomReservationType(RoomReservationType.BOOKING);
+        booking.getRoomReservation().add(roomReservation);
+
+        roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
+        roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
+        roomReservation.setRoomReservationType(RoomReservationType.BOOKING);
+        Room room;
+
+        booking.getRoomReservation().add(roomReservation);
+
+
+        return booking;
     }
 
     public void tearDown() throws Exception {

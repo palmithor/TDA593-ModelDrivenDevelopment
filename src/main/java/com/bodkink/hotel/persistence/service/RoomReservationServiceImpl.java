@@ -52,6 +52,7 @@ public class RoomReservationServiceImpl implements IRoomReservationService {
 
     @Override
     public RoomReservationEntity persist(RoomReservationEntity roomReservation) {
+        roomReservationDAO.save(roomReservation);
         return null;
     }
 

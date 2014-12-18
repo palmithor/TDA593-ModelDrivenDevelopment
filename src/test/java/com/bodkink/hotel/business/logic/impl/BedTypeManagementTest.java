@@ -1,11 +1,8 @@
 package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.IBedTypeManagement;
-import com.bodkink.hotel.business.logic.BedTypeManagement;
 import com.bodkink.hotel.business.logic.LogicFactory;
-import com.bodkink.hotel.business.logic.impl.BedTypeManagementImpl;
 import com.bodkink.hotel.business.model.BedType;
-import com.bodkink.hotel.business.model.ModelFactory;
 import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.business.util.ModelToEntityConverter;
 import com.bodkink.hotel.persistence.IBedTypeService;
@@ -18,9 +15,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -89,5 +84,12 @@ public class BedTypeManagementTest {
         bedTypeServiceMock.edit(bedTypeEntity);
 
         assertThat(bedTypeEntities.get(0).getName(), is("2x Bed"));
+    }
+
+    @Test
+    public void testListBedTypes() throws Exception {
+        List<BedTypeEntity> bedTypeEntities= DBTestDataMock.getBedTypeEntities();
+        when(bedTypeServiceMock.listAll()).thenReturn(bedTypeEntities);
+        assertThat(bedTypeManagement.listBedTypes().size(), is(bedTypeEntities.size()));
     }
 }
