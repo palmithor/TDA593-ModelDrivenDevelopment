@@ -1,15 +1,13 @@
 package com.bodkink.hotel.business.logic.impl;
 
-import com.bodkink.hotel.business.*;
+import com.bodkink.hotel.business.IBillingManagement;
+import com.bodkink.hotel.business.IGuestManagement;
+import com.bodkink.hotel.business.IRoomManagement;
+import com.bodkink.hotel.business.IRoomReservationManagement;
 import com.bodkink.hotel.business.logic.LogicFactory;
 import com.bodkink.hotel.business.model.*;
-import com.bodkink.hotel.business.util.BookingCache;
-import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.persistence.IBookingService;
-import com.bodkink.hotel.persistence.model.RoomEntity;
-import com.bodkink.hotel.test.DBTestDataMock;
 import com.bodkink.hotel.test.ModelTestDataMock;
-import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.junit.Before;
@@ -18,17 +16,15 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.List;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Matchers.anyObject;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 @RunWith(MockitoJUnitRunner.class)
 public class GuestManagementImplTest {
-
     @Mock
     IRoomReservationManagement roomReservationMock;
     @Mock
@@ -39,80 +35,84 @@ public class GuestManagementImplTest {
     IBillingManagement billingManagementMock;
     @Mock
     Booking bookingMock;
-
-    Booking booking;
+    @Mock
+    RoomReservation reservationMock;
+    @Mock
+    Guest guest;
+    @Mock
+    Customer cutomerMock;
+    @Mock
+    RoomReservation reservation1;
+    @Mock
+    RoomReservation reservation2;
 
     IGuestManagement guestManagement;
-
-    List<RoomEntity> roomEntities = DBTestDataMock.getRoomEntities();
-    List<Room> rooms;
     Customer customer = ModelTestDataMock.getCustomer();
-
-    IBookingManagement bookingManagement;
 
     @Before
     public void setUp() throws Exception {
-        setUpBooking();
         // Setup guest management.
         guestManagement = LogicFactory.eINSTANCE.createGuestManagement();
         ((GuestManagementImpl) guestManagement).billManager = billingManagementMock;
     }
 
-    private void setUpBooking(){
-        bookingManagement = LogicFactory.eINSTANCE.createBookingManagement();
-
-        rooms = new BasicEList<>();
-        roomEntities.forEach(entity -> {
-            rooms.add(EntityToModelConverter.convertRoom(entity));
-        });
-        ((BookingManagementImpl) bookingManagement).roomReservationManagement = roomReservationMock;
-
-        when(roomReservationMock.create(anyObject(), anyObject(), anyObject(), anyObject()))
-                .thenReturn(ModelFactory.eINSTANCE.createRoomReservation());
-        when(roomReservationMock.isAvailable(anyObject(), anyObject(), anyObject())).thenReturn(Boolean.TRUE);
-        ((BookingManagementImpl) bookingManagement).roomManagement = roomManagementMock;
-        ((BookingManagementImpl) bookingManagement).bookingService = bookingServiceMock;
-
-
-        ((BookingManagementImpl) bookingManagement).bookingCache = new BookingCache();
-        EList<Room> bookedRooms = new BasicEList<>();
-        bookedRooms.add(rooms.get(0));
-        bookedRooms.add(rooms.get(1));
-
-
-
-        booking = bookingManagement.create(DBTestDataMock.dateIntervalAllAvailable.getStart(), DBTestDataMock.dateIntervalAllAvailable.getEnd(),
-                bookedRooms, null, customer);
-    }
-
-    private Booking setUpBooking2(){
-        Booking booking = ModelFactory.eINSTANCE.createBooking();
-        booking.setId("testBooking1");
-
-       // booking.getRoomReservation() = new BasicEList<>();
-
-
-        RoomReservation roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
-        roomReservation.setStartDate(null);
-        roomReservation.setEndDate(null);
-        roomReservation.setRoom(null);
-        roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
-        roomReservation.setRoomReservationType(RoomReservationType.BOOKING);
-        booking.getRoomReservation().add(roomReservation);
-
-        roomReservation = ModelFactory.eINSTANCE.createRoomReservation();
-        roomReservation.setReservationStatusEnum(ReservationStatusEnum.RESERVED);
-        roomReservation.setRoomReservationType(RoomReservationType.BOOKING);
-        Room room;
-
-        booking.getRoomReservation().add(roomReservation);
-
-
-        return booking;
+    private Guest setupGuests(String id, String firstname, String surName){
+        Guest guest =  ModelFactory.eINSTANCE.createGuest();
+        guest.setFirstName(firstname);
+        guest.setSurname(surName);
+        guest.setId(id);
+        return guest;
     }
 
     public void tearDown() throws Exception {
+    }
 
+    private EList<RoomReservation> setupRoomReservations1(){
+        EList<RoomReservation> reservations = new BasicEList();
+        EList<Guest> guests = new BasicEList();
+
+        Guest guest1 = mock(Guest.class);
+        when(guest1.getId()).thenReturn("5");
+        Guest guest2 = mock(Guest.class);
+        when(guest2.getId()).thenReturn("1");
+
+        guests.add(guest1);
+        guests.add(guest2);
+
+        when(reservation1.getReservationStatusEnum()).thenReturn(ReservationStatusEnum.CHECKED_OUT);
+
+        when(reservation1.getGuest()).thenReturn(guests);
+        when(reservation1.getReservationStatusEnum()).thenReturn(ReservationStatusEnum.CHECKED_OUT);
+        when(reservation2.getGuest()).thenReturn(guests);
+
+        reservations.add(reservation1);
+        reservations.add(reservation2);
+
+        return reservations;
+    }
+
+    private EList<RoomReservation> setupRoomReservations2(){
+        EList<RoomReservation> reservations = new BasicEList();
+        EList<Guest> guests = new BasicEList();
+
+        Guest guest1 = mock(Guest.class);
+        when(guest1.getId()).thenReturn("5");
+        Guest guest2 = mock(Guest.class);
+        when(guest2.getId()).thenReturn("1");
+
+        guests.add(guest1);
+        guests.add(guest2);
+
+        when(reservation1.getReservationStatusEnum()).thenReturn(ReservationStatusEnum.CHECKED_OUT);
+
+        when(reservation1.getGuest()).thenReturn(guests);
+        when(reservation2.getReservationStatusEnum()).thenReturn(ReservationStatusEnum.CHECKED_IN);
+        when(reservation2.getGuest()).thenReturn(guests);
+
+        reservations.add(reservation1);
+        reservations.add(reservation2);
+
+        return reservations;
     }
 
     // checkOut(Booking booking)
@@ -120,31 +120,60 @@ public class GuestManagementImplTest {
     public void testCheckOutNotCheckedIn() throws Exception {
         // make sure that the payment is successful.
         when(billingManagementMock.makePayment(anyObject())).thenReturn(true);
-        //assertTrue(guestManagement.checkOut(booking));
+        when(bookingMock.getCustomer()).thenReturn(cutomerMock);
+        EList reservationListMock = setupRoomReservations1();
+        when(bookingMock.getRoomReservation()).thenReturn(reservationListMock);
 
-        assertThat(guestManagement.checkOut(booking),is(false));
+        when(bookingMock.getCustomer()).thenReturn(cutomerMock);
+        when(cutomerMock.getId()).thenReturn("1");
+
+        assertThat(guestManagement.checkOut(bookingMock), is(false));
     }
 
     @Test
     public void testCheckOutCheckedIn() throws Exception {
         // make sure that the payment is successful.
         when(billingManagementMock.makePayment(anyObject())).thenReturn(true);
-        //assertTrue(guestManagement.checkOut(booking));
+        when(bookingMock.getCustomer()).thenReturn(cutomerMock);
+        EList reservationListMock = setupRoomReservations2();
+        when(bookingMock.getRoomReservation()).thenReturn(reservationListMock);
 
-       // when(bookingMock.)
+        when(bookingMock.getCustomer()).thenReturn(cutomerMock);
+        when(cutomerMock.getId()).thenReturn("1");
 
-       // assertThat(guestManagement.checkOut(booking),is(true));
+        assertThat(guestManagement.checkOut(bookingMock), is(true));
+        verify(reservation2).setReservationStatusEnum(ReservationStatusEnum.CHECKED_OUT);
+        assertTrue(reservation2.getGuest().isEmpty());
     }
 
-    //checkOut(RoomReservation reservation)
     @Test
-    public void testCheckOut1() throws Exception {
+    public void testCheckOutPaymentFailure() throws Exception {
+        when(billingManagementMock.makePayment(anyObject())).thenReturn(false);
+        when(bookingMock.getCustomer()).thenReturn(cutomerMock);
+        EList reservationListMock = setupRoomReservations2();
+        when(bookingMock.getRoomReservation()).thenReturn(reservationListMock);
 
+        when(bookingMock.getCustomer()).thenReturn(cutomerMock);
+        when(cutomerMock.getId()).thenReturn("1");
+
+        assertThat(guestManagement.checkOut(bookingMock), is(false));
     }
 
     @Test
-    public void testCheckIn() throws Exception {
+    public void testCheckOutRoomReservation() throws Exception {
+        when(reservationMock.getReservationStatusEnum()).thenReturn(ReservationStatusEnum.CHECKED_IN);
+        when(reservationMock.getGuest()).thenReturn(mock(BasicEList.class));
+        assertThat(guestManagement.checkOut(reservationMock), is(true));
+        verify(reservationMock).setReservationStatusEnum(ReservationStatusEnum.CHECKED_OUT);
+        verify(reservationMock.getGuest()).clear();
+    }
 
-
+    @Test
+    public void testCheckInRoomReservation() throws Exception {
+        when(reservationMock.getReservationStatusEnum()).thenReturn(ReservationStatusEnum.CHECKED_OUT);
+        when(reservationMock.getGuest()).thenReturn(mock(BasicEList.class));
+        assertThat(guestManagement.checkIn(reservationMock, guest), is(true));
+        verify(reservationMock).setReservationStatusEnum(ReservationStatusEnum.CHECKED_IN);
+        verify(reservationMock.getGuest()).add(guest);
     }
 }
