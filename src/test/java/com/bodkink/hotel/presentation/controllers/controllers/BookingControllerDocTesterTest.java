@@ -23,7 +23,6 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assume.assumeTrue;
 
 
 /**
@@ -40,7 +39,6 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
 
     @Before
     public void setUp() throws Exception {
-        assumeTrue(System.getProperty("ft") == null);
         Injector injector = getInjector();
         StartupActions startupActions = injector.getInstance(StartupActions.class);
         startupActions.generateDummyDataWhenInDev();
@@ -65,43 +63,51 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
 
     @Test
     public void testSuccessfulBooking() {
-        BookingRequest request = getBookingRequest(cardWithFunds);
+        if (System.getProperty("ft") == null) {
+            BookingRequest request = getBookingRequest(cardWithFunds);
 
-        Response response = makeRequest(
-                Request.POST().contentTypeApplicationJson().payload(request).url(
-                        testServerUrl().path(BASE_URL)));
+            Response response = makeRequest(
+                    Request.POST().contentTypeApplicationJson().payload(request).url(
+                            testServerUrl().path(BASE_URL)));
 
-        assertThat(response.httpStatus, is(200));
-        verifyCache(1L);
+            assertThat(response.httpStatus, is(200));
+            verifyCache(1L);
 
-        response = makeRequest(
-                Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
-                        testServerUrl().path(BASE_URL + "/confirm")));
-        assertThat(response.httpStatus, is(200));
-        ReceiptMessage receipt = response.payloadAs(ReceiptMessage.class);
-        assertThat(receipt, is(notNullValue()));
-        assertThat(receipt.getItems().size(), is(1));
-        verifyCache(0L);
-        assertBookingSizeInDB(1);
+            response = makeRequest(
+                    Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
+                            testServerUrl().path(BASE_URL + "/confirm")));
+            assertThat(response.httpStatus, is(200));
+            ReceiptMessage receipt = response.payloadAs(ReceiptMessage.class);
+            assertThat(receipt, is(notNullValue()));
+            assertThat(receipt.getItems().size(), is(1));
+            verifyCache(0L);
+            assertBookingSizeInDB(1);
+        } else {
+            System.out.println("Test is ignored as there is no connection to Chalmers server");
+        }
     }
 
     @Test
     public void testBookingNoFunds() {
-        BookingRequest request = getBookingRequest(cardWithNoFunds);
+        if (System.getProperty("ft") == null) {
+            BookingRequest request = getBookingRequest(cardWithNoFunds);
 
-        Response response = makeRequest(
-                Request.POST().contentTypeApplicationJson().payload(request).url(
-                        testServerUrl().path(BASE_URL)));
+            Response response = makeRequest(
+                    Request.POST().contentTypeApplicationJson().payload(request).url(
+                            testServerUrl().path(BASE_URL)));
 
-        assertThat(response.httpStatus, is(200));
-        verifyCache(1L);
+            assertThat(response.httpStatus, is(200));
+            verifyCache(1L);
 
-        response = makeRequest(
-                Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
-                        testServerUrl().path(BASE_URL + "/confirm")));
-        assertThat(response.httpStatus, is(403));
-        assertThat(response.payload, is(""));
-        assertBookingSizeInDB(0);
+            response = makeRequest(
+                    Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
+                            testServerUrl().path(BASE_URL + "/confirm")));
+            assertThat(response.httpStatus, is(403));
+            assertThat(response.payload, is(""));
+            assertBookingSizeInDB(0);
+        } else {
+            System.out.println("Test is ignored as there is no connection to Chalmers server");
+        }
     }
 
     private void assertBookingSizeInDB(final int expectedSize) {
