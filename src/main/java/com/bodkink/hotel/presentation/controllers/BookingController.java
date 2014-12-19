@@ -55,7 +55,7 @@ public class BookingController {
         if (b != null) {
             return Results.json().render(ModelToMessageConverter.convertBooking(b));
         } else {
-            return Results.json().status(403);
+            return Results.forbidden().json().renderRaw("".getBytes());
         }
     }
 

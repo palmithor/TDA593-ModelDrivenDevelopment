@@ -114,6 +114,27 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         }
     }
 
+    @Test
+    public void testBookingRoomAlreadyReserved() {
+        if (System.getProperty("ft") == null) {
+            BookingRequest request = getBookingRequest(cardWithFunds);
+
+            Response response = makeRequest(
+                    Request.POST().contentTypeApplicationJson().payload(request).url(
+                            testServerUrl().path(BASE_URL)));
+
+            assertThat(response.httpStatus, is(200));
+            verifyCache(1L);
+
+            response = makeRequest(
+                    Request.POST().contentTypeApplicationJson().payload(request).url(
+                            testServerUrl().path(BASE_URL)));
+            assertThat(response.httpStatus, is(403));
+        } else {
+            System.out.println("Test is ignored as there is no connection to Chalmers server");
+        }
+    }
+
     private void assertBookingSizeInDB(final int expectedSize) {
         BookingDAO bookingDAO = new BookingDAO();
         assertThat(bookingDAO.find().asList().size(), is(expectedSize));
