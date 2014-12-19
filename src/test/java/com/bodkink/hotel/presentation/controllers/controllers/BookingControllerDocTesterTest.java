@@ -58,9 +58,11 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
 
     @After
     public void tearDown() throws Exception {
-        AdministratorRequires.instance().removeCreditCard(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
-                cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
-                cardWithFunds.getLastName());
+        if (System.getProperty("ft") == null) {
+            AdministratorRequires.instance().removeCreditCard(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
+                    cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
+                    cardWithFunds.getLastName());
+        }
     }
 
     @Test
