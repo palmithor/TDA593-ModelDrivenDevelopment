@@ -6,3 +6,6 @@ jdk:
 #notifications:
 #  email: sk@svenkubiak.com
 
+branches:
+  only:
+    - impl2
