@@ -92,7 +92,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
     }
 
     @Test
-    public void testBookingNoFunds() {
+    public void testBookingInsufficientFunds() {
         if (System.getProperty("ft") == null) {
             BookingRequest request = getBookingRequest(cardWithNoFunds);
 
