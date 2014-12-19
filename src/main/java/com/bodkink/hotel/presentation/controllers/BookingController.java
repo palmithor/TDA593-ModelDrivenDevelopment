@@ -61,7 +61,11 @@ public class BookingController {
 
     public Result confirm(final BookingMessage bookingMessage) {
         Receipt r = bookingManagement.confirmAndPay(MessageToModelConverter.convertBooking(bookingMessage));
+        if (r == null) {
+            return Results.forbidden().json().renderRaw("".getBytes());
+        }
         ReceiptMessage receipt = ModelToMessageConverter.convertReceipt(r);
+
         return Results.json().render(receipt);
     }
 

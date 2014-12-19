@@ -32,9 +32,10 @@ import static org.junit.Assume.assumeTrue;
  */
 public class BookingControllerDocTesterTest extends NinjaDocTester {
 
-    public static final AddressMessage ADDRESS = new AddressMessage("Sweden", "Gothenburg", "45475", "Apt. 2", "Street 1");
-    public static final CardInformationMessage CARD_INFORMATION = new CardInformationMessage("4000000000000002", "123", 10, 16, "Olof", "Palme",
-            ADDRESS);
+    public final AddressMessage address = new AddressMessage("Sweden", "Gothenburg", "45475", "Apt. 2", "Street 1");
+    public final CardInformationMessage cardWithFunds = new CardInformationMessage("4000000000000002", "123", 10, 16, "Olof", "Palme", address);
+    public final CardInformationMessage cardWithNoFunds = new CardInformationMessage("378282246310005", "123", 10, 16, "Olof", "Palme", address);
+
     String BASE_URL = "/api/booking";
 
     @Before
@@ -43,24 +44,28 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         Injector injector = getInjector();
         StartupActions startupActions = injector.getInstance(StartupActions.class);
         startupActions.generateDummyDataWhenInDev();
-        AdministratorRequires.instance().addCreditCard(CARD_INFORMATION.getCcNumber(), CARD_INFORMATION.getCcv(),
-                CARD_INFORMATION.getExpiryMonth(), CARD_INFORMATION.getExpiryYear(), CARD_INFORMATION.getFirstName(),
-                CARD_INFORMATION.getLastName());
-        AdministratorRequires.instance().makeDeposit(CARD_INFORMATION.getCcNumber(), CARD_INFORMATION.getCcv(),
-                CARD_INFORMATION.getExpiryMonth(), CARD_INFORMATION.getExpiryYear(), CARD_INFORMATION.getFirstName(),
-                CARD_INFORMATION.getLastName(), 20000);
+        injector.getInstance(BookingCache.class).getCache().invalidateAll();
+        AdministratorRequires.instance().addCreditCard(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
+                cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
+                cardWithFunds.getLastName());
+        AdministratorRequires.instance().addCreditCard(cardWithNoFunds.getCcNumber(), cardWithNoFunds.getCcv(),
+                cardWithNoFunds.getExpiryMonth(), cardWithNoFunds.getExpiryYear(), cardWithNoFunds.getFirstName(),
+                cardWithNoFunds.getLastName());
+        AdministratorRequires.instance().makeDeposit(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
+                cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
+                cardWithFunds.getLastName(), 20000);
     }
 
     @After
     public void tearDown() throws Exception {
-        AdministratorRequires.instance().removeCreditCard(CARD_INFORMATION.getCcNumber(), CARD_INFORMATION.getCcv(),
-                CARD_INFORMATION.getExpiryMonth(), CARD_INFORMATION.getExpiryYear(), CARD_INFORMATION.getFirstName(),
-                CARD_INFORMATION.getLastName());
+        AdministratorRequires.instance().removeCreditCard(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
+                cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
+                cardWithFunds.getLastName());
     }
 
     @Test
     public void testSuccessfulBooking() {
-        BookingRequest request = getBookingRequest();
+        BookingRequest request = getBookingRequest(cardWithFunds);
 
         Response response = makeRequest(
                 Request.POST().contentTypeApplicationJson().payload(request).url(
@@ -77,12 +82,31 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         assertThat(receipt, is(notNullValue()));
         assertThat(receipt.getItems().size(), is(1));
         verifyCache(0L);
-        assertThatBookingIsSaved();
+        assertBookingSizeInDB(1);
     }
 
-    private void assertThatBookingIsSaved() {
+    @Test
+    public void testBookingNoFunds() {
+        BookingRequest request = getBookingRequest(cardWithNoFunds);
+
+        Response response = makeRequest(
+                Request.POST().contentTypeApplicationJson().payload(request).url(
+                        testServerUrl().path(BASE_URL)));
+
+        assertThat(response.httpStatus, is(200));
+        verifyCache(1L);
+
+        response = makeRequest(
+                Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
+                        testServerUrl().path(BASE_URL + "/confirm")));
+        assertThat(response.httpStatus, is(403));
+        assertThat(response.payload, is(""));
+        assertBookingSizeInDB(0);
+    }
+
+    private void assertBookingSizeInDB(final int expectedSize) {
         BookingDAO bookingDAO = new BookingDAO();
-        assertThat(bookingDAO.find().asList().size(), is(1));
+        assertThat(bookingDAO.find().asList().size(), is(expectedSize));
     }
 
     private void verifyCache(final Long expectedSize) {
@@ -92,15 +116,15 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
     }
 
 
-    private BookingRequest getBookingRequest() {
+    private BookingRequest getBookingRequest(final CardInformationMessage cardInformation) {
         RoomDAO roomDAO = new RoomDAO();
         List<RoomMessage> rooms = new ArrayList<>();
-         RoomEntity roomEntity = roomDAO.find().asList().get(0);
+        RoomEntity roomEntity = roomDAO.find().asList().get(0);
         rooms.add(new RoomMessage(roomEntity.getId().toString(), roomEntity.getNumber(), roomEntity.getDescription(), roomEntity.getAllowedGuests(), roomEntity.getSize(),
                 roomEntity.getNightPrice(), roomEntity.getPictures(), null, null, null));
 
         CustomerMessage customerMessage = new CustomerMessage("Olof", "Palme", 1927, "+46707235555", "olof.palme@mail.com", new ArrayList<>(),
-                CARD_INFORMATION);
+                cardInformation);
 
         return new BookingRequest(new Date(), DateTime.now().plusDays(1).toDate(),
                 customerMessage, new ArrayList<>(), rooms);
