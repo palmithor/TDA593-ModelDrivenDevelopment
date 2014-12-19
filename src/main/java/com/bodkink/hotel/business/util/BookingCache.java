@@ -25,7 +25,6 @@ public class BookingCache implements IBookingCache {
         this.cache =
                 CacheBuilder.newBuilder()
                         .expireAfterWrite(3, TimeUnit.MINUTES)
-                        .refreshAfterWrite(100, TimeUnit.MILLISECONDS)
                         .removalListener(new BookingRemovalListener())
                         .build(new CacheLoader<String, Booking>() {
                                    @Override
@@ -41,7 +40,6 @@ public class BookingCache implements IBookingCache {
         this.cache =
                 CacheBuilder.newBuilder()
                         .expireAfterWrite(expiry, timeUnit)
-                        .refreshAfterWrite(100, TimeUnit.MILLISECONDS)
                         .removalListener(new BookingRemovalListener())
                         .build(new CacheLoader<String, Booking>() {
                                    @Override

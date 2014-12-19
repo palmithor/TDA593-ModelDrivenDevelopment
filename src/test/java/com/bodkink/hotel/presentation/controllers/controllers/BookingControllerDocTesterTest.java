@@ -21,6 +21,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assume.assumeTrue;
 
 
 /**
@@ -33,6 +34,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
 
     @Before
     public void setUp() throws Exception {
+        assumeTrue(System.getProperty("ft") == null);
         Injector injector = getInjector();
         StartupActions startupActions = injector.getInstance(StartupActions.class);
         startupActions.generateDummyDataWhenInDev();
@@ -52,6 +54,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         response = makeRequest(
                 Request.POST().contentTypeApplicationJson().payload(response.payloadAs(BookingMessage.class)).url(
                         testServerUrl().path(BASE_URL + "/confirm")));
+        assertThat(response.httpStatus, is(200));
         ReceiptMessage receipt = response.payloadAs(ReceiptMessage.class);
         assertThat(receipt, is(notNullValue()));
         verifyCache(0L);

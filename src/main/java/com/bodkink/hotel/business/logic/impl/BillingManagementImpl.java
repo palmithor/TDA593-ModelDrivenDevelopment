@@ -14,6 +14,8 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires;
 
 import java.lang.reflect.InvocationTargetException;
@@ -33,6 +35,8 @@ import java.util.Map;
  * @generated
  */
 public class BillingManagementImpl extends MinimalEObjectImpl.Container implements BillingManagement {
+
+    private static final Logger logger = LoggerFactory.getLogger(BillingManagementImpl.class);
 
     @Inject
     IRoomReservationService roomReservationService;
@@ -228,16 +232,6 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
 
         BigDecimal amount = BigDecimal.ZERO;
 
-        // Add all unpaid room reservations to the bill
-        for (RoomReservation room : booking.getRoomReservation()) {
-            if (room.getRoomBill() != null && room.getRoomBill().getBillStatusEnum() != BillStatusEnum.PAID) {
-                // amount = amount + RommBill price
-                amount = amount.add(getRoomBillPrice(room.getRoomBill()));
-            }
-
-            // amount = amount + price*nights
-            amount = amount.add(room.getRoom().getNightPrice().multiply(new BigDecimal(daysBetween(room.getStartDate(), room.getEndDate()))));
-        }
 
         BigDecimal percentageToPay = BigDecimal.ZERO;
         for (BookingBill b : booking.getBookingBill()) {
@@ -250,7 +244,17 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
             }
         }
 
-        amount = amount.multiply(percentageToPay);
+        // Add all unpaid room reservations to the bill
+        for (RoomReservation room : booking.getRoomReservation()) {
+            if (room.getRoomBill() != null && room.getRoomBill().getBillStatusEnum() != BillStatusEnum.PAID) {
+                // amount = amount + RommBill price
+                amount = amount.add(getRoomBillPrice(room.getRoomBill()));
+            }
+
+            // amount = amount + price*nights
+            amount = amount.add(room.getRoom().getNightPrice().multiply(new BigDecimal(daysBetween(room.getStartDate(), room.getEndDate())))).multiply(percentageToPay);
+        }
+
         // Make the payment and if success save new bill info.
         boolean paid = makePayment(booking.getCustomer().getCardInformation(), amount);
         if (paid) {
@@ -324,8 +328,9 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
         try {
             success = CustomerRequires.instance().makePayment(c.getCcNumber(), c.getCcv(), c.getExpiryMonth(),
                     c.getExpiryYear(), c.getFirstName(), c.getLastName(), amount.doubleValue());
-
+            logger.trace("makePayment isSuccess = ", success);
         } catch (javax.xml.soap.SOAPException e) {
+            logger.warn("Error making payment to web service.", e);
             return false;
         }
         return success;

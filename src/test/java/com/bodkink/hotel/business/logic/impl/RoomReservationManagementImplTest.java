@@ -11,8 +11,8 @@ import com.bodkink.hotel.persistence.IRoomReservationService;
 import com.bodkink.hotel.persistence.model.RoomEntity;
 import com.bodkink.hotel.persistence.model.RoomReservationEntity;
 import com.bodkink.hotel.test.DBTestDataMock;
-import com.bodkink.hotel.util.DateUtil;
 import org.bson.types.ObjectId;
+import org.joda.time.DateTime;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,9 +20,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.core.Is.is;
@@ -109,7 +107,7 @@ public class RoomReservationManagementImplTest {
         });
 
         Room room = EntityToModelConverter.convertRoom(roomEntities.get(0));
-
+        roomReservationManagement.create(room, DateTime.now().toDate(), DateTime.now().plusDays(1).toDate(), RoomReservationType.IN_SERVICE);
         assertThat(roomReservationEntities.size(), is(31));
     }
 
