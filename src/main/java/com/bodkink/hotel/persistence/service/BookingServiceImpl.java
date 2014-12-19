@@ -32,8 +32,6 @@ public class BookingServiceImpl implements IBookingService {
     @Inject
     CardInformationDAO cardInformationDAO;
 
-    @Inject
-    AddressDAO addressDAO;
 
     @Override
     public BookingEntity persist(final BookingEntity booking) {
@@ -69,7 +67,6 @@ public class BookingServiceImpl implements IBookingService {
     private void persistCustomer(BookingEntity booking) {
         if (booking.getCustomer().getId() == null) {
             if (booking.getCustomer().getCardInformation() != null) {
-                addressDAO.save(booking.getCustomer().getCardInformation().getAddress());
                 cardInformationDAO.save(booking.getCustomer().getCardInformation());
             }
             customerDAO.save(booking.getCustomer());

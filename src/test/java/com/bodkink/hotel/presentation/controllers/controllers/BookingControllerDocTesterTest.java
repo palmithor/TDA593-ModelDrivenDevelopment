@@ -11,8 +11,10 @@ import ninja.NinjaDocTester;
 import org.doctester.testbrowser.Request;
 import org.doctester.testbrowser.Response;
 import org.joda.time.DateTime;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -30,6 +32,9 @@ import static org.junit.Assume.assumeTrue;
  */
 public class BookingControllerDocTesterTest extends NinjaDocTester {
 
+    public static final AddressMessage ADDRESS = new AddressMessage("Sweden", "Gothenburg", "45475", "Apt. 2", "Street 1");
+    public static final CardInformationMessage CARD_INFORMATION = new CardInformationMessage("4000000000000002", "123", 10, 16, "Olof", "Palme",
+            ADDRESS);
     String BASE_URL = "/api/booking";
 
     @Before
@@ -38,10 +43,23 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         Injector injector = getInjector();
         StartupActions startupActions = injector.getInstance(StartupActions.class);
         startupActions.generateDummyDataWhenInDev();
+        AdministratorRequires.instance().addCreditCard(CARD_INFORMATION.getCcNumber(), CARD_INFORMATION.getCcv(),
+                CARD_INFORMATION.getExpiryMonth(), CARD_INFORMATION.getExpiryYear(), CARD_INFORMATION.getFirstName(),
+                CARD_INFORMATION.getLastName());
+        AdministratorRequires.instance().makeDeposit(CARD_INFORMATION.getCcNumber(), CARD_INFORMATION.getCcv(),
+                CARD_INFORMATION.getExpiryMonth(), CARD_INFORMATION.getExpiryYear(), CARD_INFORMATION.getFirstName(),
+                CARD_INFORMATION.getLastName(), 20000);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        AdministratorRequires.instance().removeCreditCard(CARD_INFORMATION.getCcNumber(), CARD_INFORMATION.getCcv(),
+                CARD_INFORMATION.getExpiryMonth(), CARD_INFORMATION.getExpiryYear(), CARD_INFORMATION.getFirstName(),
+                CARD_INFORMATION.getLastName());
     }
 
     @Test
-    public void testCreateBooking() {
+    public void testSuccessfulBooking() {
         BookingRequest request = getBookingRequest();
 
         Response response = makeRequest(
@@ -57,6 +75,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         assertThat(response.httpStatus, is(200));
         ReceiptMessage receipt = response.payloadAs(ReceiptMessage.class);
         assertThat(receipt, is(notNullValue()));
+        assertThat(receipt.getItems().size(), is(1));
         verifyCache(0L);
         assertThatBookingIsSaved();
     }
@@ -78,10 +97,10 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         List<RoomMessage> rooms = new ArrayList<>();
          RoomEntity roomEntity = roomDAO.find().asList().get(0);
         rooms.add(new RoomMessage(roomEntity.getId().toString(), roomEntity.getNumber(), roomEntity.getDescription(), roomEntity.getAllowedGuests(), roomEntity.getSize(),
-                roomEntity.getNightPrice(), roomEntity.getPictures(), null, null, null)); // TODO CONVERTER FOR THESE THREE
+                roomEntity.getNightPrice(), roomEntity.getPictures(), null, null, null));
+
         CustomerMessage customerMessage = new CustomerMessage("Olof", "Palme", 1927, "+46707235555", "olof.palme@mail.com", new ArrayList<>(),
-                new CardInformationMessage("4000000000000002", "123", 10, 2014, "Olof", "Palme",
-                        new AddressMessage("Sweden", "Gothenburg", "45475", "Apt. 2", "Street 1")));
+                CARD_INFORMATION);
 
         return new BookingRequest(new Date(), DateTime.now().plusDays(1).toDate(),
                 customerMessage, new ArrayList<>(), rooms);

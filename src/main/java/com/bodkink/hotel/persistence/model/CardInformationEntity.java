@@ -1,12 +1,9 @@
 package com.bodkink.hotel.persistence.model;
 
-import com.bodkink.hotel.business.model.Address;
 import org.bson.types.ObjectId;
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
-import org.mongodb.morphia.annotations.Reference;
-
-import java.util.Date;
 
 /**
  * @author palmithor
@@ -24,7 +21,7 @@ public class CardInformationEntity {
     private final String firstName;
     private final String lastName;
 
-    @Reference
+    @Embedded
     private final AddressEntity address;
 
     public CardInformationEntity() {

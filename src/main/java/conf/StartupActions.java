@@ -52,6 +52,7 @@ public class StartupActions {
             dropAndCreateDefaultBillableItems();
             dropAndCreateDefaultServices();
             dropRoomReservation();
+            dropBookings();
         }
     }
 
@@ -121,6 +122,12 @@ public class StartupActions {
 
     private void dropRoomReservation() {
         roomReservationDAO.getDatastore().getDB().getCollection(CollectionNames.ROOM_RESERVATION).drop();
+    }
+
+    private void dropBookings() {
+        roomReservationDAO.getDatastore().getDB().getCollection(CollectionNames.BOOKING).drop();
+        roomReservationDAO.getDatastore().getDB().getCollection(CollectionNames.BOOKING_BILL).drop();
+        roomReservationDAO.getDatastore().getDB().getCollection(CollectionNames.ROOM_BILL).drop();
     }
 
     private void dropAndCreateDefaultBillableItems() {

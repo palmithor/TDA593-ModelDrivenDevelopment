@@ -17,4 +17,8 @@ public class ReceiptMessage {
     public ReceiptMessage(List<ReceiptItem> items) {
         this.items = items;
     }
+
+    public List<ReceiptItem> getItems() {
+        return items;
+    }
 }

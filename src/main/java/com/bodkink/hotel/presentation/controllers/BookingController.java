@@ -10,6 +10,7 @@ import com.bodkink.hotel.persistence.dao.RoomDAO;
 import com.bodkink.hotel.persistence.dao.ServiceDAO;
 import com.bodkink.hotel.presentation.message.BookingMessage;
 import com.bodkink.hotel.presentation.message.BookingRequest;
+import com.bodkink.hotel.presentation.message.ReceiptMessage;
 import com.bodkink.hotel.util.MessageToModelConverter;
 import com.bodkink.hotel.util.ModelToMessageConverter;
 import com.google.inject.Inject;
@@ -60,7 +61,8 @@ public class BookingController {
 
     public Result confirm(final BookingMessage bookingMessage) {
         Receipt r = bookingManagement.confirmAndPay(MessageToModelConverter.convertBooking(bookingMessage));
-        return Results.json().render(ModelToMessageConverter.convertReceipt(r));
+        ReceiptMessage receipt = ModelToMessageConverter.convertReceipt(r);
+        return Results.json().render(receipt);
     }
 
 }

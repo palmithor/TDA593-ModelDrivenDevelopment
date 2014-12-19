@@ -2,6 +2,7 @@ package com.bodkink.hotel.business.util;
 
 import com.bodkink.hotel.business.model.*;
 import com.bodkink.hotel.persistence.model.*;
+import org.apache.commons.lang.StringUtils;
 import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
@@ -34,18 +35,18 @@ public class ModelToEntityConverter {
         model.getBookingBill().forEach(bill -> {
             bookingBills.add(convertBookingBill(bill));
         });
-        return new BookingEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+        return new BookingEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null,
                 convertCustomer(model.getCustomer()), services, roomReservations, bookingBills);
     }
 
     public static CustomerEntity convertCustomer(final Customer model) {
-        return new CustomerEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+        return new CustomerEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null,
                 model.getFirstName(), model.getSurname(), model.getBirthYear(), model.getPhone(),
                 model.getEmail(), model.getNotes(), convertCardInformation(model.getCardInformation()));
     }
 
     public static ServiceEntity convertService(final Service model) {
-        return new ServiceEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+        return new ServiceEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null,
                 model.getTitle(), model.getDescription(), model.getPrice());
     }
 
@@ -55,7 +56,7 @@ public class ModelToEntityConverter {
             guests.add(convertGuest(guest));
         });
 
-        return new RoomReservationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getStartDate(),
+        return new RoomReservationEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, model.getStartDate(),
                 model.getEndDate(), model.getRoomReservationType(), convertRoom(model.getRoom()),
                 guests, model.getRoomBill() != null ? convertRoomBill(model.getRoomBill()) : null, model.getReservationStatusEnum());
     }
@@ -65,7 +66,7 @@ public class ModelToEntityConverter {
             Map<ObjectId, Integer> bedTypeCount = new HashMap<>(model.getBedType().size());
 
             model.getBedType().forEach(bedTypeModel -> {
-                bedTypeCount.put(model.getId() != null ? new ObjectId(model.getId()) : null, 1);
+                bedTypeCount.put(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, 1);
             });
 
             List<RoomExtraEntity> roomExtras = new ArrayList<>(model.getRoomExtra().size());
@@ -73,7 +74,7 @@ public class ModelToEntityConverter {
                 roomExtras.add(convertRoomExtra(roomExtraModel));
             });
 
-            return new RoomEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getNumber(), model.getDescription(),
+            return new RoomEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, model.getNumber(), model.getDescription(),
                     model.getAllowedGuests(), model.getSize(), model.getNightPrice(), model.getPictures(),
                     convertClassification(model.getClassification()), roomExtras, bedTypeCount);
         }
@@ -81,20 +82,20 @@ public class ModelToEntityConverter {
     }
 
     public static ClassificationEntity convertClassification(final Classification model) {
-        return new ClassificationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getTitle(), model.getDescription());
+        return new ClassificationEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, model.getTitle(), model.getDescription());
     }
 
     public static BedTypeEntity convertBedType(final BedType model) {
-        return new BedTypeEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getPlaces(), model.getWidth(),
+        return new BedTypeEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, model.getPlaces(), model.getWidth(),
                 model.getLength(), model.getName());
     }
 
     public static RoomExtraEntity convertRoomExtra(final RoomExtra model) {
-        return new RoomExtraEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getTitle(), model.getDescription());
+        return new RoomExtraEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, model.getTitle(), model.getDescription());
     }
 
     public static GuestEntity convertGuest(final Guest model) {
-        return new GuestEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getFirstName(),
+        return new GuestEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, model.getFirstName(),
                 model.getSurname(), model.getBirthYear());
     }
 
@@ -104,7 +105,7 @@ public class ModelToEntityConverter {
             model.getBillableItem().forEach(item -> {
                 billableItems.add(convertBillableItem(item));
             });
-            return new RoomBillEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+            return new RoomBillEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null,
                     convertCardInformation(model.getCardInformation()), billableItems, model.getBillStatusEnum());
         }
         return null;
@@ -112,26 +113,26 @@ public class ModelToEntityConverter {
 
     public static CardInformationEntity convertCardInformation(final CardInformation model) {
         if (model != null) {
-            return new CardInformationEntity(model.getId() != null ? new ObjectId(model.getId()) : null, model.getCcNumber(), model.getCcv(), model.getExpiryMonth(), model.getExpiryYear(), model.getFirstName(), model.getLastName(), ModelToEntityConverter.convertAddress(model.getAddress()));
+            return new CardInformationEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null, model.getCcNumber(), model.getCcv(), model.getExpiryMonth(), model.getExpiryYear(), model.getFirstName(), model.getLastName(), ModelToEntityConverter.convertAddress(model.getAddress()));
         } else {
             return null;
         }
     }
 
     public static AddressEntity convertAddress(final Address model) {
-        return new AddressEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+        return new AddressEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null,
                 model.getCountry(), model.getCity(), model.getZipCode(), model.getAddressLine2(),
                 model.getAddressLine1());
     }
 
     public static BillableItemEntity convertBillableItem(final BillableItem model) {
-        return new BillableItemEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+        return new BillableItemEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null,
                 model.getName(), model.getPrice());
     }
 
 
     public static BookingBillEntity convertBookingBill(final BookingBill model) {
-        return new BookingBillEntity(model.getId() != null ? new ObjectId(model.getId()) : null,
+        return new BookingBillEntity(StringUtils.isNotBlank(model.getId()) ? new ObjectId(model.getId()) : null,
                 convertCardInformation(model.getCardInformation()), model.getBillStatusEnum(),
                 model.getBookingBillType());
     }

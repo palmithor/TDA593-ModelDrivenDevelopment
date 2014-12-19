@@ -228,8 +228,6 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated NOT
      */
     public boolean makePayment(Booking booking) {
-        BookingBill bill = null;
-
         BigDecimal amount = BigDecimal.ZERO;
 
 
@@ -258,8 +256,10 @@ public class BillingManagementImpl extends MinimalEObjectImpl.Container implemen
         // Make the payment and if success save new bill info.
         boolean paid = makePayment(booking.getCustomer().getCardInformation(), amount);
         if (paid) {
-            bill.setBillStatusEnum(BillStatusEnum.PAID);
-            bookingBillService.persist(ModelToEntityConverter.convertBookingBill(bill));
+            for (BookingBill b : booking.getBookingBill()) {
+                b.setBillStatusEnum(BillStatusEnum.PAID);
+                bookingBillService.persist(ModelToEntityConverter.convertBookingBill(b));
+            }
             for (RoomReservation room : booking.getRoomReservation()) {
                 if (room.getRoomBill() != null && room.getRoomBill().getBillStatusEnum() != BillStatusEnum.PAID) {
                     room.getRoomBill().setBillStatusEnum(BillStatusEnum.PAID);
