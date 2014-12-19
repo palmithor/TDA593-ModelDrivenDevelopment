@@ -43,15 +43,17 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         StartupActions startupActions = injector.getInstance(StartupActions.class);
         startupActions.generateDummyDataWhenInDev();
         injector.getInstance(BookingCache.class).getCache().invalidateAll();
-        AdministratorRequires.instance().addCreditCard(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
-                cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
-                cardWithFunds.getLastName());
-        AdministratorRequires.instance().addCreditCard(cardWithNoFunds.getCcNumber(), cardWithNoFunds.getCcv(),
-                cardWithNoFunds.getExpiryMonth(), cardWithNoFunds.getExpiryYear(), cardWithNoFunds.getFirstName(),
-                cardWithNoFunds.getLastName());
-        AdministratorRequires.instance().makeDeposit(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
-                cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
-                cardWithFunds.getLastName(), 20000);
+        if (System.getProperty("ft") == null) {
+            AdministratorRequires.instance().addCreditCard(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
+                    cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
+                    cardWithFunds.getLastName());
+            AdministratorRequires.instance().addCreditCard(cardWithNoFunds.getCcNumber(), cardWithNoFunds.getCcv(),
+                    cardWithNoFunds.getExpiryMonth(), cardWithNoFunds.getExpiryYear(), cardWithNoFunds.getFirstName(),
+                    cardWithNoFunds.getLastName());
+            AdministratorRequires.instance().makeDeposit(cardWithFunds.getCcNumber(), cardWithFunds.getCcv(),
+                    cardWithFunds.getExpiryMonth(), cardWithFunds.getExpiryYear(), cardWithFunds.getFirstName(),
+                    cardWithFunds.getLastName(), 20000);
+        }
     }
 
     @After
