@@ -88,7 +88,10 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated NOT
      */
     public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, Customer customer) {
-        if (DateTime.now().isAfter(new DateTime(start.getTime())) && areAvailable(rooms, start, end)) {
+        DateTime now = DateTime.now();
+        if ((now.isBefore(new DateTime(start.getTime())) ||
+                DateUtil.isSameDay(start, now.toDate())
+        ) && areAvailable(rooms, start, end)) {
             Booking booking = ModelFactory.eINSTANCE.createBooking();
             booking.setId(ObjectId.get().toString());
 

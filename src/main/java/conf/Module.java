@@ -54,6 +54,7 @@ public class Module extends AbstractModule {
         // persistence services
         bind(IRoomService.class).to(RoomServiceImpl.class);
         bind(IServiceService.class).to(ServiceServiceImpl.class);
+        bind(IBillableItemService.class).to(BillableItemServiceImpl.class);
         bind(IBookingService.class).to(BookingServiceImpl.class);
         bind(IRoomExtraService.class).to(RoomExtraServiceImpl.class);
         bind(IBedTypeService.class).to(BedTypeServiceImpl.class);

@@ -17,7 +17,6 @@ import org.junit.Test;
 import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -68,7 +67,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
     @Test
     public void testSuccessfulBooking() {
         if (System.getProperty("ft") == null) {
-            BookingRequest request = getBookingRequest(cardWithFunds);
+            BookingRequest request = getBookingRequest(cardWithFunds, DateTime.now(), DateTime.now().plusDays(1));
 
             Response response = makeRequest(
                     Request.POST().contentTypeApplicationJson().payload(request).url(
@@ -94,7 +93,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
     @Test
     public void testBookingInsufficientFunds() {
         if (System.getProperty("ft") == null) {
-            BookingRequest request = getBookingRequest(cardWithNoFunds);
+            BookingRequest request = getBookingRequest(cardWithNoFunds, DateTime.now(), DateTime.now().plusDays(1));
 
             Response response = makeRequest(
                     Request.POST().contentTypeApplicationJson().payload(request).url(
@@ -117,7 +116,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
     @Test
     public void testBookingRoomAlreadyReserved() {
         if (System.getProperty("ft") == null) {
-            BookingRequest request = getBookingRequest(cardWithFunds);
+            BookingRequest request = getBookingRequest(cardWithFunds, DateTime.now(), DateTime.now().plusDays(1));
 
             Response response = makeRequest(
                     Request.POST().contentTypeApplicationJson().payload(request).url(
@@ -135,6 +134,22 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         }
     }
 
+    @Test
+    public void testCreateBookingBackInTime() {
+        if (System.getProperty("ft") == null) {
+            BookingRequest request = getBookingRequest(cardWithFunds, DateTime.now().minusDays(1), DateTime.now().plusDays(1));
+
+            Response response = makeRequest(
+                    Request.POST().contentTypeApplicationJson().payload(request).url(
+                            testServerUrl().path(BASE_URL)));
+
+            assertThat(response.httpStatus, is(403));
+            verifyCache(0L);
+        } else {
+            System.out.println("Test is ignored as there is no connection to Chalmers server");
+        }
+    }
+
     private void assertBookingSizeInDB(final int expectedSize) {
         BookingDAO bookingDAO = new BookingDAO();
         assertThat(bookingDAO.find().asList().size(), is(expectedSize));
@@ -147,7 +162,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
     }
 
 
-    private BookingRequest getBookingRequest(final CardInformationMessage cardInformation) {
+    private BookingRequest getBookingRequest(final CardInformationMessage cardInformation, DateTime start, DateTime end) {
         RoomDAO roomDAO = new RoomDAO();
         List<RoomMessage> rooms = new ArrayList<>();
         RoomEntity roomEntity = roomDAO.find().asList().get(0);
@@ -157,7 +172,7 @@ public class BookingControllerDocTesterTest extends NinjaDocTester {
         CustomerMessage customerMessage = new CustomerMessage("Olof", "Palme", 1927, "+46707235555", "olof.palme@mail.com", new ArrayList<>(),
                 cardInformation);
 
-        return new BookingRequest(new Date(), DateTime.now().plusDays(1).toDate(),
+        return new BookingRequest(start.toDate(), end.toDate(),
                 customerMessage, new ArrayList<>(), rooms);
     }
 
