@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -87,7 +88,7 @@ public class BookingManagementImpl extends MinimalEObjectImpl.Container implemen
      * @generated NOT
      */
     public Booking create(Date start, Date end, EList<Room> rooms, EList<Service> services, Customer customer) {
-        if (areAvailable(rooms, start, end)) {
+        if (DateTime.now().isAfter(new DateTime(start.getTime())) && areAvailable(rooms, start, end)) {
             Booking booking = ModelFactory.eINSTANCE.createBooking();
             booking.setId(ObjectId.get().toString());
 
