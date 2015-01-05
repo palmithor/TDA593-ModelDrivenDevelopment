@@ -157,13 +157,49 @@ public interface BusinessPackage extends EPackage {
 	int IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRAS = 2;
 
 	/**
+	 * The operation id for the '<em>Create Room Extra Template</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA_TEMPLATE__STRING_ELIST = 3;
+
+	/**
+	 * The operation id for the '<em>Edit Room Extra Template</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_EXTRA_MANAGEMENT___EDIT_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE = 4;
+
+	/**
+	 * The operation id for the '<em>Delete Room Extra Template</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_EXTRA_MANAGEMENT___DELETE_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE = 5;
+
+	/**
+	 * The operation id for the '<em>List Room Extra Templates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRA_TEMPLATES = 6;
+
+	/**
 	 * The number of operations of the '<em>IRoom Extra Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_EXTRA_MANAGEMENT_OPERATION_COUNT = 3;
+	int IROOM_EXTRA_MANAGEMENT_OPERATION_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.IRoomManagement <em>IRoom Management</em>}' class.
@@ -194,13 +230,22 @@ public interface BusinessPackage extends EPackage {
 	int IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST = 0;
 
 	/**
+	 * The operation id for the '<em>Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRATEMPLATE = 1;
+
+	/**
 	 * The operation id for the '<em>List Rooms</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT___LIST_ROOMS = 1;
+	int IROOM_MANAGEMENT___LIST_ROOMS = 2;
 
 	/**
 	 * The operation id for the '<em>Edit Room</em>' operation.
@@ -209,7 +254,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT___EDIT_ROOM__ROOM = 2;
+	int IROOM_MANAGEMENT___EDIT_ROOM__ROOM = 3;
 
 	/**
 	 * The operation id for the '<em>Disable Room</em>' operation.
@@ -218,7 +263,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT___DISABLE_ROOM__STRING = 3;
+	int IROOM_MANAGEMENT___DISABLE_ROOM__STRING = 4;
 
 	/**
 	 * The operation id for the '<em>Find Room</em>' operation.
@@ -227,7 +272,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT___FIND_ROOM__STRING = 4;
+	int IROOM_MANAGEMENT___FIND_ROOM__STRING = 5;
 
 	/**
 	 * The number of operations of the '<em>IRoom Management</em>' class.
@@ -236,7 +281,7 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IROOM_MANAGEMENT_OPERATION_COUNT = 5;
+	int IROOM_MANAGEMENT_OPERATION_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link com.bodkink.hotel.business.IRoomReservationManagement <em>IRoom Reservation Management</em>}' class.
@@ -922,6 +967,46 @@ public interface BusinessPackage extends EPackage {
 	EOperation getIRoomExtraManagement__ListRoomExtras();
 
 	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomExtraManagement#createRoomExtraTemplate(java.lang.String, org.eclipse.emf.common.util.EList) <em>Create Room Extra Template</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Room Extra Template</em>' operation.
+	 * @see com.bodkink.hotel.business.IRoomExtraManagement#createRoomExtraTemplate(java.lang.String, org.eclipse.emf.common.util.EList)
+	 * @generated
+	 */
+	EOperation getIRoomExtraManagement__CreateRoomExtraTemplate__String_EList();
+
+	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomExtraManagement#editRoomExtraTemplate(com.bodkink.hotel.business.model.RoomExtraTemplate) <em>Edit Room Extra Template</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Edit Room Extra Template</em>' operation.
+	 * @see com.bodkink.hotel.business.IRoomExtraManagement#editRoomExtraTemplate(com.bodkink.hotel.business.model.RoomExtraTemplate)
+	 * @generated
+	 */
+	EOperation getIRoomExtraManagement__EditRoomExtraTemplate__RoomExtraTemplate();
+
+	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomExtraManagement#deleteRoomExtraTemplate(com.bodkink.hotel.business.model.RoomExtraTemplate) <em>Delete Room Extra Template</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Delete Room Extra Template</em>' operation.
+	 * @see com.bodkink.hotel.business.IRoomExtraManagement#deleteRoomExtraTemplate(com.bodkink.hotel.business.model.RoomExtraTemplate)
+	 * @generated
+	 */
+	EOperation getIRoomExtraManagement__DeleteRoomExtraTemplate__RoomExtraTemplate();
+
+	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomExtraManagement#listRoomExtraTemplates() <em>List Room Extra Templates</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>List Room Extra Templates</em>' operation.
+	 * @see com.bodkink.hotel.business.IRoomExtraManagement#listRoomExtraTemplates()
+	 * @generated
+	 */
+	EOperation getIRoomExtraManagement__ListRoomExtraTemplates();
+
+	/**
 	 * Returns the meta object for class '{@link com.bodkink.hotel.business.IRoomManagement <em>IRoom Management</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -940,6 +1025,16 @@ public interface BusinessPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_EList();
+
+	/**
+	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#create(java.lang.String, java.lang.String, int, java.math.BigDecimal, java.math.BigDecimal, java.lang.String, com.bodkink.hotel.business.model.Classification, java.util.Map, com.bodkink.hotel.business.model.RoomExtraTemplate) <em>Create</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create</em>' operation.
+	 * @see com.bodkink.hotel.business.IRoomManagement#create(java.lang.String, java.lang.String, int, java.math.BigDecimal, java.math.BigDecimal, java.lang.String, com.bodkink.hotel.business.model.Classification, java.util.Map, com.bodkink.hotel.business.model.RoomExtraTemplate)
+	 * @generated
+	 */
+	EOperation getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_RoomExtraTemplate();
 
 	/**
 	 * Returns the meta object for the '{@link com.bodkink.hotel.business.IRoomManagement#listRooms() <em>List Rooms</em>}' operation.
@@ -1573,6 +1668,38 @@ public interface BusinessPackage extends EPackage {
 		EOperation IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRAS = eINSTANCE.getIRoomExtraManagement__ListRoomExtras();
 
 		/**
+		 * The meta object literal for the '<em><b>Create Room Extra Template</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA_TEMPLATE__STRING_ELIST = eINSTANCE.getIRoomExtraManagement__CreateRoomExtraTemplate__String_EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Edit Room Extra Template</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_EXTRA_MANAGEMENT___EDIT_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE = eINSTANCE.getIRoomExtraManagement__EditRoomExtraTemplate__RoomExtraTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>Delete Room Extra Template</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_EXTRA_MANAGEMENT___DELETE_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE = eINSTANCE.getIRoomExtraManagement__DeleteRoomExtraTemplate__RoomExtraTemplate();
+
+		/**
+		 * The meta object literal for the '<em><b>List Room Extra Templates</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRA_TEMPLATES = eINSTANCE.getIRoomExtraManagement__ListRoomExtraTemplates();
+
+		/**
 		 * The meta object literal for the '{@link com.bodkink.hotel.business.IRoomManagement <em>IRoom Management</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1589,6 +1716,14 @@ public interface BusinessPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST = eINSTANCE.getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_EList();
+
+		/**
+		 * The meta object literal for the '<em><b>Create</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRATEMPLATE = eINSTANCE.getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_RoomExtraTemplate();
 
 		/**
 		 * The meta object literal for the '<em><b>List Rooms</b></em>' operation.

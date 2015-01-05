@@ -4,18 +4,23 @@ package com.bodkink.hotel.business.logic.impl;
 
 import com.bodkink.hotel.business.logic.LogicPackage;
 import com.bodkink.hotel.business.logic.RoomExtraManagement;
+
 import com.bodkink.hotel.business.model.RoomExtra;
+import com.bodkink.hotel.business.model.RoomExtraTemplate;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
+
 import com.bodkink.hotel.business.util.EntityToModelConverter;
 import com.bodkink.hotel.persistence.IRoomExtraService;
 import com.bodkink.hotel.persistence.model.RoomExtraEntity;
 import com.google.inject.Inject;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +32,6 @@ import java.util.List;
  * @generated
  */
 public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implements RoomExtraManagement {
-
 	@Inject
 	public IRoomExtraService roomExtraService;
 	/**
@@ -90,7 +94,52 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomExtraTemplate createRoomExtraTemplate(String name, EList<RoomExtra> roomExtras) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomExtraTemplate editRoomExtraTemplate(RoomExtraTemplate roomExtraTemplate) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomExtraTemplate deleteRoomExtraTemplate(RoomExtraTemplate roomExtraTemplate) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<RoomExtraTemplate> listRoomExtraTemplates() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case LogicPackage.ROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA__STRING_STRING:
@@ -99,6 +148,14 @@ public class RoomExtraManagementImpl extends MinimalEObjectImpl.Container implem
 				return editRoomExtra((RoomExtra)arguments.get(0));
 			case LogicPackage.ROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRAS:
 				return listRoomExtras();
+			case LogicPackage.ROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA_TEMPLATE__STRING_ELIST:
+				return createRoomExtraTemplate((String) arguments.get(0), (EList<RoomExtra>)arguments.get(1));
+			case LogicPackage.ROOM_EXTRA_MANAGEMENT___EDIT_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE:
+				return editRoomExtraTemplate((RoomExtraTemplate)arguments.get(0));
+			case LogicPackage.ROOM_EXTRA_MANAGEMENT___DELETE_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE:
+				return deleteRoomExtraTemplate((RoomExtraTemplate)arguments.get(0));
+			case LogicPackage.ROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRA_TEMPLATES:
+				return listRoomExtraTemplates();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

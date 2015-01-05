@@ -460,7 +460,7 @@ public interface ModelPackage extends EPackage {
 	int BOOKING__CUSTOMER = 2;
 
 	/**
-	 * The feature id for the '<em><b>Room Reservation</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Room Reservation</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -469,7 +469,7 @@ public interface ModelPackage extends EPackage {
 	int BOOKING__ROOM_RESERVATION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Service</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Service</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -478,7 +478,7 @@ public interface ModelPackage extends EPackage {
 	int BOOKING__SERVICE = 4;
 
 	/**
-	 * The feature id for the '<em><b>Booking Bill</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Booking Bill</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -633,7 +633,7 @@ public interface ModelPackage extends EPackage {
 	int CUSTOMER__EMAIL = PERSON_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Notes</b></em>' attribute listByDate.
+	 * The feature id for the '<em><b>Notes</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -706,7 +706,7 @@ public interface ModelPackage extends EPackage {
 	int ROOM_RESERVATION__END_DATE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Guest</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Guest</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -897,7 +897,7 @@ public interface ModelPackage extends EPackage {
 	int ROOM__NIGHT_PRICE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Pictures</b></em>' attribute listByDate.
+	 * The feature id for the '<em><b>Pictures</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -915,7 +915,7 @@ public interface ModelPackage extends EPackage {
 	int ROOM__CLASSIFICATION = 7;
 
 	/**
-	 * The feature id for the '<em><b>Bed Type</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Bed Type</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -924,7 +924,7 @@ public interface ModelPackage extends EPackage {
 	int ROOM__BED_TYPE = 8;
 
 	/**
-	 * The feature id for the '<em><b>Room Extra</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Room Extra</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1098,7 +1098,7 @@ public interface ModelPackage extends EPackage {
 	int ROOM_BILL__CARD_INFORMATION = BILL__CARD_INFORMATION;
 
 	/**
-	 * The feature id for the '<em><b>Billable Item</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Billable Item</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1281,7 +1281,7 @@ public interface ModelPackage extends EPackage {
 	int ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Room Extra</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Room Extra</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1318,7 +1318,7 @@ public interface ModelPackage extends EPackage {
 	int RECEIPT = 17;
 
 	/**
-	 * The feature id for the '<em><b>Receipt Item</b></em>' reference listByDate.
+	 * The feature id for the '<em><b>Receipt Item</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1956,10 +1956,10 @@ public interface ModelPackage extends EPackage {
 	EReference getBooking_Customer();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.Booking#getRoomReservation <em>Room Reservation</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.Booking#getRoomReservation <em>Room Reservation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Room Reservation</em>'.
+	 * @return the meta object for the reference list '<em>Room Reservation</em>'.
 	 * @see com.bodkink.hotel.business.model.Booking#getRoomReservation()
 	 * @see #getBooking()
 	 * @generated
@@ -1967,10 +1967,10 @@ public interface ModelPackage extends EPackage {
 	EReference getBooking_RoomReservation();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.Booking#getService <em>Service</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.Booking#getService <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Service</em>'.
+	 * @return the meta object for the reference list '<em>Service</em>'.
 	 * @see com.bodkink.hotel.business.model.Booking#getService()
 	 * @see #getBooking()
 	 * @generated
@@ -1978,10 +1978,10 @@ public interface ModelPackage extends EPackage {
 	EReference getBooking_Service();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.Booking#getBookingBill <em>Booking Bill</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.Booking#getBookingBill <em>Booking Bill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Booking Bill</em>'.
+	 * @return the meta object for the reference list '<em>Booking Bill</em>'.
 	 * @see com.bodkink.hotel.business.model.Booking#getBookingBill()
 	 * @see #getBooking()
 	 * @generated
@@ -2021,10 +2021,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getCustomer_Email();
 
 	/**
-	 * Returns the meta object for the attribute listByDate '{@link com.bodkink.hotel.business.model.Customer#getNotes <em>Notes</em>}'.
+	 * Returns the meta object for the attribute list '{@link com.bodkink.hotel.business.model.Customer#getNotes <em>Notes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute listByDate '<em>Notes</em>'.
+	 * @return the meta object for the attribute list '<em>Notes</em>'.
 	 * @see com.bodkink.hotel.business.model.Customer#getNotes()
 	 * @see #getCustomer()
 	 * @generated
@@ -2140,10 +2140,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getRoomReservation_EndDate();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.RoomReservation#getGuest <em>Guest</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.RoomReservation#getGuest <em>Guest</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Guest</em>'.
+	 * @return the meta object for the reference list '<em>Guest</em>'.
 	 * @see com.bodkink.hotel.business.model.RoomReservation#getGuest()
 	 * @see #getRoomReservation()
 	 * @generated
@@ -2281,10 +2281,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getRoom_NightPrice();
 
 	/**
-	 * Returns the meta object for the attribute listByDate '{@link com.bodkink.hotel.business.model.Room#getPictures <em>Pictures</em>}'.
+	 * Returns the meta object for the attribute list '{@link com.bodkink.hotel.business.model.Room#getPictures <em>Pictures</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute listByDate '<em>Pictures</em>'.
+	 * @return the meta object for the attribute list '<em>Pictures</em>'.
 	 * @see com.bodkink.hotel.business.model.Room#getPictures()
 	 * @see #getRoom()
 	 * @generated
@@ -2303,10 +2303,10 @@ public interface ModelPackage extends EPackage {
 	EReference getRoom_Classification();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.Room#getBedType <em>Bed Type</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.Room#getBedType <em>Bed Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Bed Type</em>'.
+	 * @return the meta object for the reference list '<em>Bed Type</em>'.
 	 * @see com.bodkink.hotel.business.model.Room#getBedType()
 	 * @see #getRoom()
 	 * @generated
@@ -2314,10 +2314,10 @@ public interface ModelPackage extends EPackage {
 	EReference getRoom_BedType();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.Room#getRoomExtra <em>Room Extra</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.Room#getRoomExtra <em>Room Extra</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Room Extra</em>'.
+	 * @return the meta object for the reference list '<em>Room Extra</em>'.
 	 * @see com.bodkink.hotel.business.model.Room#getRoomExtra()
 	 * @see #getRoom()
 	 * @generated
@@ -2421,10 +2421,10 @@ public interface ModelPackage extends EPackage {
 	EClass getRoomBill();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.RoomBill#getBillableItem <em>Billable Item</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.RoomBill#getBillableItem <em>Billable Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Billable Item</em>'.
+	 * @return the meta object for the reference list '<em>Billable Item</em>'.
 	 * @see com.bodkink.hotel.business.model.RoomBill#getBillableItem()
 	 * @see #getRoomBill()
 	 * @generated
@@ -2539,10 +2539,10 @@ public interface ModelPackage extends EPackage {
 	EAttribute getRoomExtraTemplate_TemplateName();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.RoomExtraTemplate#getRoomExtra <em>Room Extra</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.RoomExtraTemplate#getRoomExtra <em>Room Extra</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Room Extra</em>'.
+	 * @return the meta object for the reference list '<em>Room Extra</em>'.
 	 * @see com.bodkink.hotel.business.model.RoomExtraTemplate#getRoomExtra()
 	 * @see #getRoomExtraTemplate()
 	 * @generated
@@ -2560,10 +2560,10 @@ public interface ModelPackage extends EPackage {
 	EClass getReceipt();
 
 	/**
-	 * Returns the meta object for the reference listByDate '{@link com.bodkink.hotel.business.model.Receipt#getReceiptItem <em>Receipt Item</em>}'.
+	 * Returns the meta object for the reference list '{@link com.bodkink.hotel.business.model.Receipt#getReceiptItem <em>Receipt Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference listByDate '<em>Receipt Item</em>'.
+	 * @return the meta object for the reference list '<em>Receipt Item</em>'.
 	 * @see com.bodkink.hotel.business.model.Receipt#getReceiptItem()
 	 * @see #getReceipt()
 	 * @generated
@@ -3057,7 +3057,7 @@ public interface ModelPackage extends EPackage {
 		EReference BOOKING__CUSTOMER = eINSTANCE.getBooking_Customer();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Reservation</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Room Reservation</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3065,7 +3065,7 @@ public interface ModelPackage extends EPackage {
 		EReference BOOKING__ROOM_RESERVATION = eINSTANCE.getBooking_RoomReservation();
 
 		/**
-		 * The meta object literal for the '<em><b>Service</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Service</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3073,7 +3073,7 @@ public interface ModelPackage extends EPackage {
 		EReference BOOKING__SERVICE = eINSTANCE.getBooking_Service();
 
 		/**
-		 * The meta object literal for the '<em><b>Booking Bill</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Booking Bill</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3107,7 +3107,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute CUSTOMER__EMAIL = eINSTANCE.getCustomer_Email();
 
 		/**
-		 * The meta object literal for the '<em><b>Notes</b></em>' attribute listByDate feature.
+		 * The meta object literal for the '<em><b>Notes</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3199,7 +3199,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute ROOM_RESERVATION__END_DATE = eINSTANCE.getRoomReservation_EndDate();
 
 		/**
-		 * The meta object literal for the '<em><b>Guest</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Guest</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3307,7 +3307,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute ROOM__NIGHT_PRICE = eINSTANCE.getRoom_NightPrice();
 
 		/**
-		 * The meta object literal for the '<em><b>Pictures</b></em>' attribute listByDate feature.
+		 * The meta object literal for the '<em><b>Pictures</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3323,7 +3323,7 @@ public interface ModelPackage extends EPackage {
 		EReference ROOM__CLASSIFICATION = eINSTANCE.getRoom_Classification();
 
 		/**
-		 * The meta object literal for the '<em><b>Bed Type</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Bed Type</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3331,7 +3331,7 @@ public interface ModelPackage extends EPackage {
 		EReference ROOM__BED_TYPE = eINSTANCE.getRoom_BedType();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Extra</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Room Extra</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3417,7 +3417,7 @@ public interface ModelPackage extends EPackage {
 		EClass ROOM_BILL = eINSTANCE.getRoomBill();
 
 		/**
-		 * The meta object literal for the '<em><b>Billable Item</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Billable Item</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3511,7 +3511,7 @@ public interface ModelPackage extends EPackage {
 		EAttribute ROOM_EXTRA_TEMPLATE__TEMPLATE_NAME = eINSTANCE.getRoomExtraTemplate_TemplateName();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Extra</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Room Extra</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3529,7 +3529,7 @@ public interface ModelPackage extends EPackage {
 		EClass RECEIPT = eINSTANCE.getReceipt();
 
 		/**
-		 * The meta object literal for the '<em><b>Receipt Item</b></em>' reference listByDate feature.
+		 * The meta object literal for the '<em><b>Receipt Item</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

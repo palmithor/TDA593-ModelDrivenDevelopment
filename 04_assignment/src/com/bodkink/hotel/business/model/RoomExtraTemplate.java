@@ -78,15 +78,15 @@ public interface RoomExtraTemplate extends EObject {
 	void setTemplateName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Room Extra</b></em>' reference listByDate.
-	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.RoomExtra}.
+	 * Returns the value of the '<em><b>Room Extra</b></em>' reference list.
+	 * The list contents are of type {@link com.bodkink.hotel.business.model.RoomExtra}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Room Extra</em>' reference listByDate isn't clear,
+	 * If the meaning of the '<em>Room Extra</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Extra</em>' reference listByDate.
+	 * @return the value of the '<em>Room Extra</em>' reference list.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getRoomExtraTemplate_RoomExtra()
 	 * @model ordered="false"
 	 * @generated

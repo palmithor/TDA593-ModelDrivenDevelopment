@@ -158,6 +158,42 @@ public interface LogicPackage extends EPackage {
 	int ROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRAS = BusinessPackage.IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRAS;
 
 	/**
+	 * The operation id for the '<em>Create Room Extra Template</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA_TEMPLATE__STRING_ELIST = BusinessPackage.IROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA_TEMPLATE__STRING_ELIST;
+
+	/**
+	 * The operation id for the '<em>Edit Room Extra Template</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_EXTRA_MANAGEMENT___EDIT_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE = BusinessPackage.IROOM_EXTRA_MANAGEMENT___EDIT_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE;
+
+	/**
+	 * The operation id for the '<em>Delete Room Extra Template</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_EXTRA_MANAGEMENT___DELETE_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE = BusinessPackage.IROOM_EXTRA_MANAGEMENT___DELETE_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE;
+
+	/**
+	 * The operation id for the '<em>List Room Extra Templates</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRA_TEMPLATES = BusinessPackage.IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRA_TEMPLATES;
+
+	/**
 	 * The number of operations of the '<em>Room Extra Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,6 +229,15 @@ public interface LogicPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST = BusinessPackage.IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST;
+
+	/**
+	 * The operation id for the '<em>Create</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRATEMPLATE = BusinessPackage.IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRATEMPLATE;
 
 	/**
 	 * The operation id for the '<em>List Rooms</em>' operation.

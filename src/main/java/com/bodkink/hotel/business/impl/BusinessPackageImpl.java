@@ -267,6 +267,42 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIRoomExtraManagement__CreateRoomExtraTemplate__String_EList() {
+		return iRoomExtraManagementEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoomExtraManagement__EditRoomExtraTemplate__RoomExtraTemplate() {
+		return iRoomExtraManagementEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoomExtraManagement__DeleteRoomExtraTemplate__RoomExtraTemplate() {
+		return iRoomExtraManagementEClass.getEOperations().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoomExtraManagement__ListRoomExtraTemplates() {
+		return iRoomExtraManagementEClass.getEOperations().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIRoomManagement() {
 		return iRoomManagementEClass;
 	}
@@ -285,7 +321,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIRoomManagement__ListRooms() {
+	public EOperation getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_RoomExtraTemplate() {
 		return iRoomManagementEClass.getEOperations().get(1);
 	}
 
@@ -294,7 +330,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIRoomManagement__EditRoom__Room() {
+	public EOperation getIRoomManagement__ListRooms() {
 		return iRoomManagementEClass.getEOperations().get(2);
 	}
 
@@ -303,7 +339,7 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIRoomManagement__DisableRoom__String() {
+	public EOperation getIRoomManagement__EditRoom__Room() {
 		return iRoomManagementEClass.getEOperations().get(3);
 	}
 
@@ -312,8 +348,17 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIRoomManagement__FindRoom__String() {
+	public EOperation getIRoomManagement__DisableRoom__String() {
 		return iRoomManagementEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIRoomManagement__FindRoom__String() {
+		return iRoomManagementEClass.getEOperations().get(5);
 	}
 
 	/**
@@ -803,9 +848,14 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		createEOperation(iRoomExtraManagementEClass, IROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA__STRING_STRING);
 		createEOperation(iRoomExtraManagementEClass, IROOM_EXTRA_MANAGEMENT___EDIT_ROOM_EXTRA__ROOMEXTRA);
 		createEOperation(iRoomExtraManagementEClass, IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRAS);
+		createEOperation(iRoomExtraManagementEClass, IROOM_EXTRA_MANAGEMENT___CREATE_ROOM_EXTRA_TEMPLATE__STRING_ELIST);
+		createEOperation(iRoomExtraManagementEClass, IROOM_EXTRA_MANAGEMENT___EDIT_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE);
+		createEOperation(iRoomExtraManagementEClass, IROOM_EXTRA_MANAGEMENT___DELETE_ROOM_EXTRA_TEMPLATE__ROOMEXTRATEMPLATE);
+		createEOperation(iRoomExtraManagementEClass, IROOM_EXTRA_MANAGEMENT___LIST_ROOM_EXTRA_TEMPLATES);
 
 		iRoomManagementEClass = createEClass(IROOM_MANAGEMENT);
 		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST);
+		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRATEMPLATE);
 		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___LIST_ROOMS);
 		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___EDIT_ROOM__ROOM);
 		createEOperation(iRoomManagementEClass, IROOM_MANAGEMENT___DISABLE_ROOM__STRING);
@@ -932,6 +982,18 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 
 		initEOperation(getIRoomExtraManagement__ListRoomExtras(), theModelPackage.getRoomExtra(), "listRoomExtras", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
+		op = initEOperation(getIRoomExtraManagement__CreateRoomExtraTemplate__String_EList(), theModelPackage.getRoomExtraTemplate(), "createRoomExtraTemplate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "name", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theModelPackage.getRoomExtra(), "roomExtras", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoomExtraManagement__EditRoomExtraTemplate__RoomExtraTemplate(), theModelPackage.getRoomExtraTemplate(), "editRoomExtraTemplate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theModelPackage.getRoomExtraTemplate(), "roomExtraTemplate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoomExtraManagement__DeleteRoomExtraTemplate__RoomExtraTemplate(), theModelPackage.getRoomExtraTemplate(), "deleteRoomExtraTemplate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theModelPackage.getRoomExtraTemplate(), "roomExtraTemplate", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIRoomExtraManagement__ListRoomExtraTemplates(), theModelPackage.getRoomExtraTemplate(), "listRoomExtraTemplates", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(iRoomManagementEClass, IRoomManagement.class, "IRoomManagement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		op = initEOperation(getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_EList(), theModelPackage.getRoom(), "create", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -944,6 +1006,17 @@ public class BusinessPackageImpl extends EPackageImpl implements BusinessPackage
 		addEParameter(op, theModelPackage.getClassification(), "classification", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEMap(), "bedTypes", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, theModelPackage.getRoomExtra(), "roomExtras", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIRoomManagement__Create__String_String_int_BigDecimal_BigDecimal_String_Classification_Map_RoomExtraTemplate(), theModelPackage.getRoom(), "create", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "roomNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "description", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "allowedGuest", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBigDecimal(), "size", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBigDecimal(), "nightPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "picUrls", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theModelPackage.getClassification(), "classification", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEMap(), "bedTypes", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theModelPackage.getRoomExtraTemplate(), "roomExtrasTemplate", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIRoomManagement__ListRooms(), theModelPackage.getRoom(), "listRooms", 0, -1, IS_UNIQUE, !IS_ORDERED);
 

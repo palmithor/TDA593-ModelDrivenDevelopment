@@ -81,7 +81,7 @@ public enum BookingBillType implements Enumerator {
 		};
 
 	/**
-	 * A public read-only listByDate of all the '<em><b>Booking Bill Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Booking Bill Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

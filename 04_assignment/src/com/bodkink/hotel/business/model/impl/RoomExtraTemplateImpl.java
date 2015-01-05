@@ -76,7 +76,7 @@ public class RoomExtraTemplateImpl extends MinimalEObjectImpl.Container implemen
 	protected String templateName = TEMPLATE_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRoomExtra() <em>Room Extra</em>}' reference listByDate.
+	 * The cached value of the '{@link #getRoomExtra() <em>Room Extra</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRoomExtra()

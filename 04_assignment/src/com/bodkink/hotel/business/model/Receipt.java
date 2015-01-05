@@ -24,15 +24,15 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Receipt extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Receipt Item</b></em>' reference listByDate.
-	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.ReceiptItem}.
+	 * Returns the value of the '<em><b>Receipt Item</b></em>' reference list.
+	 * The list contents are of type {@link com.bodkink.hotel.business.model.ReceiptItem}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Receipt Item</em>' reference listByDate isn't clear,
+	 * If the meaning of the '<em>Receipt Item</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Receipt Item</em>' reference listByDate.
+	 * @return the value of the '<em>Receipt Item</em>' reference list.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getReceipt_ReceiptItem()
 	 * @model ordered="false"
 	 * @generated

@@ -3,6 +3,7 @@
 package com.bodkink.hotel.business;
 
 import com.bodkink.hotel.business.model.RoomExtra;
+import com.bodkink.hotel.business.model.RoomExtraTemplate;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -42,5 +43,37 @@ public interface IRoomExtraManagement extends EObject {
 	 * @generated
 	 */
 	EList<RoomExtra> listRoomExtras();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" nameDataType="org.eclipse.uml2.types.String" nameRequired="true" nameOrdered="false" roomExtrasMany="true" roomExtrasOrdered="false"
+	 * @generated
+	 */
+	RoomExtraTemplate createRoomExtraTemplate(String name, EList<RoomExtra> roomExtras);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomExtraTemplateRequired="true" roomExtraTemplateOrdered="false"
+	 * @generated
+	 */
+	RoomExtraTemplate editRoomExtraTemplate(RoomExtraTemplate roomExtraTemplate);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomExtraTemplateRequired="true" roomExtraTemplateOrdered="false"
+	 * @generated
+	 */
+	RoomExtraTemplate deleteRoomExtraTemplate(RoomExtraTemplate roomExtraTemplate);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<RoomExtraTemplate> listRoomExtraTemplates();
 
 } // IRoomExtraManagement
