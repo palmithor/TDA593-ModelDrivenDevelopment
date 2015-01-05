@@ -91,16 +91,26 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
         return result;
     }
 
-/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, RoomExtraTemplate roomExtrasTemplate) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
+    /**
+     * <!-- begin-user-doc -->
+     * Create a new room.
+     *
+     * @param roomNumber         The number of the room
+     * @param description        The description of the room
+     * @param allowedGuest       The maximum number of allowed guests in this room
+     * @param size               The size of the room
+     * @param nightPrice         The price per night of the room
+     * @param picUrls            URL for pictures used when displaying information of the room
+     * @param classification     The classification of the room
+     * @param bedTypes           A map of bed types and how many of each bed type the room has
+     * @param roomExtrasTemplate A template holding a list of room extras that this room has
+     * @return The newly created room.
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, RoomExtraTemplate roomExtrasTemplate) {
+        return create(roomNumber, description, allowedGuest, size, nightPrice, picUrls, classification, bedTypes, roomExtrasTemplate.getRoomExtra());
+    }
 
     /**
      * <!-- begin-user-doc -->
@@ -169,6 +179,7 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
     /**
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
@@ -176,7 +187,7 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
     public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
         switch (operationID) {
             case LogicPackage.ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST:
-                return create((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (BigDecimal)arguments.get(3), (BigDecimal)arguments.get(4), (String)arguments.get(5), (Classification)arguments.get(6), (Map)arguments.get(7), (EList<RoomExtra>)arguments.get(8));
+                return create((String) arguments.get(0), (String) arguments.get(1), (Integer) arguments.get(2), (BigDecimal) arguments.get(3), (BigDecimal) arguments.get(4), (String) arguments.get(5), (Classification) arguments.get(6), (Map) arguments.get(7), (EList<RoomExtra>) arguments.get(8));
             case LogicPackage.ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRATEMPLATE:
                 return create((String) arguments.get(0), (String) arguments.get(1), (Integer) arguments.get(2), (BigDecimal) arguments.get(3), (BigDecimal) arguments.get(4), (String) arguments.get(5), (Classification) arguments.get(6), (Map) arguments.get(7), (RoomExtraTemplate) arguments.get(8));
             case LogicPackage.ROOM_MANAGEMENT___LIST_ROOMS:
@@ -186,7 +197,7 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
             case LogicPackage.ROOM_MANAGEMENT___DISABLE_ROOM__STRING:
                 return disableRoom((String) arguments.get(0));
             case LogicPackage.ROOM_MANAGEMENT___FIND_ROOM__STRING:
-                return findRoom((String)arguments.get(0));
+                return findRoom((String) arguments.get(0));
         }
         return super.eInvoke(operationID, arguments);
     }
