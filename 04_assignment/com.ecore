@@ -30,6 +30,21 @@
             <eParameters name="roomExtra" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomExtra"/>
           </eOperations>
           <eOperations name="listRoomExtras" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/RoomExtra"/>
+          <eOperations name="createRoomExtraTemplate" ordered="false" lowerBound="1"
+              eType="#//bodkink/hotel/business/model/RoomExtraTemplate">
+            <eParameters name="name" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eParameters name="roomExtras" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/RoomExtra"/>
+          </eOperations>
+          <eOperations name="editRoomExtraTemplate" ordered="false" lowerBound="1"
+              eType="#//bodkink/hotel/business/model/RoomExtraTemplate">
+            <eParameters name="roomExtraTemplate" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomExtraTemplate"/>
+          </eOperations>
+          <eOperations name="deleteRoomExtraTemplate" ordered="false" lowerBound="1"
+              eType="#//bodkink/hotel/business/model/RoomExtraTemplate">
+            <eParameters name="roomExtraTemplate" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/RoomExtraTemplate"/>
+          </eOperations>
+          <eOperations name="listRoomExtraTemplates" ordered="false" upperBound="-1"
+              eType="#//bodkink/hotel/business/model/RoomExtraTemplate"/>
         </eClassifiers>
         <eClassifiers xsi:type="ecore:EClass" name="IRoomManagement" abstract="true"
             interface="true">
@@ -43,6 +58,18 @@
             <eParameters name="classification" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Classification"/>
             <eParameters name="bedTypes" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
             <eParameters name="roomExtras" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/RoomExtra"/>
+          </eOperations>
+          <eOperations name="create" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Room">
+            <eParameters name="roomNumber" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eParameters name="description" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eParameters name="allowedGuest" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            <eParameters name="size" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            <eParameters name="nightPrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+            <eParameters name="picUrls" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+            <eParameters name="classification" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Classification"/>
+            <eParameters name="bedTypes" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+            <eParameters name="roomExtrasTemplate" ordered="false" lowerBound="1"
+                eType="#//bodkink/hotel/business/model/RoomExtraTemplate"/>
           </eOperations>
           <eOperations name="listRooms" ordered="false" upperBound="-1" eType="#//bodkink/hotel/business/model/Room"/>
           <eOperations name="editRoom" ordered="false" lowerBound="1" eType="#//bodkink/hotel/business/model/Room">

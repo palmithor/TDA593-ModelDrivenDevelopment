@@ -8,6 +8,7 @@ import com.bodkink.hotel.business.logic.RoomManagement;
 import com.bodkink.hotel.business.model.Classification;
 import com.bodkink.hotel.business.model.Room;
 import com.bodkink.hotel.business.model.RoomExtra;
+import com.bodkink.hotel.business.model.RoomExtraTemplate;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -56,6 +57,17 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	public Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, EList<RoomExtra> roomExtras) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Room create(String roomNumber, String description, int allowedGuest, BigDecimal size, BigDecimal nightPrice, String picUrls, Classification classification, Map bedTypes, RoomExtraTemplate roomExtrasTemplate) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -116,6 +128,8 @@ public class RoomManagementImpl extends MinimalEObjectImpl.Container implements 
 		switch (operationID) {
 			case LogicPackage.ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ELIST:
 				return create((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (BigDecimal)arguments.get(3), (BigDecimal)arguments.get(4), (String)arguments.get(5), (Classification)arguments.get(6), (Map)arguments.get(7), (EList<RoomExtra>)arguments.get(8));
+			case LogicPackage.ROOM_MANAGEMENT___CREATE__STRING_STRING_INT_BIGDECIMAL_BIGDECIMAL_STRING_CLASSIFICATION_MAP_ROOMEXTRATEMPLATE:
+				return create((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (BigDecimal)arguments.get(3), (BigDecimal)arguments.get(4), (String)arguments.get(5), (Classification)arguments.get(6), (Map)arguments.get(7), (RoomExtraTemplate)arguments.get(8));
 			case LogicPackage.ROOM_MANAGEMENT___LIST_ROOMS:
 				return listRooms();
 			case LogicPackage.ROOM_MANAGEMENT___EDIT_ROOM__ROOM:

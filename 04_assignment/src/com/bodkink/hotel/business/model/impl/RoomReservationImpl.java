@@ -107,7 +107,7 @@ public class RoomReservationImpl extends MinimalEObjectImpl.Container implements
 	protected Date endDate = END_DATE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getGuest() <em>Guest</em>}' reference listByDate.
+	 * The cached value of the '{@link #getGuest() <em>Guest</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getGuest()

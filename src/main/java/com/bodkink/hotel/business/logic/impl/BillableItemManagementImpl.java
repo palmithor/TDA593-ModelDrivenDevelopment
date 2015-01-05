@@ -10,7 +10,15 @@ import com.bodkink.hotel.business.model.BillableItem;
 import java.lang.reflect.InvocationTargetException;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import com.bodkink.hotel.business.model.ModelFactory;
+import com.bodkink.hotel.business.util.EntityToModelConverter;
+import com.bodkink.hotel.business.util.ModelToEntityConverter;
+import com.bodkink.hotel.persistence.IBillableItemService;
+import com.bodkink.hotel.persistence.model.BillableItemEntity;
+import com.google.inject.Inject;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -27,6 +35,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class BillableItemManagementImpl extends MinimalEObjectImpl.Container implements BillableItemManagement {
+
+	@Inject
+	public IBillableItemService billableItemService;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,34 +61,43 @@ public class BillableItemManagementImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public BillableItem createBillableItem(String name, BigDecimal price) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		BillableItem billableItem = ModelFactory.eINSTANCE.createBillableItem();
+		billableItem.setName(name);
+		billableItem.setPrice(price);
+
+		BillableItemEntity billableItemEntity = ModelToEntityConverter.convertBillableItem(billableItem);
+		billableItemService.persist(billableItemEntity);
+
+		return billableItem;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public BillableItem editBillableItem(BillableItem billableItem) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		BillableItemEntity billableItemEntity = ModelToEntityConverter.convertBillableItem(billableItem);
+		billableItemService.edit(billableItemEntity);
+		return billableItem;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList<BillableItem> listBillableItems() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		List<BillableItemEntity> billableItemEntityList = billableItemService.listAll();
+		EList<BillableItem> billableItems = new BasicEList<>(billableItemEntityList.size());
+		billableItemEntityList.forEach(entity -> {
+			billableItems.add(EntityToModelConverter.convertBillableItem(entity));
+		});
+		return billableItems;
 	}
 
 	/**

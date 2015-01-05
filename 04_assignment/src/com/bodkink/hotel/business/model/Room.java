@@ -191,15 +191,15 @@ public interface Room extends EObject {
 	void setNightPrice(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Pictures</b></em>' attribute listByDate.
-	 * The listByDate contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Pictures</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Pictures</em>' attribute listByDate isn't clear,
+	 * If the meaning of the '<em>Pictures</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Pictures</em>' attribute listByDate.
+	 * @return the value of the '<em>Pictures</em>' attribute list.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getRoom_Pictures()
 	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
 	 * @generated
@@ -233,15 +233,15 @@ public interface Room extends EObject {
 	void setClassification(Classification value);
 
 	/**
-	 * Returns the value of the '<em><b>Bed Type</b></em>' reference listByDate.
-	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.BedType}.
+	 * Returns the value of the '<em><b>Bed Type</b></em>' reference list.
+	 * The list contents are of type {@link com.bodkink.hotel.business.model.BedType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Bed Type</em>' reference listByDate isn't clear,
+	 * If the meaning of the '<em>Bed Type</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bed Type</em>' reference listByDate.
+	 * @return the value of the '<em>Bed Type</em>' reference list.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getRoom_BedType()
 	 * @model ordered="false"
 	 * @generated
@@ -249,15 +249,15 @@ public interface Room extends EObject {
 	EList<BedType> getBedType();
 
 	/**
-	 * Returns the value of the '<em><b>Room Extra</b></em>' reference listByDate.
-	 * The listByDate contents are of type {@link com.bodkink.hotel.business.model.RoomExtra}.
+	 * Returns the value of the '<em><b>Room Extra</b></em>' reference list.
+	 * The list contents are of type {@link com.bodkink.hotel.business.model.RoomExtra}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Room Extra</em>' reference listByDate isn't clear,
+	 * If the meaning of the '<em>Room Extra</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Extra</em>' reference listByDate.
+	 * @return the value of the '<em>Room Extra</em>' reference list.
 	 * @see com.bodkink.hotel.business.model.ModelPackage#getRoom_RoomExtra()
 	 * @model ordered="false"
 	 * @generated

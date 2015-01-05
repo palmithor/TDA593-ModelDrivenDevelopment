@@ -61,6 +61,17 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/editRoomExtra/roomExtra"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/listRoomExtras"/>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/createRoomExtraTemplate">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/createRoomExtraTemplate/name"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/createRoomExtraTemplate/roomExtras"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/editRoomExtraTemplate">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/editRoomExtraTemplate/roomExtraTemplate"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/deleteRoomExtraTemplate">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/deleteRoomExtraTemplate/roomExtraTemplate"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomExtraManagement/listRoomExtraTemplates"/>
           </genClasses>
           <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="com.ecore#//bodkink/hotel/business/IRoomManagement">
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomManagement/create">
@@ -73,6 +84,17 @@
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create/classification"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create/bedTypes"/>
               <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create/roomExtras"/>
+            </genOperations>
+            <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1">
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/roomNumber"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/description"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/allowedGuest"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/size"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/nightPrice"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/picUrls"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/classification"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/bedTypes"/>
+              <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="com.ecore#//bodkink/hotel/business/IRoomManagement/create.1/roomExtrasTemplate"/>
             </genOperations>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomManagement/listRooms"/>
             <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="com.ecore#//bodkink/hotel/business/IRoomManagement/editRoom">

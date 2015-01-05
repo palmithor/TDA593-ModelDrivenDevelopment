@@ -107,6 +107,14 @@ public class EntityToModelConverter {
         return bedType;
     }
 
+    public static BillableItem convertBillableItem(final BillableItemEntity entity) {
+        BillableItem billableItem = ModelFactory.eINSTANCE.createBillableItem();
+        billableItem.setId(entity.getId() != null ? entity.getId().toString() : null);
+        billableItem.setName(entity.getName());
+        billableItem.setPrice(entity.getPrice());
+        return billableItem;
+    }
+
     public static Guest convertGuest(final GuestEntity entity) {
         Guest guest = ModelFactory.eINSTANCE.createGuest();
         guest.setId(entity.getId() != null ? entity.getId().toString() : null);
