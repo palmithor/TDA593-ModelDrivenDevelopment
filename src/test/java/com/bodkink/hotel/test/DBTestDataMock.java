@@ -86,6 +86,13 @@ public class DBTestDataMock {
         }};
     }
 
+    public static List<BillableItemEntity> getBillableItemEntities() {
+        return new ArrayList<BillableItemEntity>() {{
+            add(new BillableItemEntity("Coke", new BigDecimal(30)));
+            add(new BillableItemEntity("Peanuts", new BigDecimal(20)));
+        }};
+    }
+
     public static CustomerEntity getCustomerEntity() {
         return new CustomerEntity(ObjectId.get(), "Olof", "Palme", 1927,
                 "+46707235555", "olof.palme@mail.com", new ArrayList<>(), getCardInformationEntity());

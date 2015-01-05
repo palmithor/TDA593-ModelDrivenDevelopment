@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class BillableItemManagementImpl extends MinimalEObjectImpl.Container implements BillableItemManagement {
 
 	@Inject
-	IBillableItemService billableItemService;
+	public IBillableItemService billableItemService;
 
 	/**
 	 * <!-- begin-user-doc -->
