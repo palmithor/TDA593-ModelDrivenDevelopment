@@ -2688,12 +2688,6 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dg7BU35BEeSbRMfmy2L3fA" id="(0.5933333333333334,0.07142857142857142)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_dg7BVH5BEeSbRMfmy2L3fA" id="(0.48717948717948717,0.84)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_eHbnsX5BEeSbRMfmy2L3fA" type="4001" source="_OMbKAHoDEeSCM72iwJepcA" target="_CE4T8HoEEeSCM72iwJepcA">
-      <styles xmi:type="notation:FontStyle" xmi:id="_eHbnsn5BEeSbRMfmy2L3fA"/>
-      <element xmi:type="uml:Usage" href="model.uml#_eHbnsH5BEeSbRMfmy2L3fA"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eHbns35BEeSbRMfmy2L3fA" points="[-3, -4, 88, 146]$[-142, -146, -51, 4]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eHbntH5BEeSbRMfmy2L3fA" id="(0.35333333333333333,0.08571428571428572)"/>
-    </edges>
     <edges xmi:type="notation:Connector" xmi:id="_5ss6kX5BEeSbRMfmy2L3fA" type="4006" source="_OMbKAHoDEeSCM72iwJepcA" target="_gpUVoH5BEeSbRMfmy2L3fA">
       <styles xmi:type="notation:FontStyle" xmi:id="_5ss6kn5BEeSbRMfmy2L3fA"/>
       <element xmi:type="uml:InterfaceRealization" href="model.uml#_5ss6kH5BEeSbRMfmy2L3fA"/>
