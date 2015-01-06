@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @author palmithor
+ * @author simon
  * @since 11/12/14.
  */
 public interface IRoomReservationService {

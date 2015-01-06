@@ -13,7 +13,7 @@ import org.bson.types.ObjectId;
 import java.util.List;
 
 /**
- * @author palmithor
+ * @author simon
  * @since 11/12/14.
  */
 public class RoomReservationServiceImpl implements IRoomReservationService {

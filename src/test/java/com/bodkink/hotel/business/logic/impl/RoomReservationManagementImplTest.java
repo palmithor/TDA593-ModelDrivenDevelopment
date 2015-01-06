@@ -129,7 +129,7 @@ public class RoomReservationManagementImplTest {
     }
 
     @Test
-    public void testFindroomReservationNonExistingId() throws Exception {
+    public void testFindRoomReservationNonExistingId() throws Exception {
         when(roomReservationServiceMock.find(anyObject())).then(invocationOnMock -> {
             String id = (String) invocationOnMock.getArguments()[0];
 

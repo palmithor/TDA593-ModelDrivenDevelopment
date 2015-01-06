@@ -63,6 +63,8 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 
     /**
      * <!-- begin-user-doc -->
+     * List all room reservations.
+     * @return A list of all room reservations.
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -76,6 +78,10 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 
     /**
      * <!-- begin-user-doc -->
+     * List all room reservations that is overlapping the given date.
+     *
+     * @param start The wanted date.
+     * @return A list of all room reservations overlapping the given date.
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -104,6 +110,11 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 
     /**
      * <!-- begin-user-doc -->
+     * List all room reservations overlapping the given date interval.
+     *
+     * @param start The start date of the wanted interval.
+     * @param end The end date of the wanted interval.
+     * @return A list of all room reservations overlapping the given date interval.
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -122,6 +133,13 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 
     /**
      * <!-- begin-user-doc -->
+     * Create a new room reservation.
+     *
+     * @param room The room to reserve.
+     * @param start The start date of the reservation.
+     * @param end The end date of the reservation.
+     * @param roomReservationType The type of the reservation.
+     * @return The created room reservation.
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -140,6 +158,10 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 
     /**
      * <!-- begin-user-doc -->
+     * Get a room reservation with a specific id.
+     *
+     * @param roomReservationId The id of the wanted room reservation.
+     * @return The room reservation with the specified id.
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -153,6 +175,10 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 
     /**
      * <!-- begin-user-doc -->
+     * Set the status of a room reservation to CANCELED.
+     *
+     * @param roomReservationId The id of the room reservation to cancel.
+     * @return true if success, false otherwise.
      * <!-- end-user-doc -->
      * @generated NOT
      */
@@ -193,6 +219,11 @@ public class RoomReservationManagementImpl extends MinimalEObjectImpl.Container 
 
     /**
      * <!-- begin-user-doc -->
+     * Check if a room is available for a specific date interval.
+     *
+     * @param room The room to check the availability for.
+     * @param start The start date.
+     * @param end The end date.
      * <!-- end-user-doc -->
      * @generated NOT
      */
