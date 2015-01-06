@@ -3,6 +3,7 @@ package com.bodkink.hotel.test;
 
 import com.bodkink.hotel.business.model.ReservationStatusEnum;
 import com.bodkink.hotel.business.model.RoomReservationType;
+import com.bodkink.hotel.business.model.Service;
 import com.bodkink.hotel.persistence.model.*;
 import com.bodkink.hotel.util.DateInterval;
 import org.apache.commons.lang.StringUtils;
@@ -119,5 +120,12 @@ public class DBTestDataMock {
             ));
         });
         return bookings;
+    }
+
+    public static List<ServiceEntity> getServiceEntities() {
+        return new ArrayList<ServiceEntity>() {{
+            add(new ServiceEntity("All Inclusive", "Breakfast, lunch and dinner included.", new BigDecimal(200)));
+            add (new ServiceEntity("Spa", "24 hour access to the spa.", new BigDecimal(100)));
+        }};
     }
 }

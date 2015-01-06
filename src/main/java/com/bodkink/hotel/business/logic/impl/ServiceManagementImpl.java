@@ -39,7 +39,7 @@ import javax.inject.Inject;
 public class ServiceManagementImpl extends MinimalEObjectImpl.Container implements ServiceManagement {
 
 	@Inject
-	IServiceService serviceService;
+	public IServiceService serviceService;
 
 	/**
 	 * <!-- begin-user-doc -->
