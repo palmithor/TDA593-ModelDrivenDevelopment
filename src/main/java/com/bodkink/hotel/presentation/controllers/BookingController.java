@@ -1,23 +1,22 @@
 package com.bodkink.hotel.presentation.controllers;
 
 import com.bodkink.hotel.business.IBookingManagement;
+import com.bodkink.hotel.business.IRoomManagement;
+import com.bodkink.hotel.business.IServiceManagement;
 import com.bodkink.hotel.business.model.Booking;
 import com.bodkink.hotel.business.model.Receipt;
 import com.bodkink.hotel.business.model.Room;
 import com.bodkink.hotel.business.model.Service;
-import com.bodkink.hotel.business.util.EntityToModelConverter;
-import com.bodkink.hotel.persistence.dao.RoomDAO;
-import com.bodkink.hotel.persistence.dao.ServiceDAO;
 import com.bodkink.hotel.presentation.message.BookingMessage;
 import com.bodkink.hotel.presentation.message.BookingRequest;
 import com.bodkink.hotel.presentation.message.ReceiptMessage;
+import com.bodkink.hotel.presentation.message.ServiceMessage;
 import com.bodkink.hotel.util.MessageToModelConverter;
 import com.bodkink.hotel.util.ModelToMessageConverter;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import ninja.Result;
 import ninja.Results;
-import org.bson.types.ObjectId;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
@@ -32,21 +31,23 @@ public class BookingController {
     IBookingManagement bookingManagement;
 
     @Inject
-    RoomDAO roomDAO;
+    IRoomManagement roomManagement;
 
     @Inject
-    ServiceDAO serviceDAO;
+    IServiceManagement serviceManagement;
+
 
     public Result create(final BookingRequest bookingRequest) {
         EList<Room> rooms = new BasicEList<>();
         bookingRequest.getRooms().forEach(room -> {
-            rooms.add(EntityToModelConverter.convertRoom(roomDAO.get(new ObjectId(room.getId()))));
+            rooms.add(roomManagement.findRoom(room.getId()));
         });
 
         EList<Service> services = new BasicEList<>();
+        EList<Service> savedServices = serviceManagement.listServices();
         if (bookingRequest.getServices() != null) {
             bookingRequest.getServices().forEach(service -> {
-                services.add(EntityToModelConverter.convertService(serviceDAO.get(new ObjectId(service.getId()))));
+                services.add(getService(savedServices, service));
             });
         }
 
@@ -57,6 +58,15 @@ public class BookingController {
         } else {
             return Results.forbidden().json().renderRaw("".getBytes());
         }
+    }
+
+    private Service getService(final EList<Service> services, final ServiceMessage service) {
+        for (Service s : services) {
+            if (s.getId().equals(service.getId())) {
+                return MessageToModelConverter.convertService(service);
+            }
+        }
+        return null;
     }
 
     public Result confirm(final BookingMessage bookingMessage) {

@@ -17,10 +17,7 @@
 package conf;
 
 
-import com.bodkink.hotel.presentation.controllers.BedTypesController;
-import com.bodkink.hotel.presentation.controllers.BookingController;
-import com.bodkink.hotel.presentation.controllers.RoomExtrasController;
-import com.bodkink.hotel.presentation.controllers.WebApp;
+import com.bodkink.hotel.presentation.controllers.*;
 import ninja.AssetsController;
 import ninja.Router;
 import ninja.application.ApplicationRoutes;
@@ -50,6 +47,9 @@ public class Routes implements ApplicationRoutes {
         // Booking endpoint
         router.POST().route("/api/booking").with(BookingController.class, "create");
         router.POST().route("/api/booking/confirm").with(BookingController.class, "confirm");
+
+        router.POST().route("/api/reception/checkin").with(ReceptionController.class, "checkIn");
+        router.POST().route("/api/reception/checkout").with(ReceptionController.class, "checkOut");
     }
 
 }

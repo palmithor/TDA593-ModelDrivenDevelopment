@@ -63,11 +63,14 @@ public class MessageToModelConverter {
     }
 
     public static Classification convertClassification(final ClassificationMessage message) {
-        Classification classification = ModelFactory.eINSTANCE.createClassification();
-        classification.setId(message.getId());
-        classification.setTitle(message.getTitle());
-        classification.setDescription(message.getDescription());
-        return classification;
+        if (message != null && message.getId() != null) {
+            Classification classification = ModelFactory.eINSTANCE.createClassification();
+            classification.setId(message.getId());
+            classification.setTitle(message.getTitle());
+            classification.setDescription(message.getDescription());
+            return classification;
+        }
+        return null;
     }
 
     public static RoomReservation convertRoomReservation(final RoomReservationMessage message) {
@@ -77,9 +80,11 @@ public class MessageToModelConverter {
         roomReservation.setRoomReservationType(message.getReservationType());
         roomReservation.setRoom(convertRoom(message.getRoom()));
         roomReservation.setRoomBill(convertRoomBill(message.getRoomBill()));
-        message.getGuests().forEach(guest -> {
-            roomReservation.getGuest().add(convertGuest(guest));
-        });
+        if (message.getGuests() != null) {
+            message.getGuests().forEach(guest -> {
+                roomReservation.getGuest().add(convertGuest(guest));
+            });
+        }
         roomReservation.setStartDate(message.getStartDate());
         roomReservation.setEndDate(message.getEndDate());
         return roomReservation;
